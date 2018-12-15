@@ -12,7 +12,6 @@ namespace Usdk
         void loginCallBack(string ret);
         void logoutCallBack(string ret);
         void payCallBack(string ret);
-        void exchangeGiftCodeCallBack(string ret);
     }
 
     public enum UsdkCallBackErrorCode
@@ -30,9 +29,6 @@ namespace Usdk
         PayFail,
         PayProgress,
         PayOthers,
-        ExchangeGiftCodeFinish,
-        WeiXinShareSucess,
-        WeiXinShareFail,
     }
 
     public class UsdkCallBackRetMsg

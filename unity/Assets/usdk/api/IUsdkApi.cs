@@ -5,18 +5,20 @@ using UnityEngine;
 
 namespace Usdk
 {
-    public interface IUsdk
+    public interface IUsdkApi
     {
         string getConfig(string key);
-        void setSdkCallBackReceiver(string receiver_name_);
-        void login(string custom_params_);
-        void logout(string custom_params_);
-        void openUserCenter(string custom_params_);
-        void exit(string custom_params_);
-        void pay(SdkPayInfo pay_info_);
-        void releaseSdkResource(string custom_params_);
-        void switchAccount(string custom_params_);
+        void setSdkCallBackReceiver(string receiverName);
+        void login(string arg);
+        void logout(string arg);
+        void openUserCenter(string arg);
+        void exit(string arg);
+        void pay(SdkPayInfo payInfo);
+        void releaseSdkResource(string arg);
+        void switchAccount(string arg);
         void openAppstoreComment(string appid);
+        void callPugin(string pluginName, string methodName, params object[] parameters);
+        string callPuginR(string pluginName, string methodName, params object[] parameters);
     }
 
     public class SdkPayInfo

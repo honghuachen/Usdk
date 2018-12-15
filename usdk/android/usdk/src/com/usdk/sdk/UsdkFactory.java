@@ -29,7 +29,7 @@ public class UsdkFactory {
 			return load(name);
 	}
 
-	public static ProxyBase getProxy() {
+	public static ProxyBase getPlatform() {
 		return (ProxyBase) getPlugin("com.usdk.platform.PlatformProxy");
 	}
 

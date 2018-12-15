@@ -1,4 +1,4 @@
-package com.zwwx.platform;
+package com.usdk.plugin;
 
 import android.app.Activity;
 import android.os.Bundle;

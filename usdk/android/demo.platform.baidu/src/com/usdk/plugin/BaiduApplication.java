@@ -1,4 +1,4 @@
-package com.zwwx.platform;
+package com.usdk.plugin;
 
 import java.lang.reflect.Method;
 import android.app.Application;

@@ -1,4 +1,4 @@
-package com.usdk.plugin.crasheye;
+package com.usdk.plugin;
 
 import android.content.Context;
 

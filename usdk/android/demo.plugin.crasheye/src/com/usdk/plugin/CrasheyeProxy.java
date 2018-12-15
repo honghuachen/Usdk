@@ -1,4 +1,4 @@
-package com.usdk.plugin.crasheye;
+package com.usdk.plugin;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,13 +9,12 @@ import com.usdk.sdk.UsdkBase;
 import com.usdk.sdk.UsdkFactory;
 import com.xsj.crasheye.Crasheye;
 
-public class CrasheyeFactory extends UsdkBase implements ICrasheye{
+public class CrasheyeProxy extends UsdkBase implements ICrasheye{
 	@Override
 	public void OnCreate(Activity activity, Bundle savedInstanceState) {
 		super.onCreate(activity, savedInstanceState);
-		debug("onCreate");
 		this.parseXmlConfig("CrasheyeConfig.xml");	
-		ProxyBase proxy = UsdkFactory.getProxy();
+		ProxyBase proxy = UsdkFactory.getPlatform();
 		
 		String crasheyeAppkey = this.getConfig("AppKey");
 		Crasheye.enableDebug();
@@ -64,5 +63,4 @@ public class CrasheyeFactory extends UsdkBase implements ICrasheye{
 	public void setUserIdentifier(String userIdentifier) {
 		Crasheye.setUserIdentifier(userIdentifier);
 	}
-
 }
