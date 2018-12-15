@@ -1,0 +1,75 @@
+<resources>
+
+	<style name="bdp_SapiTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <style name="bdp_dialog_style" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item> 
+        <item name="android:windowNoTitle">true</item><!--除去title-->
+        <item name="android:windowContentOverlay">@null</item> 
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+    <style name="bdp_dialog_style_fullscreen" parent="@style/bdp_dialog_style">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
+    <style name="bdp_style_transparent" parent="android:Theme.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item> 
+        <item name="android:windowNoTitle">true</item><!--除去title-->
+        <item name="android:windowContentOverlay">@null</item> 
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
+    <style name="bdp_dialog_style_fullscreen_no_dim" parent="@style/bdp_dialog_style_fullscreen">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    
+    <style name="bdp_pay_result_dialog_style" parent="@style/bdp_dialog_style">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    
+    <style name="bdp_loading_dialog_style" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item> 
+        <item name="android:windowNoTitle">true</item><!--除去title-->
+        <item name="android:windowContentOverlay">@null</item> 
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+        <!-- paycenter -->
+
+
+    <!-- The style of  payment scrollViews -->
+    <style name="bdp_paycenter_payment_scrollview_style">
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarStyle">insideOverlay</item>
+        <item name="android:scrollbarSize">4dp</item>
+        <item name="android:scrollbarThumbVertical">@drawable/bdp_paycenter_scrollbar</item>
+        <item name="android:scrollbarThumbHorizontal">@drawable/bdp_paycenter_scrollbar</item>
+    </style>
+    <!-- The style of payment buttons -->
+    <style name="bdp_paycenter_payment_button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">@dimen/bdp_paycenter_text_size_12_sp</item>
+        <item name="android:background">@drawable/bdp_paycenter_btn_card_big_selector</item>
+    </style>
+    
+</resources>

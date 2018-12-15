@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bd_wallet_white">#fff</color>
+    <color name="bd_wallet_text_gray">#aaa</color>
+    <color name="bd_wallet_text_gray2">#aaaaaa</color>
+    <color name="bd_wallet_black">#000</color>
+    <color name="bd_wallet_black3">#222222</color>
+    <color name="bd_wallet_blue">#5baef5</color>
+    <color name="bd_wallet_red">#e94643</color>
+    <color name="bd_wallet_gray">#ddd</color>
+    <color name="bd_wallet_listitem_bg_grey2">#f6f6f6</color>
+    <color name="bd_wallet_fp_text_white">#FFFFFF</color>
+    <color name="bd_wallet_item_bg_blue">#37A6FB</color>
+    <color name="bd_wallet_item_bg_blue_hover">#5fb2f9</color>
+    <color name="bd_wallet_text_e4e4e4">#e4e4e4</color>
+    <color name="bd_wallet_text_999999">#999999</color>
+    <color name="ebpay_black_transparent">#80000000</color>
+    <color name="ebpay_white">#ffffff</color>
+    <color name="ebpay_black">#ff000000</color>
+    <color name="ebpay_bg_fafafafa">#fafafa</color>
+    <color name="ebpay_six_number_pwd_9f9f9f">#9f9f9f</color>
+    <color name="ebpay_six_number_pwd_cccccc">#cccccc</color>
+    <color name="ebpay_toast_bg">#cc000000</color>
+    <color name="ebpay_gray">#f2f2f2</color>
+    <color name="ebpay_gray2">#e9e9e9</color>
+    <color name="ebpay_gray3">#757575</color>
+    <color name="ebpay_gray4">#f1f1f1</color>
+    <color name="ebpay_gray_pressed">#e3e3e3</color>
+    <color name="ebpay_gray_disable">#e4effc</color>
+    <color name="ebpay_title_bg">#383838</color>
+    <color name="ebpay_action_bar_line_ccccccc">#cccccc</color>
+    <color name="ebpay_red">#ff5652</color>
+ 	<color name="ebpay_gray_999999">#999999</color>	<color name="ebpay_red_dark">#e94643</color>    <color name="ebpay_transparent">#00000000</color>
+    <color name="ebpay_list_ffe09f">#ffffe09f</color>
+    <color name="ebpay_translucence_color">#77000000</color>
+    <color name="ebpay_text_orange">#ff7800</color>
+    <color name="ebpay_text_btn_disable">#eb615f</color>
+    <color name="ebpay_text_btn_enable">#ffffff</color>
+    <color name="ebpay_button_red">#f34848</color>
+    <color name="ebpay_button_disable_ec6d6b">#ec6d6b</color>
+    <color name="ebpay_item_divider_e5e5e5">#e5e5e5</color>
+    <color name="ebpay_item_divider_d9d9d9">#d9d9d9</color>
+    <color name="ebpay_dash_rect_line_normal">#787878</color>
+    <color name="ebpay_dash_rect_line_press">#d5d5d5</color>
+    <color name="ebpay_textcolor_scancode_logo_text">#b20000</color>
+    <color name="ebpay_sub_text_color">#aaaaaa</color>
+
+
+    <!-- 蓝色色 -->
+    <color name="ebpay_blue">#20a3ff</color>
+    <color name="ebpay_scroll_bar">#bbbbbb</color>
+
+    <!-- 字体颜色 -->
+    <color name="ebpay_text_normal">#555</color>
+    <color name="ebpay_text_red_queqiao">#e94643</color>
+    <color name="ebpay_text_red">#d60000</color>
+    <color name="ebpay_text_red2">#e94643</color>
+    <color name="ebpay_text_re3">#ea3d3d</color>
+    <color name="ebpay_text_blue">#3593dc</color>
+    <color name="ebpay_text_blue2">#37a6fb</color>
+    <color name="ebpay_text_hint">#ccc</color>
+    <color name="ebpay_text_gray">#999</color>
+    <color name="ebpay_text_333">#333</color>
+    <color name="ebpay_text_333333">#333333</color>
+ 	<color name="ebpay_text_111111">#111111</color>
+    <color name="ebpay_text_222222">#222222</color>
+    <color name="ebpay_text_cashback_red">#e71f19</color>
+    <color name="ebpay_text_link_hover">#73bff9</color>
+    <color name="ebpay_text_blue3">#5f9be6</color>
+    <color name="ebpay_text_orange1">#ff5a00</color>
+    <color name="ebpay_text_copyright">#888888</color>
+    <color name="ebpay_text_negative">#e94643</color>
+    <color name="ebpay_text_link_nomal">#0a55bc</color>
+
+
+    <!-- For Charge -->
+    <color name="bd_wallet_discount_selected">#de4635</color>
+    <color name="bd_wallet_discount_normal">#dcdcdcdc</color>
+    <color name="bd_wallet_fp_text_error">#eb3c3c</color>
+    <color name="bd_wallet_fp_select">#3ea3fe</color>
+    <color name="bd_wallet_fp_boader">#bbbbbb</color>
+    <color name="bd_wallet_fp_disable">#eeeeee</color>
+	<color name="bd_wallet_fp_history">#333333</color>
+    <color name="bd_wallet_fp_fix_tip">#666666</color>
+    <color name="bd_wallet_fp_history_pressed">#e8e8e8</color>
+    <color name="bd_wallet_fp_fix_character">#e94643</color>
+  
+    <color name="bd_wallet_fp_txt_disable">#cccccc</color>
+    <color name="bd_wallet_fp_txt_default">#000000</color>
+    <color name="bd_wallet_fp_txt_select">#ffffff</color>
+    <color name="bd_wallet_traffic_txt_default">#666666</color>
+    
+    <!-- For Personal -->
+    <color name="bd_wallet_circle_gray">#d7d7d7</color>
+    <color name="bd_wallet_circle_blue">#3da1f6</color>
+    <color name="wallet_base_window_bg">#fafafa</color>
+    <color name="wallet_base_window_bg2">#f2f2f2</color>
+    <color name="wallet_base_blue">#3DA1F6</color>
+    <color name="wallet_base_6c">#ccc</color>
+    <color name="wallet_base_text_blue">#3593dc</color>
+    <color name="wallet_base_text_red">#e94643</color>
+    
+
+    <!-- For Dialog -->
+    <color name="bd_wallet_dialog_bg">#ffffff</color>
+    <color name="bd_wallet_dialog_titletext">#2c2c2c</color>
+    <color name="bd_wallet_dialog_titletext_111111">#111111</color>
+    <color name="bd_wallet_dialog_lineblue">#37a6fb</color>
+    <color name="bd_wallet_dialog_linegray_d9d9d9">#d9d9d9</color>
+    <color name="bd_wallet_dialog_linegray">#dddddd</color>
+    <color name="bd_wallet_dialog_btnpress_bg">#f2f2f2</color>
+    <color name="bd_wallet_dialog_contenttext">#555555</color>
+    <color name="bd_wallet_dialog_btndisable">#dcdcdc</color>
+    <color name="bd_wallet_dialog_text_e94643">#e94643</color>
+    <color name="bd_wallet_dialog_text_999999">#999999</color>
+
+    <!-- For PwdPayDialog -->
+    <color name="bd_wallet_pwdpay_light_gray">#cccccc</color>
+    <color name="bd_wallet_divide_line_gray">#d9d9d9</color>
+    <color name="bd_wallet_pwdpay_title_bg">#fafafa</color>
+    <color name="bd_wallet_pwdpay_text_blue">#5cb6fb</color>
+    <color name="bd_wallet_pwdpay_text_before_channel">#999999</color>
+    <color name="bd_wallet_pwdpay_nopwd_protocol_text">#666666</color>
+    <color name="bd_wallet_text_press_bg_color">#f1f1f1</color>
+
+    <!-- For safekeyBoard -->
+    <color name="bd_wallet_safekeyboard_linegray">#d9d9d9</color>
+    <color name="bd_wallet_safekeyboard_title_bg">#ffffff</color>
+    <color name="bd_wallet_safekeyboard_title_textcolor">#333333</color>
+    <color name="bd_wallet_safekeyboard_keynum_textcolor">#000000</color>
+    <color name="bd_wallet_text_gray_color">#666666</color>
+    <color name="bd_wallet_bg_color_gray">#eeeeee</color>
+    <color name="bd_wallet_bg_color_gray2">#c0c0c0</color>
+    <color name="bd_wallet_text_banner_bg_color">#ffe981</color>
+    <color name="bd_wallet_text_banner_color">#ff3600</color>
+    <color name="bd_wallet_text_banner_divider_color">#ffd964</color>
+    <color name="bd_wallet_text_gray3">#545454</color>
+    <color name="bd_wallet_lightapp_title_btntext_sel">#c63c39</color>
+    <color name="bd_wallet_lightapp_title_background_color">#f9f9f9</color>
+
+	<!-- For EdittextDialog -->
+	<color name="bd_wallet_edittextdialog_textcolor_normal">#333333</color>
+	<color name="bd_wallet_edittextdialog_textcolor_gray">#999999</color>
+	
+	<!-- 新首页 -->
+    <color name="bd_wallet_home_bg">#f2f2f2</color>
+    <color name="bd_wallet_home_cashback_text_color">#e71f19</color>
+    <color name="bd_wallet_home_item_normal_bg">#fdfdff</color>
+    <color name="bd_wallet_home_item_pressed_bg">#d7d7d9</color>
+    <color name="bd_wallet_home_inner_separator">#dddddd</color>
+    <color name="bd_wallet_home_outer_separator">#cccccc</color>
+    <color name="bd_wallet_home_text_gray">#999999</color>
+    <color name="bd_wallet_home_text_highlight_dark">#333333</color>
+    <color name="bd_wallet_home_o2o_text_0">#5eabe8</color>
+    <color name="bd_wallet_home_o2o_text_1">#e94643</color>
+    <color name="bd_wallet_home_user_title_text_yellow">#fff29c</color>
+    <color name="bd_wallet_home_user_level_text_yellow">#fff29c</color>
+    <color name="bd_wallet_home_user_name_text_yellow">#fff29c</color>
+    
+    <color name="bd_wallet_pwdfree_protocol_text">#666666</color>
+    <color name="bd_wallet_pwdfree_gray">#999999</color>
+    <color name="bd_wallet_pwdfree_gray2">#5b5b5b</color>
+    <color name="bd_wallet_pwdfree_faces_default_color">#6b6b6b</color>
+    <color name="bd_wallet_pwdfree_faces_selected_color">#e74645</color>
+    
+	
+    <!-- 鹊桥 选择银行卡界面 -->
+    <color name="bd_wallet_selectbindcard_queqiao_ededed">#ededed</color>
+    <color name="bd_wallet_selectbindcard_queqiao_fafafa">#fafafa</color>
+    <color name="bd_wallet_selectbindcard_queqiao_aaaaaa">#aaaaaa</color>
+    
+    <color name="bd_wallet_base_color_0a555bc">#0a55bc</color>
+
+    <!--鹊桥 我的交易界面 -->
+    <color name="bd_wallet_mytransrecords_queqiao_fafafa">#fafafa</color>
+    <color name="bd_wallet_mytransrecords_queqiao_aaaaaa">#aaaaaa</color>
+    <color name="bd_wallet_mytransrecords_queqiao_d9d9d9">#d9d9d9</color>
+    <color name="bd_wallet_mytransrecords_queqiao_111111">#111111</color>
+
+    <!--鹊桥 余额明细界面 -->
+    <color name="bd_wallet_balance_trans_queqiao_fafafa">#fafafa</color>
+    <color name="bd_wallet_balance_trans_queqiao_aaaaaa">#aaaaaa</color>
+    <color name="bd_wallet_balance_trans_queqiao_d9d9d9">#d9d9d9</color>
+    <color name="bd_wallet_balance_trans_queqiao_111111">#111111</color>
+
+    <!--鹊桥 安全中心界面 -->
+    <color name="bd_wallet_security_center_queqiao_111111">#111111</color>
+    <color name="bd_wallet_security_center_queqiao_d9d9d9">#d9d9d9</color>
+    <color name="bd_wallet_security_center_queqiao_cccccc">#cccccc</color>
+
+    <!--鹊桥 银行卡界面 -->
+    <color name="bd_wallet_bank_card_bg">#f2f2f2</color>
+    <color name="bd_wallet_bank_card_999999">#999999</color>
+    <color name="bd_wallet_bank_card_e6e6e6">#e6e6e6</color>
+    <color name="bd_wallet_bank_card_cbcbcb">#cbcbcb</color>
+    <color name="bd_wallet_bank_card_f8f8f8">#f8f8f8</color>
+    
+    <color name="bd_wallet_base_f4b2b1">#f4b2b1</color>
+
+</resources>

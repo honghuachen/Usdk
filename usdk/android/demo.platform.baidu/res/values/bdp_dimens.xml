@@ -1,0 +1,24 @@
+<resources>
+
+    <dimen name="bdp_dialog_width_offset">40dp</dimen>
+    
+    <!-- account -->
+	<dimen name="bdp_account_welcome_top">15dip</dimen>
+	<dimen name="bdp_account_autocomplete_drop_height">120dip</dimen>
+	<dimen name="bdp_account_activity_land_padding">120dip</dimen>
+
+        <!-- paycenter -->
+    <dimen name="bdp_paycenter_text_size_10_sp">10sp</dimen>
+    <dimen name="bdp_paycenter_text_size_12_sp">12sp</dimen>
+    <dimen name="bdp_paycenter_text_size_14_sp">14sp</dimen>
+    <dimen name="bdp_paycenter_text_size_16_sp">16sp</dimen>
+    <dimen name="bdp_paycenter_text_size_8_dp">8dp</dimen>
+    <dimen name="bdp_paycenter_text_size_12_dp">12dp</dimen>
+    <dimen name="bdp_paycenter_text_size_24_dp">24dp</dimen>
+    <dimen name="bdp_paycenter_text_size_48_dp">48dp</dimen>
+    <dimen name="bdp_paycenter_input_edit_text_left_padding">8dp</dimen>
+    
+    <dimen name="bdp_paycenter_credit_card_choose_margin">8dip</dimen>
+	<!-- paycenter -->
+    
+</resources>

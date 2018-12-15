@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zwwx_sdcard_insufficient">SD card space is insufficient</string>
+    <string name="zwwx_system_insufficient">System storage space is insufficient</string>
+    <string name="zwwx_required_space_size">Required space size:</string>
+    <string name="zwwx_extract_failed">Decompression file failed</string>
+    <string name="zwwx_extract_failed_warning">Please check if there is enough room for the remainder of the equipment! Required space:</string>
+</resources>

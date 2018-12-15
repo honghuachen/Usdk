@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/bdp_bg" >
+
+        <LinearLayout
+            android:id="@+id/bdp_paycenter_layout_list_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/bdp_paycenter_layout_list"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@drawable/bdp_paycenter_top_info_bg_file"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="12dp"
+                android:background="@drawable/bdp_paycenter_top_info_bottom_bg"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/bdp_paycenter_sv_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/bdp_paycenter_layout_list_parent"
+            android:fadeScrollbars="false"
+             android:fillViewport="true"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbarThumbVertical="@drawable/bdp_paycenter_scrollbar_gray" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/bdp_paycenter_layout_paycontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp" >
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bdp_paycenter_layout_baidu_logo_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="center|bottom"
+                    android:orientation="vertical" >
+
+                    <include
+                        android:id="@+id/bdp_paycenter_layout_baidu_logo"
+                        layout="@layout/bdp_paycenter_bottom" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

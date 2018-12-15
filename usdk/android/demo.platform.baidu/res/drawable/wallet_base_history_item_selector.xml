@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/bd_wallet_selectbindcard_queqiao_ededed"
+          android:state_pressed="true"/>
+    <item android:drawable="@color/bd_wallet_listitem_bg_grey2"/>
+
+</selector>

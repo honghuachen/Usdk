@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+    <!-- 标题 -->
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical">
+	    <ImageView 
+	        android:id="@+id/imgBack"
+	        android:layout_width="45dip"
+	        android:layout_height="48dip"
+	        android:visibility="invisible"
+	        android:scaleType="center"
+	        android:src="@drawable/bdp_icon_back_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 百度登录 -->
+	    <TextView 
+	        android:id="@+id/txtTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_login_title_baidu_long"
+	        android:textSize="18sp"
+	        android:textColor="#ff222222"
+	        android:drawableLeft="@drawable/bdp_logo_baidu_top"
+	        android:drawablePadding="6dip"
+	        android:gravity="center"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 关闭按钮 -->
+	    <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="45dip"
+	        android:layout_height="45dip"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/bdp_icon_close_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	</LinearLayout>
+	
+	<!-- 子视图 -->
+	<LinearLayout 
+	    android:id="@+id/linView"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dip"
+	    android:orientation="horizontal"
+	    />
+</LinearLayout>

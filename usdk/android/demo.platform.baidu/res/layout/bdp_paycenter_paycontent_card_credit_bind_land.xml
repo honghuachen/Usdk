@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="8dip" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_credit_pay_money_label"
+                android:textColor="@color/bdp_dark_gray"
+                android:textSize="14sp" />
+
+            <!-- 本次支付金额 -->
+
+            <TextView
+                android:id="@+id/txt_pay_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_credit_pay_money"
+                android:textColor="@color/bdp_color_ff3300"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_credit_input_info_label"
+                android:textColor="@color/bdp_dark_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bdp_paycenter_layout_input_credit_card"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- 信用卡号 -->
+
+            <EditText
+                android:id="@+id/edt_credit_number"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_tip_credit_card_number_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusDown="@+id/edt_credit_phone"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+
+            <!-- 信用卡关联手机号 -->
+
+            <EditText
+                android:id="@+id/edt_credit_phone"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_tip_credit_card_phone_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/edt_credit_valid"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" >
+
+            <!-- 有效期 -->
+
+            <EditText
+                android:id="@+id/edt_credit_valid"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_tip_credit_card_date_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusDown="@+id/edt_credit_code"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+
+            <!-- 校验码 -->
+
+            <EditText
+                android:id="@+id/edt_credit_code"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_tip_credit_card_code_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/bdp_image"
+                android:src="@drawable/bdp_paycenter_ic_credit_card_date" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/bdp_image"
+                android:src="@drawable/bdp_paycenter_ic_credit_card_code" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <!-- 支付按钮 -->
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_enough_pay_selector"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_btn_string_pay"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+</LinearLayout>

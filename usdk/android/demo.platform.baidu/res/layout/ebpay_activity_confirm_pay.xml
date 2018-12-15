@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wallet_base_window_bg"
+    android:orientation="vertical" >
+
+    <com.baidu.wallet.base.widget.BdActionBar
+        android:id="@+id/bdactionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_below="@id/bdactionbar"
+        android:scrollbarSize="5dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@drawable/wallet_base_shape_scrollbar"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#f2f2f2"
+                android:paddingBottom="@dimen/ebpay_order_padding_bottom"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="center" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc" />
+
+            <RelativeLayout
+                android:id="@+id/ebpay_show_price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ebpay_white"
+                android:paddingBottom="@dimen/ebpay_order_padding_bottom"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="@dimen/ebpay_order_padding_top" >
+
+                <TextView
+                    android:id="@+id/ebpay_price_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="￥98.50"
+                    android:textColor="@color/ebpay_black"
+                    android:textSize="@dimen/bd_wallet_text_size_largest" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc" />
+
+            <RelativeLayout
+                android:id="@+id/ebpay_origin_order_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ebpay_white"
+                android:paddingBottom="@dimen/ebpay_order_padding_bottom"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <RelativeLayout
+                    android:id="@+id/bpay_sp_name_tip_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/ebpay_white" >
+
+                    <TextView
+                        android:id="@+id/ebpay_sp_name_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/ebpay_order_text_pitch"
+                        android:text="@string/ebpay_confirm_pay_conmpany_name_tips"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+
+                    <TextView
+                        android:id="@+id/ebpay_sp_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/ebpay_sp_name_tip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/ebpay_sp_name_tip"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="false"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ebpay_good_name_tip_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bpay_sp_name_tip_layout"
+                    android:background="@color/ebpay_white" >
+
+                    <TextView
+                        android:id="@+id/ebpay_good_name_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ebpay_confirm_pay_goods_name_tips"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+
+                    <TextView
+                        android:id="@+id/ebpay_good_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/ebpay_good_name_tip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/ebpay_good_name_tip"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="false"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ebpay_order_account_tips_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ebpay_good_name_tip_layout"
+                    android:background="@color/ebpay_white" >
+
+                    <TextView
+                        android:id="@+id/ebpay_order_account_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ebpay_confirm_pay_order_account_tips"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+
+                    <TextView
+                        android:id="@+id/ebpay_order_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/ebpay_order_account_tips"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/ebpay_order_account_tips"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="false"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ebpay_pay_account_tips_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ebpay_order_account_tips_layout"
+                    android:background="@color/ebpay_white" >
+
+                    <TextView
+                        android:id="@+id/ebpay_pay_account_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/ebpay_confirm_pay_account_tips"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+
+                    <TextView
+                        android:id="@+id/ebpay_pay_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/ebpay_pay_account_tips"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/ebpay_pay_account_tips"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="false"
+                        android:textColor="@color/bd_wallet_home_text_gray"
+                        android:textSize="@dimen/ebpay_text_size_15" />
+
+                    <TextView
+                        android:id="@+id/ebpay_pay_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/ebpay_pay_account"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/ebpay_confirm_pay_tisps"
+                        android:textColor="#cccccc"
+                        android:textSize="@dimen/ebpay_text_size_12" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc" />
+            <LinearLayout
+        android:id="@+id/wallet_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/ebpay_to_pay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ebpay_white_line_height"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/wallet_base_btn"
+            android:gravity="center"
+            android:text="@string/ebpay_confirm_pay_tips"
+            android:textColor="@color/ebpay_white"
+            android:textSize="@dimen/ebpay_text_size_18" />
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

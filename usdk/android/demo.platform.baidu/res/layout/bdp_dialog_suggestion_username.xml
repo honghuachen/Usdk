@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bdp_paycenter_bg_dialog_alert"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="20dip"
+        android:orientation="vertical">
+        
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="12dip"
+	        android:paddingBottom="20dip"
+	        android:text="@string/bdp_account_register_suggest_name_tip"
+	        android:textSize="15sp"
+	        android:textColor="#ffff5555"
+	        android:gravity="center"
+	        />
+        
+        <Button 
+            android:id="@+id/btnName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:textSize="18sp"
+            android:textColor="@drawable/bdp_btn_gray_font"
+            android:background="@drawable/bdp_btn_gray_selector"
+            android:visibility="gone"
+            />
+        
+        <Button 
+            android:id="@+id/btnName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:padding="5dip"
+            android:textSize="18sp"
+            android:textColor="@drawable/bdp_btn_gray_font"
+            android:background="@drawable/bdp_btn_gray_selector"
+            android:visibility="gone"
+            />
+        
+        <Button 
+            android:id="@+id/btnName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:padding="5dip"
+            android:textSize="18sp"
+            android:textColor="@drawable/bdp_btn_gray_font"
+            android:background="@drawable/bdp_btn_gray_selector"
+            android:visibility="gone"
+            />
+        
+    </LinearLayout>
+    
+    <ImageView 
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:padding="10dip"
+        android:src="@drawable/bdp_icon_close_selector"
+        android:contentDescription="@string/bdp_image"
+        android:background="@null"/>
+    
+</RelativeLayout>

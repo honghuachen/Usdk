@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/wallet_base_window_bg"
+              android:orientation="vertical">
+
+    <com.baidu.wallet.base.widget.BdActionBar
+            android:id="@+id/bdactionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <include
+            android:id="@+id/bd_wallet_banner_layout"
+            layout="@layout/wallet_base_banner_notice_layout"
+            android:visibility="gone"
+            />
+
+    <RelativeLayout
+            android:id="@+id/content_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bd_wallet_normal_item_top_margin"
+            android:orientation="vertical"
+            >
+
+        <RelativeLayout
+                android:id="@+id/bd_wallet_input_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wallet_base_item_bg"
+                >
+
+            <LinearLayout
+                    android:id="@+id/bd_wallet_withdraw_bank_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/ebpay_white_line_height"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="@color/bd_wallet_white"
+                    android:paddingLeft="@dimen/bd_wallet_normal_item_left_margin"
+                    android:paddingRight="@dimen/bd_wallet_normal_item_left_margin"
+                    >
+
+                <TextView
+                        android:id="@+id/bd_wallet_withdraw_tip"
+                        android:layout_width="80dp"
+                        android:layout_height="@dimen/ebpay_white_line_height"
+                        android:gravity="center_vertical"
+                        android:text="@string/bd_wallet_withdraw_to_bank_tip"
+                        android:textColor="@color/ebpay_text_111111"
+                        android:textSize="@dimen/bd_wallet_text_size_normal"/>
+
+                <TextView
+                        android:id="@+id/bd_wallet_withdraw_selected_bank"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/ebpay_white_line_height"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/ebpay_text_111111"
+                        android:textSize="@dimen/bd_wallet_text_size_normal"
+                        />
+            </LinearLayout>
+
+            <View
+                    android:id="@+id/card_area_line"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/bd_wallet_withdraw_bank_layout"
+                    android:background="@color/ebpay_item_divider_e5e5e5"/>
+
+            <LinearLayout
+                    android:id="@+id/bd_wallet_withdraw_amount_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/ebpay_white_line_height"
+                    android:layout_below="@id/card_area_line"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="@color/bd_wallet_white"
+                    android:paddingLeft="@dimen/bd_wallet_normal_item_left_margin"
+                    android:paddingRight="@dimen/bd_wallet_normal_item_left_margin"
+                    >
+
+                <TextView
+                        android:id="@+id/bd_wallet_account_tip"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/bd_wallet_how_much_withdraw_tip"
+                        android:textColor="@color/ebpay_text_111111"
+                        android:textSize="@dimen/bd_wallet_text_size_normal"
+                        />
+
+
+                <com.baidu.wallet.base.widget.PluginEditText
+                        android:id="@+id/bd_wallet_withdraw_how_much"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/bd_wallet_transfer_item_height"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="8dp"
+                        android:textColor="@color/ebpay_text_111111"
+                        android:textColorHint="@color/ebpay_text_hint"
+                        android:textSize="@dimen/bd_wallet_text_size_normal"/>
+
+                <ImageView
+                        android:id="@+id/bd_wallet_withdraw_info_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:contentDescription="@null"
+                        android:paddingLeft="4dp"
+                        android:src="@drawable/wallet_base_icon_info_selector"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/bd_wallet_time_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bd_wallet_input_layout"
+                android:maxLines="5"
+                android:textColor="@color/ebpay_sub_text_color"
+                android:textSize="@dimen/ebpay_text_size_12"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="@dimen/bd_wallet_normal_item_left_margin"
+                android:layout_marginRight="@dimen/bd_wallet_normal_item_left_margin"
+                />
+
+        <Button
+                android:id="@+id/bd_wallet_withdraw_btn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/bd_wallet_time_tip"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/wallet_base_btn"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/bd_wallet_withdraw_btn_txt"
+                android:textColor="@color/wallet_base_btntext_color_selector"
+                android:textSize="@dimen/bd_wallet_text_size_normal"
+                android:layout_marginLeft="@dimen/bd_wallet_normal_item_left_margin"
+                android:layout_marginRight="@dimen/bd_wallet_normal_item_left_margin"
+                />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:paddingBottom="5dip"
+    android:paddingRight="5dip"
+    android:paddingTop="5dip" >
+
+    <ImageView
+        android:id="@+id/dk_notification_img_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/dk_activity_lv_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/dk_notification_img_icon" >
+
+        <TextView
+            android:id="@+id/dk_notification_img_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/dk_notification_img_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dk_notification_img_title"
+            android:layout_marginTop="10dip"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

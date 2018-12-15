@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:color="@color/bd_wallet_bank_card_cbcbcb"/>
+    <item android:color="@color/bd_wallet_text_999999"/>
+</selector>

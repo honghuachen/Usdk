@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/wallet_lightapp_menu_sel_mid" android:state_pressed="true"/>
+</selector>

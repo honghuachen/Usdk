@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bdp_pager_sliding_background_tab_pressed">#6633B5E5</color>
+    
+    <color name="bdp_white">#ffffffff</color>
+    <color name="bdp_black">#ff000000</color>
+    <color name="bdp_transparent">#00000000</color>
+    <color name="bdp_dark_gray">#ff333333</color>
+    <color name="bdp_deep_gray">#ff666666</color>
+    <color name="bdp_gray">#ff999999</color>
+    <color name="bdp_light_gray">#ffa0a0a0</color>
+    <color name="bdp_deep_blue">#ff2472d2</color>
+    <color name="bdp_gray_blue">#ffadc5e3</color>
+    <color name="bdp_blue">#ff488ce0</color>
+    <color name="bdp_orange">#fffea11d</color>
+    <color name="bdp_red">#ffff5555</color>
+    <color name="bdp_rice_white">#fff4f4f4</color>
+    <color name="bdp_lighter_gray">#ffe9e9e9</color>
+    
+        <!-- paycenter -->
+    <color name="bdp_bg">#f5f5f5</color>
+    <color name="bdp_color_333333">#333333</color>
+    <color name="bdp_color_ff3300">#ff3300</color>
+    <color name="bdp_color_999999">#999999</color>
+    <color name="bdp_color_fdf2db">#fdf2db</color>
+    <color name="bdp_gamesdk_white">#FFFFFF</color>
+     <color name="bdp_color_666666">#666666</color>
+    <color name="bdp_color_000000">#000000</color>
+    <color name="bdp_color_orangeyellow">#ff3300</color>
+    <color name="bdp_color_custom_hotline">#ff488ce0</color>
+    <color name="bdp_color_account_name">#ff488ce0</color>
+    <color name="bdp_color_account_balance">#ff3300</color>
+    <color name="bdp_paycenter_color_61B11F">#61B11F</color>
+    <color name="bdp_color_f08f1e">#f08f1e</color>
+    <color name="bdp_color_text_hint">#ff555555</color>
+           <!-- paycenter --> 
+    
+</resources>

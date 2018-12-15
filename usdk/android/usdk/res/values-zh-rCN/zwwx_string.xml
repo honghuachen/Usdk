@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zwwx_sdcard_insufficient">SD卡空间不足</string>
+    <string name="zwwx_system_insufficient">系统存储空间不足</string>
+    <string name="zwwx_required_space_size">所需空间大小：</string>
+    <string name="zwwx_extract_failed">解压文件失败</string>
+    <string name="zwwx_extract_failed_warning">请检查设备剩余空间是否充足！所需空间：</string>
+</resources>

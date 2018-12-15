@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/wallet_base_bank_item_selector"
+        >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+        <LinearLayout
+                android:id="@+id/bd_wallet_goods_name_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/bd_wallet_trans_amount"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="18dp">
+
+            <TextView
+                    android:id="@+id/bd_wallet_goods_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/bd_wallet_balance_trans_queqiao_111111"
+                    android:textSize="14sp"
+                    />
+
+            <com.baidu.wallet.base.widget.NetImageView
+                    android:id="@+id/bd_wallet_desc_img"
+                    android:layout_width="34dp"
+                    android:layout_height="18dp"
+                    android:visibility="gone"/>
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/bd_wallet_trans_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bd_wallet_goods_name_layout"
+                android:layout_below="@+id/bd_wallet_goods_name_layout"
+                android:textColor="@color/bd_wallet_balance_trans_queqiao_aaaaaa"
+                android:textSize="@dimen/bd_wallet_text_size_small"
+                />
+
+        <TextView
+                android:id="@+id/bd_wallet_trans_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/bd_wallet_balance_trans_queqiao_111111"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                />
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/bd_wallet_trans_time"
+            android:background="@color/bd_wallet_mytransrecords_queqiao_d9d9d9"
+            android:layout_marginLeft="@dimen/bd_wallet_normal_item_left_margin"
+            />
+</LinearLayout>

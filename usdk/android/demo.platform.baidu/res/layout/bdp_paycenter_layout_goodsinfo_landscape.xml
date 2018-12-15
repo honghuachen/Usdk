@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="7dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="7dp" >
+
+    <FrameLayout
+        android:id="@+id/bdp_paycenter_layout_goods_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/bdp_paycenter_iv_goods_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/bdp_paycenter_ic_goods_border" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_goods_namenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_pay_goods_name"
+            android:textColor="@color/bdp_color_333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_14_sp" />
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_pay_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/bdp_paycenter_pay_money_number"
+            android:textColor="@color/bdp_color_333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_14_sp" />
+    </LinearLayout>
+
+</LinearLayout>

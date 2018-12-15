@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false" android:color="@color/bd_wallet_pwdfree_faces_default_color" />
+    <item android:color="@color/bd_wallet_pwdfree_faces_selected_color" android:state_selected="true"/>
+    <item android:color="@color/bd_wallet_pwdfree_faces_default_color" android:state_selected="false"/>
+</selector>

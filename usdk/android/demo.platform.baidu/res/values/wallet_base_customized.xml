@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- SDK白色主题-->
+    <!-- 标题栏背景定制化 -->
+    <style name="wallet_title">
+        <item name="android:background">#f8f8f8</item>
+    </style>
+    
+    
+	<!-- 标题栏左侧区域定制化 -->
+    <style name="wallet_titlebar_left_imgzone2">
+        <item name="android:background">@drawable/wallet_base_title_back_selector</item> 
+        <item name="android:paddingLeft">15dp</item> 
+        <item name="android:paddingRight">7.5dp</item>   
+    </style>
+     <!-- 标题栏左侧区域:图形定制化 -->
+    <style name="wallet_titlebar_left_imgzone2_img">
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:src">@drawable/wallet_base_action_bar_back</item>
+    </style>
+    <!-- 标题栏左侧区域:文字定制化 -->
+	<style name="wallet_titlebar_left_imgzone2_notify">
+        <item name="android:textSize">16sp</item> 
+        <item name="android:textColor">#333333</item>
+        <item name="android:text"></item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>        
+    </style>
+    <!-- 中部标题文案定制化 -->
+     <style name="wallet_titlebar_center_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxEms">8</item>
+    </style>
+    <!-- 安全保障icon定制化 -->
+    <style name="title_center_safe_icon">
+    	<item name="android:src">@drawable/wallet_base_ation_bar_icon_safe</item>    
+    </style>
+    <!--安全保障文案定制化  -->
+    <style name="wallet_titlebar_center_safe_tip">
+    	<item name="android:textSize">10sp</item>    
+    	<item name="android:textColor">#999999</item>
+    	<item name="android:singleLine">true</item>
+    	<item name="android:ellipsize">end</item>
+    </style>
+    
+    
+    
+    <!-- 标题栏右侧文案定制化 -->
+    <style name="wallet_titlebar_right_imgzone2_notify">
+        <item name="android:textSize">14sp</item>
+        <item name="android:clickable">false</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">10dp</item>
+	     <item name="android:paddingLeft">10dp</item>
+    </style>
+    <!-- 标题栏底部横线定制化 -->
+    
+     <style name="wallet_titlebar_bottom_seperator">
+        <item name="android:background">@color/ebpay_action_bar_line_ccccccc</item>
+         <item name="android:scaleType">fitXY</item>
+    </style> 
+</resources>

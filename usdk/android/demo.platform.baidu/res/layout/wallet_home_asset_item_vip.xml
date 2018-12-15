@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="89.5dp"
+    android:layout_height="75dp"
+    android:layout_weight="1"
+    android:background="@drawable/wallet_home_item_bg" >
+
+    <com.baidu.wallet.base.widget.NetImageView
+        android:id="@+id/wallet_asset_new"
+        android:layout_width="21dp"
+        android:layout_height="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/wallet_home_asset_title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/wallet_home_asset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/wallet_home_asset_value_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/wallet_home_asset_title_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" >
+
+        <TextView
+            android:id="@+id/wallet_home_asset_value_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:singleLine="true"
+            android:gravity="bottom|center_horizontal"
+            android:textColor="#222222"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bdp_account_bg_upgrade_main"
+    android:fadingEdgeLength="20dip"
+    android:requiresFadingEdge="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:paddingTop="8dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dip"
+                android:drawableLeft="@drawable/bdp_account_icon_upgrade_tip"
+                android:drawablePadding="6dip"
+                android:text="@string/bdp_account_upgrade_tip"
+                android:textColor="#ffdff2ff"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bdp_bg_light_gray_round"
+                android:orientation="vertical"
+	            android:layout_marginTop="20dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip" >
+
+                <!-- 账号 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edtAccount"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/bdp_account_visitor_bind_hint_account_not_baidu"
+                        android:maxLength="80"
+                        android:singleLine="true"
+                        android:textColor="@color/bdp_black"
+                        android:textColorHint="@color/bdp_color_text_hint"
+                        android:textCursorDrawable="@null"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/imgAccountDel"
+                        android:layout_width="30dip"
+                        android:layout_height="40dip"
+                        android:contentDescription="@string/bdp_image"
+                        android:scaleType="center"
+                        android:src="@drawable/bdp_icon_text_clear_selector"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ffd1d1d1" />
+
+                <!-- 密码 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/bdp_account_visitor_bind_hint_password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:singleLine="true"
+                        android:textColor="@color/bdp_black"
+                        android:textColorHint="@color/bdp_color_text_hint"
+                        android:textCursorDrawable="@null"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/imgPasswordDel"
+                        android:layout_width="30dip"
+                        android:layout_height="40dip"
+                        android:contentDescription="@string/bdp_image"
+                        android:scaleType="center"
+                        android:src="@drawable/bdp_icon_text_clear_selector"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/imgPasswordShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dip"
+                        android:contentDescription="@string/bdp_image"
+                        android:src="@drawable/bdp_account_icon_pwd_hidden" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 验证码 -->
+
+            <LinearLayout
+                android:id="@+id/lin_verifycode"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginTop="3dip"
+                android:background="@drawable/bdp_bg_light_gray_round_no_padding"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dip" >
+
+                <EditText
+                    android:id="@+id/edtVerifycode"
+                    android:layout_width="0dip"
+                    android:layout_height="40dip"
+                    android:layout_marginBottom="3dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/bdp_account_visitor_bind_hint_verifycode_not_baidu"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:textColor="@color/bdp_black"
+                    android:textColorHint="@color/bdp_color_text_hint"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/imgVerifycodeDel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:contentDescription="@string/bdp_image"
+                    android:src="@drawable/bdp_icon_text_clear_selector"
+                    android:visibility="invisible" />
+
+                <!-- 获取验证码 -->
+                <TextView
+                    android:id="@+id/txtGetVerifycode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:singleLine="true"
+                    android:text="@string/bdp_account_visitor_bind_verifycode_get"
+                	android:textColor="@drawable/bdp_font_blue_selector"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- 发送提示 -->
+
+            <LinearLayout
+                android:id="@+id/lin_sent_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lin_verifycode"
+                android:layout_marginBottom="12dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/txtSentTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:textColor="@color/bdp_light_gray"
+                    android:textSize="13sp"
+                    android:visibility="invisible" />
+
+                <!-- 登录邮箱 -->
+
+                <TextView
+                    android:id="@+id/txtLoginMail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bdp_account_visitor_bind_login_mail"
+                    android:textColor="@color/bdp_blue"
+                    android:textSize="13sp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+    
+		    <!-- 完成 -->
+		    <Button
+		        android:id="@+id/btnComplete"
+		        android:layout_width="match_parent"
+		        android:layout_height="38dip"
+		        android:layout_marginBottom="30dip"
+		        android:background="@drawable/bdp_btn_yellow_selector"
+		        android:text="@string/bdp_account_upgrade_btn_register"
+		        android:textColor="@color/bdp_white"
+		        android:textSize="15sp" />
+        </LinearLayout>
+        
+        <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	        android:padding="5dip"
+	        android:src="@drawable/bdp_account_icon_upgrade_close_selector"
+	        android:scaleType="centerInside"
+            android:contentDescription="@string/bdp_image"
+	        />
+    </RelativeLayout>
+
+</ScrollView>

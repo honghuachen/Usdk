@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+   	android:background="@drawable/bdp_bg_white_round" >
+    
+	<LinearLayout
+	    android:id="@+id/lin_account"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="30dip"
+	    android:layout_marginLeft="48dip"
+	    android:layout_marginRight="48dip"
+	    android:gravity="center"
+	    android:visibility="gone" >
+	
+	    <!-- 登录类型 -->
+		<TextView
+		    android:id="@+id/txt_login_type"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textColor="#ff222222"
+		    android:textSize="15sp" />
+		
+		<!-- 登录账号 -->
+		<TextView
+		    android:id="@+id/txt_account"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:singleLine="true"
+		    android:ellipsize="end"
+		    android:textColor="#ff297bf6"
+		    android:textSize="15sp" />
+	</LinearLayout>
+	
+	<LinearLayout 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="30dip"
+		android:layout_marginRight="30dip"
+	    android:layout_marginTop="20dip"
+	    android:layout_marginBottom="30dip"
+		android:gravity="center">
+	  
+		<ProgressBar 
+			android:layout_width="27dip"
+			android:layout_height="27dip"
+			style="?android:attr/progressBarStyle"
+			android:indeterminateDrawable="@drawable/bdp_progress_loading_xml"
+		    />
+		  
+		  <TextView 
+		      android:id="@+id/txt_now_logining"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_marginLeft="5dip"
+		      android:text="@string/bdp_account_autologin_now_logining"
+		      android:textColor="#ff888888"
+		      android:textSize="13sp"
+		      />
+	</LinearLayout>
+		
+</LinearLayout>

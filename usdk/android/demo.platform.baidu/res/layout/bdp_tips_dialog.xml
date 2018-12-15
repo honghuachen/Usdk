@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:background="@drawable/bdp_paycenter_bg_dialog_alert"
+    android:layout_width="325dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+    
+    <LinearLayout 
+        android:id="@+id/bdpTitle"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+        <TextView 
+            android:id="@+id/bdpTitleText"
+            android:layout_width="match_parent"
+            android:textColor="@color/bdp_black"
+            android:text="@string/bdp_tips" 
+		    android:layout_height="wrap_content"/>
+        <View 
+            android:layout_width="match_parent"
+		    android:layout_height="1dp"
+		    android:layout_marginBottom="5dp"
+		    android:layout_marginTop="5dp"
+		    android:background="@drawable/bdp_paycenter_ic_dialog_dot"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/bdpContentText"
+        android:layout_width="match_parent"
+ 		android:layout_height="wrap_content"  
+        android:paddingTop="4dp" 
+ 		android:textColor="@color/bdp_black"/>
+     
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="14dp" >
+ 
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_pay_cancel_selector"
+            android:gravity="center"
+            android:text="@string/bdp_cancel"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="38dp" />
+ 
+        <Button
+            android:id="@+id/bdpOk"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_enough_pay_selector"
+            android:gravity="center"
+            android:text="@string/bdp_pay"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+</LinearLayout>
