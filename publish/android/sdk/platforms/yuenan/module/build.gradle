@@ -60,4 +60,5 @@ dependencies {
 	provided project(':usdk')
 	
 	//下面依赖提供修改
+	compile project(':sDKSoha')
 }
