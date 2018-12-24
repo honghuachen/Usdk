@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutParent" >
+
+    <RelativeLayout
+        android:id="@+id/layoutParent"
+        style="@style/layoutMatch" >
+
+        <TextView
+            android:id="@+id/tv"
+            style="@style/textViewLarge"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+	
+    <application>
+		<!--weichatshare-->
+		<activity
+            android:name="com.zwwx.plugins.weixin.WXEntryActivity"
+            android:exported="true"
+			android:launchMode="singleTop" >
+		</activity>
+		<activity-alias
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.zwwx.plugins.weixin.WXEntryActivity" >
+		</activity-alias>
+		<!--weichatshare end-->
+	</application>
+</manifest>

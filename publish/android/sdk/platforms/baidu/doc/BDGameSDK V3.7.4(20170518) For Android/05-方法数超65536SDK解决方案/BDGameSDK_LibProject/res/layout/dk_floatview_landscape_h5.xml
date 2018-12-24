@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#80000000"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/dk_layout_tab"
+            android:layout_width="65dp"
+            android:layout_height="fill_parent"
+            android:visibility="gone" >
+            <ImageView
+                android:id="@+id/dk_wb_tab_line"
+                android:layout_width="17dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="21dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dk_bg_accbar" />
+
+            <ImageView
+                android:layout_width="4dp"
+                android:layout_height="7dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="100dp"
+                android:layout_toRightOf="@+id/dk_wb_tab_web"
+                android:background="@drawable/dk_tab_logo_land" />
+
+            <LinearLayout
+                android:id="@+id/dk_wb_tab_web"
+                android:layout_width="33dp"
+                android:layout_height="100dp"
+                android:layout_above="@+id/dk_wb_tab_line"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/dk_float_tab_bg"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:src="@drawable/dk_tab_web" />
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/dk_web_tab"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dk_wb_tab_omlet"
+                android:layout_width="33dp"
+                android:layout_height="110dp"
+                android:layout_below="@+id/dk_wb_tab_line"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:background="@drawable/dk_tab_record" />
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="@string/dk_web_table_record"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/dk_layout_prefecture_header"
+                layout="@layout/dk_payment_header" />
+
+            <FrameLayout
+                android:id="@+id/bookstore_contentview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                 >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/dk_bottom_dialog_new" >
+
+                    <LinearLayout
+                        android:id="@+id/dk_layout_net_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:id="@+id/dk_iv_network_error"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/dk_ic_network_info" />
+
+                        <TextView
+                            android:id="@+id/dk_tv_network_error"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="@string/dk_tip_payment_network_error"
+                            android:textColor="@color/dk_color_333333"
+                            android:textSize="@dimen/dk_text_size_16_sp" />
+
+                        <Button
+                            android:id="@+id/dk_btn_retry"
+                            android:layout_width="fill_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="18dp"
+                            android:background="@drawable/dk_payment_btn_pay_selector"
+                            android:gravity="center"
+                            android:text="@string/dk_retry"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/dk_text_size_16_sp" />
+                    </LinearLayout>
+                    
+                    <WebView
+                        android:id="@+id/float_web_view"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/float_web_view_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/dk_tv_string_loading" />
+
+                </FrameLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/dk_layout_progress_prefecture"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/dk_transparent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    layout="@layout/dk_common_progress_small" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

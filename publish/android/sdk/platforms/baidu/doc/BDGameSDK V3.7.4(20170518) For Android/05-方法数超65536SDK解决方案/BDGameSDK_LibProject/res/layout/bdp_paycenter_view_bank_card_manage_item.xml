@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/bdp_paycenter_layout_select_bank_card"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bdp_paycenter_bg_pay_no_enough"
+        android:padding="8dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@+id/bdp_paycenter_bank_card_remove_bind"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/bdp_paycenter_tv_bank_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bdp_color_999999"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bdp_paycenter_dialog_dot_bg" />
+
+            <TextView
+                android:id="@+id/bdp_paycenter_tv_card_num"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_bank_card_no"
+                android:textColor="@color/bdp_color_999999"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bdp_paycenter_bank_card_remove_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bdp_paycenter_btn_pay_cancel_selector"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/bdp_paycenter_bank_card_remove_bind"
+            android:textColor="@color/bdp_color_orangeyellow"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

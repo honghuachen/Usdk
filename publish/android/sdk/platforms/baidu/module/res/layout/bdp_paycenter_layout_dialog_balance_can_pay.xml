@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bdp_paycenter_layout_dialog_support_bank"
+    android:layout_width="320dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp" >
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/bdp_paycenter_layout_dialog_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/bdp_paycenter_tv_dialog_tip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/bdp_paycenter_tip_bean_pay_title"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+
+            <ImageView
+                android:id="@+id/bdp_paycenter_dialog_iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="4dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:src="@drawable/bdp_paycenter_btn_dialog_close_selector" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bdp_paycenter_dialog_dot_bg" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_layout_balance_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_tip_balance_can_not_pay"
+            android:textColor="#333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+
+        <Button
+            android:id="@+id/bdp_paycenter_btn_dialog_close"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/bdp_paycenter_btn_pay_cancel_selector"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_credit_dialog_close"
+            android:textColor="@color/bdp_dark_gray"
+            android:textSize="@dimen/bdp_paycenter_text_size_14_sp" />
+    </LinearLayout>
+
+</LinearLayout>

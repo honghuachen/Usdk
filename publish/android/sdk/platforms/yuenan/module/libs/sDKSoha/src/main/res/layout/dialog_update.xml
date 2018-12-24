@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutParent" >
+
+    <RelativeLayout
+        android:id="@+id/layoutParent"
+        style="@style/layoutMatch" >
+
+        <RelativeLayout style="@style/layoutMatch" >
+
+            <Button
+                android:id="@+id/btDownloadNow"
+                style="@style/buttonGreen"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="5dp"
+                android:text="@string/buttonDownloadNow" />
+
+            <Button
+                android:id="@+id/btContinue"
+                style="@style/buttonGray"
+                android:layout_below="@+id/btDownloadNow"
+                android:layout_marginTop="@dimen/marginObject"
+                android:text="@string/buttonContinue" />
+
+            <TextView
+                android:id="@+id/tvFormatUpdate"
+                style="@style/textViewNormal"
+                android:layout_above="@+id/btDownloadNow"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/marginObject"
+                android:gravity="center"
+                android:text="@string/textviewFormatUpdate" />
+
+            <ImageView
+                android:id="@+id/ivGameIcon"
+                style="@style/layoutWrap"
+                android:layout_above="@+id/tvFormatUpdate"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/marginObject"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_photo_loading" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

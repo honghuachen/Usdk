@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bd_game_init_success">初始化成功</string>
+    <string name="bd_game_init_fail">初始化失败</string>
+    <string name="bd_game_login_success">登录成功</string>
+    <string name="bd_game_login_suspend_window_fail">登录失败(显示悬浮窗失败)</string>
+    <string name="bd_game_login_user_cancel">登录失败(用户取消)</string>
+    <string name="bd_game_session_invalid">会话失效</string>
+    <string name="bd_game_sdkversion_invalid">SDK版本信息不正确</string>
+    <string name="bd_game_sdkversion_invalid_desc">当前百度移动游戏SDK版本号是：%s，AndroidManifest.xml的BDGameVersion配置与SDK版本号不一致</string>
+</resources>

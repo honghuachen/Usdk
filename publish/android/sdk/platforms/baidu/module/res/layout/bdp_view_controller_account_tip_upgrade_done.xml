@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+    <!-- 标题 -->
+	<TextView 
+	    android:id="@+id/txtTitle"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:padding="12dip"
+	    android:textSize="15sp"
+	    android:textColor="@color/bdp_orange"
+	    />
+	
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="1px"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip"
+	    android:background="#ffdddddd"
+	    />
+	
+	<!-- 内容 -->
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="1">
+	    
+		<TextView 
+		    android:id="@+id/txtContent"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center"
+		    android:padding="15dip"
+	        android:textSize="16sp"
+	        android:textColor="@color/bdp_dark_gray"
+	        />
+	</ScrollView>
+	
+	<TextView 
+	    android:id="@+id/txtOk"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="12dip"
+	    android:gravity="center"
+	    android:text="@string/bdp_account_upgrade_roger"
+        android:textSize="16sp"
+        android:textColor="@color/bdp_blue"
+	    />
+</LinearLayout>

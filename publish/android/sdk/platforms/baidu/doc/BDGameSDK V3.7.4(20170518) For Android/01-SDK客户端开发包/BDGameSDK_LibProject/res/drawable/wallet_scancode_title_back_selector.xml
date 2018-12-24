@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 钱包sdk黑色背景选中效果 -->
+<!--  
+      #383838        sdk标题栏背景
+      #383838        sdk 正常状态透明背景
+      #bec2c8 sdk黑色背景 按下效果
+
+-->
+    <item  android:state_enabled="true" android:state_pressed="true">
+    <color android:color="#e94643" />
+    </item>
+    <item android:state_enabled="true" android:state_pressed="false">
+    <color android:color="#e94643" />
+    </item>
+    <item android:state_enabled="false" android:state_pressed="true">
+    <color android:color="#e94643" />
+    </item>
+    <item android:state_enabled="false" android:state_pressed="false">
+    <color android:color="#e94643" />
+    </item>
+    <item> 
+        <color android:color="#e94643" />
+    </item>
+</selector>

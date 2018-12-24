@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="480dp"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/bd_rl_noticetitle" 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        >
+        
+        <ImageView 
+            android:id="@+id/bd_iv_notice_close"
+            android:layout_width="20dp"
+        	android:layout_height="20dp"
+        	android:layout_alignParentRight="true"
+        	android:layout_alignParentTop="true"
+        	android:layout_margin="20dp"
+        	android:background="@drawable/dk_btn_selector_notice_close"/>
+        <LinearLayout 
+            android:layout_width="match_parent"
+        	android:layout_height="1dp"
+        	android:layout_alignParentBottom="true"
+        	android:background="#eeeeee"
+            />
+
+        <TextView
+            android:id="@+id/bd_notice_toptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/dk_user_notice_text"
+            android:textColor="#0aa0ff"
+            android:textSize="24sp" />
+        
+
+    </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/bd_lv_notice" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bd_rl_noticetitle"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@color/dk_transparent"
+        android:fadingEdge="none"
+        android:divider="@drawable/dk_notice_line"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="25dp"
+        />
+    <TextView 
+        android:id="@+id/bd_tv_nexttitle" 
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|right"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:background="@drawable/dk_errornotic_bottom"/>
+    
+
+</RelativeLayout>

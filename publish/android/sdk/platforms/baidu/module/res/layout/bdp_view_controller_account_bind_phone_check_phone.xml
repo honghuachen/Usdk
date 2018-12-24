@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dip"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical">
+	    <View 
+	        android:layout_width="45dip"
+	        android:layout_height="48dip"
+	        android:visibility="invisible"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+		<!-- 标题 -->
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_bind_phone_check_phone_title"
+	        android:textSize="15sp"
+	        android:textColor="@color/bdp_deep_blue"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 关闭按钮 -->
+	    <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="45dip"
+	        android:layout_height="45dip"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/bdp_icon_close_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	</LinearLayout>
+	
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="1dip"
+	    android:background="@drawable/bdp_account_lin_account_pass"
+	    />
+	
+	<!-- 子视图 -->
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dip"
+	    android:padding="10dip"
+   		android:scrollbarStyle="outsideOverlay">
+	    <RelativeLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="320dip"
+		    android:orientation="vertical" >
+		    
+	        <LinearLayout 
+	            android:id="@+id/lin_tip"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="12dip"
+	            android:orientation="vertical">
+	            
+		        <TextView 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="@string/bdp_account_bind_phone_check_phone_tip"
+		            android:textColor="@color/bdp_dark_gray"
+		            android:textSize="13sp"
+		            />
+		            
+	            <!-- 描述文字 -->
+	            <TextView 
+	                android:id="@+id/txtDes"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:text="@string/bdp_account_bind_phone_check_phone_des"
+		            android:textColor="@color/bdp_dark_gray"
+		            android:textSize="13sp"
+	                />
+		        
+		        <LinearLayout 
+	            	android:id="@+id/linBindedPhone"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="horizontal"
+		            android:visibility="gone" >
+		            
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="@string/bdp_account_bind_phone_check_phone_binded"
+			            android:textColor="@color/bdp_dark_gray"
+			            android:textSize="13sp"
+		                />
+		            
+		        	<!-- 已绑定手机 -->
+		            <TextView 
+		            	android:id="@+id/txtBindedPhone"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		            	android:singleLine="true"
+		                android:ellipsize="middle"
+		                android:textColor="@color/bdp_dark_gray"
+			            android:textSize="13sp"
+			            android:textStyle="bold"
+		                />
+		            
+		        </LinearLayout>
+            </LinearLayout>
+	        
+	        <LinearLayout 
+	            android:id="@+id/lin_get_verifycode"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/lin_tip"
+	            android:layout_marginBottom="12dip"
+	            android:orientation="horizontal"
+	            android:gravity="center_vertical">
+		        
+		        <!-- 获取短信验证码 -->
+		        <Button 
+		            android:id="@+id/btnGetVerifycode"
+		            android:layout_width="160dip"
+		            android:layout_height="38dip"
+		            android:paddingLeft="10dip"
+		            android:paddingRight="10dip"
+		            android:singleLine="true"
+		            android:text="@string/bdp_account_bind_phone_check_phone_verifycode_get"
+		            android:textColor="@color/bdp_white"
+		            android:textSize="15sp"
+		            android:background="@drawable/bdp_btn_yellow_selector"
+		            />
+		        
+		        <!-- 已发送提示 -->
+		        <TextView 
+		            android:id="@+id/txtSentTip"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dip"
+		            android:text="@string/bdp_account_bind_phone_check_phone_sent_tip"
+		            android:textColor="@color/bdp_light_gray"
+		            android:textSize="13sp"
+		            android:visibility="invisible"
+		            />
+	        </LinearLayout>
+	        
+	        <!-- 输入验证码 -->
+	        <LinearLayout
+	            android:id="@+id/lin_verifycode"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dip"
+	            android:layout_below="@id/lin_get_verifycode"
+	            android:layout_marginBottom="20dip"
+	            android:gravity="center_vertical"
+	            android:orientation="horizontal"
+	            android:background="@drawable/bdp_bg_white_border_blue" >
+	
+	            <EditText
+	                android:id="@+id/edtVerifycode"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_marginLeft="10dip"
+	                android:hint="@string/bdp_account_bind_phone_check_phone_hint_verifycode"
+	                android:textColorHint="@color/bdp_color_text_hint"
+	                android:textColor="@color/bdp_black"
+	                android:textSize="15sp"
+	                android:singleLine="true"
+	                android:background="@null" />
+	
+	            <ImageView
+	                android:id="@+id/imgVerifycodeDel"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginRight="5dip"
+	                android:contentDescription="@string/bdp_image"
+	                android:src="@drawable/bdp_icon_text_clear_selector"
+	                android:visibility="invisible" />
+	
+	        </LinearLayout>
+	        
+	        <!-- 下一步 -->
+	        <Button 
+	            android:id="@+id/btnNext"
+	            android:layout_width="match_parent"
+	            android:layout_height="38dip"
+	            android:layout_below="@id/lin_verifycode"
+	            android:layout_marginBottom="30dip"
+	            android:text="@string/bdp_next"
+	            android:textColor="@color/bdp_white"
+	            android:textSize="15sp"
+		        android:background="@drawable/bdp_btn_blue_selector"
+	            />
+        </RelativeLayout>
+	</ScrollView>
+</LinearLayout>

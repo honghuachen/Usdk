@@ -1,0 +1,30 @@
+<resources>
+
+    <dimen name="ebpay_dialog_width">290dp</dimen>
+    <dimen name="ebpay_dialog_img_width">260dp</dimen>
+    <dimen name="ebpay_dialog_img_height">150dp</dimen>
+    <dimen name="bd_wallet_contact_name_width">120dp</dimen>
+    <dimen name="ebpay_order_padding_top">27dp</dimen>
+    <dimen name="ebpay_order_padding_bottom">23dp</dimen>
+    <dimen name="ebpay_order_text_pitch">25dp</dimen>
+    <dimen name="security_text_margin_top">25dp</dimen>
+    <dimen name="security_text_padding_btm">8dp</dimen>
+    <dimen name="ebpay_fast_max_width">68dp</dimen>
+    <dimen name="wallet_fp_button_padding_top">20dp</dimen>
+    <dimen name="wallet_fp_face_padding_top">15dp</dimen>
+    
+     <!--SafeKeyBoard 安全键盘适配尺寸  h-->
+    <dimen name="bd_wallet_safekeyboard_title_height">33dp</dimen>
+    <dimen name="bd_wallet_safekeyboard_closebtn_marginright">11.5dp</dimen>
+    <dimen name="bd_wallet_safekeyboard_logo_marginright">5.5dp</dimen>
+    <dimen name="bd_wallet_safekeyboard_title_textsize">13sp</dimen>
+    <dimen name="bd_wallet_safekeyboard_grayline_width_1">1px</dimen>
+    <dimen name="bd_wallet_safekeyboard_grayline_width_0.5">1px</dimen>
+    <dimen name="bd_wallet_safekeyboard_button_height">45dp</dimen>
+    <dimen name="bd_wallet_safekeyboard_keynum_textsize">22sp</dimen>
+    <!--SafeKeyBoard结束  -->
+    <dimen name="wallet_base_sendsms_button_width">100dp</dimen>
+    <dimen name="wallet_base_sendsms_edittext_marginleft">7dp</dimen>
+   
+
+</resources>

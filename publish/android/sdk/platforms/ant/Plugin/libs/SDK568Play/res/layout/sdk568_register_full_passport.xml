@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/sdk568_size_305dp"
+    android:layout_height="@dimen/sdk568_size_250dp"
+    android:layout_gravity="center"
+    android:background="@color/sdk568_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sdk568_size_35dp"
+        android:background="@color/sdk568_color1"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/sdk568_txt_title_login"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="showLoginView"
+            android:text="@string/sdk568_login_title"
+            android:textColor="@color/sdk568_color2"
+            android:textSize="@dimen/sdk568_size_14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="@dimen/sdk568_size_0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/sdk568_color9" />
+
+        <TextView
+            android:id="@+id/sdk568_txt_title_register"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/sdk568_register_title"
+            android:textColor="@color/sdk568_white"
+            android:textSize="@dimen/sdk568_size_14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollviewRegisterFull"
+        android:layout_width="@dimen/sdk568_size_305dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/sdk568_white" >
+
+        <LinearLayout
+            android:layout_width="@dimen/sdk568_size_305dp"
+            android:layout_height="250dp"
+            android:background="@color/sdk568_white"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/sdk568_txt_fullname_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_10dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_fullname"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="text"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <EditText
+                android:id="@+id/sdk568_txt_email_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_email"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <EditText
+                android:id="@+id/sdk568_txt_username_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_user_name"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="text"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <EditText
+                android:id="@+id/sdk568_txt_password_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_password"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="textPassword"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <EditText
+                android:id="@+id/sdk568_txt_repassword_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_repassword"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionGo"
+                android:inputType="textPassword"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/sdk568_txt_dayofbirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sdk568_date_of_birth"
+                    android:textColor="#000000" />
+
+                <DatePicker
+                    android:id="@+id/sdk568_dpr_dayofbirth_full_register_passport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/sdk568_txt_dayofbirth" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/sdk568_txt_address_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_10dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_address"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="text"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <TextView
+                android:id="@+id/sdk568_sex_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_40dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_bg_payment_item"
+                android:clickable="true"
+                android:drawableEnd="@drawable/sdk568_ic_polygon"
+                android:drawableRight="@drawable/sdk568_ic_polygon"
+                android:gravity="center_vertical|left|start"
+                android:onClick="showSexList"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:text="@string/sdk568_payment_select_sex_list"
+                android:textColor="@color/sdk568_color1"
+                android:textSize="@dimen/sdk568_size_14sp" />
+
+            <TextView
+                android:id="@+id/sdk568_city_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_40dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_bg_payment_item"
+                android:clickable="true"
+                android:drawableEnd="@drawable/sdk568_ic_polygon"
+                android:drawableRight="@drawable/sdk568_ic_polygon"
+                android:gravity="center_vertical|left|start"
+                android:onClick="showCityList"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:text="@string/sdk568_payment_select_city_list"
+                android:textColor="@color/sdk568_color1"
+                android:textSize="@dimen/sdk568_size_14sp" />
+
+            <EditText
+                android:id="@+id/sdk568_txt_identity_number_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_10dp"
+                android:background="@drawable/sdk568_edittext"
+                android:digits="0123456789"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_identity"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="number"
+                android:maxLength="12"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/sdk568_txt_identify_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sdk568_identity_date"
+                    android:textColor="#000000" />
+
+                <DatePicker
+                    android:id="@+id/sdk568_dpr_dayofidentity_full_register_passport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/sdk568_txt_identify_date" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/sdk568_txt_identity_address_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_4dp"
+                android:background="@drawable/sdk568_edittext"
+                android:drawablePadding="@dimen/sdk568_size_10dp"
+                android:gravity="center_vertical"
+                android:hint="@string/sdk568_hint_identity_address"
+                android:imeOptions="flagNoFullscreen|flagNoExtractUi|actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingEnd="@dimen/sdk568_size_10dp"
+                android:paddingLeft="@dimen/sdk568_size_10dp"
+                android:paddingRight="@dimen/sdk568_size_10dp"
+                android:paddingStart="@dimen/sdk568_size_10dp"
+                android:singleLine="true"
+                android:textColor="@color/sdk568_color10"
+                android:textSize="@dimen/sdk568_size_12sp" />
+
+            <Button
+                android:id="@+id/sdk568_btn_register_full_register_passport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_35dp"
+                android:layout_marginBottom="@dimen/sdk568_size_10dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp"
+                android:layout_marginTop="@dimen/sdk568_size_15dp"
+                android:background="@color/sdk568_color4"
+                android:onClick="game3FullRegisterPassport"
+                android:text="@string/sdk568_btn_register"
+                android:textColor="@color/sdk568_white"
+                android:textSize="@dimen/sdk568_size_14sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sdk568_size_15dp"
+                android:layout_marginEnd="@dimen/sdk568_size_15dp"
+                android:layout_marginLeft="@dimen/sdk568_size_15dp"
+                android:layout_marginRight="@dimen/sdk568_size_15dp"
+                android:layout_marginStart="@dimen/sdk568_size_15dp" >
+
+                <TextView
+                    android:id="@+id/sdk568_btn_forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:clickable="true"
+                    android:onClick="forgotPassword"
+                    android:text="@string/sdk568_btn_forgot"
+                    android:textColor="@color/sdk568_gray40"
+                    android:textSize="@dimen/sdk568_size_12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" >
+
+                    <TextView
+                        android:id="@+id/sdk568_txt_lang_vi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="switchToVietnamese"
+                        android:text="@string/sdk568_lang_vi"
+                        android:textColor="@color/sdk568_color10"
+                        android:textSize="@dimen/sdk568_size_12sp" />
+
+                    <View
+                        android:layout_width="@dimen/sdk568_size_0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/sdk568_size_5dp"
+                        android:layout_marginLeft="@dimen/sdk568_size_5dp"
+                        android:layout_marginRight="@dimen/sdk568_size_5dp"
+                        android:layout_marginStart="@dimen/sdk568_size_5dp"
+                        android:background="@color/sdk568_gray40" />
+
+                    <TextView
+                        android:id="@+id/sdk568_txt_lang_en"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="switchToEnglish"
+                        android:text="@string/sdk568_lang_en"
+                        android:textColor="@color/sdk568_color10"
+                        android:textSize="@dimen/sdk568_size_12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sdk568_size_2dp"
+                android:background="@color/sdk568_color11" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

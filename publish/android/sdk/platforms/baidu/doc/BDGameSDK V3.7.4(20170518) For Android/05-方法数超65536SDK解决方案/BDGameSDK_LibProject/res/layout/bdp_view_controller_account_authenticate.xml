@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+    <!-- 标题 -->
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical">
+	    <ImageView 
+	        android:layout_width="45dip"
+	        android:layout_height="48dip"
+	        android:visibility="invisible"
+	        android:scaleType="center"
+	        android:src="@drawable/bdp_icon_back_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 实名认证 -->
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_authenticate_title"
+	        android:textSize="18sp"
+	        android:textColor="#ff222222"
+	        android:drawableLeft="@drawable/bdp_logo_baidu_top"
+	        android:drawablePadding="6dip"
+	        android:gravity="center"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 关闭按钮 -->
+	    <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="45dip"
+	        android:layout_height="45dip"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/bdp_icon_close_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	</LinearLayout>
+	
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dip"
+	    android:scrollbarStyle="outsideOverlay"
+	    android:background="@drawable/bdp_bg_white_round">
+	    
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="260dip"
+		    android:orientation="vertical" >
+	    
+		    <LinearLayout
+		        android:id="@+id/linAccountPass"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="18dip"
+		        android:paddingLeft="10dip"
+		        android:paddingRight="10dip"
+		        android:orientation="vertical"
+		        android:background="@drawable/bdp_bg_light_gray_round" >
+		
+		        <!-- 真实姓名 -->
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="40dip"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		
+		            <EditText
+		                android:id="@+id/edtRealName"
+		                android:layout_width="0dip"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:layout_marginLeft="5dip"
+		                android:textColor="@color/bdp_black"
+		                android:textSize="15sp"
+		                android:maxLength="80"
+		                android:hint="@string/bdp_account_authenticate_name"
+		                android:textColorHint="@color/bdp_color_text_hint"
+		                android:background="@null"
+		                android:textCursorDrawable="@null"
+		                android:singleLine="true" />
+		
+		            <ImageView
+		                android:id="@+id/imgNameDel"
+		                android:layout_width="30dip"
+		                android:layout_height="40dip"
+		                android:scaleType="center"
+		                android:contentDescription="@string/bdp_image"
+		                android:src="@drawable/bdp_icon_text_clear_selector"
+		                android:visibility="invisible" />
+		
+		        </LinearLayout>
+		        
+		        <View 
+		            android:layout_width="match_parent"
+		            android:layout_height="1px"
+		            android:background="#ffd1d1d1"
+		            />
+		        
+		        <!-- 身份证号 -->
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="40dip"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		
+		            <EditText
+		                android:id="@+id/edtIdCard"
+		                android:layout_width="0dip"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:layout_marginLeft="5dip"
+		                android:textColor="@color/bdp_black"
+		                android:textSize="15sp"
+		                android:maxLength="30"
+		                android:hint="@string/bdp_account_authenticate_id_card"
+		                android:textColorHint="@color/bdp_color_text_hint"
+		                android:digits="0123456789xX"
+		                android:singleLine="true" 
+		                android:textCursorDrawable="@null"
+		                android:background="@null" />
+		
+		            <ImageView
+		                android:id="@+id/imgIdCardDel"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginRight="10dip"
+		                android:contentDescription="@string/bdp_image"
+		                android:src="@drawable/bdp_icon_text_clear_selector"
+		                android:visibility="invisible" />
+		
+		        </LinearLayout>
+		    </LinearLayout>
+		    
+		    <!-- 按钮 -->
+		    <Button
+		        android:id="@+id/btnSubmit"
+		        android:layout_width="match_parent"
+		        android:layout_height="42dip"
+		        android:layout_marginBottom="18dip"
+		    	android:layout_below="@id/linAccountPass"
+		        android:text="@string/bdp_account_authenticate_submit"
+		        android:textColor="@drawable/bdp_btn_yellow_font"
+	            android:textSize="17sp"
+		        android:background="@drawable/bdp_btn_yellow_selector"
+		        android:enabled="false" />
+		    
+		    <TextView 
+		        android:id="@+id/txtTips"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/btnSubmit"
+		        android:maxLines="3"
+		        android:textColor="@color/bdp_gray"
+		        android:textSize="13sp"
+		        />
+		
+		</RelativeLayout>
+	</ScrollView>
+</LinearLayout>

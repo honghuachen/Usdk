@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:background="#82cde5">
+        <ImageView
+            android:layout_width="32dip"
+            android:layout_height="26dip"
+            android:id="@+id/filter"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="39dip"
+            android:background="@drawable/omp_btn_filter_icon_normal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/filter"
+            android:layout_marginLeft="71dip"
+            android:textColor="#ffffff"
+            android:text="@string/omp_legend_of_the_turret"
+            android:textSize="18sp"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+

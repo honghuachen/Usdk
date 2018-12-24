@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relative_layout_thumbnails_container"
+    android:background="@android:color/black">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_thumbnails"
+        android:layout_marginLeft="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_marginRight="@dimen/omp_trim_video_tool_thumb_width" />
+    <View
+        android:layout_width="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_height="match_parent"
+        android:id="@+id/view_video_left_placeholder"
+        android:background="@android:color/black"
+        android:layout_alignParentLeft="true"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/view_thumbnail_slider_left_outer_region"
+        android:background="@color/omp_video_edit_thumbnail_slider_background"
+        android:layout_toRightOf="@id/view_video_left_placeholder" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_marginLeft="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_alignParentLeft="true" />
+    <RelativeLayout
+        android:layout_width="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_height="match_parent"
+        android:id="@+id/view_thumbnail_slider_left"
+        android:background="@color/omp_video_edit_thumbnail_slider_default_color"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentLeft="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/omp_ic_trim_left"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:id="@+id/view_thumbnail_slider_top"
+        android:background="@color/omp_video_edit_thumbnail_slider_default_color"
+        android:layout_marginLeft="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_marginRight="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_alignParentTop="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:id="@+id/view_thumbnail_slider_bottom"
+        android:background="@color/omp_video_edit_thumbnail_slider_default_color"
+        android:layout_marginLeft="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_marginRight="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_alignParentBottom="true" />
+    <View
+        android:layout_width="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_height="match_parent"
+        android:id="@+id/view_video_right_placeholder"
+        android:background="@android:color/black"
+        android:layout_alignParentRight="true"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/view_thumbnail_slider_right_outer_region"
+        android:background="@color/omp_video_edit_thumbnail_slider_background"
+        android:layout_toLeftOf="@id/view_video_right_placeholder" />
+    <RelativeLayout
+        android:layout_width="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_height="match_parent"
+        android:id="@+id/view_thumbnail_slider_right"
+        android:background="@color/omp_video_edit_thumbnail_slider_default_color"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentRight="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/omp_ic_trim_right" />
+    </RelativeLayout>
+
+    <mobisocial.omlet.ui.view.RangeBar
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rangeBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:omp_rb_barColor="@android:color/transparent"
+        custom:omp_rb_connectingLineColor="@android:color/transparent"
+        custom:omp_rb_tickHeight="0dp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/omp_trim_video_tool_thumb_width"
+        android:layout_marginRight="@dimen/omp_trim_video_tool_thumb_width">
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="46dp"
+            android:id="@+id/image_view_progress_thumb"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/omp_btn_trim_target" />
+    </RelativeLayout>
+</RelativeLayout>
+

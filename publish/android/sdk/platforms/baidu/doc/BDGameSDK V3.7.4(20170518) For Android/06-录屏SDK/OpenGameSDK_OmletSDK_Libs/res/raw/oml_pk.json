@@ -1,0 +1,19 @@
+{
+  "ClusterEndpoints": {
+    "ONE": ["https://us.omlet.me"],
+    "TWO": ["https://sg.omlet.me"],
+    "THREE": ["https://cn.omlet.me"],
+    "FOUR": ["https://de.omlet.me"]
+  },
+  "ClusterKeys": {
+    "ONE": "xkkzyNJmZ1DmNPxGwrykZ2O91f10KNXQvspa15nKKGs=",
+    "TWO": "XaG4I7b7wDOZ+lGHSPwbJ2HLkIFf0UGYAWz9c9LkiQk=",
+    "THREE": "hj/8xrbYZvZkeOjoN9ndTj+2HAICPXDfK3D/Tfl2nDY=",
+    "FOUR": "xMRCvh1eki9JEceBcV7Bx49uaQYpX8FdD0eZ+LCGqCc="
+  },
+  "DefaultCluster": "ONE",
+  "IdpEndpoints": ["https://idp.omlet.me"],
+  "IdpKey": "MIOC9PS8KIwXOXSHtplBZLSpIqcifns0jzExtkHXw1g=",
+  "ReadOnlyEndpoints": ["https://auto.omlet.me"],
+  "ReadOnlyKey":"QKxHfdLVgbn+VYpnUiCFLMq/hhUpkpx7occEY3Z0Wnk="
+}

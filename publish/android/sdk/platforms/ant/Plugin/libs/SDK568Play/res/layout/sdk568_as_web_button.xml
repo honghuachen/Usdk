@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/sdk568_as_button_img"
+        android:layout_width="@dimen/sdk568_size_25dp"
+        android:layout_height="@dimen/sdk568_size_25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/sdk568_as_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sdk568_as_button_img"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/sdk568_color13"
+        android:textSize="@dimen/sdk568_size_12sp" />
+
+</RelativeLayout>

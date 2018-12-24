@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bdp_paycenter_top_info_bg_file"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="4dp"
+            android:text="@string/bdp_paycenter_yibao_cash_card"
+            android:textColor="@color/bdp_color_000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        	android:layout_marginTop="4dp"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/bdp_paycenter_ic_credit_card_tip"
+            android:text="@string/bdp_paycenter_tip_credit_security"
+            android:textColor="@color/bdp_paycenter_color_61B11F"
+            android:textSize="@dimen/bdp_paycenter_text_size_12_sp"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+    
+    <!-- 支持银行列表 -->
+    <Button
+        android:id="@+id/btn_support_bank"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.1"
+        android:background="@drawable/bdp_paycenter_btn_bank_selector"
+        android:gravity="center"
+        android:text="@string/bdp_paycenter_tip_support_bank"
+        android:textColor="#666666"
+        android:textSize="@dimen/bdp_paycenter_text_size_14_sp" />
+
+</LinearLayout>

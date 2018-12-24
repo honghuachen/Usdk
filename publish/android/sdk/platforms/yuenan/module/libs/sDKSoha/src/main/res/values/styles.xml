@@ -1,0 +1,311 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ducnm start -->
+
+    <style name="footerGreyText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingRight">@dimen/paddingSmall</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="footerGreenText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="footerContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/paddingNormal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="buttonDimGreen" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_green</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonGray" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_gray</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonTransparent" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_transparent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="textViewMessage" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/paddingNormal</item>
+        <item name="android:paddingBottom">@dimen/paddingNormal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/blackTranparent</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+    </style>
+    <!-- <style name="buttonFacbook" parent="@android:style/Widget.Button"> -->
+    <!-- <item name="android:layout_width">match_parent</item> -->
+    <!-- <item name="android:layout_height">wrap_content</item> -->
+    <!-- <item name="android:background">@drawable/bg_button_white</item> -->
+    <!-- <item name="android:singleLine">true</item> -->
+    <!-- <item name="android:textSize">@dimen/textSizeNormal</item> -->
+    <!-- <item name="android:textStyle">bold</item> -->
+    <!-- <item name="android:textColor">@color/crystal</item> -->
+    <!-- </style> -->
+
+
+    <!-- ducnm end -->
+    <style name="buttonGreen" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_green</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonWhite" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/green2</item>
+    </style>
+
+    <style name="buttonMySoha" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_mysoha</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="buttonFacebook" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:background">@drawable/bg_button_facebook</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dialogAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="dialogAnimPopInOut" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+    <style name="dialogAnimSlideUpDown" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_up_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_down_out</item>
+    </style>
+
+    <style name="dialogAnimSlideDownUp" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_down_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_up_out</item>
+    </style>
+
+    <style name="dialogAnimSlideLeftRight" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="dialogAnimSlideRightLeft" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_left_out</item>
+    </style>
+
+    <style name="editTextNormal" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/bg_edittext_normal</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="imageButtonNormal" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="layoutParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/backgr</item>
+    </style>
+
+    <style name="layoutParentDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">100dp</item>
+        <item name="android:paddingRight">100dp</item>
+        <item name="android:paddingTop">100dp</item>
+        <item name="android:paddingBottom">100dp</item>
+        <item name="android:background">@color/crystal</item>
+    </style>
+
+    <style name="layoutMatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layoutMatchCrystal">
+        <item name="android:background">@color/crystal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layoutWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layoutMatchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layoutWrapMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="listViewNormal" parent="@android:style/Widget.ListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+    <style name="textViewNormal" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+    </style>
+
+    <style name="textViewHeader" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="textViewLink" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_link</item>
+        <item name="android:textSize">@dimen/textSizeNormal</item>
+    </style>
+
+    <style name="textViewLarge" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="textViewSmall" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="textViewSmallX" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSizeSmallX</item>
+    </style>
+
+    <style name="textViewSmallXGray" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/textSizeSmallX</item>
+    </style>
+
+    <style name="textViewPayment" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_payment</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="textViewPaymentBold" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_payment</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="viewTabPayment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:background">@color/green3</item>
+    </style>
+
+    <style name="viewGone">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="text_notify" parent="@android:style/Widget.TextView">
+        <item name="android:shadowColor">#aa000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#eeffffff</item>
+    </style>
+
+</resources>

@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/view_group_video_tag_open_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/omp_gray_d2d2d2_round_background">
+        <ImageView
+            android:id="@+id/video_tag_open_image"
+            android:layout_width="10dp"
+            android:layout_height="8dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/omp_btn_addtags_open"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="13.5dp"
+            android:gravity="center_vertical"
+            android:text="@string/omp_add_tag"
+            android:textSize="12sp"
+            android:textColor="#6a6a6a"/>
+    </LinearLayout>
+
+</LinearLayout>
+

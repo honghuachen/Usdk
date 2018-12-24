@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bdp_paycenter_top_info_bg_file"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_text_view_other_pay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="4dp"
+            android:text="@string/bdp_paycenter_credit_key_card"
+            android:textColor="@color/bdp_color_000000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bdp_paycenter_ic_credit_card_tip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/bdp_paycenter_tip_credit_security"
+                android:textColor="@color/bdp_paycenter_color_61B11F"
+                android:textSize="@dimen/bdp_paycenter_text_size_12_sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bdp_paycenter_btn_bank_manage"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.1"
+        android:background="@drawable/bdp_paycenter_btn_bank_selector"
+        android:gravity="center"
+        android:text="@string/bdp_paycenter_btn_bank_manage"
+        android:textSize="@dimen/bdp_paycenter_text_size_14_sp" />
+
+</LinearLayout>

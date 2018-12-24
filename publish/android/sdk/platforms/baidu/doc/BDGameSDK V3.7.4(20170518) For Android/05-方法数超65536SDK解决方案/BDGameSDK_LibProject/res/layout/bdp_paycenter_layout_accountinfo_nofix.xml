@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="36dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/bdp_paycenter_top_info_bg_file"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="8dp"
+    android:paddingTop="6dp"
+    android:paddingRight="8dp" >
+
+    <TextView
+        android:id="@+id/bdp_paycenter_tv_current_account"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="@string/bdp_paycenter_current_account"
+        android:textColor="@color/bdp_color_333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/bdp_paycenter_tv_kubi_balance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="@string/bdp_paycenter_baidubean_balance"
+        android:textColor="@color/bdp_color_333333"
+        android:textSize="14sp" />
+
+</LinearLayout>

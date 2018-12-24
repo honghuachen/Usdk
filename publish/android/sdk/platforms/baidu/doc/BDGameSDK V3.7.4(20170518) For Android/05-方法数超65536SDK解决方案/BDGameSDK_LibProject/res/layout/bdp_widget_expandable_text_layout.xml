@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<com.baidu.platformsdk.widget.ExpandableTextView 
+		android:id="@+id/txt_content"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="5.0dip"
+		android:textSize="14sp"
+		android:textColor="@color/bdp_gray"
+		android:lineSpacingMultiplier="1.5"
+		/>
+	
+	    <!-- android:src="@drawable/bdp_widget_text_expandable_unfold" -->
+	<ImageView 
+	    android:id="@+id/img_expand"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignRight="@id/txt_content"
+	    android:layout_alignBottom="@id/txt_content"
+	    android:contentDescription="@string/bdp_image"
+	    />
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:minHeight="45dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_margin="10dp">
+    
+    <TextView 
+        android:id="@+id/bdp_pay_voucher_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/bdp_paycenter_text_size_12_sp"
+        android:textColor="@color/bdp_black"/>
+    
+    <TextView 
+        android:id="@+id/bdp_pay_voucher_expire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/bdp_paycenter_text_size_12_sp"
+        android:textColor="@color/bdp_color_666666"/>
+
+</LinearLayout>

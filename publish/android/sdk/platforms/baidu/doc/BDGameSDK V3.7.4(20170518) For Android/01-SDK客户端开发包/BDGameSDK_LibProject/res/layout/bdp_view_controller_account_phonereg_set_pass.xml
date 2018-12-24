@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dip"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+	<!-- 标题 -->
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical">
+	    <View 
+	        android:layout_width="45dip"
+	        android:layout_height="48dip"
+	        android:visibility="invisible"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 设置密码 -->
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_phonereg_set_pass_title"
+	        android:textSize="16sp"
+	        android:textColor="@color/bdp_black"
+	        android:drawableLeft="@drawable/bdp_logo_baidu_top"
+	        android:drawablePadding="5dp"
+	        android:gravity="center"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 关闭按钮 -->
+	    <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="45dip"
+	        android:layout_height="45dip"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/bdp_icon_close_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	</LinearLayout>
+	
+	<!-- 子视图 -->
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+        android:layout_marginTop="2dip"
+	    android:padding="10dip"
+   		android:scrollbarStyle="outsideOverlay">
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+		    
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+                android:background="@drawable/bdp_bg_light_gray_round"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+	            android:orientation="vertical">
+	            
+		        <!-- 手机号 -->
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="40dip"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		
+		            <EditText
+		                android:id="@+id/edtPhone"
+		                android:layout_width="0dip"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:layout_marginLeft="10dip"
+		                android:textColorHint="@color/bdp_color_text_hint"
+		                android:inputType="phone"
+		            	android:imeOptions="actionDone"
+		            	android:maxLength="30"
+		                android:textColor="@color/bdp_black"
+		                android:textSize="15sp"
+		                android:typeface="sans"
+		                android:singleLine="true"
+		                android:background="@null"
+		                android:enabled="true" />
+		
+		            <ImageView
+		                android:id="@+id/imgPhoneDel"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginRight="5dip"
+		                android:contentDescription="@string/bdp_image"
+		                android:src="@drawable/bdp_icon_text_clear_selector"
+		                android:visibility="invisible" />
+		        </LinearLayout>
+		        
+			    <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ffd1d1d1" />
+			    
+		        <!-- 密码 -->
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="40dip"
+		            android:layout_marginBottom="12dip"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		
+		            <EditText
+		                android:id="@+id/edtPassword"
+		                android:layout_width="0dip"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:layout_marginLeft="10dip"
+		                android:hint="@string/bdp_account_phonereg_set_pass_hint"
+		                android:textColorHint="@color/bdp_color_text_hint"
+		                android:inputType="textVisiblePassword"
+		            	android:imeOptions="actionDone"
+		            	android:maxLength="30"
+		                android:textColor="@color/bdp_black"
+		                android:textSize="15sp"
+		                android:typeface="sans"
+		                android:singleLine="true"
+		                android:background="@null" />
+		
+		            <ImageView
+		                android:id="@+id/imgPasswordDel"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginRight="5dip"
+		                android:contentDescription="@string/bdp_image"
+		                android:src="@drawable/bdp_icon_text_clear_selector"
+		                android:visibility="gone" />
+		
+		            <ImageView
+		                android:id="@+id/imgPasswordShow"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginRight="5dip"
+		                android:contentDescription="@string/bdp_image"
+		                android:src="@drawable/bdp_icon_password_show" />
+		        </LinearLayout>
+	        </LinearLayout>
+		    
+	        
+	        <!-- 确定 -->
+	        <Button 
+	            android:id="@+id/btnOk"
+	            android:layout_width="match_parent"
+	            android:layout_height="38dip"
+	            android:layout_marginTop="15dip"
+	            android:layout_marginBottom="20dip"
+	            android:text="@string/bdp_account_phonereg_set_pass_ok"
+	            android:textColor="@color/bdp_white"
+	            android:textSize="15sp"
+				android:background="@drawable/bdp_btn_yellow_selector"
+	            />
+	        
+	        <!-- 跳过 -->
+	        <TextView 
+	            android:id="@+id/txtSkip"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:padding="5dip"
+	            android:text="@string/bdp_account_phonereg_set_pass_skip"
+	            android:textColor="@color/bdp_blue"
+	            />
+		</LinearLayout>
+    </ScrollView>
+</LinearLayout>

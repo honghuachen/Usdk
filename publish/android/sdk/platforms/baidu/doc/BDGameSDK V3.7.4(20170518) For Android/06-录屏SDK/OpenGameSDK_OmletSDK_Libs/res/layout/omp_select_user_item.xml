@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="18.5dp"
+        android:layout_marginRight="18.5dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1000"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/omp_gray_text_585857"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+        <RelativeLayout
+            android:id="@+id/select_user_view_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/select_user_button"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:src="@drawable/omp_select_user_image_selector"
+                android:background="@null"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:background="@color/omp_gray_line_979797"></View>
+
+</LinearLayout>

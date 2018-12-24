@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <TextView
+        android:id="@+id/tutorial_hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:text="@string/omp_tutorial_overlay_bar_selection_instruction1"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:gravity="center"/>
+    <CheckBox
+        android:layout_marginTop="12dp"
+        android:id="@+id/tutorial_disable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:checked="true"
+        android:text="@string/omp_tutorial_disable_tutorial"/>
+    <TextView
+        android:id="@+id/tutorial_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/omp_tutorial_button_background"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:text="@string/omp_tutorial_overlay_bar_ok"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+</LinearLayout>

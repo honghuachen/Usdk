@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="sdk568_size_0.5dp">0.75dp</dimen>
+    <dimen name="sdk568_size_1dp">1.5dp</dimen>
+    <dimen name="sdk568_size_2dp">3dp</dimen>
+    <dimen name="sdk568_size_3dp">4.5dp</dimen>
+    <dimen name="sdk568_size_4dp">6dp</dimen>
+    <dimen name="sdk568_size_5dp">7.5dp</dimen>
+    <dimen name="sdk568_size_10dp">15dp</dimen>
+    <dimen name="sdk568_size_15dp">22.5dp</dimen>
+    <dimen name="sdk568_size_20dp">30dp</dimen>
+    <dimen name="sdk568_size_24dp">36dp</dimen>
+    <dimen name="sdk568_size_25dp">37.5dp</dimen>
+    <dimen name="sdk568_size_30dp">45dp</dimen>
+    <dimen name="sdk568_size_35dp">52.5dp</dimen>
+    <dimen name="sdk568_size_40dp">60dp</dimen>
+    <dimen name="sdk568_size_45dp">67.5dp</dimen>
+    <dimen name="sdk568_size_48dp">72dp</dimen>
+    <dimen name="sdk568_size_63dp">94.5dp</dimen>
+    <dimen name="sdk568_size_69dp">103.5dp</dimen>
+    <dimen name="sdk568_size_240dp">360dp</dimen>
+    <dimen name="sdk568_size_250dp">375dp</dimen>
+    <dimen name="sdk568_size_300dp">450dp</dimen>
+    <dimen name="sdk568_size_305dp">457.5dp</dimen>
+    <dimen name="sdk568_size_320dp">480dp</dimen>
+    <dimen name="sdk568_size_12sp">18sp</dimen>
+    <dimen name="sdk568_size_14sp">21sp</dimen>
+    <dimen name="sdk568_as_icon_web_margin">8dp</dimen>
+
+</resources>

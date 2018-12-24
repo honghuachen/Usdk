@@ -1,0 +1,6 @@
+微信开放平台：
+https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&verify=1&lang=zh_CN&target=res/app_download_android
+账号：2158796566
+密码：zwwx@20160415
+AppID: wx36ec270a52f4c59d
+AppSecret: c531309393655884f340a2d1f75339b4

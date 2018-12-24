@@ -1,0 +1,60 @@
+
+
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+	android:clickable="false"
+    android:id="@+id/rlWarningContainer"
+    android:layout_height="match_parent"
+    >
+    
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#cc000000"
+    android:gravity="clip_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="10dp"
+ >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginRight="20dp"
+       >
+
+             <TextView
+            android:id="@+id/tvAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connectNow2"
+            android:textColor="#13b94e"
+            android:textStyle="bold" />
+        <TextView
+            android:paddingLeft="5dp"
+            android:layout_toRightOf="@+id/tvAction"
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connectMessage2"
+            android:textColor="@color/white" />
+
+   
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/btn_close" />
+
+</RelativeLayout>
+</RelativeLayout>

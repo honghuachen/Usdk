@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="glrecorder.lib"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="22" />
+
+    <!-- 若需录音需加此权限 omlet sdk -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <application>
+        
+		<activity
+            android:name="mobisocial.omlet.overlaybar.ui.activity.SigninActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Omp.Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="mobisocial.omlet.overlaybar.ui.activity.UploadCompleteActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Omp.Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="mobisocial.omlet.overlaybar.ui.activity.VideoEditorActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Omp.Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="mobisocial.omlet.overlaybar.ui.activity.ScreenshotEditActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Omp.Theme.Transparent" >
+        </activity>
+        <activity
+            android:name="mobisocial.omlet.overlaybar.ui.activity.MediaUploadActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Omp.Theme.Transparent" >
+        </activity>
+
+        <service
+            android:name="mobisocial.omlet.overlaybar.util.FileUploadIntentService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="mobisocial.omlib.service.OmlibService"
+            android:exported="false"
+            android:label="Omlet Network Service" />
+        
+        <!--需修改android:authorities="packagename.provider
+        	替换packagename为应用包名, 如：android:authorities="com.baidu.test.provider" -->
+        <provider
+			android:name="mobisocial.omlib.service.OmlibContentProvider"
+			android:authorities="com.baidu.bdgamesdk.demo.provider" />
+        
+        <!--需修改android:authorities="packagename.initializer"
+        	替换packagename为应用包名, 如：android:authorities="com.baidu.test.initializer" -->
+        <provider
+			android:name="glrecorder.Initializer"
+			android:authorities="com.baidu.bdgamesdk.demo.initializer"
+			android:exported="false"
+			android:initOrder="2147483647" />
+        
+    </application>
+
+</manifest>

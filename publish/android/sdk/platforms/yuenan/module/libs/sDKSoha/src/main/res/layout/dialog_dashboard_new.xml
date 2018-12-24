@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlDb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dashboard"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <vn.sgame.sdk.view.HorizontalListView
+            android:id="@+id/lvItemsDashBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            >
+        </vn.sgame.sdk.view.HorizontalListView>
+    </RelativeLayout>
+    
+<!--     <RelativeLayout -->
+<!--         android:id="@+id/rl" -->
+<!--         style="@style/layoutMatch" > -->
+
+<!--         <ProgressBar -->
+<!--             style="@style/layoutWrap" -->
+<!--             android:layout_centerInParent="true" /> -->
+
+<!--     </RelativeLayout> -->
+
+</RelativeLayout>

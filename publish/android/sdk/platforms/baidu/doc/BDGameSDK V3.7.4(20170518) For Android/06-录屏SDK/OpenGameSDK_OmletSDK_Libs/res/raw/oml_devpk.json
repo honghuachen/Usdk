@@ -1,0 +1,14 @@
+{
+  "_comment" : "Replace the ip addresses with your own when testing",
+  "ClusterEndpoints": {
+    "ONE": ["http://dev.omapi.net:3829"]
+  },
+  "ClusterKeys": {
+    "ONE": "80Qd+N2ml/Iahcd5kFfzLdT+3Kel7wS/2AwCybtGblA="
+  },
+  "DefaultCluster": "ONE",
+  "IdpEndpoints": ["http://dev.omapi.net:4001"],
+  "IdpKey": "A2kW+bIHpCz0Xv2t7SVGPDjqXQbHPsBkFNtIhR3ruzk=",
+  "ReadOnlyEndpoints": ["http://dev.omapi.net:3829"],
+  "ReadOnlyKey": "JQtH1LYRup3kRzKBacRLOnW2VOUhahNqbjByfHyh8XI="
+}

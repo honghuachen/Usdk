@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutParent"
+    android:padding="30dp"
+    android:background="#cc000000" >
+
+    <RelativeLayout
+        android:id="@+id/rlParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_dialog_round" >
+
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/tv"
+            
+            android:layout_centerHorizontal="true"
+            style="@style/textViewNormal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="@string/textviewFormatUpdate" />
+        
+        
+        <TextView
+            android:id="@+id/tvWithDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv"
+            android:layout_marginLeft="-10dp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:id="@+id/lnNormalAction"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tvWithDivider"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvRetry"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thử lại"
+                android:textColor="@color/darkGreen" />
+
+            <TextView
+                android:id="@+id/tvCenterDivider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/tvLogout"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thoát"
+                android:textColor="@color/darkGreen"
+               />
+        </LinearLayout>
+        
+             <ProgressBar
+                 android:visibility="gone"
+            android:id="@+id/prgLoadding"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btRetry"
+                style="@style/buttonGreen"
+                android:layout_marginTop="@dimen/marginObject"
+                android:text="Thử lại" />
+
+            <Button
+                android:id="@+id/btLogout"
+                style="@style/buttonGray"
+                android:layout_marginTop="@dimen/marginObject"
+                android:text="Đăng xuất" />
+
+            <Button
+                android:id="@+id/btDetail"
+                style="@style/buttonGreen"
+                android:layout_marginTop="@dimen/marginObject"
+                android:text="Chi tiết"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

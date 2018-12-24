@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="true"
+        android:drawable="@drawable/omp_view_om_media_controller_share_dialog_copy_background_press"></item>
+    <item android:drawable="@drawable/omp_view_om_media_controller_share_dialog_copy_background"></item>
+</selector>

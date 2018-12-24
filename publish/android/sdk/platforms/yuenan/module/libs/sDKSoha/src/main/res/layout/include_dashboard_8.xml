@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutWrap"
+    android:layout_centerInParent="true"
+    android:background="@drawable/bg_dialog_dashboard"
+    android:baselineAligned="false" >
+
+    <GridView
+        android:id="@+id/gridview_db"
+        style="@style/layoutWrap"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+    
+    <color name="wallet_balance_baizhuanfen_orange">#ffe981</color>
+    <color name="wallet_balance_baizhuanfen_red">#ff3600</color>
+    <color name="wallet_balance_baizhuanfen_text_normal">#333333</color>
+    <color name="wallet_balance_baizhuanfen_text_blue">#3da1f6</color>
+    <color name="wallet_balance_baizhuanfen_text_transparent">#00000000</color>
+</resources>

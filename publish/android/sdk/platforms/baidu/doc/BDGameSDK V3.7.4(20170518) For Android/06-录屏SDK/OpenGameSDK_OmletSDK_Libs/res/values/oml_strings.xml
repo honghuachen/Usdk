@@ -1,0 +1,12 @@
+<resources>
+    <string name="oml_already_have_account">Already have account! (Sign in not required)</string>
+    <string name="oml_logging_in">Logging in</string>
+    <string name="oml_logout_confirm">Logout?</string>
+    <string name="oml_please_wait">Please wait…</string>
+    <string name="oml_auth_error">Error Authenticating. Please Try again</string>
+    <string name="oml_you_were_added">You were added.</string>
+    <string name="oml_was_added">%1$s was added.</string>
+    <string name="oml_you_were_removed">You were removed.</string>
+    <string name="oml_was_removed">%1$s was removed.</string>
+    <string name="oml_feed_remove_error">Cannot remove feed creator from a feed</string>
+</resources>

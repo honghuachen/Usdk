@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/omp_video_overlay_outer_background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/omp_video_overlay_edge_container" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/omp_video_overlay_content_container"
+        android:id="@+id/relative_layout_video_editor_overlay_container">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_close_button"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+        <ImageView
+            android:layout_width="38dip"
+            android:layout_height="38dip"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/omp_btn_clospeage"/>
+    </RelativeLayout>
+</RelativeLayout>

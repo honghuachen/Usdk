@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="30dip"
+    android:paddingRight="30dip"
+    android:paddingTop="15dip"
+    android:paddingBottom="15dip"
+    android:background="@drawable/bdp_paycenter_bg_dialog_alert"
+    android:orientation="vertical"
+    android:gravity="center_horizontal" >
+	        
+    <!-- icon -->
+    <ImageView 
+        android:id="@+id/img_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dip"
+        android:contentDescription="@string/bdp_image"
+        android:src="@drawable/bdp_icon_pay_result_success"
+        />
+	            
+    <!-- 结果类型 -->
+    <TextView 
+        android:id="@+id/txt_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dip"
+        android:text="@string/bdp_paycenter_pay_result_notify_submit"
+        android:textColor="@color/bdp_dark_gray"
+        android:textSize="18sp"
+        />
+	            
+    <!-- 提示文字 -->
+    <TextView 
+        android:id="@+id/txt_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bdp_paycenter_pay_result_notify_fail_cancel_tip"
+        android:textColor="@color/bdp_deep_gray"
+        android:textSize="14sp"
+        />
+    
+    <!-- 返利商品 -->
+    <ScrollView 
+        android:id="@+id/sv_activity"
+        android:layout_width="match_parent"
+        android:layout_height="55dip"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="20dip"
+        android:requiresFadingEdge="vertical"
+        >
+        
+        <TextView 
+            android:id="@+id/txt_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            />
+    </ScrollView>
+    
+    <!-- 返回游戏按钮 -->
+    <Button 
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:layout_marginTop="10dip"
+        android:text="@string/bdp_paycenter_pay_result_notify_return"
+        android:textColor="@color/bdp_white"
+        android:textSize="16sp"
+        android:background="@drawable/bdp_btn_blue_selector"
+        />
+</LinearLayout>

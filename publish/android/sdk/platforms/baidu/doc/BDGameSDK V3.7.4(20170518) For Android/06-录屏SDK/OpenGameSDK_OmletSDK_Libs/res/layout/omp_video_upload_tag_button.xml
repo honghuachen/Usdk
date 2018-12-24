@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+    <LinearLayout
+        android:id="@+id/video_tag_view_grooup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/omp_video_upload_tag_button_selector">
+        <ImageView
+            android:id="@+id/video_tag_add_image"
+            android:layout_width="10dp"
+            android:layout_height="9dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/omp_video_upload_tag_image_selector"/>
+        <TextView
+            android:id="@+id/video_tag_text"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="13.5dp"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:textColor="@color/omp_tag_text_selector"/>
+    </LinearLayout>
+
+</LinearLayout>
+

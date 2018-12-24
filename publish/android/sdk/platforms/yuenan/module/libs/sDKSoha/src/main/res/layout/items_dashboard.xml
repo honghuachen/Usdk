@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp" >
+
+        <ImageView
+            android:id="@+id/imgItemsDb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/iconback" />
+
+        <TextView
+            android:id="@+id/tvNotiDb"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="10"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvItemsDb"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView" />
+
+</LinearLayout>

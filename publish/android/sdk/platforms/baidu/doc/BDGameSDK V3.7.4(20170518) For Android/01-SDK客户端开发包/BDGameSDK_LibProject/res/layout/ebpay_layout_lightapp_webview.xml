@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.baidu.wallet.base.widget.BdActionBarEx
+        android:id="@+id/lightappactionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <com.baidu.paysdk.lightapp.LightappWebView
+        android:id="@+id/cust_webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/lightappactionbar" />
+
+    <View
+        android:id="@+id/progress_line"
+        android:layout_width="10dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/lightappactionbar"
+        android:background="@color/ebpay_transparent" />
+
+</RelativeLayout>

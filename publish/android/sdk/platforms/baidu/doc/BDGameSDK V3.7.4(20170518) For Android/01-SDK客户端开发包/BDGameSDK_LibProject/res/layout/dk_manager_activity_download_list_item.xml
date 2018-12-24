@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/dk_content_list_item_style_for_show" >
+
+    <LinearLayout style="@style/dk_content_list_item_style_for_card" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="9dp"
+            android:paddingTop="10dp" >
+
+            <!-- <ImageView -->
+            <!-- android:layout_width="60dp" -->
+            <!-- android:layout_height="60dp" -->
+            <!-- android:background="@drawable/download_nothing_icon" /> -->
+
+            <com.duoku.platform.download.widget.XCRoundRectImageView
+                android:id="@+id/manager_activity_download_list_item_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/dk_download_nothing_icon" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/dk_icon_front_shade_game_list"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <!--
+         <ImageView
+        android:id="@+id/manager_activity_download_list_item_icon"
+        style="@style/dk_content_list_item_imageview_style" />
+        -->
+
+        <LinearLayout style="@style/dk_content_list_item_linear_layout_style" >
+
+            <TextView
+                android:id="@+id/manager_activity_download_list_item_name"
+                style="@style/dk_content_list_item_title_style"
+                android:layout_marginBottom="1dp" />
+
+            <ProgressBar
+                android:id="@+id/manager_activity_download_list_item_progress"
+                style="@style/dk_content_list_item_progressbar_style"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:progressDrawable="@drawable/dk_progress_horizontal_yellow" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/manager_activity_download_list_item_text_percent"
+                    style="@style/dk_content_list_item_text_style"
+                    android:layout_alignParentLeft="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/manager_activity_download_list_item_text_progress"
+                    style="@style/dk_content_list_item_text_style"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/download_item_action_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:minWidth="70dp"
+            android:orientation="vertical"
+            android:paddingRight="9dp" >
+
+            <com.duoku.platform.view.AnimationDrawableView
+                android:id="@+id/download_item_action_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/dk_btn_download_selector"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_game_download_text"
+                android:layout_width="68dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:background="@drawable/dk_download_buttonshape"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/download_item_action_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:minWidth="56dp"
+                android:textSize="13sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/download_item_action_cancel"
+        android:layout_width="96dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/dk_btn_download_cancel_selector"
+        android:paddingLeft="6dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/download_item_action_cancel_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/dk_ad_canceloff_file"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:textColor="#ff5555" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="74dp"
+        android:layout_marginRight="5dp"
+        android:background="#dedede" />
+
+</LinearLayout>

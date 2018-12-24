@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/wallet_base_icon_info_press" android:state_pressed="true"/>
+    <item android:drawable="@drawable/wallet_base_icon_info_noraml"/>
+
+</selector>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bdp_paycenter_top_info_bg_file"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp" >
+
+    <com.baidu.platformsdk.pay.widget.BDPLineFeedLayout
+        android:id="@+id/bdp_paycenter_layout_game_card_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.baidu.platformsdk.pay.widget.BDPLineFeedLayout>
+
+</LinearLayout>

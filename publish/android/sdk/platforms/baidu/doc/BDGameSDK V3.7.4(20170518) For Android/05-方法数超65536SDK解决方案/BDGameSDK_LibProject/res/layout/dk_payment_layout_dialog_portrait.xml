@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/dk_layout_payment_dialog" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp">
+    
+    <LinearLayout 
+        android:id="@+id/dk_layout_dialog_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+	        android:id="@+id/dk_layout_dialog_tip_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="14dp"
+	        android:layout_gravity="center" >
+	        
+	        <TextView
+	            android:gravity="center" 
+	            android:textColor="#333333"
+	            android:textSize="@dimen/dk_text_size_16_sp"
+	            android:id="@+id/dk_tv_dialog_tip_title"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"/>
+	    </LinearLayout>
+    
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="14dp"
+	        android:layout_gravity="center_horizontal"
+	        android:orientation="vertical">
+	        
+	        <TextView 
+	            android:id="@+id/dk_tv_dialog_tip_info"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="#333333"
+	            android:layout_gravity="center"
+	            android:gravity="center_horizontal"
+	            android:textSize="@dimen/dk_text_size_16_sp"/>
+	    </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="4dp">
+        
+        <Button
+            android:id="@+id/dk_btn_dialog_back"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/dk_btn_string_back"
+            android:textSize="@dimen/dk_text_size_16_sp"
+            android:textColor="@color/dk_gamesdk_white"
+            android:background="@drawable/dk_payment_btn_pay_selector" />
+        
+        <Button
+            android:id="@+id/dk_btn_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_marginLeft="12dp"
+            android:text="@string/dk_cancel_text"
+            android:textSize="@dimen/dk_text_size_16_sp"
+            android:background="@drawable/dk_payment_btn_pay_selector" />
+    </LinearLayout>
+</LinearLayout>

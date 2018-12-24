@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dk_layout_payment_dialog_extend"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_dialog_all_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_tip_pay_dialog_all_amount"
+            android:textColor="#333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_dialog_good_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_tip_pay_dialog_good_price"
+            android:textColor="#333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_dialog_baidubean_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_tip_pay_dialog_baiduben_save"
+            android:textColor="#333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bdp_paycenter_layout_dialog_exchange_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_dialog_exchange_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_tip_pay_dialog_exchange_tips"
+            android:textColor="@color/bdp_color_ff3300"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" >
+
+        <TextView
+            android:id="@+id/bdp_paycenter_tv_dialog_is_not_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bdp_paycenter_tip_is_not_pay"
+            android:textColor="#333333"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="14dp" >
+
+        <Button
+            android:id="@+id/bdp_paycenter_btn_dialog_ensure"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_pay_selector"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_alipay_ensure"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+
+        <Button
+            android:id="@+id/bdp_paycenter_btn_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_pay_cancel_selector"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_alipay_cancel"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+</LinearLayout>

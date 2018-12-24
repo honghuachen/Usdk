@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SDK Verions -->
+    <string name="sdkVersion">3.2.4.1</string>
+
+    <!-- GCM Project Id -->
+    <!-- <string name="game_trackingId">UA-68935577-8</string> -->
+    <string name="gcm_project_id">754061351551</string>
+    <string name="permissionExplain">Để ứng dụng chạy ổn định bạn cần cấp quyền cho ứng dụng truy cập một số chức năng!</string>
+    <string name="connectMessage">Bạn nên nối tài khoản để có thể được hỗ trợ tốt nhất trong quá trình chơi game. </string>
+    <string name="connectMessage2">để được hỗ trợ tốt nhất </string>
+    <string name="connectNow">Kết nối ngay</string>
+    <string name="connectNow2">Kết nối tài khoản</string>
+    <string name="logInMobile">Đăng nhập</string>
+    <string name="logInFacebook">FaceBook</string>
+    <string name="connectSucess">Nối tài khoản thành công!</string>
+    <string name="cancel">Bỏ qua</string>
+    <string name="cancelCloseDb">Hủy bỏ</string>
+    <string name="connectAcc">Nối tài khoản</string>
+    <string name="Ok">Đồng ý</string>
+    <string name="permissionSetting">Cài đặt</string>
+    <string name="errorConnect">Hãy kiểm tra kết nối mạng của bạn và thử lại!</string>
+    <string name="retry">Thử lại</string>
+    <string name="details">Chi tiết</string>
+    <string name="notify">Thông Báo</string>
+    <string name="closeDashBoard">Bạn có muốn ẩn Dashboard hay không?</string>
+    <string name="agree">Đồng ý</string>
+
+    <!-- ducnm start -->
+    <string name="textviewConectSuccess">Kết nối tài khoản thành công!</string>
+    <string name="varify">Xác thực</string>
+    <string name="sendCodeAgain">Gửi lại mã xác thực</string>
+    <string name="register">Đăng ký</string>
+    <string name="getCode">Nhận mã xác thực</string>
+    <string name="activeCode">Mã số xác thực</string>
+    <string name="varifyOtp">Xác thực mã OTP</string>
+    <string name="otpInput">Nhập mã OTP</string>
+    <string name="registerByMail">Đăng ký bằng email</string>
+    <string name="registerByFacebook">FaceBook</string>
+    <string name="registerByPhone">Số điện thoại</string>
+    <string name="email">Địa chỉ email</string>
+    <string name="username">User name</string>
+    <string name="password">Mật khẩu</string>
+    <string name="registerFail">Có lỗi xảy ra trong quá trình đăng ký, xin vui lòng thử lại sau!</string>
+    <string name="emptyMail">Vui lòng nhập địa chỉ email</string>
+    <string name="invalidMail">Vui lòng nhập địa chỉ email hợp lệ</string>
+    <string name="emptyUsername">Vui lòng nhập tên đăng nhập</string>
+    <string name="invalidUsername">Tên đăng nhập phải có ít nhất 6 ký tự</string>
+    <string name="emptyPassword">Vui lòng nhập mật khẩu</string>
+    <string name="invalidPassword">Mật khẩu phải có ít nhất 6 ký tự</string>
+    <string name="sendSMS">Send SMS ngay</string>
+    <string name="defaultSyntax">Mã xác nhận</string>
+    <string name="agreeText">Tôi đồng ý với các</string>
+    <string name="ruleOfUse">Điều khoản sử dụng</string>
+    <!-- ducnm end -->
+
+
+    <!-- button -->
+    <string name="buttonLogin">Đăng nhập</string>
+    <string name="buttonRegister">Đăng ký</string>
+    <string name="buttonMySoha">Sohagame</string>
+    <string name="buttonFacebook">Facebook</string>
+    <string name="buttonTryAgain">Try again</string>
+    <string name="buttonDownloadNow">Tải ngay bản cập nhật</string>
+    <string name="buttonContinue">Tiếp tục</string>
+    <string name="buttonSend">Gửi</string>
+    <string name="buttonMoreAccount">Tài khoản khác</string>
+    <string name="buttonViewMore">Xem thêm&#8230;</string>
+    <string name="buttonConfirm">Xác nhận</string>
+    <string name="buttonImpulse">Nạp</string>
+
+    <!-- hint -->
+    <string name="hintEmailPhone">Địa chỉ email / Số điện thoại</string>
+    <string name="hintPassword">Mật khẩu</string>
+    <string name="hintCardType">Loại thẻ</string>
+    <string name="hintCardNumber">Mã số thẻ</string>
+    <string name="hintSerial">Serial</string>
+
+    <!-- paylist -->
+    <string name="card">Thẻ cào</string>
+    <string name="bank">Thẻ ngân hàng</string>
+    <string name="scoin">Scoin</string>
+    <string name="iap">In App Purchase</string>
+
+    <!-- textview -->
+    <string name="textviewLogin">Đăng nhập</string>
+    <string name="textviewFormatGameVersion">Game v%1$s</string>
+    <string name="textviewFormatSDKVersion">SDK v%1$s</string>
+    <string name="textviewOr">Hoặc</string>
+    <string name="textviewProcessing">Đang xử lý&#8230;</string>
+    <string name="textviewNotInstallMySoha">Bạn chưa cài đặt app mySoha. Tải và cài đặt ngay?</string>
+    <string name="textviewNotInstallSohagame">Bạn chưa cài đặt app Sohagame. Tải và cài đặt ngay?</string>
+    <string name="textviewInstallFacebook">Bạn cần cài đặt app Facebook để sử dụng tính năng này</string>
+    <string name="textviewFormatHello">Xin chào %s</string>
+    <string name="textviewCheckInternetTryAgain">Vui lòng kiểm tra lại kết nối và thử lại</string>
+    <string name="textviewTokenOutOfDate">Phiên đăng nhập Mysoha hết hạn xin vui lòng đăng nhập lại Mysoha và thử lại</string>
+    <string name="textviewLossPassword">Quên mật khẩu?</string>
+    <string name="textviewFormatUpdate">Đã có bản cập nhật mới cho %s</string>
+    <string name="textviewFormatPatmentFailed">Lỗi giao dịch (%s)</string>
+    <string name="textviewLossPassword2">Quên mật khẩu</string>
+    <string name="textviewLossPasswordGuide">Bạn vui lòng nhập địa chỉ email hoặc số điện thoại đã dùng để đăng ký ViệtID vào ô dưới đây để nhận hướng dẫn khôi phục mật khẩu</string>
+    <string name="textviewChooseAccount">Chọn tài khoản</string>
+    <string name="textviewConfirmDeleteAccount">Bạn có chắc chắn muốn xóa tài khoản này?</string>
+    <string name="textviewPayment">Nạp</string>
+    <string name="textviewConfirmPayment">Bạn có chắc chắn muốn thực hiện giao dịch này?</string>
+    <string name="textviewBuyScoinToPayment">Bạn cần mua thêm %s Scoin để thực hiện giao dịch này!</string>
+    <string name="textviewReVerifyPaymentIAP">Đã xảy ra lỗi khi xác thực giao dịch, bạn vui lòng thực hiện lại thao tác!</string>
+    <string name="textviewRecharge">Giao dịch lỗi</string>
+    <string name="textviewRechargeEmpty">Chưa có giao dịch lỗi nào</string>
+    <string name="textviewSuggestRegister">Bạn chưa có tài khoản?</string>
+    <string name="textviewRegisterNow">Đăng ký ngay</string>
+    <string name="toastErrorTryAgain1">Đã có lỗi xảy ra, xin vui lòng thử lại</string>
+    <string name="toastErrorTryAgain2">Đã có lỗi xảy ra, xin vui lòng thử lại.</string>
+
+    <!-- toast -->
+    <string name="toastErrorTryAgain">Đã có lỗi xảy ra, xin vui lòng thử lại!</string>
+    <string name="toastErrorNetwork">Vui lòng kiểm tra kết nối mạng!</string>
+    <string name="toastErrorServer">Không thể kết nối đến máy chủ!</string>
+    <string name="toastErrorNotLoginGoogle">Bạn cần vào phần cài đặt của thiết bị và đăng nhập tài khoản Google trước!</string>
+    <string name="toastErrorRegFormat">Các trường bắt buộc không được chứa dấu cách!</string>
+    <string name="toastPleaseChooseFriend">Vui lòng chọn bạn bè trước khi mời!</string>
+    <string name="bitmapListNull">Trong danh sách ảnh được chọn có ảnh không hợp lệ. Vui lòng chọn ảnh khác </string>
+    <string name="bitmapNull">Ảnh được chọn không hợp lệ. Vui lòng chọn ảnh khác</string>
+    <!-- Dashboard -->
+    <string name="textviewMore">Thêm</string>
+    <string name="contentOpenFanpageFB">Bạn có muốn mở app Facebook không ?</string>
+    <string name="contentOpenFanpageTwitter">Bạn có muốn mở app Twitter không ?</string>
+    <string name="contentOpenFanpageSohaCare">Bạn có muốn mở app SohaCare không ?</string>
+    <string name="confirm_permission_dashboard">Tiếp tục chọn Đồng Ý sau đó cho phép nhận thông báo để vào ứng dụng </string>
+    <string name="guide">Hướng dẫn</string>
+</resources>

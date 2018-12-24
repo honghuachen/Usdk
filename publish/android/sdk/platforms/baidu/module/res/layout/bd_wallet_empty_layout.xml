@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
+  -->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bd_wallet_empty_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+    <ImageView
+            android:id="@+id/bd_wallet_empty_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/bd_wallet_empty_text_pic"/>
+
+    <TextView
+            android:id="@+id/bd_wallet_error_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/bd_wallet_load_error"
+            android:textColor="@color/bd_wallet_text_999999"
+            android:textSize="@dimen/bd_wallet_text_size_normal"/>
+
+    <Button
+            android:id="@+id/bd_wallet_do"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ebpay_bind_card_input_height"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/wallet_base_btn"
+            android:text="@string/bd_wallet_reload"
+            android:textColor="@color/wallet_base_btntext_color_selector"
+            android:textSize="@dimen/ebpay_text_size_18"/>
+
+</LinearLayout>

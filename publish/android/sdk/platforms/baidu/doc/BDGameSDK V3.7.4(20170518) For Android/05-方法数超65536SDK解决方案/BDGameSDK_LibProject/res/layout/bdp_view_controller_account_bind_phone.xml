@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dip"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+    <!-- 标题 -->
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical">
+	    <TextView 
+	        android:id="@+id/txtBack"
+	        android:layout_width="45dip"
+	        android:layout_height="48dip"
+	        android:text="@string/bdp_account_title_back"
+	        android:textColor="@color/bdp_blue"
+	        android:textSize="13sp"
+	        android:gravity="center"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 绑定手机 -->
+	    <TextView 
+	        android:id="@+id/txtTitle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_bind_phone_title"
+	        android:textSize="15sp"
+	        android:textColor="@color/bdp_deep_blue"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 关闭按钮 -->
+	    <ImageView 
+	        android:id="@+id/imgClose"
+	        android:layout_width="45dip"
+	        android:layout_height="45dip"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/bdp_icon_close_selector"
+	        android:contentDescription="@string/bdp_image"
+	        />
+	</LinearLayout>
+	
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="1dip"
+	    android:background="@drawable/bdp_account_lin_account_pass"
+	    />
+	
+	<!-- 子视图 -->
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dip"
+	    android:padding="10dip"
+   		android:scrollbarStyle="outsideOverlay">
+	    <RelativeLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="320dip"
+		    android:orientation="vertical" >
+		    
+	        <!-- tip -->
+	        <TextView 
+	            android:id="@+id/txtTip"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="18dip"
+	            android:text="@string/bdp_account_bind_phone_tip"
+	            android:textColor="@color/bdp_dark_gray"
+	            android:textSize="13sp"
+	            />
+		    
+	        <!-- 要绑定的手机号 -->
+	        <LinearLayout
+	            android:id="@+id/lin_phone_no"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dip"
+	            android:layout_marginBottom="12dip"
+	            android:layout_below="@id/txtTip"
+	            android:gravity="center_vertical"
+	            android:orientation="horizontal"
+	            android:background="@drawable/bdp_bg_white_border_blue" >
+	
+	            <EditText
+	                android:id="@+id/edtPhoneNo"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_marginLeft="10dip"
+	                android:hint="@string/bdp_account_bind_phone_hint_phone_no"
+	                android:textColorHint="@color/bdp_color_text_hint"
+	            	android:inputType="phone"
+	            	android:imeOptions="actionDone"
+	            	android:maxLength="15"
+	                android:textColor="@color/bdp_black"
+	                android:textSize="15sp"
+	                android:singleLine="true"
+	                android:background="@null" />
+	
+	            <ImageView
+	                android:id="@+id/imgPhoneNoDel"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginRight="5dip"
+	                android:contentDescription="@string/bdp_image"
+	                android:src="@drawable/bdp_icon_text_clear_selector"
+	                android:visibility="invisible" />
+	
+	        </LinearLayout>
+	        
+	        <LinearLayout 
+	            android:id="@+id/lin_get_verifycode"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/lin_phone_no"
+	            android:layout_marginBottom="12dip"
+	            android:orientation="horizontal"
+	            android:gravity="center_vertical">
+	            
+		        <!-- 获取短信验证码 -->
+		        <Button 
+		            android:id="@+id/btnGetVerifycode"
+		            android:layout_width="160dip"
+	                android:layout_height="38dip"
+		            android:paddingLeft="10dip"
+		            android:paddingRight="10dip"
+		            android:singleLine="true"
+		            android:text="@string/bdp_account_bind_phone_verifycode_get"
+		            android:textColor="@color/bdp_white"
+		            android:textSize="15sp"
+		            android:background="@drawable/bdp_btn_yellow_selector"
+		            />
+		        
+		        <!-- 已发送提示 -->
+		        <TextView 
+		            android:id="@+id/txtSentTip"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dip"
+		            android:text="@string/bdp_account_bind_phone_sent_tip"
+		            android:textColor="@color/bdp_light_gray"
+		            android:textSize="13sp"
+		            android:visibility="invisible"
+		            />
+		        
+	        </LinearLayout>
+	        
+	        <!-- 输入验证码 -->
+	        <LinearLayout
+	            android:id="@+id/lin_verifycode"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dip"
+	            android:layout_marginBottom="24dip"
+	            android:layout_below="@id/lin_get_verifycode"
+	            android:gravity="center_vertical"
+	            android:orientation="horizontal"
+	            android:background="@drawable/bdp_bg_white_border_blue" >
+	
+	            <EditText
+	                android:id="@+id/edtVerifycode"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_marginLeft="10dip"
+	                android:hint="@string/bdp_account_bind_phone_hint_verifycode"
+	                android:textColorHint="@color/bdp_color_text_hint"
+	                android:textColor="@color/bdp_black"
+	                android:textSize="15sp"
+	                android:singleLine="true"
+	                android:background="@null" />
+	
+	            <ImageView
+	                android:id="@+id/imgVerifycodeDel"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginRight="5dip"
+	                android:contentDescription="@string/bdp_image"
+	                android:src="@drawable/bdp_icon_text_clear_selector"
+	                android:visibility="invisible" />
+	
+	        </LinearLayout>
+	        
+	        <!-- 提交按钮 -->
+	        <Button 
+	            android:id="@+id/btnSubmit"
+	            android:layout_width="match_parent"
+	            android:layout_height="38dip"
+	            android:layout_below="@id/lin_verifycode"
+	            android:layout_marginBottom="10dip"
+	            android:text="@string/bdp_account_bind_phone_submit"
+	            android:textColor="@color/bdp_white"
+	            android:textSize="15sp"
+		        android:background="@drawable/bdp_btn_blue_selector"
+	            />
+	        
+	        <!-- tip -->
+	        <TextView 
+	            android:id="@+id/txtNewTip"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/btnSubmit"
+	            android:layout_marginBottom="30dip"
+	            android:text="@string/bdp_account_bind_phone_new_tip"
+	            android:visibility="invisible"
+	            />
+	    </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

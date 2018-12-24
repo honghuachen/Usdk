@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dip"
+    android:orientation="vertical"
+    android:background="@drawable/bdp_bg_white_round" >
+    
+    <!-- 标题 -->
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingBottom="5dip"
+	    android:gravity="center_vertical">
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	    <!-- 认证成功 -->
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dip"
+	        android:text="@string/bdp_account_authenticate_success_title"
+	        android:textSize="18sp"
+	        android:textColor="@color/bdp_orange"
+	        android:gravity="center"
+	        />
+	    <View 
+	        android:layout_width="0dip"
+	        android:layout_height="1dip"
+	        android:layout_weight="1"
+	        />
+	</LinearLayout>
+	
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="1px"
+	    android:background="@drawable/bdp_horizontal_line"
+	    />
+	
+	<ScrollView 
+	    android:id="@+id/svView"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="20dip"
+	    android:scrollbarStyle="outsideOverlay"
+	    android:background="@drawable/bdp_bg_white_round">
+	    
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="260dip"
+		    android:orientation="vertical" >
+	    
+		    <TextView 
+		        android:id="@+id/txtName"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:padding="10dip"
+		        android:text="@string/bdp_account_authenticate_success_name"
+		        android:textColor="@color/bdp_black"
+		        android:textSize="16sp"
+		        />
+		    
+		    <TextView 
+		        android:id="@+id/txtId"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:padding="10dip"
+		        android:text="@string/bdp_account_authenticate_success_id"
+		        android:textColor="@color/bdp_black"
+		        android:textSize="16sp"
+		        />
+		    
+		    <TextView 
+		        android:id="@+id/txtAge"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:padding="10dip"
+		        android:text="@string/bdp_account_authenticate_success_age"
+		        android:textColor="@color/bdp_black"
+		        android:textSize="16sp"
+		        />
+		    
+		    <Button 
+		        android:id="@+id/btnComplete"
+		        android:layout_width="match_parent"
+		        android:layout_height="40dip"
+		        android:layout_marginTop="10dip"
+		        android:background="@drawable/bdp_btn_yellow_selector"
+		        android:text="@string/bdp_complete"
+		        android:textSize="18sp"
+		        android:textColor="@color/bdp_white"
+		        />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sdk568_white">#fff</color>
+    <color name="sdk568_black">#000</color>
+    <color name="sdk568_gray40">#666</color>
+    <color name="sdk568_black1">#222</color>
+    <color name="sdk568_color1">#0fb7f5</color>
+    <color name="sdk568_color2">#7cdcff</color>
+    <color name="sdk568_color4">#ff8a00</color>
+    <color name="sdk568_color5">#ffc581</color>
+    <color name="sdk568_color6">#f5fcff</color>
+    <color name="sdk568_color7">#d0d0d0</color>
+    <color name="sdk568_color8">#a3c435</color>
+    <color name="sdk568_color9">#cff2ff</color>
+    <color name="sdk568_color10">#9b9b9b</color>
+    <color name="sdk568_color11">#19b8f3</color>
+    <color name="sdk568_color12">#909090</color>
+    <color name="sdk568_color13">#9ce4ff</color>
+
+</resources>

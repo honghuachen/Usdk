@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transforms>
+  <data name="AppKey">
+    <value>null</value>
+  </data>
+  <!-- 渠道id -->
+  <data name="ChannelId">
+    <value>linyou</value>
+  </data>
+  <!-- 渠道号 -->
+  <data name="ChannelEnum">
+    <value>2</value>
+  </data>
+  <!-- 渠道标识符 -->
+  <data name="ChannelName">
+    <value>linyou</value>
+  </data>
+  <!--媒体标识-->
+  <data name="AdId">
+    <value>1</value>
+  </data>
+  <!-- 是否是测试环境 -->
+  <data name="isDebug">
+      <value>false</value>
+  </data>
+  <!-- 产品id linyou 提供-->
+  <data name="linyou_productId">
+    <value>ssss</value>
+  </data>
+  <!-- signkey linyou 提供 -->
+  <data name="linyou_signKey">
+    <value>e98f4b37e1228fcd</value>
+  </data>
+  <!-- 麟游分包时修改（子渠道） -->
+  <data name="linyou_sub_channel">
+    <value>linyou</value>
+  </data>
+  <data name="url">
+    <value></value>
+  </data>
+</transforms>

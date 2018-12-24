@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical" 
+    android:orientation="vertical">
+       
+    
+    <!-- ↓↓↓ 百度币 ↓↓↓ -->
+    <LinearLayout
+        android:id="@+id/bdp_baidu_bean_layout"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:background="@drawable/bdp_paycenter_coupon_bg" >
+	    <LinearLayout 
+	        android:layout_width="45dp"
+	    	android:layout_height="wrap_content"
+	    	android:layout_gravity="center">
+		    <CheckBox 
+		        android:id="@+id/bdp_baidu_bean_check"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:layout_marginLeft="15dp"
+		        android:button="@drawable/bdp_paycenter_checkbox"/>
+	    </LinearLayout>
+	    <ImageView  
+	        android:layout_width="1dp"
+	        android:layout_height="fill_parent"  
+	        android:scaleType="fitXY"  
+	        android:contentDescription="@string/bdp_image"
+	        android:src="@drawable/bdp_ver_line"/>
+	    <LinearLayout
+	         android:id="@+id/bdp_baidu_bean"
+	        android:layout_width="match_parent"
+		    android:layout_height="40dp"
+		    android:gravity="center_vertical"  
+		    android:padding="4dip">
+		    <TextView 
+		        android:layout_width="0dip"
+		        android:layout_height="fill_parent" 
+		        android:layout_weight="1" 
+		        android:gravity="center_vertical"
+		        android:text="@string/bdp_paycenter_use_baidu_bean"
+		        android:textColor="@color/bdp_black"/> 
+		    
+		    <TextView 
+		        android:id="@+id/bdp_baidu_bean_content"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" 
+		        android:layout_marginRight="15dip"
+		        android:text="@string/bdp_paycenter_pay_amount"
+		        android:textColor="@color/bdp_black"/>  
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- ↑↑↑ 百度币 ↑↑↑ -->
+    
+    <!-- ↓↓↓ 酷点 ↓↓↓ -->
+    <LinearLayout
+        android:id="@+id/bdp_kudian_layout"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/bdp_paycenter_coupon_bg" >
+	    <LinearLayout 
+	        android:layout_width="45dp"
+	    	android:layout_height="wrap_content"
+	    	android:layout_gravity="center">
+		    <CheckBox 
+		        android:id="@+id/bdp_kudian_check"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:layout_marginLeft="15dp"
+		        android:button="@drawable/bdp_paycenter_checkbox"/>
+	    </LinearLayout>
+	    <ImageView  
+	        android:layout_width="1dp"
+	        android:layout_height="fill_parent"  
+	        android:scaleType="fitXY"  
+	        android:contentDescription="@string/bdp_image"
+	        android:src="@drawable/bdp_ver_line"/>
+	    <LinearLayout
+	         android:id="@+id/bdp_kudian"
+	        android:layout_width="match_parent"
+		    android:layout_height="40dp"
+		    android:gravity="center_vertical"  
+		    android:padding="4dip">
+		    <TextView 
+		        android:id="@+id/bdp_kudian_name"
+		        android:layout_width="0dip" 
+		        android:layout_height="fill_parent"
+		        android:gravity="center_vertical"
+		        android:textColor="@color/bdp_black"
+		        android:layout_weight="1"/> 
+		    
+		    <ImageView 
+		        android:id="@+id/bdp_kudian_drop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:scaleType="centerInside"
+		        android:layout_marginRight="15dp" 
+		        android:contentDescription="@string/bdp_image"
+		        android:src="@drawable/bdp_drop_black_down"/>
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- ↑↑↑ 酷点 ↑↑↑ -->
+    
+    <!-- ↓↓↓ 代金券 ↓↓↓ -->
+    <LinearLayout
+        android:id="@+id/bdp_voucher_layout"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/bdp_paycenter_coupon_bg" >
+	    <LinearLayout 
+	        android:layout_width="45dp"
+	    	android:layout_height="wrap_content"
+	    	android:layout_gravity="center">
+		    <CheckBox 
+		        android:id="@+id/bdp_voucher_check"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:layout_marginLeft="15dp"
+		        android:button="@drawable/bdp_paycenter_checkbox"/>
+	    </LinearLayout>
+	    <ImageView  
+	        android:layout_width="1dp"
+	        android:layout_height="fill_parent"  
+	        android:scaleType="fitXY"  
+	        android:contentDescription="@string/bdp_image"
+	        android:src="@drawable/bdp_ver_line"/>
+	    <LinearLayout
+	         android:id="@+id/bdp_voucher"
+	        android:layout_width="match_parent"
+		    android:layout_height="40dp"
+		    android:gravity="center_vertical"  
+		    android:padding="4dip">
+		    <TextView 
+		        android:id="@+id/bdp_voucher_name"
+		        android:layout_width="0dip" 
+		        android:layout_height="fill_parent"
+		        android:gravity="center_vertical"
+		        android:textColor="@color/bdp_black"
+		        android:layout_weight="1"/> 
+		    
+		    <ImageView 
+		        android:id="@+id/bdp_voucher_drop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:scaleType="centerInside"
+		        android:layout_marginRight="15dp" 
+		        android:contentDescription="@string/bdp_image"
+		        android:src="@drawable/bdp_drop_black_down"/>
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- ↑↑↑ 代金券 ↑↑↑ -->
+    
+    <!-- ↓↓↓ 合并支付  ↓↓↓ --> 
+    <LinearLayout
+        android:id="@+id/bdp_merge_pay_layout"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <TextView 
+	       android:id="@+id/bdp_add_amount"
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:textColor="@color/bdp_color_f08f1e"
+	       android:layout_marginTop="5dp" 
+	       android:text="@string/bdp_paycenter_add_amount_pay"
+	       android:textSize="@dimen/ebpay_text_size_15"/>
+    </LinearLayout>
+    <!-- ↑↑↑ 合并支付 ↑↑↑ -->
+   
+    <!-- ↓↓↓ 非合并支付  ↓↓↓ --> 
+    <LinearLayout
+        android:id="@+id/bdp_non_merge_pay_layout"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:orientation="vertical">
+	     <Button 
+	         android:id="@+id/bdp_non_merge_pay"
+	         android:layout_width="match_parent" 
+	         android:layout_height="wrap_content" 
+	         android:background="@drawable/bdp_paycenter_selector_info"
+	         android:text="@string/bdp_paycenter_pay"
+	         android:textSize="@dimen/ebpay_text_size_15"
+	         android:textColor="@color/bdp_white"
+	         android:textStyle="bold"
+	         />
+	     
+	     <LinearLayout
+	         android:id="@+id/bdp_other_payment_layout"
+	         android:layout_width="match_parent"
+		     android:layout_height="30dp"
+		     android:gravity="center_vertical" 
+		     android:background="@drawable/bdp_paycenter_coupon_bg"
+		     android:layout_marginTop="10dp">
+		    <TextView 
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/bdp_paycenter_more_payment"
+		        android:textColor="@color/bdp_black"
+		        android:layout_marginLeft="15dp"
+		        android:layout_marginRight="5dip"/> 
+		    
+		    <ImageView 
+		        android:id="@+id/bdp_more_payment_drop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"  
+		        android:scaleType="centerInside"
+		        android:layout_marginRight="15dp"
+		        android:contentDescription="@string/bdp_image"
+		        android:src="@drawable/bdp_account_icon_unfold_selector"/>
+	    </LinearLayout>
+    </LinearLayout>
+    <!-- ↑↑↑ 合并支付 ↑↑↑ -->
+   
+</LinearLayout>

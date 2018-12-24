@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/omp_activity_horizontal_margin"
+    android:paddingRight="@dimen/omp_activity_horizontal_margin"
+    android:paddingTop="@dimen/omp_activity_vertical_margin"
+    android:paddingBottom="@dimen/omp_activity_vertical_margin"
+    tools:context="mobisocial.omlet.mobisocial.omlet.fragment.LatestFragment">
+
+    <TextView android:text="@string/omp_settingsFragment_placeholder" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+

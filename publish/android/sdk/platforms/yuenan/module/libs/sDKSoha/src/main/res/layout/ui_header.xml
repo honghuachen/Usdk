@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layoutMatchWrap" >
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        style="@style/layoutMatchWrap"
+        android:background="@drawable/bg_header"
+        android:minHeight="@dimen/buttonHeight" >
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/textViewHeader"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="42dp"
+            android:layout_marginRight="42dp"
+            android:text="@string/textviewFormatSDKVersion" />
+
+        <ImageButton
+            android:id="@+id/ibHeaderLeft"
+            style="@style/imageButtonNormal"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_back_white" />
+
+        <ImageButton
+            android:id="@+id/ibHeaderRight"
+            style="@style/imageButtonNormal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/viewGone" />
+
+</RelativeLayout>

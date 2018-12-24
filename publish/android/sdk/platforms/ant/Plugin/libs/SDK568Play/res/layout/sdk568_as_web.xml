@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/sdk568_size_20dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sdk568_size_48dp"
+        android:background="@color/sdk568_color1" >
+
+        <ImageView
+            android:id="@+id/sdk568_as_web_left"
+            android:layout_width="@dimen/sdk568_size_63dp"
+            android:layout_height="@dimen/sdk568_size_30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/sdk568_size_10dp"
+            android:layout_marginStart="@dimen/sdk568_size_10dp"
+            android:contentDescription="@null"
+            android:src="@drawable/sdk568_logo_web_568" />
+
+        <ImageView
+            android:id="@+id/sdk568_as_web_right"
+            android:layout_width="@dimen/sdk568_size_20dp"
+            android:layout_height="@dimen/sdk568_size_20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/sdk568_size_10dp"
+            android:layout_marginRight="@dimen/sdk568_size_10dp"
+            android:contentDescription="@null"
+            android:onClick="closeWebview"
+            android:src="@drawable/sdk568_ic_close2" />
+
+        <LinearLayout
+            android:id="@+id/sdk568_as_web"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/sdk568_as_web_left"
+            android:layout_toLeftOf="@id/sdk568_as_web_right"
+            android:layout_toRightOf="@id/sdk568_as_web_left"
+            android:layout_toStartOf="@id/sdk568_as_web_right"
+            android:gravity="center"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/sdk568_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sdk568_size_4dp"
+        android:progressDrawable="@drawable/sdk568_progress_bar"
+        android:visibility="gone" />
+
+    <WebView
+        android:id="@+id/sdk568_webpage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

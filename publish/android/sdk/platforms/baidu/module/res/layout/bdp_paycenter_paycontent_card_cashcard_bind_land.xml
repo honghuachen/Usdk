@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="8dip" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_credit_pay_money_label"
+                android:textColor="@color/bdp_dark_gray"
+                android:textSize="14sp" />
+
+            <!-- 本次支付金额 -->
+
+            <TextView
+                android:id="@+id/txt_pay_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_credit_pay_money"
+                android:textColor="@color/bdp_color_ff3300"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bdp_paycenter_yibao_cash_card_input_info_label"
+                android:textColor="@color/bdp_dark_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bdp_paycenter_layout_input_cash_card"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- 储蓄卡号 -->
+
+            <EditText
+                android:id="@+id/edt_card_number"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_yibao_cash_card_number_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusDown="@+id/edt_card_phone"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+
+            <!-- 储蓄卡关联手机号 -->
+
+            <EditText
+                android:id="@+id/edt_card_phone"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_yibao_cash_card_phone_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/edt_id_card"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" >
+
+            <!-- 身份证号 -->
+
+            <EditText
+                android:id="@+id/edt_id_card"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_yibao_cash_card_idcard_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:digits="0123456789xX"
+                android:nextFocusDown="@+id/edt_realname"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+
+            <!-- 真实姓名 -->
+
+            <EditText
+                android:id="@+id/edt_realname"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bdp_paycenter_edittext_selector"
+                android:gravity="center_vertical"
+                android:hint="@string/bdp_paycenter_yibao_cash_card_realname_hint"
+                android:textColorHint="@color/bdp_color_text_hint"
+                android:imeOptions="actionDone"
+                android:inputType="none"
+                android:paddingLeft="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:paddingRight="@dimen/bdp_paycenter_input_edit_text_left_padding"
+                android:textColor="#333333"
+                android:textSize="@dimen/bdp_paycenter_text_size_14_sp" >
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal" >
+
+        <!-- 支付按钮 -->
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/bdp_paycenter_btn_enough_pay_selector"
+            android:gravity="center"
+            android:text="@string/bdp_paycenter_btn_string_pay"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/bdp_paycenter_text_size_16_sp" />
+    </LinearLayout>
+
+</LinearLayout>

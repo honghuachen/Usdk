@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transforms>
+  <data name="AppID.com.zwwx.jsws.mi">
+    <value>wx8a7804c15f31a57b</value>
+  </data>
+  
+  <data name="AppID.com.game.jsws.zwwxsdk">
+    <value>wx925e48daf9c98c51</value>
+  </data>
+  
+  <data name="AppID.com.game.jsws.tiantuo">
+    <value>wxcbcee4c5e9288d36</value>
+  </data>
+  
+  <data name="AppID.com.tencent.tmgp.jsws">
+    <value>wx5a4eac4f4b9c01d9</value>
+  </data>
+  
+  <data name="AppID.com.game.jsws.xsj">
+    <value>wxd90a056f2f6749e2</value>
+  </data>
+  
+  <data name="AppID.com.game.jsws.bd">
+    <value>wxcae06d28b6bfb252</value>
+  </data>
+  
+  <data name="FontSize">
+    <value>7</value>
+  </data>
+  <data name="RoleNamePosition">
+    <value>912,421</value>
+  </data>
+  <data name="ServerNamePosition">
+    <value>870,456</value>
+  </data>
+</transforms>

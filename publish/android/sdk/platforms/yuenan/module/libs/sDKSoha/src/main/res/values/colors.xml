@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ducnm start -->
+    <color name="red">#FF0000</color>
+    <color name="blackTranparent">#90000000</color>
+    <color name="retry">#1e7cce</color>
+    <color name="dialog_header">#f4f4f4</color>
+      <color name="dialog_divider">#e2e2e2</color>
+    <!-- ducnm end -->
+    <color name="divider">#f4f4f4</color>
+    <color name="backgr">#f7fbf9</color>
+    <color name="black">#222222</color>
+    <color name="black2">#555</color>
+    <color name="border">#ddd</color>
+    <color name="border_edittext">#bfc0c4</color>
+    <color name="button_close">#fdfffa</color>
+    <color name="crystal">#aa000000</color>
+    <color name="facebook">#3b5ba6</color>
+    <color name="header">#92c64b</color>
+    <color name="gray">#bfc0c4</color>
+    <color name="graytabpayment">#f4f4f4</color>
+    <color name="graytabtext">#888</color>
+    <color name="green">#91c54a</color>
+    <color name="green2">#92c64b</color>
+    <color name="green3">#92c641</color>
+    <color name="darkGreen">#13b94e</color>
+    <color name="green_pressed">#9ec64b</color>
+    <color name="green_disable">#badb90</color>
+    <color name="text">#555</color>
+    <color name="mysoha">#65bd30</color>
+    <color name="text_link">#92c64b</color>
+    <color name="text_payment">#393937</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+
+</resources>

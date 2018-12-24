@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/wallet_home_item_bg"
+    android:orientation="vertical" >
+    
+    <com.baidu.wallet.base.widget.NetImageView
+        android:id="@+id/wallet_asset_new"
+        android:layout_width="50dp"
+        android:layout_height="31dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@null"
+        android:visibility="gone"
+        android:scaleType="fitXY"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical"
+        >
+        <RelativeLayout
+        android:id="@+id/wallet_home_asset_title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/wallet_home_asset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            android:textColor="@color/bd_wallet_home_text_gray"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/wallet_home_asset_point"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_toRightOf="@id/wallet_home_asset_title"
+            android:background="@drawable/wallet_home_shape_red_point"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/wallet_home_asset_value_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/wallet_home_asset_value_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wallet_home_asset_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/bd_wallet_home_text_gray"
+            android:textSize="16sp" />
+    </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:gravity="center_horizontal">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/omp_gray_text_333333"
+        android:text="@string/omp_miui_popup_warning_title"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textSize="14sp"
+        android:textColor="@color/omp_gray_text_333333"
+        android:text="@string/omp_miui_popup_warning_desc"/>
+
+    <CheckBox
+        android:id="@+id/disable_checkbox"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:textSize="12sp"
+        android:textColor="@color/omp_gray_text_333333"
+        android:text="@string/omp_miui_popup_warning_checkbox"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/close_button"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/omp_green_5bcd78_round_background"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:text="@string/omp_miui_popup_warning_ok"/>
+        <Button
+            android:id="@+id/enable_button"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/omp_green_5bcd78_stroke_round_background"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:textColor="@color/omp_green_5bcd78"
+            android:text="@string/omp_miui_popup_warning_setting"/>
+    </LinearLayout>
+</LinearLayout>

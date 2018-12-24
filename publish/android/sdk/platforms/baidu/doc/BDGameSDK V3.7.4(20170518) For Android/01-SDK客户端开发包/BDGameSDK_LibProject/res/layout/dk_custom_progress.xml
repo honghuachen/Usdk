@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+  	android:layout_width="wrap_content"  
+  	android:layout_height="wrap_content"  
+  	android:orientation="horizontal">
+  
+  	<View 
+  	    android:layout_width="110dp"
+  	    android:layout_height="110dp"
+      	android:background="@drawable/dk_wane_shape"/>
+  	
+  	<LinearLayout 
+  	    android:layout_width="110dp"  
+  		android:layout_height="110dp"  
+  		android:orientation="vertical"
+  		android:gravity="center">
+  		
+  		<ProgressBar  
+	        android:id="@+id/dk_loadingImageView"  
+	        android:layout_width="42dp"  
+	        android:layout_height="42dp"  
+	        android:indeterminate="false"  
+	        android:indeterminateDrawable="@drawable/dk_loading_progress"/>  
+	        
+    	<TextView
+    	    android:id="@+id/dk_tv_loading_msg"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:layout_marginTop="12dp"
+    	    android:textColor="@color/dk_color_333333"
+    	    android:textSize="14sp" />
+
+    </LinearLayout> 
+</FrameLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dk_app_name">百度游戏</string>
+    <string name="dk_login">登录</string>
+    <string name="dk_user_notice_text">公&#160;&#160;告</string>
+    <string name="dk_confirm">确定</string>
+    <string name="dk_cancel">取消</string>
+    <string name="dk_tokenid_failed">服务器繁忙，请稍后重试</string>
+    <string name="dk_pay_info_return">返回游戏</string>
+    <string name="dk_tv_string_loading">加载中...</string>
+    <string name="dk_net_error">网络异常，请重新登录！</string>
+    <string name="dk_default_game_name">百度游戏</string>
+
+    <string name="dk_tip_payment_network_error">网络异常，请检查网络状态后重试！</string>
+    <string name="dk_btn_string_back">返回游戏</string>
+    <string name="dk_dialog_string_close">关闭</string>
+    <string name="dk_tip">提示</string>
+    <string name="dk_retry">重试</string>
+    <string name="dk_message_footer_loading">正在加载</string>
+    <string name="dk_cancel_text">取消</string>
+    <string name="dk_message_content_source">来源：%s</string>
+    <string name="bd_ad_continue_title">继续游戏 ？</string>
+    <string name="dk_welcom_join">欢迎加入百度游戏！</string>
+    <string name="dk_btn_string_check_network">检查网络</string>
+
+    <!-- 3.1 -->
+    <string name="dk_float_view_title">百度游戏</string>
+    <string name="dk_actionnotice_link">立即查看</string>
+    <!-- 3.6 -->
+    <string name="dk_user_back_text">退出游戏</string>
+    <string name="dk_user_back_hot">热门游戏</string>
+    <string name="dk_user_back_cancel">取消</string>
+    <string name="dk_user_back_middle">/</string>
+    <string name="dk_user_back_exit">确认退出</string>
+    <string name="dk_user_back_exit_content">确定要退出游戏吗？</string>
+    <string name="dk_user_back_exit_default">确认</string>
+    <string name="dk_upload_select_image">图片选择</string>
+    <string name="dk_upload_from_camera">拍照选取</string>
+    <string name="dk_upload_from_photo">相册选取</string>
+    <string name="dk_web_tab">专区</string>
+    <string name="dk_web_table_record">录屏</string>
+    <!-- Manager Title of tabs  start -->
+    <string name="dk_open_game">打开</string>
+    <string name="dk_download_download">下载</string>
+    <string name="dk_download_update">更新</string>
+    <string name="dk_home_loading_tip">正在努力加载&#8230;</string>
+    <string name="dk_download_successful_and_install">待安装</string>
+    <string name="dk_hint_download_null">暂时没有内容</string>
+    <string name="dk_install">安装</string>
+    <string name="dk_installed">已安装</string>
+    <string name="dk_install_failed">安装失败,点击手动安装</string>
+    <string name="dk_speed_download_installed"> 已安装</string>
+    <string name="dk_waitting">正在等待</string>
+    <string name="dk_cancel_download_file">取消下载</string>
+    <string name="dk_delete_download_file">删除文件</string>
+    <string name="dk_label_waiting">等待</string>
+    <string name="dk_label_pause">暂停</string>
+    <string name="dk_try_again">重试</string>
+    <string name="dk_paused">已暂停</string>
+    <string name="dk_resume">继续</string>
+    <string name="dk_hint_installing">正在安装</string>
+    <string name="dk_installing">安装中</string>
+    <string name="dk_download_failed_and_try">下载失败，点击重试</string>
+    <string name="dk_tab_download_manager_download">下载管理</string>
+    <string name="dk_tab_download_manager_update">游戏更新</string>
+    <string name="dk_tab_download_manager_installed">游戏卸载</string>
+    <string name="dk_download_all_resume">全部开始</string>
+    <string name="dk_download_all_cancel">全部取消</string>
+    <string name="dk_download_tips">温馨提示</string>
+    <string name="dk_download_tips_delete">确认要删除下载的安装包吗?</string>
+    <string name="dk_download_back_cancel">取消</string>
+    <string name="dk_download_back_exit">确认</string>
+    <string name="dk_download_request_net_error_tip">网络异常，请稍后重试!</string>
+    <string name="dk_download_request_show">正在请求数据...</string>
+
+    <!-- 3.6活动公告新增 -->
+    <string name="dk_actionnotice_time">活动时间:</string>
+    <!-- end -->
+
+    <!-- download manager error start -->
+    <string name="dk_sdcard_unmounted">SD卡已经拔出或者不可访问，无法下载!</string>
+    <string name="dk_alert_network_inavailble">网络不给力,请稍后再试!</string>
+    <string name="dk_sdcard_lack_space">SD卡存储空间不足!</string>
+    <string name="dk_network_non_wifi">当前为非wifi环境，注意流量噢！</string>
+    <string name="dk_file_deleted">下载文件已经删除</string>
+    <string name="dk_parse_file_error">解析文件出现错误</string>
+    <string name="dk_download_unknown_title" msgid="7015124071247271585">"&lt;未命名&gt;"</string>
+    <string name="dk_notification_need_wifi_for_size" msgid="5973127997598540499">"文件过大，需要通过 wifi下载"</string>
+    <string name="dk_download_paused">已暂停</string>
+    <string name="dk_download_begin">"开始下载"</string>
+    <string name="dk_notification_download_complete" msgid="840713937779273632">"下载完成"</string>
+    <string name="dk_notification_download_failed" msgid="5343637375905111462">"下载失败,点击重试"</string>
+    <string name="dk_notification_download_failed2" msgid="5343637375905111462">"下载失败"</string>
+    <!-- 网络对话框提示 -->
+    <string name="dk_no_network_dialog_hint">当前未连接Wifi网络,如果下载游戏将消耗2G/3G流量,是否继续？</string>
+    <string name="dk_no_network_dialog_confirm">继续下载</string>
+    <string name="dk_no_network_dialog_cancel">取消</string>
+    <string name="dk_no_network_dialog_title">2G/3G下载提示</string>
+    <string name="dk_network_changed_to_mobile">网络已切换至非wifi，注意流量噢！ </string>
+    <string name="dk_network_tips_to_mobile">当前网络：非wifi网络</string>
+    <string name="dk_uninstall_is_ongoing">正在卸载请稍候。。。</string>
+    <string name="dk_download_no_application_title" msgid="3501359021635168387">"无法打开文件"</string>
+    <!-- download manager error end -->
+
+</resources>

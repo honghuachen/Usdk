@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="sdk568_vertical_separator">|</string>
+    <string name="sdk568_loading">Loading&#8230;</string>
+    <string name="sdk568_game_error">Unfortunately, %1$s has stopped.</string>
+    <string name="sdk568_game_error_report">Report</string>
+    <string name="sdk568_game_error_cancel">Cancel</string>
+    <string name="sdk568_permission_question">Please select OK to agree and continue</string>
+    <string name="sdk568_permission_ok">OK</string>
+    <string name="sdk568_permission_cancel">Cancel</string>
+
+    <!-- Login/Register -->
+    <string name="sdk568_login_fail">Login failed. Please try again</string>
+    <string name="sdk568_login_error_2002">Signature is incorrect</string>
+    <string name="sdk568_login_error_2003">Account isn\'t logged in</string>
+    <string name="sdk568_login_error_2004">User name is illegal</string>
+    <string name="sdk568_login_error_2006">Account blocked</string>
+    <string name="sdk568_login_error_2007">User name or password is incorrect</string>
+    <string name="sdk568_login_error_2008">User name is illegal</string>
+    <string name="sdk568_login_error_2009">Password is illegal</string>
+    <string name="sdk568_login_error_2010">User name already exists</string>
+    <string name="sdk568_login_error_2011">Registration failed. Please try again</string>
+    <string name="sdk568_register_success">Registration success.</string>
+    <string name="sdk568_login_error_9999">System maintenance</string>
+    <string name="sdk568_register_fail">Registration failed. Please try again</string>
+    <string name="sdk568_login_title">Login</string>
+    <string name="sdk568_register_login_success">Registration success. Login success.</string>
+    <string name="sdk568_register_title">Register</string>
+    <string name="sdk568_update_account_title">Update profile</string>
+    <string name="sdk568_hint_fullname">Full name</string>
+    <string name="sdk568_hint_email">Email</string>
+    <string name="sdk568_hint_identity_address">Identity address</string>
+    <string name="sdk568_hint_address">Address</string>
+    <string name="sdk568_hint_identity">Identity/Passport number</string>
+    <string name="sdk568_hint_user_name">User name</string>
+    <string name="sdk568_hint_password">Password</string>
+    <string name="sdk568_hint_repassword">Confirm your password</string>
+    <string name="sdk568_btn_login">Login</string>
+    <string name="sdk568_btn_forgot">Forgot account?</string>
+    <string name="sdk568_btn_register">Register</string>
+    <string name="sdk568_btn_quick_play">Quick play</string>
+    <string name="sdk568_btn_update_account">Update</string>
+    <string name="sdk568_username_empty">User name can\'t be blank</string>
+    <string name="sdk568_password_empty">Password can\'t be blank</string>
+    <string name="sdk568_repassword_empty">Confirm password can\'t be blank</string>
+    <string name="sdk568_repassword_incorrect">Password does not match the confirm password</string>
+    <string name="sdk568_update_account_fail">Update profile failed. Please try again</string>
+    <string name="sdk568_update_account_success">Update profile successful</string>
+
+
+    <!-- Language -->
+    <string name="sdk568_lang_en">English</string>
+    <string name="sdk568_lang_vi">Vietnamese</string>
+
+    <!-- Update dialog -->
+    <string name="sdk568_update_title">Update Is Available</string>
+    <string name="sdk568_update_message">There is newer version of this applilcation available, click OK to upgrade now?</string>
+    <string name="sdk568_update_ok">OK</string>
+    <string name="sdk568_update_cancel">Remind Later</string>
+
+    <!-- Payment -->
+    <string name="sdk568_payment_confirm_buy_item_message">Press OK to continue</string>
+    <string name="sdk568_payment_confirm_buy_item_cancle">Quit</string>
+    <string name="sdk568_payment_confirm_buy_item_ok">OK</string>
+    <string name="sdk568_payment_current_money">Balance:&#160;</string>
+    <string name="sdk568_payment_current_0">Balance:&#160;0</string>
+    <string name="sdk568_payment_card">Mobile Card Payment</string>
+    <string name="sdk568_payment_google">Google In-App Payment</string>
+    <string name="sdk568_payment_select_card_list">Select card type</string>
+    <string name="sdk568_payment_card_code">Card number</string>
+    <string name="sdk568_payment_card_serial">Seri number</string>
+    <string name="sdk568_payment_btn_card">Submit</string>
+    <string name="sdk568_payment_card_type_empty">You don\'t select a card type</string>
+    <string name="sdk568_payment_card_code_empty">Card number can\'t be blank</string>
+    <string name="sdk568_payment_card_serial_empty">Seri number can\'t be blank</string>
+    <string name="sdk568_payment_error">Payment failed. Please try again</string>
+    <string name="sdk568_payment_not_logged_in">User not logged in</string>
+    <string name="sdk568_payment_user_cancel">User cancelled payment</string>
+    <string name="sdk568_payment_confirm_message">Your account isn\'t enought money to pay. Press OK to ?</string>
+    <string name="sdk568_payment_confirm_ok">OK</string>
+    <string name="sdk568_payment_confirm_cancel">Cancel</string>
+    <string name="sdk568_payment_success">Payment successful</string>
+    <string name="sdk568_payment_success_10">You have successfully added EXu into your account</string>
+    <string name="sdk568_payment_success_11">You have successfully added EXu into your account and convert successful</string>
+    <string name="sdk568_payment_success_12">Payment successful</string>
+    <string name="sdk568_payment_error_2050">Seri number is illegal</string>
+    <string name="sdk568_payment_error_2051">Card number is illegal</string>
+    <string name="sdk568_payment_error_2052">You has entered wrong card too many times. Please try again later</string>
+    <string name="sdk568_payment_error_2053">Card doesn\'t exists or has been used</string>
+    <string name="sdk568_payment_error_2054">Transaction failed. Please try again</string>
+    <string name="sdk568_payment_error_2055">You have successfully added EXu into your account but convert unsuccessful</string>
+    <string name="sdk568_payment_error_2056">Amount is incorrect</string>
+    <string name="sdk568_payment_error_2057">URL is incorrect</string>
+    <string name="sdk568_payment_error_2058">Character name doesn\'t exists</string>
+    <string name="sdk568_payment_error_2059">Not enough money</string>
+    <string name="sdk568_payment_error_2060">The payment exceeds the limit</string>
+    <string name="sdk568_payment_error_2061">The payment exceeds the limit</string>
+    <string name="sdk568_payment_error_2062">Transaction doesn\'t exists</string>
+    <string name="sdk568_payment_error_9999">System maintenance</string>
+    <string name="sdk568_exchange_web_error_3004">Transaction already exists</string>
+    <string name="sdk568_exchange_web_error_3005">Not enough EXu</string>
+    <string name="sdk568_exchange_web_error_3006">Cannot convert more than 100000 EXu per day</string>
+    <string name="sdk568_exchange_web_error_3007">Cannot convert more than 20 times per day</string>
+    <string name="sdk568_exchange_web_error_3008">Unknown</string>
+    <string name="sdk568_exchange_web_error_4001">Unsuccessful</string>
+    <string name="sdk568_exchange_web_error_4002">Unknown</string>
+
+    <!-- Auto login -->
+    <string name="sdk568_auto_login_message">Do you want to use account %1$s to play game?</string>
+    <string name="sdk568_auto_login_ok">Yes</string>
+    <string name="sdk568_auto_login_cancel">Use different account</string>
+
+    <!-- Full rigister passport -->
+    <string name="sdk568_fullname_empty">Fullname can\'t be blank</string>
+    <string name="sdk568_email_full_register_passport_empty">Email can\'t be blank or invalid</string>
+    <string name="sdk568_address_full_register_passport_empty">Address can\'t be blank</string>
+    <string name="sdk568_identity_number_full_register_passport_error">Identity numbers invalid</string>
+    <string name="sdk568_date_of_birth">Date of birth</string>
+     <string name="sdk568_date_of_birth_error">Require above 18 year old</string>
+     <string name="sdk568_identity_date_error">Identity date invalid</string>
+    <string name="sdk568_identity_date">Identity date</string>
+    <string name="sdk568_identity_address">Identity address can\'t be blank</string>
+    <string name="sdk568_sex_list_empty">You don\'t select sex</string>
+    <string name="sdk568_payment_select_sex_list">Select sex</string>
+    <string name="sdk568_payment_select_city_list">Select city</string>
+    <string name="sdk568_city_list_empty">You don\'t select city</string>
+    
+
+
+</resources>

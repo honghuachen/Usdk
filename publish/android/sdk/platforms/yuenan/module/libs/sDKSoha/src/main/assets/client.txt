@@ -1,0 +1,6 @@
+{
+    "app_id": "21005e7c6680a5d2e8ee2ce1512e13d1",
+    "app_id_facebook": "110142746174189",
+    "client_name" : "",
+    "client_code": "SGDEMO"
+}

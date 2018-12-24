@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="@drawable/dk_bg_dialog_round_corner">
+
+    <!-- android:background="@drawable/dialog_bg" -->
+
+    <LinearLayout
+        android:id="@+id/progress_message_body_layout"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:background="@color/dk_download_white"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingLeft="19dp"
+        android:paddingTop="5dp"
+        android:visibility="invisible" >
+
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+        <TextView
+        	android:id="@+id/progress_message_title"
+        	android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+        	android:text="@string/dk_download_tips"
+        	android:textColor="#000"
+        	android:textSize="20sp"/>
+     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/dk_download_white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/progress_message_body"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text="@string/dk_download_tips_delete"
+            android:textColor="#333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+<!--     <View -->
+<!--         android:id="@+id/titleDividerTop" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="2px" -->
+<!--         android:layout_marginTop="20dp" -->
+<!--         android:background="#e9e9e9" /> -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:showDividers="beginning" >
+
+        <!-- android:background="@color/dialog_button_selector" -->
+
+        <TextView
+            android:id="@+id/dialog_button_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.81"
+            android:background="@drawable/dk_dialog_button_selector_left"
+            android:gravity="center"
+            android:minHeight="48dip"
+            android:text="@string/dk_download_back_cancel"
+            android:textColor="#676767"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/dk_cof_separator" />
+
+        <TextView
+            android:id="@+id/dialog_button_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.77"
+            android:background="@drawable/dk_dialog_button_selector_right"
+            android:gravity="center"
+            android:minHeight="48dip"
+            android:text="@string/dk_download_back_exit"
+            android:textColor="#2caffd"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

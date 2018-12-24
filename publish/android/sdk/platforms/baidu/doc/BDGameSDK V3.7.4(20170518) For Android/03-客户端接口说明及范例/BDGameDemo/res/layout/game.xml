@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:paddingTop="10dp"
+     >
+   
+   
+   
+   
+   <RelativeLayout 
+       android:id="@+id/glsurfaceview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@drawable/main_bg">
+
+       <ImageView
+           android:id="@+id/recharge"
+           android:layout_width="80dp"
+           android:layout_height="48dp"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentTop="true"
+           android:layout_marginLeft="105dp"
+           android:background="@drawable/recharge" />
+
+   </RelativeLayout>
+
+</RelativeLayout>

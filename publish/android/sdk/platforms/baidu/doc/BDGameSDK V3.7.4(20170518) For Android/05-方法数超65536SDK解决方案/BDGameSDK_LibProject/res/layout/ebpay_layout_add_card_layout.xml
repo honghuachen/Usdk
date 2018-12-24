@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/new_card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/wallet_base_item_height_49dp"
+    android:background="@drawable/ebpay_textview_bg_selector"
+    android:paddingLeft="@dimen/ebpay_line_margin_15"
+    android:paddingRight="@dimen/ebpay_line_margin_15" >
+
+    <ImageView
+        android:id="@+id/new_card_logo"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bd_wallet_add_card"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wallet_base_item_height_49dp"
+        android:layout_marginLeft="@dimen/ebpay_line_margin_10"
+        android:layout_toRightOf="@id/new_card_logo"
+        android:gravity="center_vertical"
+        android:text="@string/ebpay_use_new_card"
+        android:textColor="@color/ebpay_text_111111"
+        android:textSize="@dimen/ebpay_text_size_14" />
+
+    <ImageView
+        android:id="@+id/bankcard_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/wallet_base_right_arrow"
+        android:scaleType="center" />
+
+</RelativeLayout>

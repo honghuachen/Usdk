@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:background="@color/dk_download_white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/manager_pager"
+            style="@style/dk_manager_btn_layout_layout_style"
+            android:paddingLeft="46dp"
+            android:paddingRight="46dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/manager_download_downloadall"
+                style="@style/dk_button_style"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="@string/dk_download_all_resume"
+                android:textColor="@color/dk_tab_hall_pressed"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/manager_download_pauseall"
+                style="@style/dk_button_style"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="0px"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="@string/dk_download_all_cancel"
+                android:textColor="@color/dk_tab_hall_pressed"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/manager_activity_download_hint_text"
+            style="@style/dk_list_sep_layout_style_for_manager"
+            android:background="@color/dk_download_white"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/dk_download_white" />
+
+            <include layout="@layout/dk_notifier_for_incremental_updates" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <com.duoku.platform.view.StickyListHeadersListView
+                android:id="@+id/manager_activity_download_list"
+                style="@style/dk_content_list"
+                android:overScrollMode="never" />
+
+            <View
+                android:id="@+id/download_no_use"
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+            <!-- 没有下载任务 -->
+
+            <TextView
+                android:id="@+id/download_null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/download_no_use"
+                android:layout_centerInParent="true"
+                android:drawablePadding="16dp"
+                android:gravity="center_horizontal"
+                android:drawableTop="@drawable/dk_downlod_nothing"
+                android:text="@string/dk_hint_download_null"
+                android:textColor="#999999"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/manager_download_list_progressbar"
+        layout="@layout/dk_network_loading" />
+
+</FrameLayout>

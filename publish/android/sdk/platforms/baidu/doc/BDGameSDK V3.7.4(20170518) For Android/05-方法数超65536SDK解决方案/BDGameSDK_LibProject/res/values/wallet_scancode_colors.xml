@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wallet_scancode_widget_shapeprogressbar_roudcolor">#d5d5d5</color>
+    <color name="wallet_scancode_actionbar_background_color">#e94643</color>
+    <color name="wallet_scancode_widget_shapeprogressbar_roudprogresscolor">#3791dd</color>
+    <color name="wallet_scancode_actionbar_text_color">#ffffff</color>
+</resources>

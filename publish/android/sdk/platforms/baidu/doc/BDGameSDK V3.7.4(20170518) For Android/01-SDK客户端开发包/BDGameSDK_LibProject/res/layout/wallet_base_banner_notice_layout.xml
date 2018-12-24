@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:paysdk="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical"
+    >
+      <TextView 
+          android:id="@+id/top_txt_banner"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="14.0sp"
+          android:maxLines="5"
+          android:paddingLeft="15.0dp"
+          android:paddingRight="15.0dp"
+          android:paddingTop="10.0dp"
+          android:paddingBottom="10.0dp"
+          android:gravity="center_vertical"
+          android:textColor="@color/bd_wallet_text_banner_color"
+          android:background="@color/bd_wallet_text_banner_bg_color"
+          />
+      <View 
+          android:layout_width="match_parent"
+          android:layout_height="1.0dp"
+          android:background="@color/bd_wallet_text_banner_divider_color"
+          />
+    
+</LinearLayout>

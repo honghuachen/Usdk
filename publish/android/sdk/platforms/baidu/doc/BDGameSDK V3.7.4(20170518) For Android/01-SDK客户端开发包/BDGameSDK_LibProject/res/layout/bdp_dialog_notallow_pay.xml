@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="315dp"
+    android:layout_height="195dp"
+    android:background="@drawable/dk_dialog_round_bg"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="25dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp" >
+
+        <ImageView
+            android:id="@+id/bd_close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="18dp"
+            android:visibility="gone"
+            android:src="@drawable/bdp_icon_close_selector" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/bdp_realname_auth_under_age"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/content"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/bdp_realname_auth_tips"
+                android:textColor="#656565"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+        
+        <Button
+            android:id="@+id/bd_ok"
+            android:layout_width="150dp"
+            android:layout_height="45dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bdp_btn_blue_selector"
+            android:text="@string/bdp_ok"
+            android:textColor="@color/bdp_white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
