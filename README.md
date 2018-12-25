@@ -1,2 +1,2 @@
-# Usdk
-# C#下Lua编程支持
+# Usdk 
+Unity3D移动平台sdk快速适配框架
