@@ -1,0 +1,145 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:theme="@android:style/Theme.NoTitleBar" package="com.chuxinhudong.sdk">
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.webkit.permission.PLUGIN" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    
+    <application android:name="com.chuxin.game.SGApplication">
+       <meta-data
+           android:name="com.facebook.sdk.ApplicationId"
+           android:value="@string/facebook_app_id" />
+       <receiver
+           android:name="com.appsflyer.SingleInstallBroadcastReceiver"
+           android:exported="true">
+           <intent-filter>
+               <action android:name="com.android.vending.INSTALL_REFERRER" />
+           </intent-filter>
+       </receiver>
+       <receiver
+           android:name="com.appsflyer.MultipleInstallBroadcastReceiver"
+           android:exported="true">
+           <intent-filter>
+               <action android:name="com.android.vending.INSTALL_REFERRER" />
+           </intent-filter>
+       </receiver>
+       <activity android:name="com.chuxin.sdk.payment.ChuXinGooglePay" />
+       <activity
+           android:name="com.facebook.FacebookActivity"
+           android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+           android:label="@string/app_name" />
+       <activity
+           android:name="com.facebook.CustomTabActivity"
+           android:exported="true">
+           <intent-filter>
+               <action android:name="android.intent.action.VIEW" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+               <data android:scheme="@string/fb_login_protocol_scheme" />
+           </intent-filter>
+       </activity>
+       <activity
+           android:name="com.chuxin.sdk.view.activity.ChuXinMainActivity"
+           android:configChanges="screenSize|keyboardHidden|orientation"
+           android:launchMode="singleTask"
+           android:theme="@style/Transparent" />
+       <activity
+           android:name="com.chuxin.sdk.view.activity.ChuXinPayActivity"
+           android:configChanges="screenSize|keyboardHidden|orientation"
+           android:theme="@style/Transparent" />
+       <activity
+           android:name="com.chuxin.sdk.view.activity.ScancodeH5Activity"
+           android:configChanges="screenSize|keyboardHidden|orientation"
+           android:theme="@style/Transparent" />
+       <!-- 支付宝支付 -->
+       <activity
+           android:name="com.alipay.sdk.app.H5PayActivity"
+           android:configChanges="orientation|keyboardHidden|navigation"
+           android:exported="false"
+           android:screenOrientation="behind"
+           android:windowSoftInputMode="adjustResize|stateHidden" />
+       <activity
+           android:name="com.alipay.sdk.auth.AuthActivity"
+           android:configChanges="orientation|keyboardHidden|navigation"
+           android:exported="false"
+           android:screenOrientation="behind" />
+       <!-- 银联支付 -->
+       <activity
+           android:name="com.unionpay.uppay.PayActivity"
+           android:configChanges="orientation|keyboardHidden"
+           android:excludeFromRecents="true"
+           android:screenOrientation="portrait"
+           android:windowSoftInputMode="adjustResize" />
+       <activity
+           android:name="com.unionpay.uppay.PayActivityEx"
+           android:configChanges="orientation|keyboardHidden"
+           android:excludeFromRecents="true"
+           android:label="@string/app_name"
+           android:screenOrientation="portrait"
+           android:windowSoftInputMode="adjustResize" />
+       <!-- 现在支付 -->
+       <activity
+           android:name="com.ipaynow.plugin.presenter.PayMethodActivity"
+           android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+           android:exported="false"
+           android:screenOrientation="portrait"
+           android:theme="@android:style/Theme.Dialog" />
+       <!-- 微信WAP版支付 -->
+       <activity
+           android:name="com.ipaynow.plugin.inner_plugin.wechatwp.activity.WeChatNotifyActivity"
+           android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+           android:exported="false"
+           android:launchMode="singleTop"
+           android:screenOrientation="behind"
+           android:theme="@android:style/Theme.Dialog" />
+       <!-- 微信插件版支付 -->
+       <activity
+           android:name="com.ipaynow.plugin.inner_plugin.wechatpg.activity.WXPayActivity"
+           android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+           android:launchMode="singleTop"
+           android:screenOrientation="behind"
+           android:theme="@android:style/Theme.Dialog" />
+       <activity-alias
+           android:name=".wxapi.WXPayEntryActivity"
+           android:exported="true"
+           android:targetActivity="com.ipaynow.plugin.inner_plugin.wechatpg.activity.WXPayActivity" />
+       <!-- QQ支付 -->
+       <activity
+           android:name="com.ipaynow.plugin.inner_plugin.qqpay.activity.QQPayActivity"
+           android:exported="true"
+           android:launchMode="singleTop">
+           <intent-filter>
+               <action android:name="android.intent.action.VIEW" />
+
+               <category android:name="android.intent.category.BROWSABLE" />
+               <category android:name="android.intent.category.DEFAULT" />
+
+               <data android:scheme="qwallet1104856314" />
+           </intent-filter>
+       </activity>
+       <activity
+           android:name="com.ipaynow.plugin.inner_plugin.qqwp.activity.QQWapPayActivity"
+           android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+           android:exported="false"
+           android:launchMode="singleTop"
+           android:screenOrientation="behind"
+           android:theme="@android:style/Theme.Dialog" />
+       <service android:name="com.chuxin.sdk.service.ChuXinFloatService" />
+   </application>
+</manifest>

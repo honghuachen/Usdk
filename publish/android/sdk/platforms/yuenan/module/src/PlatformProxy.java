@@ -1,4 +1,4 @@
-package com.zwwx.platform;
+package com.yuenan.sdk;
 
 
 import java.util.HashMap;
@@ -7,11 +7,10 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.zwwx.adapter.PlatformCallBack;
-import com.zwwx.adapter.ProxyBase;
-import com.zwwx.adapter.SdkPayInfo;
-import com.zwwx.adapter.SdkRoleInfo;
-import com.zwwx.sdk.SDKFactory;
+import com.usdk.platform.adapter.IPlatformCallBack;
+import com.usdk.platform.adapter.ProxyBase;
+import com.usdk.platform.adapter.SdkPayInfo;
+import com.usdk.platform.adapter.SdkRoleInfo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -48,7 +47,7 @@ public class PlatformProxy extends ProxyBase {
 	private SohaSDK mSohaSDK;
 	
 	@Override
-	public void onCreate(Activity activity, Bundle savedInstanceState) {
+	public void OnCreate(Activity activity, Bundle savedInstanceState) {
 		super.onCreate(activity, savedInstanceState);
 		
 		// initialize SDK
@@ -75,7 +74,7 @@ public class PlatformProxy extends ProxyBase {
 			debug("mToken: "+mToken);
 			
 			platformCallBackWrapper.loginCallBack(
-					PlatformCallBack.ErrorCode.LoginSuccess.ordinal(),
+					IPlatformCallBack.ErrorCode.LoginSuccess.ordinal(),
 					"");
 		}
 
@@ -84,7 +83,7 @@ public class PlatformProxy extends ProxyBase {
 			// TODO Auto-generated method stub
 			Utils.toast(mActivity, "Login failed, reason: " + reason);
 			platformCallBackWrapper.loginCallBack(
-					PlatformCallBack.ErrorCode.LoginFail.ordinal(),
+					IPlatformCallBack.ErrorCode.LoginFail.ordinal(),
 					"");
 		}
 	};
@@ -97,7 +96,7 @@ public class PlatformProxy extends ProxyBase {
 			//mSohaSDK.login();
 			debug("*** logout success!");
 			platformCallBackWrapper.logoutCallBack(
-					PlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
+					IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
 					"");
 		}
 	};
@@ -115,7 +114,7 @@ public class PlatformProxy extends ProxyBase {
 				debug("*** yuenansdk pay successed");
 				
 				platformCallBackWrapper.payCallBack(
-							PlatformCallBack.ErrorCode.PaySuccess.ordinal(),
+						IPlatformCallBack.ErrorCode.PaySuccess.ordinal(),
 							"");
 			} else {
 				Utils.toast(mActivity, "Payment successful");
@@ -169,7 +168,7 @@ public class PlatformProxy extends ProxyBase {
 	}
 	
 	@Override
-	public void onBackPressed() {
+	public void OnBackPressed() {
 		super.onBackPressed();
 		debug("*** onBackPressed()");
 		
@@ -177,7 +176,7 @@ public class PlatformProxy extends ProxyBase {
 	}
 	
 	  @Override
-	  public boolean onKeyDown(int keyCode, KeyEvent event)  {
+	  public boolean OnKeyDown(int keyCode, KeyEvent event)  {
 	      if (keyCode == KeyEvent.KEYCODE_BACK) {
 	    	  debug("*** onKeyDown + onBackPressed()");
 	          exit("");
@@ -233,7 +232,6 @@ public class PlatformProxy extends ProxyBase {
 		//mSohaSDK.pay(mOnPayListener);
 	}
 
-	@Override
 	public void playerLogin(String role_info_) {
 		debug("*** playerLogin()");
 		
@@ -247,7 +245,7 @@ public class PlatformProxy extends ProxyBase {
 		debug("*** playerLogout()");
 	}
 
-	@Override
+
 	public void playerCreated(String role_info_) {
 		debug("*** playerCreated()");
 	}
@@ -258,13 +256,13 @@ public class PlatformProxy extends ProxyBase {
 		//final SdkRoleInfo roleInfo = new SdkRoleInfo(role_info_);
 	}
 
-	@Override
+
 	public String getToken() {
 		return mToken;
 	}
 	
 	@Override
-	public void onRequestPermissionsResult(int requestCode,  String[] permissions,  int[] grantResults) {
+	public void OnRequestPermissionsResult(int requestCode,  String[] permissions,  int[] grantResults) {
 		try {
 			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 			if (mSohaSDK != null) {
@@ -278,14 +276,14 @@ public class PlatformProxy extends ProxyBase {
 	}
 	
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	public void OnActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		//SGGameProxy.instance().onActivityResult(mActivity, requestCode, resultCode, data);
 		mSohaSDK.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override
-	public void onResume() {
+	public void OnResume() {
 
         if(mSohaSDK!=null)
         {
@@ -295,17 +293,17 @@ public class PlatformProxy extends ProxyBase {
 	}
 
 	@Override
-	public void onRestart() {
+	public void OnRestart() {
 		super.onRestart();
 	}
 
 	@Override
-	public void onStart() {
+	public void OnStart() {
 		super.onStart();
 	}
 
 	@Override
-	public void onPause() {
+	public void OnPause() {
 		if (mSohaSDK != null) {
 			mSohaSDK.onPause();
 		}
@@ -313,17 +311,17 @@ public class PlatformProxy extends ProxyBase {
 	}
 
 	@Override
-	public void onNewIntent(Intent intent) {
+	public void OnNewIntent(Intent intent) {
 		super.onNewIntent(intent);
 	}
 
 	@Override
-	public void onStop() {
+	public void OnStop() {
 		super.onStop();
 	}
 	
 	@Override
-	public void onDestroy() {
+	public void OnDestroy() {
 		if (mSohaSDK != null) {
 			mSohaSDK.onDestroy();
 		}

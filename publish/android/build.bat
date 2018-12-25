@@ -152,6 +152,12 @@ echo StorePassword=%storepass%>>%gradle_properties%
 echo KeyAlias=%alias%>>%gradle_properties%
 echo KeyPassword=%keypass%>>%gradle_properties%
 
+echo org.gradle.jvmargs=-Xmx4098m -Xms2048m -XX:MaxPermSize=1024m>>%gradle_properties%
+echo android.enableAapt2=false>>%gradle_properties%
+echo org.gradle.parallel=true>>%gradle_properties%
+echo org.gradle.daemon=true>>%gradle_properties%
+echo org.gradle.configureondemand=true>>%gradle_properties%
+
 rem local.properties
 rem set android_home=%Android_Home%
 rem set android_home=%android_home:\=/%
@@ -183,6 +189,12 @@ echo include ':%platform%'>>%settings_gradle%
 echo project(':%platform%').projectDir=new File('../sdk/platforms/%platform%/module')>>%settings_gradle%
 echo include ':usdk'>>%settings_gradle%
 echo project(':usdk').projectDir=new File('../sdk/usdk/module')>>%settings_gradle%
+set platformSettingGradle=./sdk/platforms/%platform%/module/settings.gradle
+if exist %platformSettingGradle% (
+    for /f "tokens=*" %%i in (%platformSettingGradle%) do (
+        echo %%i>>%settings_gradle%
+    )
+)
 
 ::extend build.gradle
 if exist %unityAndroidPath%\build.gradle (del %unityAndroidPath%\build.gradle)

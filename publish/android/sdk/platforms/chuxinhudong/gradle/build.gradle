@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
+
+    defaultConfig {
+        applicationId project.PACKAGE
+		//此方法需要删除string.xml中的app_name字段
+		//resValue "string", "app_name", "上述"//此方法需要删除string.xml中的app_name字段
+		//manifestPlaceholders = [App_Name : project.App_Name]//此方法需要把mainfest中的app_name替换成变量"${App_Name}"
+		versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
+		
+        minSdkVersion 19
+        targetSdkVersion 27
+		
+		// dex突破65535的限制,为大程序而设
+		//multiDexEnabled true
+    }
+	
+	tasks.withType(JavaCompile) {    
+		options.encoding = 'UTF-8'  
+	}
+	
+	lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+	
+	dexOptions {
+        incremental true
+        javaMaxHeapSize "8g"
+        jumboMode = true
+        preDexLibraries = false
+        threadCount ="8"
+    }
+	
+	// Java版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+	
+	signingConfigs {
+         release {
+             storeFile file("../../common/keystore/xgsdk.keystore")
+             storePassword "f3f9be6df8a2327bf891b5235ec6101d"
+             keyAlias "15515.keystore"
+             keyPassword "b8aa15f0ddac2b14a753b48c6367ec4f"
+         }
+     }
+
+    buildTypes {
+        release {
+			signingConfig signingConfigs.release
+            minifyEnabled false
+			zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    //配置eclipse工程结构布局，然后所有的文件就可以按照eclipse的结构放置
+    sourceSets {
+        main {
+            manifest.srcFile '../../apktemp/AndroidManifest.xml'
+            java.srcDirs = ['src','../../apktemp/src']
+            resources.srcDirs = ['src','../../apktemp/src']
+            aidl.srcDirs = ['src','../../apktemp/src']
+            renderscript.srcDirs = ['src','../../apktemp/src']
+            res.srcDirs = ['../../apktemp/res']
+            assets.srcDirs = ['assets','../../apktemp/assets']
+            jniLibs.srcDirs = ['libs','../../apktemp/libs']
+        }
+    }
+}
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	compile fileTree(dir: '../../apktemp/libs', include: ['*.jar'])
+	
+	//下面依赖提供修改
+    compile ('com.android.support:support-v4:26.0.0-alpha1')
+    compile ('com.facebook.android:facebook-android-sdk:4.28.0')
+    compile project(':chuXinSDK-2.0')
+    compile project(':SGFrameworkChuXin-2.0')
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}
+
+//dexOptions {
+//    javaMaxHeapSize "4g"
+//}

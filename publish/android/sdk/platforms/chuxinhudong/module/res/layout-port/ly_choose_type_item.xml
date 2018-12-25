@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="126dp"
+    android:layout_height="72dp"
+    android:background="@drawable/ly_choose_type_bg_selector">
+
+    <TextView
+        android:id="@+id/ly_choose_type_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        style="@style/ly_style_big_btn_text"
+        android:textColor="@color/ly_white_ff5a00_selector"
+        android:text="111" />
+
+</RelativeLayout>

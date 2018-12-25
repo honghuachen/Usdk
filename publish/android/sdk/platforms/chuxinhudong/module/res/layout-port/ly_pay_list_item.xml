@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:minHeight="58dp">
+
+    <TextView
+        android:id="@+id/ly_pay_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        style="@style/ly_style_text_middle"
+        android:textColor="@android:color/black"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ly_arrow"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp" />
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ly_color_e5e5e5" />
+</RelativeLayout>

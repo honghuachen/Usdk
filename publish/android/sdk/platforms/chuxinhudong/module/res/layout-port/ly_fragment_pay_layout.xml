@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ly_pay_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ly_color_ff5a00"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/ly_pay_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/ly_pay_logo" />
+
+        <ImageView
+            android:id="@+id/ly_pay_close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ly_pay_close" />
+
+        <TextView
+            android:id="@+id/ly_pay_balance"
+            style="@style/ly_style_text_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ly_pay_logo"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/ly_color_b3ffffff" />
+
+        <TextView
+            android:id="@+id/ly_pay_need_to_pay"
+            style="@style/ly_style_text_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ly_pay_balance"
+            android:layout_marginTop="8dp"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:text="@string/ly_pay_sum_money"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/ly_pay_sum_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ly_pay_need_to_pay"
+            android:layout_marginBottom=" -4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toRightOf="@id/ly_pay_need_to_pay"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            style="@style/ly_style_text_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ly_pay_need_to_pay"
+            android:layout_toRightOf="@id/ly_pay_sum_money"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:text="@string/ly_abs_yuan"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/ly_pay_more_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignBottom="@id/ly_pay_sum_money"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/ly_pay_sum_money"
+            android:src="@drawable/ly_pay_more_arrow" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ly_pay_more_text"
+        style="@style/ly_style_big_btn_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_pay_top"
+        android:background="@color/ly_color_ff5a00"
+        android:gravity="left|center_vertical"
+        android:maxLines="1"
+        android:paddingBottom="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ly_pay_top"
+        android:background="@color/ly_color_e5e5e5" />
+
+    <GridView
+        android:id="@+id/ly_pay_cp_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ly_pay_more_text"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@drawable/ly_item_bg_selector"
+        android:numColumns="1"
+        android:scrollbars="@null" />
+    <!--
+   <GridView
+       android:id="@+id/ly_pay_cp_list"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@id/ly_pay_more_text"
+       android:numColumns="1"
+       android:scrollbars="@null" />
+-->
+</RelativeLayout>

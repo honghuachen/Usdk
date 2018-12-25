@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ly_charge_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingBottom="24dp"
+        android:background="@color/ly_color_ff5a00">
+
+        <ImageView
+            android:id="@+id/ly_charge_logo"
+            android:layout_height="30dp"
+            android:layout_width="152dp"
+            android:src="@drawable/ly_pay_logo"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/ly_charge_close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ly_pay_close" />
+
+        <EditText
+            android:id="@+id/ly_charge_money"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ly_common_edittext_height"
+            style="@style/ly_style_edit_text"
+            android:inputType="number"
+            android:hint="@string/ly_pay_charge_tip"
+            android:paddingLeft="6dp"
+            android:layout_below="@id/ly_charge_close"
+            android:layout_marginTop="24dp"
+            android:textColor="@android:color/black"
+            android:textCursorDrawable="@null" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/ly_charge_cp_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/ly_color_e5e5e5"
+        android:dividerHeight="0.5dp"
+        android:layout_below="@id/ly_charge_top" />
+
+</RelativeLayout>

@@ -55,7 +55,7 @@ android {
 }
 
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
+	provided fileTree(dir: 'libs', include: ['*.jar'])
 	provided project(':usdk')
 	
 	//下面依赖提供修改

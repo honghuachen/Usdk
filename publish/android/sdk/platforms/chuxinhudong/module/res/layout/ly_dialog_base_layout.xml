@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ly_dialog_white_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ly_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ly_home_tip_icon"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:textColor="#4d7edb"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/ly_view_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2" />
+
+        <LinearLayout
+            android:id="@+id/ly_ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <TextView
+                    android:id="@+id/ly_tv_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ly_btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="1"
+                android:background="@drawable/ly_button_opt_cancel_selector"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/ly_btn_sure"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@drawable/ly_button_opt_update_selector"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

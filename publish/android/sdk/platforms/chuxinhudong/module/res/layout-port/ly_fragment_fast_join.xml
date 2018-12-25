@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:padding="40dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ly_shape_white_bg"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ly_logo" />
+
+        <Button
+            android:id="@+id/ly_btn_fast_join"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ly_btn_fast_join_selector"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            android:text="快速游戏"
+            android:textSize="18sp"
+            android:textColor="@color/ly_common_btn_text_selector" />
+
+        <Button
+            android:id="@+id/ly_btn_account_login"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ly_btn_account_login_selector"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            android:text="账号登录"
+            android:textColor="@color/ly_btn_login_selector" />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/ly_btn_FB_login"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            android:text="Facebook账号登录" />
+    </LinearLayout>
+
+</RelativeLayout>

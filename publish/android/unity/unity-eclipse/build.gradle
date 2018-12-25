@@ -145,6 +145,6 @@ dependencies {
 dependencies {
    compile project(':app')
    compile project(':usdk')
-   compile project(':baidu')
+   compile project(':yuenan')
    compile project(':crasheye')
 }

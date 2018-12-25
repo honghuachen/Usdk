@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ly_welcome_title_bg">
+
+        <TextView
+            android:id="@+id/ly_welcome_welcome_text"
+            style="@style/ly_style_big_btn_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/ly_welcome_user_center"
+            android:gravity="center"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/ly_welcome_user_center"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ly_user_center_selector"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ly_common_title_height"
+    android:background="@color/ly_color_ff5a00">
+
+    <RelativeLayout
+        android:id="@+id/ly_title_back_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp">
+
+        <ImageView
+            android:id="@+id/ly_title_back_icon"
+            android:layout_height="12dp"
+            android:layout_width="8dp"
+            android:scaleType="fitXY"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ly_title_back_icon" />
+
+        <TextView
+            android:id="@+id/ly_title_title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/ly_style_big_btn_text"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ly_title_back_icon"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/ly_common_btn_text_selector"
+            android:text="@string/ly_recharge_phone_card" />
+    </RelativeLayout>
+
+</RelativeLayout>
