@@ -3,8 +3,7 @@
 
 # 系统要求
 #android：
-#Java JDK1.7或1.8
-#
+#Java JDK1.7或1.8，android sdk8.0以上（至少升到了27）
 
 # Unity3D版本支持
 Unity全版本支持
