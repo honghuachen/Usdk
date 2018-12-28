@@ -11,10 +11,10 @@ import com.baidu.gamesdk.OnGameExitListener;
 import com.baidu.gamesdk.ResultCode;
 import com.baidu.platformsdk.PayOrderInfo;
 import com.usdk.platform.adapter.IPlatformCallBack;
-import com.usdk.platform.adapter.ProxyBase;
+import com.usdk.platform.adapter.PlatformProxyBase;
 import com.usdk.platform.adapter.SdkPayInfo;
 
-public class PlatformProxy extends ProxyBase {
+public class PlatformProxy extends PlatformProxyBase {
 	private String mtoken;
 	private String uid;
 
@@ -30,7 +30,7 @@ public class PlatformProxy extends ProxyBase {
 
 					@Override
 					public void onGameExit() {
-						platformCallBackWrapper
+						platformCallBack
 								.exitGameCallBack(IPlatformCallBack.ErrorCode.ExitSuccess
 										.ordinal());
 					}
@@ -44,7 +44,7 @@ public class PlatformProxy extends ProxyBase {
 	public void logout(String custom_params_) {
 		BDGameSDK.logout();
 		uid = "";
-		platformCallBackWrapper.logoutCallBack(
+		platformCallBack.logoutCallBack(
 				IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(), "logout");
 	}
 
@@ -65,19 +65,19 @@ public class PlatformProxy extends ProxyBase {
 							mtoken = arg0 + "&" + arg1;
 
 							BDGameSDK.showFloatView(mActivity);
-							platformCallBackWrapper.loginCallBack(
+							platformCallBack.loginCallBack(
 									IPlatformCallBack.ErrorCode.LoginSuccess
 											.ordinal(), resultDesc);
 							break;
 						case ResultCode.LOGIN_CANCEL:
-							platformCallBackWrapper.loginCallBack(
+							platformCallBack.loginCallBack(
 									IPlatformCallBack.ErrorCode.LoginCancel
 											.ordinal(), resultDesc);
 							break;
 						case ResultCode.LOGIN_FAIL:
 						default:
 							uid = "";
-							platformCallBackWrapper.loginCallBack(
+							platformCallBack.loginCallBack(
 									IPlatformCallBack.ErrorCode.LoginFail
 											.ordinal(), resultDesc);
 							break;
@@ -111,23 +111,23 @@ public class PlatformProxy extends ProxyBase {
 							PayOrderInfo extraData) {
 						switch (resultCode) {
 						case ResultCode.PAY_SUCCESS:
-							platformCallBackWrapper.payCallBack(
+							platformCallBack.payCallBack(
 									IPlatformCallBack.ErrorCode.PaySuccess
 											.ordinal(), resultDesc);
 							break;
 						case ResultCode.PAY_CANCEL:
-							platformCallBackWrapper.payCallBack(
+							platformCallBack.payCallBack(
 									IPlatformCallBack.ErrorCode.PayCancel
 											.ordinal(), resultDesc);
 							break;
 						case ResultCode.PAY_FAIL: 
-							platformCallBackWrapper.payCallBack(
+							platformCallBack.payCallBack(
 									IPlatformCallBack.ErrorCode.PayFail
 											.ordinal(), resultDesc);
 							break;
 						case ResultCode.PAY_SUBMIT_ORDER:
 						default:
-							platformCallBackWrapper.payCallBack(
+							platformCallBack.payCallBack(
 									IPlatformCallBack.ErrorCode.PayOthers
 											.ordinal(), resultDesc);
 							break;
@@ -151,13 +151,13 @@ public class PlatformProxy extends ProxyBase {
 					Void extraData) {
 				switch (resultCode) {
 				case ResultCode.INIT_SUCCESS:
-					platformCallBackWrapper.initSDKCallBack(
+					platformCallBack.initSDKCallBack(
 							IPlatformCallBack.ErrorCode.InitSuccess.ordinal(),
 							resultDesc);
 					break;
 				case ResultCode.INIT_FAIL:
 				default:
-					platformCallBackWrapper.initSDKCallBack(
+					platformCallBack.initSDKCallBack(
 							IPlatformCallBack.ErrorCode.InitFail.ordinal(),
 							resultDesc);
 					break;
@@ -190,7 +190,7 @@ public class PlatformProxy extends ProxyBase {
 					String arg1 = "arg1@" + BDGameSDK.getLoginUid();
 					mtoken = arg0 + "&" + arg1;
 			
-					platformCallBackWrapper.logoutCallBack(
+					platformCallBack.logoutCallBack(
 							IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
 							resultDesc);
 					break;

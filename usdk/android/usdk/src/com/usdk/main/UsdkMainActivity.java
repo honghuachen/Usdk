@@ -10,7 +10,7 @@ import android.view.WindowManager;
 
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
-import com.usdk.sdk.UsdkFactory;
+import com.usdk.sdk.Usdk;
 
 public class UsdkMainActivity extends UnityPlayerActivity{
 
@@ -22,7 +22,7 @@ public class UsdkMainActivity extends UnityPlayerActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		UsdkFactory.onCreate(UsdkMainActivity.this, savedInstanceState);
+		Usdk.onCreate(UsdkMainActivity.this, savedInstanceState);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
@@ -30,43 +30,43 @@ public class UsdkMainActivity extends UnityPlayerActivity{
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		UsdkFactory.onStart();
+		Usdk.onStart();
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		UsdkFactory.onDestroy();
+		Usdk.onDestroy();
 	}
 
 	@Override
 	public void onRestart() {
 		super.onRestart();
-		UsdkFactory.onRestart();
+		Usdk.onRestart();
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		UsdkFactory.onStop();
+		Usdk.onStop();
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		UsdkFactory.onResume();
+		Usdk.onResume();
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-		UsdkFactory.onPause();
+		Usdk.onPause();
 	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		super.onActivityResult(requestCode, resultCode, intent);
-		UsdkFactory.onActivityResult(requestCode, resultCode, intent);
+		Usdk.onActivityResult(requestCode, resultCode, intent);
 	}
 
 	@SuppressLint("Override")
@@ -77,54 +77,54 @@ public class UsdkMainActivity extends UnityPlayerActivity{
 //		{
 //			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 //		}
-		UsdkFactory.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		Usdk.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
 	@Override
 	public void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		UsdkFactory.onNewIntent(intent);
+		Usdk.onNewIntent(intent);
 	}
 
 	@Override
 	public void onConfigurationChanged(Configuration arg0) {
 		// TODO Auto-generated method stub
 		super.onConfigurationChanged(arg0);
-		UsdkFactory.onConfigurationChanged(arg0);
+		Usdk.onConfigurationChanged(arg0);
 	}
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		// TODO Auto-generated method stub
 		super.onSaveInstanceState(outState);
-		UsdkFactory.onSaveInstanceState(outState);
+		Usdk.onSaveInstanceState(outState);
 	}
 
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		UsdkFactory.onBackPressed();
+		Usdk.onBackPressed();
 	}
 
 	@Override
 	public void finish() {
 		// TODO Auto-generated method stub
-		UsdkFactory.finish();
+		Usdk.finish();
 		super.finish();
 	}
 
 	@Override
 	public boolean onKeyDown(int arg0, KeyEvent arg1) {
 		// TODO Auto-generated method stub
-		return UsdkFactory.onKeyDown(arg0, arg1);
+		return Usdk.onKeyDown(arg0, arg1);
 		
 	}
 
 	@Override
 	public boolean onKeyUp(int arg0, KeyEvent arg1) {
 		// TODO Auto-generated method stub
-		return UsdkFactory.onKeyUp(arg0, arg1);
+		return Usdk.onKeyUp(arg0, arg1);
 	}
 	
 	
