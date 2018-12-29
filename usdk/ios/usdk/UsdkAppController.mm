@@ -1,5 +1,5 @@
 #import "UnityAppController.h"
-#import "UsdkFactory.h"
+#import "Usdk.h"
 
 @interface UsdkAppController : UnityAppController
 @end

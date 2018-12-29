@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Usdk()
+@interface UsdkBase :NSObject
 - (void) getConfig:(NSString*)key;
 - (void)sendU3dMessage:(NSString *)messageName param:(NSDictionary *)args;
 - (void)sendU3dStringMessage:(NSString *)messageName param:(NSString *)args;

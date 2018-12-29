@@ -1,5 +1,5 @@
 #import "Usdk.h"
-#import "PlatformProxy.h"
+#import "UsdkBase.h"
 
 #if defined(__cplusplus)
 extern "C" {
@@ -50,12 +50,12 @@ extern "C" {
 
     void SDKPayStart(const char* product_id, int amount)
     {
-        [[Usdk instance] zwwxpayStart:CreateNSString(product_id) amount:amount];
+        [[Usdk instance] payStart:CreateNSString(product_id) amount:amount];
     }
 
     void SDKPay(const char* pay_info)
     {
-        [[Usdk instance] zwwxpay:CreateNSString(pay_info)];
+        [[Usdk instance] pay:CreateNSString(pay_info)];
     }
 
     void SDKReleaseSdkResource(const char* args_)
@@ -104,7 +104,7 @@ extern "C" {
         return len;
     }
     
-    void SDKCallPlugin(const char* method, const char** args)
+    void SDKCallPlugin(const char* pluginName,const char* method, const char** args)
     {
         printf("iOSMethod method %s\n", method);
         int length = GetArgsLen(args);
@@ -118,10 +118,10 @@ extern "C" {
         
         NSString * methodName = CreateNSString(method);
 
-        [[Usdk instance] CalliOSMethod:methodName with:params];
+        [[Usdk instance] callPlugin:CreateNSString(pluginName) methodName:methodName with:params];
     }
 
-    const char* SDKCallPluginR(const char* method, const char** args)
+    const char* SDKCallPluginR(const char* pluginName,const char* method, const char** args)
     {
         printf("IosMethodReturnInt method %s\n", method);
         int length = GetArgsLen(args);
@@ -133,7 +133,7 @@ extern "C" {
             [params addObject:param];
         }
         NSString * methodName = CreateNSString(method);
-        NSString * ret = [[Usdk instance] CalliOSMethodReturnString:methodName with:params];
+        NSString * ret = [[Usdk instance] callPluginR:CreateNSString(pluginName) methodName:methodName with:params];
         return MakeStringCopy(ret);
     }
     
@@ -150,15 +150,16 @@ static Usdk* _instance = nil;
 
 +(Usdk*) instance
 {
-    if (!_instance) {
+    if (!_instance)
+    {
         _instance = [[Usdk alloc] init];
-        _instance.platformProxy  = [_instance loadPlugin:@"PlatformProxy"];
+        _instance.platformProxy  = (PlatformProxyBase*)[_instance loadPlugin:@"PlatformProxy"];
         _instance.m_pluginMap = [NSMutableDictionary dictionary];
     }
     return _instance;
 }
 
-- (void) setSdkCallBackReceiver:(NSString*) receiver_name
+- (void) setSdkCallBackReceiver:(NSString*)receiver_name
 {
     [platformProxy setSdkCallBackReceiver:receiver_name];
 }
@@ -215,39 +216,37 @@ static Usdk* _instance = nil;
 
 - (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
 {
-    UsdkBase *plugin = [self loadPlugin:pluginName]
+    UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
-        SEL selector = NSSelectorFromString(methodName);
-        [plugin performSelector:selector with:args];
+        [plugin performSelector:@selector(methodName) withObject:args];
     }
 }
 
 - (NSString*)callPluginR:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
 {
-    UsdkBase *plugin = [self loadPlugin:pluginName]
+    UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
-        SEL selector = NSSelectorFromString(methodName);
-        return [plugin performSelector:selector with:args];
+        return [plugin performSelector:@selector(methodName) withObject:args];
     }
-    return "";
+    return @"";
 }
 
 - (UsdkBase*)loadPlugin:(NSString*)pluginName
 {
     //通过KEY找到value
-    NSObject *object = [m_pluginMap objectForKey:pluginName];
+    UsdkBase *object = [m_pluginMap objectForKey:pluginName];
     if (object != nil) 
         return object;
     else
     {
-        Class *pluginClass = NSClassFromString(pluginName);
+        Class pluginClass = NSClassFromString(pluginName);
         if(pluginClass != nil)
         {
             UsdkBase *plugin = [[pluginClass alloc] init];
-            [m_pluginMap setObject:pluginName forkey:plugin];
-            [plugin didFinishLaunchingWithOptions:m_application didFinishLaunchingWithOptions:m_launchOptions]
+            [m_pluginMap setValue:plugin forkey:pluginName];
+            [plugin application:m_application didFinishLaunchingWithOptions:m_launchOptions];
             return plugin;
         }
     }
@@ -280,7 +279,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationWillResignActive:application]
+            [plugin applicationWillResignActive:application];
     }
 }
 
@@ -291,7 +290,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationDidBecomeActive:application]
+            [plugin applicationDidBecomeActive:application];
     }
 }
 
@@ -302,7 +301,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationWillEnterForeground:application]
+            [plugin applicationWillEnterForeground:application];
     }
 }
 
@@ -313,7 +312,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationDidEnterBackground:application]
+            [plugin applicationDidEnterBackground:application];
     }
 }
 
@@ -323,7 +322,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationWillTerminate:application]
+            [plugin applicationWillTerminate:application];
     }
 }
 
@@ -334,7 +333,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin applicationDidReceiveMemoryWarning:application]
+            [plugin applicationDidReceiveMemoryWarning:application];
     }
 }
 
@@ -345,7 +344,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken]
+            [plugin application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
     }
 }
 
@@ -356,7 +355,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin application:application didFailToRegisterForRemoteNotificationsWithError:error]
+            [plugin application:application didFailToRegisterForRemoteNotificationsWithError:error];
     }
 }
 
@@ -367,7 +366,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin application:application didReceiveRemoteNotification:userInfo]
+            [plugin application:application didReceiveRemoteNotification:userInfo];
     }
 }
 
@@ -376,7 +375,7 @@ static Usdk* _instance = nil;
     {
         UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
         if(plugin != nil)
-            [plugin application:application supportedInterfaceOrientationsForWindow:window]
+            [plugin application:application supportedInterfaceOrientationsForWindow:window];
     }
 }
 @end

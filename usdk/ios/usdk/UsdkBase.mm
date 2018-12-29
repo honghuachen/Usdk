@@ -4,7 +4,7 @@
 extern "C" {
 #endif
     extern void UnitySendMessage(const char *, const char *, const char *);
-    extern NSString *CreateNSString (const char* string);  
+    extern NSString *CreateNSString (const char* string);
 #if defined(__cplusplus)
 }
 #endif

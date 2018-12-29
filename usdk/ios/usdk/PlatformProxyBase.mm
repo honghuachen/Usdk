@@ -1,5 +1,11 @@
 #import "PlatformProxyBase.h"
 
+@implementation SDKPayInfo
+@end
+
+@implementation SDKRoleInfo
+@end
+
 @implementation PlatformProxyBase
 - (void) setSdkCallBackReceiver:(NSString*) receiver_name{}
 - (void) login:(NSString*)arg{}

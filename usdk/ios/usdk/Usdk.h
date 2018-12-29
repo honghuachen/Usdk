@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PlatformProxyBase.h"
 
 #define ERROR_CODE              @"errorCode"
 #define MESSAGE                 @"message"
@@ -33,14 +34,13 @@ typedef NS_ENUM(NSInteger, SdkCallBackErrorCode)
     PayOthers,
 };
 
-#pragma mark - Usdk
-@interface Usdk()
-@property PlatformProxy *platformProxy;
+@interface Usdk :NSObject
++(Usdk*) instance;
+@property PlatformProxyBase *platformProxy;
 @property NSMutableDictionary *m_pluginMap;
 @property UIApplication *m_application;
 @property NSDictionary *m_launchOptions;
 
-+(Usdk*) _instance;
 - (void) setSdkCallBackReceiver:(NSString*) receiver_name;
 - (void) login:(NSString*)args;
 - (void) logout:(NSString*) args;
