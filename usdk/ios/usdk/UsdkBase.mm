@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 @implementation UsdkBase
-- (void) getConfig:(NSString*)key{}
+- (NSString*) getConfig:(NSString*)key{return @"";}
 - (void)sendU3dMessage:(NSString *)messageName param:(NSDictionary *)dict
 {
     NSString *param = @"";
@@ -55,6 +55,6 @@ extern "C" {
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error{}
  //程序运收远程通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {}
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {}
+- (void)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {}
 @end
 

@@ -1,5 +1,4 @@
 #import "Usdk.h"
-#import "UsdkBase.h"
 
 #if defined(__cplusplus)
 extern "C" {
@@ -245,7 +244,7 @@ static Usdk* _instance = nil;
         if(pluginClass != nil)
         {
             UsdkBase *plugin = [[pluginClass alloc] init];
-            [m_pluginMap setValue:plugin forkey:pluginName];
+            [m_pluginMap setObject:plugin forKeyedSubscript:pluginName];
             [plugin application:m_application didFinishLaunchingWithOptions:m_launchOptions];
             return plugin;
         }
@@ -275,9 +274,10 @@ static Usdk* _instance = nil;
 
  //App将要进入前台
 - (void)applicationWillResignActive:(UIApplication *)application {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationWillResignActive:application];
     }
@@ -286,9 +286,10 @@ static Usdk* _instance = nil;
  //App已经进入前台
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationDidBecomeActive:application];
     }
@@ -297,9 +298,10 @@ static Usdk* _instance = nil;
  //App将要进入后台
 - (void)applicationWillEnterForeground:(UIApplication *)application 
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationWillEnterForeground:application];
     }
@@ -308,9 +310,10 @@ static Usdk* _instance = nil;
  //App已经进入后台
 - (void)applicationDidEnterBackground:(UIApplication *)application 
 {   
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationDidEnterBackground:application];
     }
@@ -318,9 +321,10 @@ static Usdk* _instance = nil;
 
  //App将要退出
 - (void)applicationWillTerminate:(UIApplication *)application {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationWillTerminate:application];
     }
@@ -329,9 +333,10 @@ static Usdk* _instance = nil;
  //App内存警告
 -  (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin applicationDidReceiveMemoryWarning:application];
     }
@@ -340,9 +345,10 @@ static Usdk* _instance = nil;
  //当应用程序成功的注册一个推送服务
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
     }
@@ -351,9 +357,10 @@ static Usdk* _instance = nil;
  //当 APS无法成功的完成向 程序进程推送时
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin application:application didFailToRegisterForRemoteNotificationsWithError:error];
     }
@@ -362,18 +369,20 @@ static Usdk* _instance = nil;
  //程序运收远程通知
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo 
 {
-    for(NSString *pluginName in m_pluginMap) 
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin application:application didReceiveRemoteNotification:userInfo];
     }
 }
 
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    for(NSString *pluginName in m_pluginMap) 
+- (void)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionaryWithDictionary:m_pluginMap];
+    for(NSString *pluginName in tempDic)
     {
-        UsdkBase *plugin = [m_pluginMap objectForKey:pluginName];
+        UsdkBase *plugin = [tempDic objectForKey:pluginName];
         if(plugin != nil)
             [plugin application:application supportedInterfaceOrientationsForWindow:window];
     }

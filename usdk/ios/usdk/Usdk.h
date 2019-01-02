@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "PlatformProxyBase.h"
+#import "IUsdkBase.h"
+#import "UsdkBase.h"
 
 #define ERROR_CODE              @"errorCode"
 #define MESSAGE                 @"message"
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger, SdkCallBackErrorCode)
     PayOthers,
 };
 
-@interface Usdk :NSObject
+@interface Usdk :NSObject<IUsdkBase>
 +(Usdk*) instance;
 @property PlatformProxyBase *platformProxy;
 @property NSMutableDictionary *m_pluginMap;
@@ -51,21 +53,8 @@ typedef NS_ENUM(NSInteger, SdkCallBackErrorCode)
 - (void) releaseSdkResource:(NSString*)args;
 - (void) switchAccount:(NSString*) args;
 - (void)setProductIdentifiers:(NSArray*)identifers;
-- (void)getConfig:(NSString*)key;
 - (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (NSString*)callPluginR:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (UsdkBase*)loadPlugin:(NSString*)pluginName;
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation NS_AVAILABLE_IOS(4_2);
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions ;
-- (void)applicationWillResignActive:(UIApplication *)application ;
-- (void)applicationDidBecomeActive:(UIApplication *)application;
-- (void)applicationWillEnterForeground:(UIApplication *)application ;
-- (void)applicationDidEnterBackground:(UIApplication *)application ;
-- (void)applicationWillTerminate:(UIApplication *)application ;
--  (void)applicationDidReceiveMemoryWarning:(UIApplication *)application;
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken ;
-- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error;
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo ;
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window;
+- (NSString*)getConfig:(NSString*)key;
 @end

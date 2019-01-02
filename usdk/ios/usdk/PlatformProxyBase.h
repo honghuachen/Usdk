@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UsdkBase.h"
+#import "IUsdkBase.h"
 
 /**
  @breif 玩家信息属性
@@ -56,7 +57,7 @@
 @property (nonatomic, copy) NSString *pay_type;
 @end
 
-@interface PlatformProxyBase : UsdkBase
+@interface PlatformProxyBase : UsdkBase<IUsdkBase>
 - (void) setSdkCallBackReceiver:(NSString*) receiver_name;
 - (void) login:(NSString*)arg;
 - (void) logout:(NSString*) arg;
