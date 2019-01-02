@@ -11,15 +11,14 @@
 #define TRANSACTION_ID          @"transactionid"
 
 //callback method name
-#define INIT_SDK_CALLBACK           @"initSDKCallBack"
+#define INIT_SDK_CALLBACK           @"initSdkCallBack"
 #define EXIT_GAME_CALLBACK          @"exitGameCallBack"
 #define LOGIN_CALLBACK              @"loginCallBack"
 #define LOGOUT_CALLBACK             @"logoutCallBack"
 #define PAY_CALLBACK                @"payCallBack"
 #define APPLEPAY_CALLBACK           @"applePayCallBack"
-#define EXCHANGE_GIFTCODE_CALLBACK  @"exchangeGiftCodeCallBack"
 
-typedef NS_ENUM(NSInteger, SdkCallBackErrorCode)
+typedef NS_ENUM(NSInteger, UsdkCallBackErrorCode)
 {
     InitSuccess = 0,
     InitFail,

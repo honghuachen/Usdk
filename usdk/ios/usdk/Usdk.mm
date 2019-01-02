@@ -208,9 +208,9 @@ static Usdk* _instance = nil;
     [platformProxy setProductIdentifiers:identifers];
 }
 
-- (void)getConfig:(NSString*)key
+- (NSString*)getConfig:(NSString*)key
 {
-    [platformProxy getConfig:key];
+    return [platformProxy getConfig:key];
 }
 
 - (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
