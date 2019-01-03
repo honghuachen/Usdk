@@ -1,0 +1,14 @@
+{
+  "assets" : [
+    {
+      "filename" : "icon1.imageset",
+      "idiom" : "tv",
+      "role" : "primary-app-icon",
+      "size" : "128x256"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}

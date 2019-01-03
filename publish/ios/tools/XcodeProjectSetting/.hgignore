@@ -1,0 +1,5 @@
+syntax:glob
+*.unc-backup*
+.DS_Store
+bin
+obj

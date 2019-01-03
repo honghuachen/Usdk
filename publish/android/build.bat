@@ -15,7 +15,7 @@ set global_gradle=%gradlebuildTemp%\global.gradle
 set buildType=debug
 set platform,subPlatform,platformPath=
 set versionName,versionCode=
-set build,keystore,package,appame,cdn,plugins,icon,splash=
+set build,keystore,package,appname,cdn,plugins,icon,splash=
 
 ::==================================================================================
 :Main

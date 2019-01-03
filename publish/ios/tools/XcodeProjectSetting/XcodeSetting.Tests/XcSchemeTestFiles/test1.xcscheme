@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scheme LastUpgradeVersion="0500" version="1.3">
+  <LaunchAction launchStyle="0" useCustomWorkingDirectory="NO" buildConfiguration="ReleaseForRunning" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" allowLocationSimulation="YES">
+    <BuildableProductRunnable runnableDebuggingMode="0">
+      <BuildableReference>
+      </BuildableReference>
+    </BuildableProductRunnable>
+    <AdditionalOptions>
+    </AdditionalOptions>
+  </LaunchAction>
+</Scheme>

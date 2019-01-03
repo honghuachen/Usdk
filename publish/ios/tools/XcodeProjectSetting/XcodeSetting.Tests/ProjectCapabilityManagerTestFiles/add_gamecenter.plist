@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleDisplayName</key>
+    <string>KeyboardTypes</string>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleIconFiles</key>
+    <array>
+      <string>AppIcon57x57.png</string>
+      <string>AppIcon57x57@2x.png</string>
+      <string>AppIcon60x60@2x.png</string>
+      <string>AppIcon72x72@2x~ipad.png</string>
+      <string>AppIcon72x72~ipad.png</string>
+      <string>AppIcon76x76@2x~ipad.png</string>
+      <string>AppIcon76x76~ipad.png</string>
+    </array>
+    <key>CFBundleIdentifier</key>
+    <string>com.${PRODUCT_NAME}</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>0</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true />
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true />
+    </dict>
+    <key>UIApplicationExitsOnSuspend</key>
+    <false />
+    <key>UILaunchStoryboardName~ipad</key>
+    <string>LaunchScreen-iPad</string>
+    <key>UILaunchStoryboardName~iphone</key>
+    <string>LaunchScreen-iPhone</string>
+    <key>UILaunchStoryboardName~ipod</key>
+    <string>LaunchScreen-iPhone</string>
+    <key>UIPrerenderedIcon</key>
+    <false />
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+      <string>armv7</string>
+      <string>gamekit</string>
+    </array>
+    <key>UIRequiresFullScreen</key>
+    <true />
+    <key>UIRequiresPersistentWiFi</key>
+    <false />
+    <key>UIStatusBarHidden</key>
+    <true />
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleDefault</string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <true />
+  </dict>
+</plist>

@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "data1.png",
+      "idiom" : "universal",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "data2.png",
+      "height-class" : "compact",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}

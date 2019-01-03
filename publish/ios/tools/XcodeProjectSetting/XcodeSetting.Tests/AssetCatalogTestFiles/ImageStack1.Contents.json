@@ -1,0 +1,14 @@
+{
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  },
+  "layers" : [
+    {
+      "filename" : "layer1.imagestacklayer"
+    },
+    {
+      "filename" : "layer2.imagestacklayer"
+    }
+  ]
+}

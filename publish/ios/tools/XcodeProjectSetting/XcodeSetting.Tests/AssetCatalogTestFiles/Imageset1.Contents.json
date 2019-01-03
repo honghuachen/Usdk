@@ -1,0 +1,48 @@
+{
+  "images" : [
+    {
+      "filename" : "data1.png",
+      "idiom" : "universal",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "data2.png",
+      "height-class" : "compact",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "data3.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "alignment-insets" : {
+        "bottom" : 2,
+        "left" : 3,
+        "right" : 4,
+        "top" : 1
+      },
+      "filename" : "data4.png",
+      "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 2,
+          "left" : 3,
+          "right" : 4,
+          "top" : 1
+        },
+        "center" : {
+          "height" : 4,
+          "mode" : "stretch",
+          "width" : 2
+        },
+        "mode" : "9-part"
+      },
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}

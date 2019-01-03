@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>test</key>
+    <string>ABCD</string>
+    <key>test2</key>
+    <string>${value}</string>
+    <key>test3</key>
+    <string>
+        value
+    </string>
+    <key>testarray</key>
+    <array>
+      <string>valuestring</string>
+      <integer>123</integer>
+      <true />
+    </array>
+    <key>test-array</key>
+    <array>
+      <string>value1</string>
+      <string>value2</string>
+    </array>
+    <key>testbool</key>
+    <false />
+    <key>test-bool</key>
+    <false />
+    <key>test-bool2</key>
+    <false />
+    <key>test-bool3</key>
+    <true />
+    <key>test-empty-array</key>
+    <array />
+    <key>testinteger</key>
+    <integer>123</integer>
+    <key>test-integer</key>
+    <integer>-1</integer>
+    <key>testquotes</key>
+    <string>"quotes"</string>
+    <key>testspecial</key>
+    <string>&lt;&gt;&amp;'</string>
+  </dict>
+</plist>

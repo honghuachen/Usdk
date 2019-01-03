@@ -1,0 +1,16 @@
+{
+  "data" : [
+    {
+      "filename" : "data1.dat",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "on-demand-resource-tags" : [
+      "tag1",
+      "tag2"
+    ],
+    "version" : 1
+  }
+}

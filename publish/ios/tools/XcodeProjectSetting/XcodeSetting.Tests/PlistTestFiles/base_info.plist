@@ -1,0 +1,24 @@
+﻿<plist version="1.0">
+<dict>
+	<key>test</key><string>val</string>
+	<key>test2</key>
+	<string>${value}</string>
+	<key>test3</key>
+	<string>
+		value
+	</string>
+	<key>test-array</key>
+	<array>
+		<string>value1</string>
+		<string>value2</string>
+	</array>
+	<key>test-empty-array</key>
+	<array></array>
+	<key>test-bool</key>
+	<false/>
+	<key>test-bool2</key><false/>
+	<key>test-bool3</key><true/>
+	<key>test-integer</key>
+	<integer>-1</integer>
+</dict>
+</plist>

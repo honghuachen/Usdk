@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2301D70B-617E-49AB-97B4-0BF15CF8E167}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Unity.iOS.Extensions.Xcode</RootNamespace>
+    <AssemblyName>Unity.iOS.Extensions.Xcode</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="main.cs" />
+    <Compile Include="PBXCapabilityType.cs" />
+    <Compile Include="PBXProject.cs" />
+    <Compile Include="ProjectCapabilityManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PlistParser.cs" />
+    <Compile Include="PBX\Lexer.cs" />
+    <Compile Include="PBX\Parser.cs" />
+    <Compile Include="PBX\Serializer.cs" />
+    <Compile Include="PBX\Objects.cs" />
+    <Compile Include="PBX\Sections.cs" />
+    <Compile Include="PBX\Utils.cs" />
+    <Compile Include="PBX\Elements.cs" />
+    <Compile Include="PBXProjectData.cs" />
+    <Compile Include="JsonParser.cs" />
+    <Compile Include="AssetCatalog.cs" />
+    <Compile Include="PBXPath.cs" />
+    <Compile Include="PBXProjectExtensions.cs" />
+    <Compile Include="XcodeSetting\XcodeSetting.cs" />
+    <Compile Include="XcodeSetting\HashtableEX.cs" />
+    <Compile Include="XcodeSetting\MiniJSON.cs" />
+    <Compile Include="XcScheme.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="XcodeSetting\XcodeSetting - 复制.json" />
+    <None Include="XcodeSetting\XcodeSetting.json" />
+    <None Include="XcodeSetting\XcodeSettingTemplate.json" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy NoTabsAfterNonTabs="True" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentSwitchBody="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ElseNewLinePlacement="NewLine" CatchNewLinePlacement="NewLine" FinallyNewLinePlacement="NewLine" WhileNewLinePlacement="DoNotCare" ArrayInitializerWrapping="DoNotChange" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

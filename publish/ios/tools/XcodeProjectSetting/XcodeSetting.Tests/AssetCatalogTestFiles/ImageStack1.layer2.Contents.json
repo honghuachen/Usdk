@@ -1,0 +1,13 @@
+{
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  },
+  "properties" : {
+    "content-reference" : {
+      "matching-style" : "fully-qualified-name",
+      "name" : "Image1",
+      "type" : "image-set"
+    }
+  }
+}

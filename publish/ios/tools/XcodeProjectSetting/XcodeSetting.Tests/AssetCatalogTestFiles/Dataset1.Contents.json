@@ -1,0 +1,25 @@
+{
+  "data" : [
+    {
+      "filename" : "data1.dat",
+      "idiom" : "ipad"
+    },
+    {
+      "filename" : "data2.dat",
+      "idiom" : "universal",
+      "memory" : "1GB",
+      "universal-type-identifier" : "testtype1"
+    },
+    {
+      "filename" : "data3",
+      "graphics-feature-set" : "metal1v2",
+      "idiom" : "universal",
+      "memory" : "2GB",
+      "universal-type-identifier" : "testtype2"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}

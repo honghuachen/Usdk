@@ -1,0 +1,9 @@
+{
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  },
+  "properties" : {
+    "provides-namespace" : true
+  }
+}

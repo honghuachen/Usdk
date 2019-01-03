@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "data1.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}

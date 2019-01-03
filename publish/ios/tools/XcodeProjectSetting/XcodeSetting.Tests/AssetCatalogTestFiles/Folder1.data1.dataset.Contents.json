@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "data1.dat",
+      "idiom" : "ipad"
+    }
+  ],
+  "info" : {
+    "author" : "test.test",
+    "version" : 1
+  }
+}
