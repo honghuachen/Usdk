@@ -21,7 +21,7 @@
 	},
 	"properties":{
 		"=":{
-			"ENABLE_BITCODE":"NO",
+			"ENABLE_BITCODE":"YES",
 			"GCC_ENABLE_OBJC_EXCEPTIONS":"YES"
 			},
 		"+":{
@@ -30,6 +30,8 @@
 		"-":{}
 	},
 	"plist":{
+		"AppID":"123456",
+		"CFBundleDisplayName":"我爱我的祖国",
 		"CFBundleURLTypes":[
 			{
 				"CFBundleTypeRole":"Editor",
@@ -77,9 +79,7 @@
 	},
 	"files":{},
 	"folders":{
-		"iOSAdd/Album":"Libraries/Plugins/iOS/Album",
-		"iOSAdd/ShareSDK":"ShareSDK",
-		"iOSAdd/ShareREC":"ShareREC"
+		"src":"Libraries/Plugins/iOS/Usdk"
 	},
 	"filesCompileFlag":{
 		"Libraries/Plugins/iOS/JSONKit.m":["-fno-objc-arc"]

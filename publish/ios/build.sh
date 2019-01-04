@@ -41,7 +41,7 @@ function __showPlatforms(){
 		array=(${var//-/ })  	
 		if [[ ${val} =~ ${array[0]} ]]
 		then
-		  echo "包含"
+		  t="包含"
 		else
 		  val=${val}" "${array[0]}
 		fi
@@ -115,13 +115,18 @@ function __modifyVersion(){
 }
 
 function __buildUnity(){
+	tempDir=$RootPath/build
+	if [ -d "$tempDir" ];then
+		rm -rf $tempDir
+	fi
+	mkdir $tempDir
+
 	package=( $( __getPublishProperties package ) )
 	appname=( $( __getPublishProperties appname ) )
 	cdn=( $( __getPublishProperties cdn ) )
 	plugins=( $( __getPublishProperties plugins ) )
 	icon=( $( __getPublishProperties icon ) )
 	splash=( $( __getPublishProperties splash ) )
-	
 	echo $package $appname $cdn $plugins $icon $splash
 	
 	echo -e "\n------------Xcode export------------"
@@ -140,16 +145,36 @@ function __buildUnity(){
 	#"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -quit -batchmode -logFile $logfile
 	#"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -logFile $logfile
 	
+	cp -arf $XCODE_OUT_PATH $tempDir
+	#gen app XcodeSetting.json
+	appConfigPath=$tempDir/XcodeSetting.json
+	echo {>$appConfigPath
+	echo -e	"	\"plist\":{">>$appConfigPath
+	echo -e	"		\"CFBundleDisplayName\":\"$appname\",">>$appConfigPath
+	echo -e	"		\"CFBundleIdentifier\":\"$package\",">>$appConfigPath
+	echo -e	"		\"CFBundleShortVersionString\":\"$versionCode\"">>$appConfigPath
+	echo -e	"	}">>$appConfigPath
+	echo }>>$appConfigPath
+	
+	tempXcodeDir="$tempDir"/$platform
+	echo -e "\n------------app XcodeSetting------------"
+	usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
+	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $appConfigPath
+	
+	echo -e "\n------------Usdk XcodeSetting------------"
+	usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
+	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $usdkConfigPath
+	
 	echo -e "\n------------platform XcodeSetting------------"
-	platformPath=$RootPath/sdk/platforms/$platform
-	"$MONO_PATH" ./tools/XcodeSetting.exe "$XCODE_OUT_PATH" $platformPath
+	platformConfigPath=$RootPath/sdk/platforms/$platform/module/XcodeSetting.json
+	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $platformConfigPath
 	
 	echo -e "\n------------plugins XcodeSetting------------"
 	array=(${plugins//,/ }) 
 	for var in ${array[@]}
 	do
-		pluginPath=$RootPath/sdk/plugins/$var
-		"$MONO_PATH" ./tools/XcodeSetting.exe "$XCODE_OUT_PATH" $pluginPath
+		pluginConfigPath=$RootPath/sdk/plugins/$var/module/XcodeSetting.json
+		"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $pluginConfigPath
 	done
 }
 

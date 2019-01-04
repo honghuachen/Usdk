@@ -8,15 +8,14 @@ namespace UnityEditor.iOS.Xcode.Custom
     public class XcodeSetting
     {
         private static string pluginPath = "";
-        public static void OnPostprocessBuild(string xcodePath, string pluginPath)
+        public static void OnPostprocessBuild(string xcodePath, string configPath)
         {
-            XcodeSetting.pluginPath = pluginPath;
+            pluginPath = configPath.Replace("XcodeSetting.json", "");
             string projPath = PBXProject.GetPBXProjectPath(xcodePath);
             PBXProject proj = new PBXProject();
 
             proj.ReadFromString(File.ReadAllText(projPath));
             //读取配置文件
-            string configPath = Path.Combine(pluginPath, "module/XcodeSetting.json");
             string json = File.ReadAllText(configPath);
             Hashtable table = json.hashtableFromJson();
 
@@ -222,6 +221,8 @@ namespace UnityEditor.iOS.Xcode.Custom
         //复制文件
         private static void CopyFiles(PBXProject proj, string xcodePath, Hashtable arg)
         {
+            if (arg == null)
+                return;
             foreach (DictionaryEntry i in arg)
             {
                 //string src = Path.Combine(System.Environment.CurrentDirectory, i.Key.ToString());
@@ -234,6 +235,8 @@ namespace UnityEditor.iOS.Xcode.Custom
         //复制文件夹
         private static void CopyFolders(PBXProject proj, string xcodePath, Hashtable arg)
         {
+            if (arg == null)
+                return;
             foreach (DictionaryEntry i in arg)
             {
                 //string src = Path.Combine(System.Environment.CurrentDirectory, i.Key.ToString());
@@ -260,7 +263,7 @@ namespace UnityEditor.iOS.Xcode.Custom
         private static void CopyFolder(string srcPath, string dstPath)
         {
             if (Directory.Exists(dstPath))
-                Directory.Delete(dstPath);
+                Directory.Delete(dstPath,true);
             if (File.Exists(dstPath))
                 File.Delete(dstPath);
 
@@ -369,6 +372,8 @@ namespace UnityEditor.iOS.Xcode.Custom
 
         private static void SetFilesCompileFlag(PBXProject proj, Hashtable arg)
         {
+            if (arg == null)
+                return;
             string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
             foreach (DictionaryEntry i in arg)
             {

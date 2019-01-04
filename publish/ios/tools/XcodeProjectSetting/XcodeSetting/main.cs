@@ -7,12 +7,12 @@ namespace UnityEditor.iOS.Xcode.Custom
         public static void Main(string[] args)
         {
             string xcodePath = args[0];
-            string pluginPath = args[1];
-            Console.WriteLine("xcodePath=" + xcodePath + " pluginPath=" + pluginPath);
-            XcodeSetting.OnPostprocessBuild(xcodePath, pluginPath);
+            string configPath = args[1];
+            Console.WriteLine("xcodePath=" + xcodePath + " configPath=" + configPath);
+            XcodeSetting.OnPostprocessBuild(xcodePath, configPath);
             Console.WriteLine("********XcodeSetting success");
 
-            //XcodeSetting.OnPostprocessBuild("E:/Usdk/publish/ios/xcode/chuxinhudong", "E:/Usdk/publish/ios/sdk/platforms/chuxinhudong");
+            //XcodeSetting.OnPostprocessBuild("E:\\Usdk\\publish\\ios\\build\\chuxinhudong", "E:/Usdk/publish/ios/build/XcodeSetting.json");
         }
     }
 }
