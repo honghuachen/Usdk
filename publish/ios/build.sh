@@ -178,6 +178,42 @@ function __buildUnity(){
 	done
 }
 
+#打ipa包
+function __buildIPA(){
+	ipatypes=( $( __getPublishProperties ipatypes ) )
+	targetname=Unity-iPhone
+	xcodeprojname=$targetname.xcodeproj
+	xcodeproj=${tempXcodeDir}/$xcodeprojname
+	
+	array=(${ipatypes//,/ }) 
+	for var in ${array[@]}
+	do
+		CODE_SIGN_IDENTITY=( "$( __readINI ${global_properties} CODE_SIGN_IDENTITY $var )" )
+		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
+		time=$(date "+%Y%m%d%H%M%S")
+		ipaoutpath==${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
+
+		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
+		echo -e "<plist version=\"1.0\">">$ExportOptionsPlist
+		echo -e	"<dict>">>$ExportOptionsPlist
+		echo -e	"		<key>provisioningProfiles</key>">>$ExportOptionsPlist
+		echo -e	"		<dict>">>$ExportOptionsPlist
+		echo -e	"			<key>${package}</key>">>$ExportOptionsPlist
+		echo -e	"			<string>$PROVISIONING_PROFILE</string>">>$ExportOptionsPlist
+		echo -e	"		</dict>">>$ExportOptionsPlist
+		echo -e	"		<key>method</key>">>$ExportOptionsPlist
+		echo -e	"		<string>$var</string>">>$ExportOptionsPlist
+		echo -e	"		<key>uploadBitcode</key>">>$ExportOptionsPlist
+		echo -e	"		<false/>">>$ExportOptionsPlist
+		echo -e	"</dict>">>$ExportOptionsPlist
+		echo -e	"</plist>">>$ExportOptionsPlist
+		
+		xcodebuild clean -xcodeproj $xcodeproj -configuration ${buildType} -alltargets
+		xcodebuild -project $xcodeproj -scheme $xcodeprojname -configuration ${buildType} -archivePath build/$targetname-$var.xcarchive clean archive build CODE_SIGN_IDENTITY=$CODE_SIGN_IDENTITY PROVISIONING_PROFILE=$PROVISIONING_PROFILE PRODUCT_BUNDLE_IDENTIFIER=${package}
+		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $AppStoreExportOptionsPlist -exportPath $ipaoutpath
+	done
+}
+
 function __main(){
 	__showVersion
 	echo :Main
