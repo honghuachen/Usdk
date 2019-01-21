@@ -114,12 +114,16 @@ function __modifyVersion(){
 	echo $versionCode >>  ${version_properties}
 }
 
+#构建xcode工程
 function __buildUnity(){
 	tempDir=$RootPath/build
 	if [ -d "$tempDir" ];then
 		rm -rf $tempDir
 	fi
 	mkdir $tempDir
+	if [ ! -d "ipa" ];then
+		mkdir ipa
+	fi
 
 	package=( $( __getPublishProperties package ) )
 	appname=( $( __getPublishProperties appname ) )
@@ -129,23 +133,27 @@ function __buildUnity(){
 	splash=( $( __getPublishProperties splash ) )
 	echo $package $appname $cdn $plugins $icon $splash
 	
-	echo -e "\n------------Xcode export------------"
+	echo -e "\n------------Xcode export,please wait------------"
 	time=$(date "+%Y%m%d%H%M%S")
 	logfile=./logs/$time.log
 	UNITY_PATH=( "$( __readINI ${global_properties} unity unity.exe )" )
 	UNITY_PROJECT_PATH=( "$( __readINI ${global_properties} unity project.dir )" )
-	XCODE_OUT_PATH=( "$( __readINI ${global_properties} unity xcode.outdir )"/$platform )
+	XCODE_OUT_PATH=( "$( __readINI ${global_properties} unity xcode.outdir )" )
 	MONO_PATH=( "$( __readINI ${global_properties} mono mono.exe )" )
 	echo $XCODE_OUT_PATH
+	
+	if [ ! -d $XCODE_OUT_PATH ];then
+		mkdir $XCODE_OUT_PATH
+	fi
 	
 	#kill unity
 	ps -ef | grep Unity | grep -v grep | awk '{print $2}' | xargs kill -9
 	parameter="platform=$platform versionName=$versionName versionCode=$versionCode buildType=$buildType package=$package appName=$appname cdn=$cdn plugins=$plugins icon=$icon splash=$splash xcodeOut=$XCODE_OUT_PATH"
 	#build unity
-	#"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -quit -batchmode -logFile $logfile
+	"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -quit -batchmode -logFile $logfile
 	#"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -logFile $logfile
 	
-	cp -arf $XCODE_OUT_PATH $tempDir
+	cp -arf $XCODE_OUT_PATH/. $tempDir/${platform}
 	#gen app XcodeSetting.json
 	appConfigPath=$tempDir/XcodeSetting.json
 	echo {>$appConfigPath
@@ -178,7 +186,7 @@ function __buildUnity(){
 	done
 }
 
-#打ipa包
+#构建ipa包
 function __buildIPA(){
 	ipatypes=( $( __getPublishProperties ipatypes ) )
 	targetname=Unity-iPhone
@@ -230,11 +238,13 @@ function __main(){
 		buildType=debug
 		__inputPlatforms
 		__buildUnity
+		__buildIPA
 	elif [ $select == 2 ]
 	then
 		buildType=release
 		__inputPlatforms
 		__buildUnity
+		__buildIPA
 	elif [ $select == 3 ]
 	then
 		__modifyVersion
