@@ -192,7 +192,8 @@ function __buildIPA(){
 		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
 		time=$(date "+%Y%m%d%H%M%S")
 		ipaoutpath==${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
-
+		
+		echo -e "\n------------build ipa [$ipaoutpath],please wait------------"
 		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
 		echo -e "<plist version=\"1.0\">">$ExportOptionsPlist
 		echo -e	"<dict>">>$ExportOptionsPlist
