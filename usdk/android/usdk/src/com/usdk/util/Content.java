@@ -35,9 +35,6 @@ import com.unity3d.player.UnityPlayer;
 
 public class Content {
 	public static String getSystemModel() {
-		Boolean isGooglePay = Boolean.parseBoolean( getConfig("isGooglePay") );//forbiden Google Play IMEI
-		if(isGooglePay)
-			return "unknown";
 		return android.os.Build.MODEL;
 	}
 
@@ -105,20 +102,12 @@ public class Content {
 	}
 
 	public static String getCountry() {
-		Boolean isGooglePay = Boolean.parseBoolean( getConfig("isGooglePay") );//forbiden Google Play IMEI
-		if(isGooglePay)
-			return "unknown";
 		String country = UnityPlayer.currentActivity.getResources()
 				.getConfiguration().locale.getCountry();
 		return country;
 	}
 
 	public static String _getDeviceUUID() {
-		Boolean isGooglePay = Boolean.parseBoolean( getConfig("isGooglePay") );//forbiden Google Play IMEI
-		if(isGooglePay)
-			return "unknown";
-		//GP app��ֹ��ȡIMEI
-		//return "";
 		TelephonyManager tm = (TelephonyManager) UnityPlayer.currentActivity
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		String tmDevice = null;
@@ -160,9 +149,6 @@ public class Content {
 	}
 
 	private static String _getMacAddress(Context paramContext) {
-		Boolean isGooglePay = Boolean.parseBoolean( getConfig("isGooglePay") );//forbiden Google Play IMEI
-		if(isGooglePay)
-			return "unknown";
 		String str = null;
 		try {
 			WifiManager localWifiManager = (WifiManager) paramContext
