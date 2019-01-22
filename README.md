@@ -7,6 +7,7 @@
 
 # 文档
 [Android开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/Android%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)
+[iOS开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/iOS%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)
 
 # 系统要求
 #android：
