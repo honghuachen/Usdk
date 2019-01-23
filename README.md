@@ -8,6 +8,7 @@
 # 文档
 [Android开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/Android%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)  
 [iOS开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/iOS%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)
+[Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)
 
 # 系统要求
 #android：
