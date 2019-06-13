@@ -115,7 +115,7 @@ function __modifyVersion(){
 }
 
 #构建xcode工程
-function __buildUnity(){
+function __buildUnity2Xcode(){
 	tempDir=$RootPath/build
 	if [ -d "$tempDir" ];then
 		rm -rf $tempDir
@@ -147,7 +147,7 @@ function __buildUnity(){
 	fi
 	
 	#kill unity
-	ps -ef | grep Unity | grep -v grep | awk '{print $2}' | xargs kill -9
+	#ps -ef | grep Unity | grep -v grep | awk '{print $2}' | xargs kill -9
 	parameter="platform=$platform versionName=$versionName versionCode=$versionCode buildType=$buildType package=$package appName=$appname cdn=$cdn plugins=$plugins icon=$icon splash=$splash xcodeOut=$XCODE_OUT_PATH"
 	#build unity
 	"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -quit -batchmode -logFile $logfile
@@ -166,7 +166,7 @@ function __buildUnity(){
 	
 	tempXcodeDir="$tempDir"/$platform
 	echo -e "\n------------app XcodeSetting------------"
-	usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
+	#usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
 	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $appConfigPath
 	
 	echo -e "\n------------Usdk XcodeSetting------------"
@@ -227,8 +227,8 @@ function __main(){
 	__showVersion
 	echo :Main
 	echo -----------------------------------
-	echo 1.Publish game to debug                  [Debug apk]
-	echo 2.Publish game to release                [Release apk]
+	echo 1.Publish game to debug                  [Debug ipa]
+	echo 2.Publish game to release                [Release ipa]
 	echo 3.Modify version information             [Modify version]
 	echo -----------------------------------
 
@@ -237,14 +237,14 @@ function __main(){
 	then
 		buildType=debug
 		__inputPlatforms
-		__buildUnity
-		__buildIPA
+		__buildUnity2Xcode
+		#__buildIPA
 	elif [ $select == 2 ]
 	then
 		buildType=release
 		__inputPlatforms
-		__buildUnity
-		__buildIPA
+		__buildUnity2Xcode
+		#__buildIPA
 	elif [ $select == 3 ]
 	then
 		__modifyVersion
