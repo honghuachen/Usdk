@@ -254,7 +254,9 @@ namespace UnityEditor.iOS.Xcode.Custom
             {
                 File.Copy(src, des);
                 string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-                proj.AddFileToBuild(target, proj.AddFile(des, des.Replace(xcodePath + "/", ""), PBXSourceTree.Absolute));
+                 // The path is relative to the source folder
+                string relativePath = des.Replace(xcodePath + "/", "");
+                proj.AddFileToBuild(target, proj.AddFile(relativePath, relativePath, PBXSourceTree.Source));
                 AutoAddSearchPath(proj, xcodePath, des);
                 Console.WriteLine("copy file " + src + " -> " + des);
             }
@@ -289,7 +291,7 @@ namespace UnityEditor.iOS.Xcode.Custom
             {
                 string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
                 Console.WriteLine(string.Format("add framework or bundle to build:{0}->{1}", currDir, root));
-                proj.AddFileToBuild(target, proj.AddFile(currDir, root, PBXSourceTree.Source));
+                proj.AddFileToBuild(target, proj.AddFile(root, root, PBXSourceTree.Source));
                 return;
             }
             List<string> folders = new List<string>(Directory.GetDirectories(currDir));
@@ -302,7 +304,7 @@ namespace UnityEditor.iOS.Xcode.Custom
                 {
                     string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
                     Console.WriteLine(string.Format("add framework or bundle to build:{0}->{1}", t_path, t_projPath));
-                    proj.AddFileToBuild(target, proj.AddFile(t_path, t_projPath, PBXSourceTree.Source));
+                    proj.AddFileToBuild(target, proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source));
                     AutoAddSearchPath(proj, xcodePath, t_path);
                 }
                 else
@@ -319,7 +321,7 @@ namespace UnityEditor.iOS.Xcode.Custom
                     string t_path = Path.Combine(currDir, name);
                     string t_projPath = Path.Combine(root, name);
                     string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-                    proj.AddFileToBuild(target, proj.AddFile(t_path, t_projPath, PBXSourceTree.Source));
+                    proj.AddFileToBuild(target, proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source));
                     AutoAddSearchPath(proj, xcodePath, t_path);
                     Console.WriteLine("add file to build:" + Path.Combine(root, file));
                 }
