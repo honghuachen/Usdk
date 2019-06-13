@@ -153,7 +153,7 @@ function __buildUnity2Xcode(){
 	"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -quit -batchmode -logFile $logfile
 	#"$UNITY_PATH" -projectPath "$UNITY_PROJECT_PATH" -executeMethod BuildiOS.Build $parameter -logFile $logfile
 	
-	cp -arf $XCODE_OUT_PATH/. $tempDir/${platform}
+	cp -r $XCODE_OUT_PATH/. $tempDir/${platform}
 	#gen app XcodeSetting.json
 	appConfigPath=$tempDir/XcodeSetting.json
 	echo {>$appConfigPath
@@ -238,13 +238,13 @@ function __main(){
 		buildType=debug
 		__inputPlatforms
 		__buildUnity2Xcode
-		#__buildIPA
+		__buildIPA
 	elif [ $select == 2 ]
 	then
 		buildType=release
 		__inputPlatforms
 		__buildUnity2Xcode
-		#__buildIPA
+		__buildIPA
 	elif [ $select == 3 ]
 	then
 		__modifyVersion
