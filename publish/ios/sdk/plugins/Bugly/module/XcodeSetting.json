@@ -1,10 +1,10 @@
 {
 	"libs":{
-		"+":[],
+		"+":["libz.tbd","libc++.tbd"],
 		"-":[]
 	},
 	"frameworks":{
-		"+":[],
+		"+":["SystemConfiguration.framework","Security.framework"],
 		"-":[]
 	},
 	"properties":{
@@ -12,7 +12,12 @@
 		"+":{},
 		"-":{}
 	},
-	"plist":{},
+	"plist":{
+		"BuglyAppIDString":"6c0dfb1b29",
+		"BuglyAppChannelString":"bugly渠道标识",
+		"BuglyAppVersionString":"2.5.0",
+		"BuglyDebugEnable":"true"
+	},
 	"files":{},
 	"folders":{
 		"libs":"Frameworks/Plugins/iOS/Bugly",
