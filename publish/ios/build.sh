@@ -167,22 +167,22 @@ function __buildUnity2Xcode(){
 	tempXcodeDir="$tempDir"/$platform
 	echo -e "\n------------app XcodeSetting------------"
 	#usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
-	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $appConfigPath
+	"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $appConfigPath
 	
 	echo -e "\n------------Usdk XcodeSetting------------"
 	usdkConfigPath=$RootPath/sdk/usdk/module/XcodeSetting.json
-	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $usdkConfigPath
+	"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $usdkConfigPath
 	
 	echo -e "\n------------platform XcodeSetting------------"
 	platformConfigPath=$RootPath/sdk/platforms/$platform/module/XcodeSetting.json
-	"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $platformConfigPath
+	"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $platformConfigPath
 	
 	echo -e "\n------------plugins XcodeSetting------------"
 	array=(${plugins//,/ }) 
 	for var in ${array[@]}
 	do
 		pluginConfigPath=$RootPath/sdk/plugins/$var/module/XcodeSetting.json
-		"$MONO_PATH" ./tools/XcodeSetting.exe "$tempXcodeDir" $pluginConfigPath
+		"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $pluginConfigPath
 	done
 }
 

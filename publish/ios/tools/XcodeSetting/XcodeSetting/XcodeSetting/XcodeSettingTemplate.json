@@ -1,0 +1,30 @@
+{
+	"libs":{
+		//"tip0":"+里面是要添加的，值都是string",
+		"+":[],
+		//"tip1":"-里面是要移除的，值都是string",
+		"-":[]
+		},
+	"frameworks":{
+		//"tip0":"+里面是要添加的，值都是string",
+		"+":[],
+		//"tip1":"-里面是要移除的，值都是string",
+		"-":[]
+		},
+	"properties":{
+		//"tip0":"=里面是要设置的，table键值都是string",
+		"=":{},
+		//"tip1":"+里面是要添加的，table键是string值是string数组",
+		"+":{},
+		//"tip2":"=里面是要移除的，table键是string值是string数组",
+		"-":{}
+		},
+	//"tip0":"plist的table的key是string,值可以是任意类型",
+	"plist":{},
+	//"tip1":"table键值都是string",
+	"files":{},
+	//"tip2":"table键值都是string",
+	"folders":{},
+	//"tip3":"table的key是文件在工程内的路径，值是数组",
+	"filesCompileFlag":{}
+}

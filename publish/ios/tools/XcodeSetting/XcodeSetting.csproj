@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9E0158F-7315-44BE-8722-4B3E97896567}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XcodeSetting</RootNamespace>
+    <AssemblyName>XcodeSetting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cocoapods\CommandLine.cs" />
+    <Compile Include="Cocoapods\ExecutionEnvironment.cs" />
+    <Compile Include="Cocoapods\FileUtils.cs" />
+    <Compile Include="Cocoapods\IOSResolver.cs" />
+    <Compile Include="Cocoapods\Logger.cs" />
+    <Compile Include="Cocoapods\XmlDependencies.cs" />
+    <Compile Include="Cocoapods\XmlUtilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="XcodeSetting\AssetCatalog.cs" />
+    <Compile Include="XcodeSetting\JsonParser.cs" />
+    <Compile Include="XcodeSetting\PBXCapabilityType.cs" />
+    <Compile Include="XcodeSetting\PBXPath.cs" />
+    <Compile Include="XcodeSetting\PBXProject.cs" />
+    <Compile Include="XcodeSetting\PBXProjectData.cs" />
+    <Compile Include="XcodeSetting\PBXProjectExtensions.cs" />
+    <Compile Include="XcodeSetting\PBX\Elements.cs" />
+    <Compile Include="XcodeSetting\PBX\Lexer.cs" />
+    <Compile Include="XcodeSetting\PBX\Objects.cs" />
+    <Compile Include="XcodeSetting\PBX\Parser.cs" />
+    <Compile Include="XcodeSetting\PBX\Sections.cs" />
+    <Compile Include="XcodeSetting\PBX\Serializer.cs" />
+    <Compile Include="XcodeSetting\PBX\Utils.cs" />
+    <Compile Include="XcodeSetting\PlistParser.cs" />
+    <Compile Include="XcodeSetting\ProjectCapabilityManager.cs" />
+    <Compile Include="XcodeSetting\XcodeSetting\HashtableEX.cs" />
+    <Compile Include="XcodeSetting\XcodeSetting\MiniJSON.cs" />
+    <Compile Include="XcodeSetting\XcodeSetting\XcodeSetting.cs" />
+    <Compile Include="XcodeSetting\XcScheme.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XcodeSetting\run.bat" />
+    <None Include="XcodeSetting\XcodeSetting\XcodeSetting - 复制.json" />
+    <None Include="XcodeSetting\XcodeSetting\XcodeSetting.json" />
+    <None Include="XcodeSetting\XcodeSetting\XcodeSettingTemplate.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XcodeSetting\XcodeSetting.csproj" />
+    <Content Include="XcodeSetting\XcodeSetting.csproj.user" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
