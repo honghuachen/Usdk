@@ -183,6 +183,11 @@ function __buildUnity2Xcode(){
 	do
 		pluginConfigPath=$RootPath/sdk/plugins/$var/module/XcodeSetting.json
 		"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $pluginConfigPath
+		
+		pluginPodConfigPath=$RootPath/sdk/plugins/$var/module/CocoapodsDependencies.json
+		if [ -f $pluginPodConfigPath ];then
+			"$MONO_PATH" ./tools/XcodeSetting.exe --pod "$tempXcodeDir" $pluginPodConfigPath project
+		fi
 	done
 }
 
