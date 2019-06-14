@@ -15,12 +15,12 @@ namespace UnityEditor.iOS.Xcode.Custom {
                 string xcodePath = args[1];
                 string configPath = args[2];
                 string podType = args[3]; //workspace,project
-                object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), podType);
-                if (cocoaPodType == null) {
+                try {
+                    object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), podType);
+                    IOSResolver.OnPosetProcess (xcodePath, configPath, cocoaPodType);
+                } catch (Exception ex) {
                     Console.WriteLine ("CocoaPodType is null.{'Workspace','Project','None'}");
-                    return;
                 }
-                IOSResolver.OnPosetProcess (xcodePath, configPath, cocoaPodType);
             }
 
             //XcodeSetting.OnPostprocessBuild("E:\\Usdk\\publish\\ios\\build\\chuxinhudong", "E:/Usdk/publish/ios/build/XcodeSetting.json");

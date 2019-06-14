@@ -178,7 +178,7 @@ namespace Google {
 					}
 					return true;
 				} catch (Exception ex) {
-					IOSResolver.Log (string.Format ("Reading cocoapods dependency json file failed: filePath={0} msg={1}", filePath, ex.StackTrace), false, LogLevel.Error);
+					IOSResolver.Log (string.Format ("Reading cocoapods dependency json file failed: filePath={0} \nmsg={1}", filePath, ex.Message), false, LogLevel.Error);
 					return false;
 				}
 			}
