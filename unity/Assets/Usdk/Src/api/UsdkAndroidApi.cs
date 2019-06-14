@@ -30,8 +30,8 @@ namespace Usdk
             try
             {
                 pluginName = pluginPreName + pluginName;
-		        if(factory != null){
-                    AndroidJavaObject context = factory.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
+		        if(usdkFactory != null){
+                    AndroidJavaObject context = usdkFactory.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
                     if(context != null)
                         context.Call(method, parameters);
                 }
@@ -46,14 +46,14 @@ namespace Usdk
 		    try
             {
                 pluginName = pluginPreName + pluginName;
-		        if(factory != null){
-                    AndroidJavaObject context = factory.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
+		        if(usdkFactory != null){
+                    AndroidJavaObject context = usdkFactory.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
                     if(context != null)
-                        return context.Call<T>(method, parameters);
+                        return context.Call<R>(method, parameters);
                 }
             }
             catch(Exception ex){
-                return default(T);
+                return default(R);
             }
 #endif
             return default(R);
