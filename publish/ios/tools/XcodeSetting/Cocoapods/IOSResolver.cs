@@ -1174,7 +1174,7 @@ namespace Google {
 			string fullPath = Path.GetFullPath (pathToBuiltProject);
 			Directory.CreateDirectory (Path.Combine (pathToBuiltProject, "Frameworks"));
 			Directory.CreateDirectory (Path.Combine (pathToBuiltProject, "Resources"));
-			string projectPath = IOSResolver.GetProjectPath (pathToBuiltProject);
+			string projectPath = IOSResolver.GetProjectPath ();
 			PBXProject pBXProject = new PBXProject ();
 			pBXProject.ReadFromString (File.ReadAllText (projectPath));
 			string text2 = pBXProject.TargetGuidByName (IOSResolver.TARGET_NAME);
