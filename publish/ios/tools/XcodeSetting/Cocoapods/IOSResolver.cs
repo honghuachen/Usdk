@@ -758,6 +758,8 @@ namespace Google {
 		}
 
 		public static void OnPostProcessPatchProject () {
+			IOSResolver.Log (string.Format("PodfileGenerationEnabled={0} CocoapodsProjectIntegrationEnabled={1} cocoapodsToolsInstallPresent={2}",!IOSResolver.PodfileGenerationEnabled
+			,!IOSResolver.CocoapodsProjectIntegrationEnabled,!IOSResolver.cocoapodsToolsInstallPresent));
 			if (!IOSResolver.InjectDependencies () || !IOSResolver.PodfileGenerationEnabled || !IOSResolver.CocoapodsProjectIntegrationEnabled || !IOSResolver.cocoapodsToolsInstallPresent) {
 				return;
 			}
