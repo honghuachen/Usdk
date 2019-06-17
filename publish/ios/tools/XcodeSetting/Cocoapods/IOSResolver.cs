@@ -27,7 +27,7 @@ namespace Google {
 
 			public string minTargetSdk = null;
 
-			public string createdBy = Environment.StackTrace;
+			public string createdBy = "unknow";
 
 			public bool fromXmlFile = false;
 
@@ -166,15 +166,17 @@ namespace Google {
 					foreach (DictionaryEntry p in pods) {
 						string podName = p.Key.ToString ();
 						Hashtable podProperty = p.Value as Hashtable;
-						string podVersion = podProperty["version"].ToString ();
-						string bitCode = (podProperty["bitcode"].ToString () ?? "").ToLower ();
+						object versionProperty = podProperty["version"];
+						string podVersion = versionProperty == null?null : podProperty["version"].ToString ();
+						object bitcodeProperty = podProperty["bitcode"];
+						string bitCode = bitcodeProperty == null? "": (podProperty["bitcode"].ToString () ?? "").ToLower ();
 						bool bitcodeEnabled = true;
 						bitcodeEnabled |= trueStrings.Contains (bitCode);
 						bitcodeEnabled &= !falseStrings.Contains (bitCode);
 						List<string> sources = null;
 
 						propertiesByName = new Dictionary<string, string> ();
-						IOSResolver.AddPodInternal (podName, podVersion, bitcodeEnabled, null, sources, false, null, true, propertiesByName);
+						IOSResolver.AddPodInternal (podName, podVersion, bitcodeEnabled, null, sources, true, null, true, propertiesByName);
 					}
 					return true;
 				} catch (Exception ex) {
@@ -491,7 +493,7 @@ namespace Google {
 
 		internal static void Log (string message, bool verbose = false, LogLevel level = LogLevel.Info) {
 			IOSResolver.logger.Level = ((!IOSResolver.VerboseLoggingEnabled && !ExecutionEnvironment.InBatchMode) ? LogLevel.Info : LogLevel.Verbose);
-			IOSResolver.logger.Log (message, (!verbose) ? level : LogLevel.Verbose);
+            IOSResolver.logger.Log(message, level);
 		}
 
 		internal static void LogToDialog (string message, bool verbose = false, LogLevel level = LogLevel.Info) {

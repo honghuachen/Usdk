@@ -22,8 +22,10 @@ namespace UnityEditor.iOS.Xcode.Custom {
                     Console.WriteLine ("CocoaPodType is null.{'Workspace','Project','None'}");
                 }
             }
-
-            //XcodeSetting.OnPostprocessBuild("E:\\Usdk\\publish\\ios\\build\\chuxinhudong", "E:/Usdk/publish/ios/build/XcodeSetting.json");
+            // object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), "Project");
+            // IOSResolver.OnPosetProcess("E:\\github\\usdk\\publish\\ios\\build\\baidu", "E:\\github\\usdk\\publish\\ios\\sdk\\plugins\\Bugly\\module\\CocoapodsDependencies.json", cocoaPodType);
+            // //XcodeSetting.OnPostprocessBuild("E:\\Usdk\\publish\\ios\\build\\chuxinhudong", "E:/Usdk/publish/ios/build/XcodeSetting.json");
+            // Console.ReadKey();
         }
     }
 }
