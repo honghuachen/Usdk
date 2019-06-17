@@ -19,7 +19,8 @@ namespace UnityEditor.iOS.Xcode.Custom {
                     object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), podType);
                     IOSResolver.OnPosetProcess (xcodePath, configPath, cocoaPodType);
                 } catch (Exception ex) {
-                    Console.WriteLine ("CocoaPodType is null.{'Workspace','Project','None'}");
+                    Console.WriteLine (string.Format("CocoaPodType is null.{'Workspace','Project','None'}   msg:{0} \nStackTrace:{1}"
+                    ,ex.Message,ex.StackTrace));
                 }
             }
             // object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), "Project");
