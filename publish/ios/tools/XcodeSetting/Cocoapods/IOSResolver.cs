@@ -318,10 +318,10 @@ namespace Google {
 
 		public static IOSResolver.CocoapodsIntegrationMethod CocoapodsIntegrationMethodPref;
 		private static bool LegacyCocoapodsInstallEnabled;
-		public static bool PodfileGenerationEnabled;
-		public static bool PodToolExecutionViaShellEnabled;
-		public static bool AutoPodToolInstallInEditorEnabled;
-		public static bool UpgradeToWorkspaceWarningDisabled;
+		public static bool PodfileGenerationEnabled = true;
+		public static bool PodToolExecutionViaShellEnabled = true;
+		public static bool AutoPodToolInstallInEditorEnabled = true;
+		// public static bool UpgradeToWorkspaceWarningDisabled;
 		public static bool VerboseLoggingEnabled;
 		public static bool SkipPodInstallWhenUsingWorkspaceIntegration;
 		public static bool Enabled {
