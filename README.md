@@ -29,10 +29,15 @@ Usdk可以做到按需调用各种Native插件，各种Native插件可以按需�
 # 强大的多渠道打包平台
 Usdk不仅仅是一个sdk适配框架，更是一个功能强大的多渠道打包平台，通过强大的sdk适配机制能够快速的实现单渠道和多渠道的出包，并且可以大大的减少出包时间。
 
-# Unity导出xcode自动配置工具
-[文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
+# Unity导出xcode自动配置工具([文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx))
+[Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
 在unity4.x通过xupoter插件来设置unity导出xcode自动配置，到了unity5.x unity自己实现了一套工具，并且比xupoter提供了更多的操作可能。但是unity的工具集成在了unity编辑器里面，所以如果要想使用只能在unity工程中通过编辑器功能来操作导出xcode工程的自动配置。这样有一个缺点就是对于unity工程不需要变化但是又要打多个渠道的iOS包的情况下需要每次都要重新从Unity导出到xcode，对于大项目这是十分浪费时间的。针对上述情况，Usdk独立出了unity这套自动配置工具，完全脱离了Unity体系，能够单独作为一个外部工具随时随地的操作xcode工程下的工程配置文件和Info.plist配置文件，可以添加或者移除指定库、源码、资源等，操作非常灵活，只要你能想得到的操作都能够实现。
 并且工具通过unity安装目录下的mono虚拟机进行运行，所以具有跨平台的能力，不管是windows还是mac都能够使用。
+
+# iOS打包智能支持CocoaPods项目的构建([文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx))
+[智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)
+Usdk加入了CocoaPods自动构建工具，使得cocoapods方式构建xcode工程成为可能，内置工具可以实现Project\Workspace xcode项目类型的构建。
+iOS多渠道多插件出包不仅支持本地Framework的导入，还智能支持CocoaPods远程仓库依赖的构建，并且两种方式可以混用。只需要在插件或者渠道的module文件夹下加入一个CocoaPods.json的依赖配置文件即可，打包工具即会智能识别依赖并构建CocoaPods项目。
 
 # 技术支持
 QQ群：3112035
