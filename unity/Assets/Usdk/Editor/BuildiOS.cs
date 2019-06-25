@@ -72,7 +72,7 @@ public class BuildiOS : Editor
         }
 
         PlayerSettings.iOS.targetDevice = iOSTargetDevice.iPhoneAndiPad;//目标设备
-        PlayerSettings.iOS.targetOSVersionString = "8";//最低iOS版本要求
+        // PlayerSettings.iOS.targetOSVersionString = "8.0";//最低iOS版本要求
         PlayerSettings.iOS.statusBarStyle = iOSStatusBarStyle.Default;
         PlayerSettings.statusBarHidden = true;
         PlayerSettings.allowedAutorotateToLandscapeLeft = true;
