@@ -8,7 +8,9 @@
 # 文档
 [Android开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/Android%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)  
 [iOS开发文档](https://github.com/honghuachen/Usdk/blob/master/doc/iOS%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.docx)  
-[Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)
+[Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
+[Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
+[智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)  
 
 # 系统要求
 #android：
@@ -35,7 +37,7 @@ Usdk不仅仅是一个sdk适配框架，更是一个功能强大的多渠道打�
 并且工具通过unity安装目录下的mono虚拟机进行运行，所以具有跨平台的能力，不管是windows还是mac都能够使用。
 
 # iOS打包智能支持CocoaPods项目的构建([文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx))
-[智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)
+[智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)  
 Usdk加入了CocoaPods自动构建工具，使得cocoapods方式构建xcode工程成为可能，内置工具可以实现Project\Workspace xcode项目类型的构建。
 iOS多渠道多插件出包不仅支持本地Framework的导入，还智能支持CocoaPods远程仓库依赖的构建，并且两种方式可以混用。只需要在插件或者渠道的module文件夹下加入一个CocoaPods.json的依赖配置文件即可，打包工具即会智能识别依赖并构建CocoaPods项目。
 
