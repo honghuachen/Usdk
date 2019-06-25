@@ -1,5 +1,5 @@
 {
 	"pods":{
-		"Bugly":{},
+		"Bugly":{"version":"2.5.0","bitcode":"false"}
 	}
 }
