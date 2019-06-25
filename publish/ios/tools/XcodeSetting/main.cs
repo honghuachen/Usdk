@@ -23,9 +23,10 @@ namespace UnityEditor.iOS.Xcode.Custom {
                     ,ex.Message,ex.StackTrace));
                 }
             }
+
             // object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), "Project");
             // IOSResolver.OnPosetProcess("E:\\github\\usdk\\publish\\ios\\build\\baidu", "E:\\github\\usdk\\publish\\ios\\sdk\\plugins\\Bugly\\module\\CocoapodsDependencies.json", cocoaPodType);
-            // //XcodeSetting.OnPostprocessBuild("E:\\Usdk\\publish\\ios\\build\\chuxinhudong", "E:/Usdk/publish/ios/build/XcodeSetting.json");
+            // XcodeSetting.OnPostprocessBuild("E:\\github\\usdk\\publish\\ios\\build\\baidu", "E:\\github\\usdk\\publish\\ios\\sdk\\plugins\\Bugly\\module\\XcodeSetting.json");
             // Console.ReadKey();
         }
     }

@@ -276,6 +276,7 @@ namespace UnityEditor.iOS.Xcode.Custom
                 if (NeedCopy(Path.GetFileName(file)))
                 {
                     File.Copy(file, Path.Combine(dstPath, Path.GetFileName(file)));
+                    Console.WriteLine("copy file " + file + " -> " + Path.Combine(dstPath, Path.GetFileName(file)));
                 }
             }
 
