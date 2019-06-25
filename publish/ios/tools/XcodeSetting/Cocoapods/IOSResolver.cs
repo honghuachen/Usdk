@@ -493,7 +493,7 @@ namespace Google {
 
 		internal static void Log (string message, bool verbose = false, LogLevel level = LogLevel.Info) {
 			IOSResolver.logger.Level = ((!IOSResolver.VerboseLoggingEnabled && !ExecutionEnvironment.InBatchMode) ? LogLevel.Info : LogLevel.Verbose);
-            IOSResolver.logger.Log(message, level);
+			IOSResolver.logger.Log (message, level);
 		}
 
 		internal static void LogToDialog (string message, bool verbose = false, LogLevel level = LogLevel.Info) {
@@ -758,8 +758,7 @@ namespace Google {
 		}
 
 		public static void OnPostProcessPatchProject () {
-			IOSResolver.Log (string.Format("PodfileGenerationEnabled={0} CocoapodsProjectIntegrationEnabled={1} cocoapodsToolsInstallPresent={2}",!IOSResolver.PodfileGenerationEnabled
-			,!IOSResolver.CocoapodsProjectIntegrationEnabled,!IOSResolver.cocoapodsToolsInstallPresent));
+			IOSResolver.Log (string.Format ("PodfileGenerationEnabled={0} CocoapodsProjectIntegrationEnabled={1} cocoapodsToolsInstallPresent={2}", !IOSResolver.PodfileGenerationEnabled, !IOSResolver.CocoapodsProjectIntegrationEnabled, !IOSResolver.cocoapodsToolsInstallPresent));
 			if (!IOSResolver.InjectDependencies () || !IOSResolver.PodfileGenerationEnabled || !IOSResolver.CocoapodsProjectIntegrationEnabled || !IOSResolver.cocoapodsToolsInstallPresent) {
 				return;
 			}

@@ -10,6 +10,8 @@ buildType=debug
 platform=,subPlatform=
 versionName=,versionCode=
 package=,appname=,cdn=,plugins=,icon=,splash=
+#podsType可以为Project\Workspace
+podsType=Project
 
 # __readINI [配置文件路径+名称] [节点名] [键值]
 function __readINI() {
@@ -176,6 +178,10 @@ function __buildUnity2Xcode(){
 	echo -e "\n------------platform XcodeSetting------------"
 	platformConfigPath=$RootPath/sdk/platforms/$platform/module/XcodeSetting.json
 	"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $platformConfigPath
+	platPodConfigPath=$RootPath/sdk/platforms/$platform/module/CocoaPods.json
+	if [ -f $platPodConfigPath ];then
+		"$MONO_PATH" ./tools/XcodeSetting.exe --pod "$tempXcodeDir" $platPodConfigPath ${podsType}
+	fi
 	
 	echo -e "\n------------plugins XcodeSetting------------"
 	array=(${plugins//,/ }) 
@@ -184,9 +190,9 @@ function __buildUnity2Xcode(){
 		pluginConfigPath=$RootPath/sdk/plugins/$var/module/XcodeSetting.json
 		"$MONO_PATH" ./tools/XcodeSetting.exe --pbx "$tempXcodeDir" $pluginConfigPath
 		
-		pluginPodConfigPath=$RootPath/sdk/plugins/$var/module/CocoapodsDependencies.json
+		pluginPodConfigPath=$RootPath/sdk/plugins/$var/module/CocoaPods.json
 		if [ -f $pluginPodConfigPath ];then
-			"$MONO_PATH" ./tools/XcodeSetting.exe --pod "$tempXcodeDir" $pluginPodConfigPath Project
+			"$MONO_PATH" ./tools/XcodeSetting.exe --pod "$tempXcodeDir" $pluginPodConfigPath ${podsType}
 		fi
 	done
 }
