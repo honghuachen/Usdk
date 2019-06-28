@@ -14,45 +14,45 @@ public class Test : MonoBehaviour {
     }
 
     void OnGUI () {
-        if (GUI.Button (new Rect (0, 0, 100, 100), "Login")) {
+        if (GUI.Button (new Rect (0, 0, 100, 50), "Login")) {
             UsdkApi.Login();
         }
 
-        if (GUI.Button (new Rect (0, 100, 100, 100), "Logout")) {
+        if (GUI.Button (new Rect (0, 50, 100, 50), "Logout")) {
             UsdkApi.Logout();
         }
 
-        if (GUI.Button (new Rect (0, 200, 100, 100), "Pay")) {
+        if (GUI.Button (new Rect (0, 100, 100, 50), "Pay")) {
             SdkPayInfo info = new SdkPayInfo();
             info.payAmount = 100;
             UsdkApi.Pay(info);
         }
 
-        if (GUI.Button (new Rect (0, 300, 100, 100), "Quit")) {
+        if (GUI.Button (new Rect (0, 150, 100, 50), "Quit")) {
             UsdkApi.Quit();
         }
 
-        if (GUI.Button (new Rect (0, 400, 100, 100), "OpenUserCenter")) {
+        if (GUI.Button (new Rect (0, 200, 100, 50), "OpenUserCenter")) {
             UsdkApi.OpenUserCenter();
         }
 
-        if (GUI.Button (new Rect (0, 500, 100, 100), "SwitchAccount")) {
+        if (GUI.Button (new Rect (0, 250, 100, 50), "SwitchAccount")) {
             UsdkApi.SwitchAccount();
         }
 
-        if (GUI.Button (new Rect (0, 600, 100, 100), "OpenAppstoreComment")) {
+        if (GUI.Button (new Rect (0, 300, 100, 50), "OpenAppstoreComment")) {
             UsdkApi.OpenAppstoreComment("appid");
         }
 
-        if (GUI.Button (new Rect (0, 700, 100, 100), "ReleaseSdkResource")) {
+        if (GUI.Button (new Rect (0, 350, 100, 50), "ReleaseSdkResource")) {
             UsdkApi.ReleaseSdkResource();
         }
 
-        if (GUI.Button (new Rect (0, 700, 100, 100), "CallPugin")) {
+        if (GUI.Button (new Rect (0, 400, 100, 50), "CallPugin")) {
             UsdkApi.CallPugin("PlatformProxy","callPugin","arg1","1","true","1.15");
         }
 
-         if (GUI.Button (new Rect (0, 700, 100, 100), "CallPuginR")) {
+         if (GUI.Button (new Rect (0, 450, 100, 50), "CallPuginR")) {
             int ret = UsdkApi.CallPugin<int>("PlatformProxy","callPuginR","arg2","2","false","24.15");
             Debug.Log("[unity]callPuginR ret="+ret);
         }
