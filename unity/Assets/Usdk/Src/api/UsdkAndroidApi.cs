@@ -114,12 +114,12 @@ namespace Usdk
         //     return SendAndroidMessage<string>(platfromName,"getConfig", key);
         // }
 
-        public void CallPugin(string pluginName, string methodName, params string[] parameters)
+        public void CallPlugin(string pluginName, string methodName, params string[] parameters)
         {
            SendAndroidMessage<string>(pluginName, methodName, parameters);
         }
 
-        public R CallPugin<R>(string pluginName, string methodName, params string[] parameters)
+        public R CallPlugin<R>(string pluginName, string methodName, params string[] parameters)
         {
             return SendAndroidMessage<R>(pluginName, methodName, parameters);
         }

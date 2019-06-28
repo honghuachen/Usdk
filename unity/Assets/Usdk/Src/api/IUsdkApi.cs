@@ -17,8 +17,8 @@ namespace Usdk
         // void releaseSdkResource(string arg);
         // void switchAccount(string arg);
         // void openAppstoreComment(string appid);
-        void CallPugin(string pluginName, string methodName, params string[] parameters);
-        R CallPugin<R>(string pluginName, string methodName, params string[] parameters);
+        void CallPlugin(string pluginName, string methodName, params string[] parameters);
+        R CallPlugin<R>(string pluginName, string methodName, params string[] parameters);
     }
 
     public class SdkPayInfo

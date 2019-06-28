@@ -43,9 +43,9 @@ namespace Usdk
         //     return string.Empty;
         // }
 
-        public void CallPugin(string pluginName, string methodName, params string[] parameters) { }
+        public void CallPlugin(string pluginName, string methodName, params string[] parameters) { }
 
-        public R CallPugin<R>(string pluginName, string methodName, params string[] parameters)
+        public R CallPlugin<R>(string pluginName, string methodName, params string[] parameters)
         {
             return default(R);
         }

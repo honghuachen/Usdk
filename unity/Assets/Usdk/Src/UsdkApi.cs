@@ -39,53 +39,53 @@ namespace Usdk {
         public static void SetSdkCallBackReceiver (string receiverName) {
             if (string.IsNullOrEmpty (receiverName))
                 return;
-            CallPugin (PLATFORM_NAME, "setSdkCallBackReceiver", receiverName);
+            CallPlugin (PLATFORM_NAME, "setSdkCallBackReceiver", receiverName);
         }
 
         public static string GetConfig (string key) {
             if (key == null)
                 return string.Empty;
-            return CallPugin<string> (PLATFORM_NAME, "getConfig", key);
+            return CallPlugin<string> (PLATFORM_NAME, "getConfig", key);
         }
 
         public static void Login () {
-            CallPugin (PLATFORM_NAME, "login");
+            CallPlugin (PLATFORM_NAME, "login");
         }
 
         public static void Logout () {
-            CallPugin (PLATFORM_NAME, "logout");
+            CallPlugin (PLATFORM_NAME, "logout");
         }
 
         public static void Pay (SdkPayInfo payInfo) {
-            CallPugin (PLATFORM_NAME, "pay", payInfo.ToString ());
+            CallPlugin (PLATFORM_NAME, "pay", payInfo.ToString ());
         }
 
         public static void Quit () {
-            CallPugin (PLATFORM_NAME, "exitGame");
+            CallPlugin (PLATFORM_NAME, "exitGame");
         }
 
         public static void OpenUserCenter () {
-            CallPugin (PLATFORM_NAME, "openUserCenter");
+            CallPlugin (PLATFORM_NAME, "openUserCenter");
         }
 
         public static void SwitchAccount () {
-            CallPugin (PLATFORM_NAME, "switchAccount");
+            CallPlugin (PLATFORM_NAME, "switchAccount");
         }
 
         public static void OpenAppstoreComment (string appid) {
-            CallPugin (PLATFORM_NAME, "openAppstoreComment", appid);
+            CallPlugin (PLATFORM_NAME, "openAppstoreComment", appid);
         }
 
         public static void ReleaseSdkResource () {
-            CallPugin (PLATFORM_NAME, "releaseSdkResource");
+            CallPlugin (PLATFORM_NAME, "releaseSdkResource");
         }
 
-        public static void CallPugin (string pluginName, string methodName, params string[] parameters) {
-            api.CallPugin (pluginName, methodName, parameters);
+        public static void CallPlugin (string pluginName, string methodName, params string[] parameters) {
+            api.CallPlugin (pluginName, methodName, parameters);
         }
 
-        public static R CallPugin<R> (string pluginName, string methodName, params string[] parameters) {
-            return api.CallPugin<R> (pluginName, methodName, parameters);
+        public static R CallPlugin<R> (string pluginName, string methodName, params string[] parameters) {
+            return api.CallPlugin<R> (pluginName, methodName, parameters);
         }
         #endregion
 

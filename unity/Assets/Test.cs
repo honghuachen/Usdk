@@ -48,13 +48,13 @@ public class Test : MonoBehaviour {
             UsdkApi.ReleaseSdkResource();
         }
 
-        if (GUI.Button (new Rect (0, 400, 100, 50), "CallPugin")) {
-            UsdkApi.CallPugin("PlatformProxy","callPugin","arg1","1","true","1.15");
+        if (GUI.Button (new Rect (0, 400, 100, 50), "CallPlugin")) {
+            UsdkApi.CallPlugin("PlatformProxy","callPlugin","arg1","1","true","1.15");
         }
 
-         if (GUI.Button (new Rect (0, 450, 100, 50), "CallPuginR")) {
-            int ret = UsdkApi.CallPugin<int>("PlatformProxy","callPuginR","arg2","2","false","24.15");
-            Debug.Log("[unity]callPuginR ret="+ret);
+         if (GUI.Button (new Rect (0, 450, 100, 50), "CallPluginR")) {
+            int ret = UsdkApi.CallPlugin<int>("PlatformProxy","callPluginR","arg2","2","false","24.15");
+            Debug.Log("[unity]CallPluginR ret="+ret);
         }
     }
 }
