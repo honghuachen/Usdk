@@ -7,18 +7,18 @@ namespace Usdk
 {
     public interface IUsdkApi
     {
-        string getConfig(string key);
-        void setSdkCallBackReceiver(string receiverName);
-        void login(string arg);
-        void logout(string arg);
-        void openUserCenter(string arg);
-        void exit(string arg);
-        void pay(SdkPayInfo payInfo);
-        void releaseSdkResource(string arg);
-        void switchAccount(string arg);
-        void openAppstoreComment(string appid);
-        void callPugin(string pluginName, string methodName, params object[] parameters);
-        string callPuginR(string pluginName, string methodName, params object[] parameters);
+        // string getConfig(string key);
+        // void setSdkCallBackReceiver(string receiverName);
+        // void login(string arg);
+        // void logout(string arg);
+        // void openUserCenter(string arg);
+        // void exit(string arg);
+        // void pay(SdkPayInfo payInfo);
+        // void releaseSdkResource(string arg);
+        // void switchAccount(string arg);
+        // void openAppstoreComment(string appid);
+        void CallPugin(string pluginName, string methodName, params string[] parameters);
+        R CallPugin<R>(string pluginName, string methodName, params string[] parameters);
     }
 
     public class SdkPayInfo

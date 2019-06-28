@@ -1,11 +1,6 @@
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "UsdkBase.h"
-#import "IUsdkBase.h"
-#import "UsdkRoleInfo.h"
-#import "UsdkPayInfo.h"
-
-@interface PlatformProxyBase : UsdkBase<IUsdkBase>
+@protocol UsdkPlatformDelegate <NSObject>
+//@optional
+@required
 - (void) setSdkCallBackReceiver:(NSString*) receiver_name;
 - (void) login:(NSString*)arg;
 - (void) logout:(NSString*) arg;
@@ -16,6 +11,4 @@
 - (void) releaseSdkResource:(NSString*)arg;
 - (void) switchAccount:(NSString*) arg;
 - (void) setProductIdentifiers:(NSArray*)identifers;
-- (UsdkRoleInfo*)CreateRoleInfo:(NSString*)info;
-- (UsdkPayInfo*)CreatePayInfo:(NSString*)info;
 @end

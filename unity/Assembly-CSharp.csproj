@@ -46,10 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Usdk\Src\Usdk.cs" />
+     <Compile Include="Assets\Test.cs" />
+     <Compile Include="Assets\Usdk\Src\UsdkApi.cs" />
      <Compile Include="Assets\Usdk\Src\api\IUsdkApi.cs" />
      <Compile Include="Assets\Usdk\Src\api\UsdkAndroidApi.cs" />
-     <Compile Include="Assets\Usdk\Src\api\UsdkEditorApi.cs" />
+     <Compile Include="Assets\Usdk\Src\api\UsdkWindowsApi.cs" />
      <Compile Include="Assets\Usdk\Src\api\UsdkiOSApi.cs" />
      <Compile Include="Assets\Usdk\Src\callback\IUsdkCallBack.cs" />
      <Compile Include="Assets\Usdk\Src\callback\UsdkCallBack.cs" />

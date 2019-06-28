@@ -24,7 +24,7 @@ namespace Usdk
         }
 #endif
 
-        private void SendAndroidMessage(string pluginName, string method, params object[] parameters)
+        private void SendAndroidMessage(string pluginName, string method, params string[] parameters)
         {
 #if UNITY_ANDROID
             try
@@ -40,7 +40,7 @@ namespace Usdk
 #endif
         }
 
-        private R SendAndroidMessage<R>(string pluginName,string method, params object[] parameters)
+        private R SendAndroidMessage<R>(string pluginName,string method, params string[] parameters)
         {
 #if UNITY_ANDROID
 		    try
@@ -59,69 +59,69 @@ namespace Usdk
             return default(R);
         }
 
-        public void setSdkCallBackReceiver(string receiverName)
-        {
-            if (string.IsNullOrEmpty(receiverName))
-                return;
-            SendAndroidMessage(platfromName, "setCallBackReceiver", receiverName);
-        }
+        // public void setSdkCallBackReceiver(string receiverName)
+        // {
+        //     if (string.IsNullOrEmpty(receiverName))
+        //         return;
+        //     SendAndroidMessage(platfromName, "setCallBackReceiver", receiverName);
+        // }
 
-        public void login(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"login", arg);
-        }
+        // public void login(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"login", arg);
+        // }
 
-        public void logout(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"logout", arg);
-        }
+        // public void logout(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"logout", arg);
+        // }
 
-        public void openUserCenter(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"openUserCenter", arg);
-        }
+        // public void openUserCenter(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"openUserCenter", arg);
+        // }
 
-        public void exit(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"exit", arg);
-        }
+        // public void exit(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"exit", arg);
+        // }
 
-        public void pay(SdkPayInfo payInfo)
-        {
-            SendAndroidMessage(platfromName,"pay", payInfo.ToString());
-        }
+        // public void pay(SdkPayInfo payInfo)
+        // {
+        //     SendAndroidMessage(platfromName,"pay", payInfo.ToString());
+        // }
 
-        public void releaseSdkResource(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"releaseSdkResource", arg);
-        }
+        // public void releaseSdkResource(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"releaseSdkResource", arg);
+        // }
 
-        public void switchAccount(string arg = "")
-        {
-            SendAndroidMessage(platfromName,"switchAccount", arg);
-        }
+        // public void switchAccount(string arg = "")
+        // {
+        //     SendAndroidMessage(platfromName,"switchAccount", arg);
+        // }
 
-        //appid app在GP 或 App Store中的AppID标识
-        public void openAppstoreComment(string appid)
-        {
-            SendAndroidMessage(platfromName,"openAppstoreComment", appid);
-        }
+        // //appid app在GP 或 App Store中的AppID标识
+        // public void openAppstoreComment(string appid)
+        // {
+        //     SendAndroidMessage(platfromName,"openAppstoreComment", appid);
+        // }
 
-        public string getConfig(string key)
-        {
-            if (string.IsNullOrEmpty(key))
-                return string.Empty;
-            return SendAndroidMessage<string>(platfromName,"getConfig", key);
-        }
+        // public string getConfig(string key)
+        // {
+        //     if (string.IsNullOrEmpty(key))
+        //         return string.Empty;
+        //     return SendAndroidMessage<string>(platfromName,"getConfig", key);
+        // }
 
-        public void callPugin(string pluginName, string methodName, params object[] parameters)
+        public void CallPugin(string pluginName, string methodName, params string[] parameters)
         {
            SendAndroidMessage<string>(pluginName, methodName, parameters);
         }
 
-        public string callPuginR(string pluginName, string methodName, params object[] parameters)
+        public R CallPugin<R>(string pluginName, string methodName, params string[] parameters)
         {
-            return SendAndroidMessage<string>(pluginName, methodName, parameters);
+            return SendAndroidMessage<R>(pluginName, methodName, parameters);
         }
     }
 }
