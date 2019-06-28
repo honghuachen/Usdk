@@ -90,17 +90,17 @@ namespace Usdk
         // }
 
         [DllImport("__Internal")]
-        private static extern void _CallPugin(string pluginName, string methodName, params string[] parameters);
+        private static extern void __CallPugin(string pluginName, string methodName, params string[] parameters);
         public void CallPugin(string pluginName, string methodName, params string[] parameters)
         {
-            _CallPugin(pluginName, methodName, parameters);
+            __CallPugin(pluginName, methodName, parameters);
         }
 
         [DllImport("__Internal")]
-        private static extern string _CallPuginR(string pluginName, string methodName, params string[] parameters);
+        private static extern string __CallPuginR(string pluginName, string methodName, params string[] parameters);
         public R CallPugin<R>(string pluginName, string methodName, params string[] parameters)
         {
-            string ret = _CallPuginR(pluginName, methodName, parameters);
+            string ret = __CallPuginR(pluginName, methodName, parameters);
             R retR = (R)Convert.ChangeType(ret,typeof(R));
             return retR;
         }
