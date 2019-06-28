@@ -1,14 +1,13 @@
 @protocol UsdkPlatformDelegate <NSObject>
 //@optional
 @required
-- (void) setSdkCallBackReceiver:(NSString*) receiver_name;
-- (void) login:(NSString*)arg;
-- (void) logout:(NSString*) arg;
-- (void) openUserCenter:(NSString*) arg;
-- (void) exitGame:(NSString*) arg;
-- (void) payStart:(NSString*)product_id amount:(int)amount;
-- (void) pay:(NSString*) pay_info;
-- (void) releaseSdkResource:(NSString*)arg;
-- (void) switchAccount:(NSString*) arg;
+- (void) setSdkCallBackReceiver:(NSString*)receiverName;
+- (void) login;
+- (void) logout;
+- (void) openUserCenter;
+- (void) exitGame;
+- (void) pay;
+- (void) releaseSdkResource;
+- (void) switchAccount;
 - (void) setProductIdentifiers:(NSArray*)identifers;
 @end

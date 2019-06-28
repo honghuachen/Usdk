@@ -41,21 +41,9 @@ typedef NS_ENUM(NSInteger, UsdkCallBackErrorCode)
 @property NSMutableDictionary *m_pluginMap;
 @property UIApplication *m_application;
 @property NSDictionary *m_launchOptions;
-
-//- (void) setSdkCallBackReceiver:(NSString*) receiver_name;
-//- (void) login:(NSString*)args;
-//- (void) logout:(NSString*) args;
-//- (void) openUserCenter:(NSString*) args;
-//- (void) exitGame:(NSString*) args;
-//- (void) payStart:(NSString*)product_id amount:(int)amount;
-//- (void) pay:(NSString*) pay_info;
-//- (void) releaseSdkResource:(NSString*)args;
-//- (void) switchAccount:(NSString*) args;
-//- (void)setProductIdentifiers:(NSArray*)identifers;
 - (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (NSString*)callPluginR:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (UsdkBase*)loadPlugin:(NSString*)pluginName;
-//- (NSString*)getConfig:(NSString*)key;
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation NS_AVAILABLE_IOS(4_2);
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions;

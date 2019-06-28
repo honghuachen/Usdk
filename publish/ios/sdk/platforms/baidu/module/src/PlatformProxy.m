@@ -61,31 +61,27 @@
      NSLog(@"[PlatformProxy13]applicationWillTerminate:(UIApplication *)application");
 }
 
-- (void)exitGame:(NSString *)arg {
+- (void)exitGame{
     NSLog(@"[PlatformProxy14]exitGame");
 }
 
-- (void)login:(NSString *)arg {
+- (void)login{
     NSLog(@"[PlatformProxy]login");
 }
 
-- (void)logout:(NSString *)arg {
+- (void)logout {
     NSLog(@"[PlatformProxy]logout");
 }
 
-- (void)openUserCenter:(NSString *)arg {
+- (void)openUserCenter {
     NSLog(@"[PlatformProxy]openUserCenter");
 }
 
-- (void)pay:(NSString *)pay_info {
+- (void)pay {
     NSLog(@"[PlatformProxy]pay");
 }
 
-- (void)payStart:(NSString *)product_id amount:(int)amount {
-    NSLog(@"[PlatformProxy]payStart");
-}
-
-- (void)releaseSdkResource:(NSString *)arg {
+- (void)releaseSdkResource {
     NSLog(@"[PlatformProxy]releaseSdkResource");
 }
 
@@ -93,35 +89,45 @@
     NSLog(@"[PlatformProxy]setProductIdentifiers");
 }
 
-- (void)setSdkCallBackReceiver:(NSString *)receiver_name {
-    NSLog(@"[PlatformProxy]setSdkCallBackReceiver");
+- (void)setSdkCallBackReceiver:(NSArray *)receiverName {
+    NSLog(@"[PlatformProxy]setSdkCallBackReceiver receiverName=%@",receiverName[0]);
 }
 
-- (void)switchAccount:(NSString *)arg {
+- (void)switchAccount {
     NSLog(@"[PlatformProxy]switchAccount");
 }
 
-- (void)callPlugin:(NSArray *)arg {
-    NSLog(@"[PlatformProxy]callPlugin arg=%@",arg);
-    for (id obj in arg){
-        NSLog(@"[PlatformProxy]obj=%@",obj);
+- (void)callPlugin:(NSArray *)arg{
+    for(id obj in arg){
+        NSLog(@"[PlatformProxy]callPlugin obj=%@",obj);
     }
 }
 
-- (NSString*)callPluginR:(NSArray *)arg {
-    NSLog(@"[PlatformProxy]callPluginR arg=%@",arg);
-    for (id obj in arg){
-        NSLog(@"[PlatformProxy]obj=%@",obj);
+- (NSString*)callPluginRInt:(NSArray *)arg{
+    for(id obj in arg){
+        NSLog(@"[PlatformProxy]callPluginRInt obj=%@",obj);
     }
-    return @"iOS call R";
+    return @"2";
 }
 
-- (NSString*)callPluginR2:(NSArray *)arg {
-    NSLog(@"[PlatformProxy]callPluginR2 arg=%@",arg);
-    for (id obj in arg){
-        NSLog(@"[PlatformProxy]obj=%@",obj);
+- (NSString*)callPluginRString:(NSArray *)arg{
+    for(id obj in arg){
+        NSLog(@"[PlatformProxy]callPluginRString obj=%@",obj);
     }
-    return @"iOS call R2";
+    return @"iOS return";
 }
 
+- (NSString*)callPluginRBool:(NSArray *)arg{
+    for(id obj in arg){
+        NSLog(@"[PlatformProxy]callPluginRBool obj=%@",obj);
+    }
+    return @"true";
+}
+
+- (NSString*)callPluginRFloat:(NSArray *)arg{
+    for(id obj in arg){
+        NSLog(@"[PlatformProxy]callPluginRFloat obj=%@",obj);
+    }
+    return @"3.1415926";
+}
 @end
