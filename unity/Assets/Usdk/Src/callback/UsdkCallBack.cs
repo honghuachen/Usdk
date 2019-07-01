@@ -1,58 +1,55 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace Usdk
-{
-    public class UsdkCallBack : MonoBehaviour, IUsdkCallBack
-    {
-        public Action<int, List<string>> OnInitSDKCallBack;
-        public Action<int, List<string>> OnExitGameCallBack;
-        public Action<int, List<string>> OnLoginCallBack;
-        public Action<int, List<string>> OnPayCallBack;
-        public Action<int, List<string>> OnLogoutCallBack;
+namespace Usdk {
+    public enum UsdkCallBackErrorCode {
+        InitSuccess = 0,
+        InitFail,
+        LoginSuccess,
+        LoginCancel,
+        LoginFail,
+        LogoutFinish,
+        ExitNoChannelExiter,
+        ExitSuccess,
+        PaySuccess,
+        PayCancel,
+        PayFail,
+        PayProgress,
+        PayOthers,
+    }
 
-        public static UsdkCallBack Create()
-        {
-            GameObject callBackObj = new GameObject("UsdkCallBack");
-            UsdkCallBack callBack = callBackObj.AddComponent<UsdkCallBack>();
-            DontDestroyOnLoad(callBackObj);
+    public class UsdkCallBackRetMsg {
+        public string errorCode;
+        public List<string> msg;
+
+        public UsdkCallBackRetMsg (string ret) {
+            msg = new List<string> ();
+            string[] retInfo = ret.Split ('&');
+            for (int i = 0; i < retInfo.Length; i++) {
+                string[] subMsgs = retInfo[i].Split ('=');
+                if (subMsgs[0] == "errorCode")
+                    errorCode = subMsgs[1];
+                else
+                    msg.Add (subMsgs[1]);
+            }
+        }
+    }
+
+    public class UsdkCallBack : MonoBehaviour {
+        public Action<string, List<string>> OnCallBack;
+
+        public static UsdkCallBack Create () {
+            GameObject callBackObj = new GameObject ("UsdkCallBack");
+            UsdkCallBack callBack = callBackObj.AddComponent<UsdkCallBack> ();
+            DontDestroyOnLoad (callBackObj);
             return callBack;
         }
 
-        public void initSDKCallBack(string ret)
-        {
-            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg(ret);
-            if (OnInitSDKCallBack != null)
-                OnInitSDKCallBack(retInfo.errorCode, retInfo.msg);
-        }
-
-        public void exitGameCallBack(string ret)
-        {
-            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg(ret);
-            if (OnExitGameCallBack != null)
-                OnExitGameCallBack(retInfo.errorCode, retInfo.msg);
-        }
-
-        public void loginCallBack(string ret)
-        {
-            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg(ret);
-            if (OnLoginCallBack != null)
-                OnLoginCallBack(retInfo.errorCode, retInfo.msg);
-        }
-
-        public void logoutCallBack(string ret)
-        {
-            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg(ret);
-            if (OnLogoutCallBack != null)
-                OnLogoutCallBack(retInfo.errorCode, retInfo.msg);
-        }
-
-        public void payCallBack(string ret)
-        {
-            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg(ret);
-            if (OnPayCallBack != null)
-                OnPayCallBack(retInfo.errorCode, retInfo.msg);
+        public void CallBack (string ret) {
+            UsdkCallBackRetMsg retInfo = new UsdkCallBackRetMsg (ret);
+            if(OnCallBack != null) 
+                OnCallBack(retInfo.errorCode,retInfo.msg);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 @implementation UsdkBase
 - (NSString*) getConfig:(NSString*)key{return @"";}
-- (void)sendDict2U3d:(NSString *)method param:(NSDictionary *)dict
+- (void)sendDict2Unity:(NSString *)method param:(NSDictionary *)dict
 {
     NSString *param = @"";
     for (NSString *key in dict)
@@ -13,10 +13,10 @@
             param = [param stringByAppendingFormat:@"&%@=%@", key, [dict valueForKey:key]];
     }
     
-    [self sendString2U3d:method param:param];
+    [self sendString2Unity:method param:param];
 }
 
-- (void)sendString2U3d:(NSString *)method param:(NSString *)str
+- (void)sendString2Unity:(NSString *)method param:(NSString *)str
 {
     NSLog(@"SDKCallBack with method=%@, param=%@",method,str);
     UnitySendMessage("UsdkCallBack", [method UTF8String], [str UTF8String]);
@@ -32,10 +32,13 @@
     return [UsdkPayInfo Create:info];
 }
 
-- (void)callBack2U3d:(NSString *)method Code:(NSInteger *)code Result:(NSString *)ret
+- (void)sendCallBack2Unity:(UsdkCallBackErrorCode)code Param:(NSString *)str
 {
-    NSString *param =  [NSString stringWithFormat:@"code=%d&ret=%@", (int)code,ret];
-    [self sendString2U3d:method param:param];
+    NSString *param = @"";
+    if(str == nil || !str.length)
+        param = [NSString stringWithFormat:@"errorCode=%d", (int)code];
+    else
+        param = [NSString stringWithFormat:@"errorCode=%d&ret=%@", (int)code,str];
+    [self sendString2Unity:@"CallBack" param:param];
 }
 @end
-

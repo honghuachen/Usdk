@@ -5,10 +5,27 @@
 #import "UsdkPlatformDelegate.h"
 #import "UsdkApplicationDelegate.h"
 
+typedef NS_ENUM(NSInteger, UsdkCallBackErrorCode)
+{
+    InitSuccess = 0,
+    InitFail,
+    LoginSuccess,
+    LoginCancel,
+    LoginFail,
+    LogoutFinish,
+    ExitNoChannelExiter,
+    ExitSuccess,
+    PaySuccess,
+    PayCancel,
+    PayFail,
+    PayProgress,
+    PayOthers,
+};
+
 @interface UsdkBase : NSObject
-- (void)sendDict2U3d:(NSString *)method param:(NSDictionary *)dict;
-- (void)sendString2U3d:(NSString *)method param:(NSString *)str;
-- (void)callBack2U3d:(NSString *)method Code:(NSInteger *)code Result:(NSString *)ret;
+- (void)sendDict2Unity:(NSString *)method param:(NSDictionary *)dict;
+- (void)sendString2Unity:(NSString *)method param:(NSString *)str;
+- (void)sendCallBack2Unity:(UsdkCallBackErrorCode)code Param:(NSString *)str;
 - (NSString*)getConfig:(NSString *)key;
 - (UsdkRoleInfo*)createRoleInfo:(NSString *)info;
 - (UsdkPayInfo*)createPayInfo:(NSString *)info;

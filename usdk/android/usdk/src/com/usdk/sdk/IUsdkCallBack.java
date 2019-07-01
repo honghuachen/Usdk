@@ -1,10 +1,10 @@
 package com.usdk.sdk;
 
 public interface IUsdkCallBack {
-	public void sendCallBack2Unity(ErrorCode errorCode);
-	public void sendCallBack2Unity(ErrorCode errorCode, String paramString);
+	public void sendCallBack2Unity(UsdkCallBackErrorCode errorCode);
+	public void sendCallBack2Unity(UsdkCallBackErrorCode errorCode, String paramString);
 	
-	public enum ErrorCode
+	public enum UsdkCallBackErrorCode
 	{
 		InitSuccess,
 		InitFail,

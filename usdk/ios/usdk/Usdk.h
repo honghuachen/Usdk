@@ -3,38 +3,7 @@
 #import "UsdkBase.h"
 #import "UsdkApplicationDelegate.h"
 #import "UsdkPlatformDelegate.h"
-
-#define ERROR_CODE              @"errorCode"
-#define MESSAGE                 @"message"
-#define CHANNEL_CODE            @"channelCode"
-#define ORDER_ID                @"orderID"
-#define TRANSACTION_ID          @"transactionid"
-
-//callback method name
-#define INIT_SDK_CALLBACK           @"initSdkCallBack"
-#define EXIT_GAME_CALLBACK          @"exitGameCallBack"
-#define LOGIN_CALLBACK              @"loginCallBack"
-#define LOGOUT_CALLBACK             @"logoutCallBack"
-#define PAY_CALLBACK                @"payCallBack"
-#define APPLEPAY_CALLBACK           @"applePayCallBack"
 #define PLATFORM_NAME               @"PlatformProxy"
-
-typedef NS_ENUM(NSInteger, UsdkCallBackErrorCode)
-{
-    InitSuccess = 0,
-    InitFail,
-    LoginSuccess,
-    LoginCancel,
-    LoginFail,
-    LogoutFinish,
-    ExitNoChannelExiter,
-    ExitSuccess,
-    PaySuccess,
-    PayCancel,
-    PayFail,
-    PayProgress,
-    PayOthers,
-};
 
 @interface Usdk : NSObject
 +(Usdk*) instance;

@@ -1,20 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Usdk {
     public static class UsdkApi {
         public const string PLATFORM_NAME = "PlatformProxy";
         private static IUsdkApi api = null;
-        // public static Usdk _instance = null;
-        // public static Usdk Instance
-        // {
-        //     get
-        //     {
-        //         if (_instance == null) 
-        //             _instance = new Usdk();
-        //         return _instance;
-        //     }
-        // }
 
         static UsdkApi () {
             //sdk api
@@ -27,21 +18,10 @@ namespace Usdk {
 
             //sdk callback
             UsdkCallBack callBack = UsdkCallBack.Create ();
-            callBack.OnInitSDKCallBack = OnInitSDKCallBack;
-            callBack.OnLoginCallBack = OnLoginCallBack;
-            callBack.OnLogoutCallBack = OnLogoutCallBack;
-            callBack.OnExitGameCallBack = OnExitGameCallBack;
-            callBack.OnPayCallBack = OnPayCallBack;
-            SetSdkCallBackReceiver (callBack.gameObject.name);
+            callBack.OnCallBack = OnUsdkCallBack;
         }
 
         #region sdk api
-        public static void SetSdkCallBackReceiver (string receiverName) {
-            if (string.IsNullOrEmpty (receiverName))
-                return;
-            CallPlugin (PLATFORM_NAME, "setSdkCallBackReceiver", receiverName);
-        }
-
         public static string GetConfig (string key) {
             if (key == null)
                 return string.Empty;
@@ -90,63 +70,48 @@ namespace Usdk {
         #endregion
 
         #region sdk callback
-        private static void OnPayCallBack (int errorCode, List<string> msg) {
-            if (errorCode == (int) UsdkCallBackErrorCode.InitSuccess) {
+        private static void OnUsdkCallBack (string errorCode, List<string> msg) {
+            if (errorCode == UsdkCallBackErrorCode.InitSuccess.ToString ()) {
                 //初始化成功
                 Debug.Log ("sdk init success");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.InitFail) {
+            } else if (errorCode == UsdkCallBackErrorCode.InitFail.ToString ()) {
                 //初始化失败
                 Debug.Log ("sdk init failed");
-            }
-        }
-
-        private static void OnExitGameCallBack (int errorCode, List<string> msg) {
-            Debug.Log ("exit game");
-            if (errorCode == (int) UsdkCallBackErrorCode.ExitNoChannelExiter) {
+            } else if (errorCode == UsdkCallBackErrorCode.ExitNoChannelExiter.ToString ()) {
                 //SDK无退出页，需要调用游戏内部退出页
                 Application.Quit ();
-            } else if (errorCode == (int) UsdkCallBackErrorCode.ExitSuccess) {
+            } else if (errorCode == UsdkCallBackErrorCode.ExitSuccess.ToString ()) {
                 //SDK自带退出页并且已经确认退出
                 Application.Quit ();
-            }
-        }
-
-        private static void OnLogoutCallBack (int errorCode, List<string> msg) {
-            if (errorCode == (int) UsdkCallBackErrorCode.LogoutFinish) {
+            } else if (errorCode == UsdkCallBackErrorCode.LogoutFinish.ToString ()) {
                 //SDK退出成功
                 Debug.Log ("logout success");
-            }
-        }
-
-        private static void OnLoginCallBack (int errorCode, List<string> msg) {
-            if (errorCode == (int) UsdkCallBackErrorCode.LoginSuccess) {
+            } else if (errorCode == UsdkCallBackErrorCode.LoginSuccess.ToString ()) {
                 //SDK登录成功
                 Debug.Log ("login success");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.LoginCancel) {
+            } else if (errorCode == UsdkCallBackErrorCode.LoginCancel.ToString ()) {
                 //SDK取消登录
                 Debug.Log ("login cancel");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.LoginFail) {
+            } else if (errorCode == UsdkCallBackErrorCode.LoginFail.ToString ()) {
                 //SDK登录失败
                 Debug.Log ("login failed");
-            }
-        }
-
-        private static void OnInitSDKCallBack (int errorCode, List<string> msg) {
-            if (errorCode == (int) UsdkCallBackErrorCode.PaySuccess) {
+            } else if (errorCode == UsdkCallBackErrorCode.PaySuccess.ToString ()) {
                 //SDK支付成功
                 Debug.Log ("pay success");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.PayCancel) {
+            } else if (errorCode == UsdkCallBackErrorCode.PayCancel.ToString ()) {
                 //SDK取消支付
                 Debug.Log ("pay cancel");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.PayProgress) {
+            } else if (errorCode == UsdkCallBackErrorCode.PayProgress.ToString ()) {
                 //SDK支付进行中
                 Debug.Log ("pay progress");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.PayOthers) {
+            } else if (errorCode == UsdkCallBackErrorCode.PayOthers.ToString ()) {
                 //SDK其他支付错误码
                 Debug.Log ("pay other errorcode");
-            } else if (errorCode == (int) UsdkCallBackErrorCode.PayFail) {
+            } else if (errorCode == UsdkCallBackErrorCode.PayFail.ToString ()) {
                 //SDK支付失败
                 Debug.Log ("pay failed");
+            } else {
+                Debug.LogError (string.Format ("usdk call back error.'{0}' undefine in 'UsdkCallBackErrorCode'", errorCode));
             }
         }
         #endregion
