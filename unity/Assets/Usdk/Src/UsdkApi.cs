@@ -70,44 +70,44 @@ namespace Usdk {
         #endregion
 
         #region sdk callback
-        private static void OnUsdkCallBack (string errorCode, List<string> msg) {
-            if (errorCode == UsdkCallBackErrorCode.InitSuccess.ToString ()) {
+        private static void OnUsdkCallBack (int errorCode, List<string> msg) {
+            if (errorCode == (int)UsdkCallBackErrorCode.InitSuccess) {
                 //初始化成功
                 Debug.Log ("sdk init success");
-            } else if (errorCode == UsdkCallBackErrorCode.InitFail.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.InitFail) {
                 //初始化失败
                 Debug.Log ("sdk init failed");
-            } else if (errorCode == UsdkCallBackErrorCode.ExitNoChannelExiter.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.ExitNoChannelExiter) {
                 //SDK无退出页，需要调用游戏内部退出页
                 Application.Quit ();
-            } else if (errorCode == UsdkCallBackErrorCode.ExitSuccess.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.ExitSuccess) {
                 //SDK自带退出页并且已经确认退出
                 Application.Quit ();
-            } else if (errorCode == UsdkCallBackErrorCode.LogoutFinish.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.LogoutFinish) {
                 //SDK退出成功
                 Debug.Log ("logout success");
-            } else if (errorCode == UsdkCallBackErrorCode.LoginSuccess.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.LoginSuccess) {
                 //SDK登录成功
                 Debug.Log ("login success");
-            } else if (errorCode == UsdkCallBackErrorCode.LoginCancel.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.LoginCancel) {
                 //SDK取消登录
                 Debug.Log ("login cancel");
-            } else if (errorCode == UsdkCallBackErrorCode.LoginFail.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.LoginFail) {
                 //SDK登录失败
                 Debug.Log ("login failed");
-            } else if (errorCode == UsdkCallBackErrorCode.PaySuccess.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.PaySuccess) {
                 //SDK支付成功
                 Debug.Log ("pay success");
-            } else if (errorCode == UsdkCallBackErrorCode.PayCancel.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.PayCancel) {
                 //SDK取消支付
                 Debug.Log ("pay cancel");
-            } else if (errorCode == UsdkCallBackErrorCode.PayProgress.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.PayProgress) {
                 //SDK支付进行中
                 Debug.Log ("pay progress");
-            } else if (errorCode == UsdkCallBackErrorCode.PayOthers.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.PayOthers) {
                 //SDK其他支付错误码
                 Debug.Log ("pay other errorcode");
-            } else if (errorCode == UsdkCallBackErrorCode.PayFail.ToString ()) {
+            } else if (errorCode == (int)UsdkCallBackErrorCode.PayFail) {
                 //SDK支付失败
                 Debug.Log ("pay failed");
             } else {

@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace Usdk {
     public enum UsdkCallBackErrorCode {
-        InitSuccess = 0,
-        InitFail,
-        LoginSuccess,
-        LoginCancel,
-        LoginFail,
-        LogoutFinish,
-        ExitNoChannelExiter,
-        ExitSuccess,
-        PaySuccess,
-        PayCancel,
-        PayFail,
-        PayProgress,
-        PayOthers,
+	    InitSuccess,
+	    InitFail,
+	    LoginSuccess,
+	    LoginCancel,
+	    LoginFail,
+	    LogoutFinish,
+	    ExitNoChannelExiter,
+	    ExitSuccess,
+	    PaySuccess,
+	    PayCancel,
+	    PayFail,
+	    PayProgress,
+	    PayOthers
     }
 
     public class UsdkCallBackRetMsg {
-        public string errorCode;
+        public int errorCode;
         public List<string> msg;
 
         public UsdkCallBackRetMsg (string ret) {
@@ -29,7 +29,7 @@ namespace Usdk {
             for (int i = 0; i < retInfo.Length; i++) {
                 string[] subMsgs = retInfo[i].Split ('=');
                 if (subMsgs[0] == "errorCode")
-                    errorCode = subMsgs[1];
+                    errorCode = Convert.ToInt32(subMsgs[1]);
                 else
                     msg.Add (subMsgs[1]);
             }
@@ -37,7 +37,7 @@ namespace Usdk {
     }
 
     public class UsdkCallBack : MonoBehaviour {
-        public Action<string, List<string>> OnCallBack;
+        public Action<int, List<string>> OnCallBack;
 
         public static UsdkCallBack Create () {
             GameObject callBackObj = new GameObject ("UsdkCallBack");

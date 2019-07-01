@@ -201,7 +201,7 @@ public class UsdkBase implements IUsdkCallBack, IUsdkApplicationDelegate {
 	
 	@Override
 	public void sendCallBack2Unity(UsdkCallBackErrorCode errorCode, String paramString) {
-		String retMsg = "errorCode=" + errorCode.name();
+		String retMsg = "errorCode=" + errorCode.ordinal();
 		if(paramString != null && paramString.length() > 0)
 			retMsg = retMsg + "&paramString=" + paramString;
 		UnityPlayer.UnitySendMessage(callBackReceiverName, "CallBack", retMsg);

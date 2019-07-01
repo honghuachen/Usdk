@@ -6,18 +6,18 @@ public interface IUsdkCallBack {
 	
 	public enum UsdkCallBackErrorCode
 	{
-		InitSuccess,
-		InitFail,
-		LoginSuccess,
-		LoginCancel,
-		LoginFail,
-		LogoutFinish,
-		ExitNoChannelExiter,
-		ExitSuccess,
-		PaySuccess,
-		PayCancel,
-		PayFail,
-		PayProgress,
-		PayOthers,	
+	    InitSuccess,
+	    InitFail,
+	    LoginSuccess,
+	    LoginCancel,
+	    LoginFail,
+	    LogoutFinish,
+	    ExitNoChannelExiter,
+	    ExitSuccess,
+	    PaySuccess,
+	    PayCancel,
+	    PayFail,
+	    PayProgress,
+	    PayOthers
 	}
 }
