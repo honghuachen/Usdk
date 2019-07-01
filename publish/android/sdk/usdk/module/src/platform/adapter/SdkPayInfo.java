@@ -6,28 +6,28 @@ import java.util.Map;
 import android.util.Log;
 
 public class SdkPayInfo {
-	public String uid;// �û�ID,��Ϸ����ʹ�õ�¼ʱ���Ϸ��������ص�uid
-	public String productId;// ��ƷID
-	public String productName;// ��Ʒ����
-	public String productDesc;// ��Ʒ����
-	public String productUnit;// ��Ʒ��λ������Ԫ��
-	public int productUnitPrice;// ��Ʒ����,��λ�֣����贫���Ժ�汾��ȥ����?
-	public int productQuantity;// ��Ʒ���������繺��60Ԫ����60
-	public int totalAmount;// ��Ʒ�ܽ��?,��λ��
-	public int payAmount;// ʵ��֧���ܶ�,��λ��
-	public String currencyName;// ���������ش���ʵ��֧���Ĺ��ʱ�׼���Ҵ��룬����CNY(�����?)/USD(��Ԫ)
-	public String roleId;// ��ɫID
-	public String roleName;// ��ɫ����
-	public String roleLevel;// ��ɫ�ȼ�
-	public String roleVipLevel;// ��ɫvip�ȼ�
-	public String serverId;// ��ID������Ϊ�����֣��Ҳ��ܳ���2147483647��Ӧ�ñ�����Ҫ��
-	public String zoneId;// ��ID
-	public String partyName;// �������?
-	public String virtualCurrencyBalance;// �����������Ҫ���ֶε��������췢��С�ס�VIVO
-	public String customInfo;// ��չ�ֶΣ�����֧���ɹ���͸������Ϸ
-	public String gameTradeNo;// ��Ϸ����ID��֧���ɹ���͸������Ϸ
-	public String gameCallBackURL;// ֧���ص���ַ�����Ϊ�գ����̨���õĻص���ַ
-	public String additionalParams;// ��չ����
+	public String uid;
+	public String productId;
+	public String productName;
+	public String productDesc;
+	public String productUnit;
+	public int productUnitPrice;
+	public int productQuantity;
+	public int totalAmount;
+	public int payAmount;
+	public String currencyName;
+	public String roleId;
+	public String roleName;
+	public String roleLevel;
+	public String roleVipLevel;
+	public String serverId;
+	public String zoneId;
+	public String partyName;
+	public String virtualCurrencyBalance;
+	public String customInfo;
+	public String gameTradeNo;
+	public String gameCallBackURL;
+	public String additionalParams;
 
 	public SdkPayInfo(String pay_info_) {
 		Map<String, String> pay_infos = ParseString(pay_info_);
