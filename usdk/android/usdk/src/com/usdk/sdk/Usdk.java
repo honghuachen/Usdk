@@ -2,8 +2,6 @@ package com.usdk.sdk;
 
 import java.util.LinkedHashMap;
 
-import com.usdk.platform.adapter.PlatformProxyBase;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -27,10 +25,6 @@ public class Usdk {
 			return m_pluginMap.get(name);
 		else
 			return load(name);
-	}
-
-	public static PlatformProxyBase getPlatform() {
-		return (PlatformProxyBase) getPlugin("com.usdk.platform.PlatformProxy");
 	}
 
 	private static UsdkBase load(String name) {

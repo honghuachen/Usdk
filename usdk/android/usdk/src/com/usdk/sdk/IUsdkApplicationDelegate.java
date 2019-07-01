@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-public interface IUsdkBase {
+public interface IUsdkApplicationDelegate {
 	public void onCreate(Activity activity, Bundle savedInstanceState);
 	public void onStart();
 	public void onDestroy();

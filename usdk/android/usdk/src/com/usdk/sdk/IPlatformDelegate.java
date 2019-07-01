@@ -1,7 +1,6 @@
-package com.usdk.platform.adapter;
+package com.usdk.sdk;
 
-public interface IPlatformProxyBase {
-	public void setSdkCallBackReceiver(String receiverName);
+public interface IPlatformDelegate {
 	public void login(String custom_params_);
 	public void logout(String custom_params_);
 	public void exit(String custom_params_);
@@ -9,6 +8,5 @@ public interface IPlatformProxyBase {
 	public void releaseSdkResource(String custom_params_);
 	public void switchAccount(String custom_params_);
 	public void openUserCenter(String custom_params_);
-	public void openAppstoreComment(String appid);
 	public String getConfig(String key);
 }
