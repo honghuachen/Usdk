@@ -1,4 +1,4 @@
-package com.yuenan.sdk;
+package com.usdk.plugin;
 
 
 import java.util.HashMap;
@@ -7,10 +7,10 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.usdk.platform.adapter.IPlatformCallBack;
 import com.usdk.platform.adapter.PlatformProxyBase;
 import com.usdk.platform.adapter.SdkPayInfo;
 import com.usdk.platform.adapter.SdkRoleInfo;
+import com.usdk.sdk.IUsdkCallBack.UsdkCallBackErrorCode;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -68,18 +68,14 @@ public class PlatformProxy extends PlatformProxyBase {
 			mTokens.add(accessToken);
 			debug("mToken: "+mToken);
 			
-			platformCallBack.loginCallBack(
-					IPlatformCallBack.ErrorCode.LoginSuccess.ordinal(),
-					"");
+			sendCallBack2Unity(UsdkCallBackErrorCode.LoginSuccess);
 		}
 
 		@Override
 		public void onLoginFailed(String reason) {
 			// TODO Auto-generated method stub
 			Utils.toast(mActivity, "Login failed, reason: " + reason);
-			platformCallBack.loginCallBack(
-					IPlatformCallBack.ErrorCode.LoginFail.ordinal(),
-					"");
+			sendCallBack2Unity(UsdkCallBackErrorCode.LoginFail);
 		}
 	};
 
@@ -90,9 +86,7 @@ public class PlatformProxy extends PlatformProxyBase {
 		public void onLogoutSuccessful() {
 			//mSohaSDK.login();
 			debug("*** logout success!");
-			platformCallBack.logoutCallBack(
-					IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
-					"");
+			sendCallBack2Unity(UsdkCallBackErrorCode.LogoutFinish);
 		}
 	};
 
@@ -107,10 +101,7 @@ public class PlatformProxy extends PlatformProxyBase {
 				Utils.toast(mActivity, "Payment successful; orderId="
 						+ orderId);
 				debug("*** yuenansdk pay successed");
-				
-				platformCallBack.payCallBack(
-						IPlatformCallBack.ErrorCode.PaySuccess.ordinal(),
-							"");
+				sendCallBack2Unity(UsdkCallBackErrorCode.PaySuccess);
 			} else {
 				Utils.toast(mActivity, "Payment successful");
 			}

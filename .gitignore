@@ -1,0 +1,14 @@
+/publish/ios/xcode
+/publish/ios/build
+/publish/ios/ipa
+/publish/ios/logs
+/unity/ProjectSettings
+/unity/Library
+/unity/Logs
+/unity/Packages
+*.meta
+/publish/ios/tools/XcodeSetting/obj
+/publish/ios/tools/XcodeSetting/bin
+bin
+obj
+Temp

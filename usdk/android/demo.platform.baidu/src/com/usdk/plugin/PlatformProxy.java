@@ -10,7 +10,6 @@ import com.baidu.gamesdk.IResponse;
 import com.baidu.gamesdk.OnGameExitListener;
 import com.baidu.gamesdk.ResultCode;
 import com.baidu.platformsdk.PayOrderInfo;
-import com.usdk.platform.adapter.IPlatformCallBack;
 import com.usdk.platform.adapter.PlatformProxyBase;
 import com.usdk.platform.adapter.SdkPayInfo;
 
@@ -30,22 +29,19 @@ public class PlatformProxy extends PlatformProxyBase {
 
 					@Override
 					public void onGameExit() {
-						platformCallBack
-								.exitGameCallBack(IPlatformCallBack.ErrorCode.ExitSuccess
-										.ordinal());
+						sendCallBack2Unity(UsdkCallBackErrorCode.ExitSuccess);
 					}
 				});
 
 			}
-		});
+		});		
 	}
 
 	@Override
 	public void logout(String custom_params_) {
 		BDGameSDK.logout();
 		uid = "";
-		platformCallBack.logoutCallBack(
-				IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(), "logout");
+		this.sendCallBack2Unity(UsdkCallBackErrorCode.LogoutFinish,"logout");
 	}
 
 	@Override
@@ -65,21 +61,15 @@ public class PlatformProxy extends PlatformProxyBase {
 							mtoken = arg0 + "&" + arg1;
 
 							BDGameSDK.showFloatView(mActivity);
-							platformCallBack.loginCallBack(
-									IPlatformCallBack.ErrorCode.LoginSuccess
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.LoginSuccess,resultDesc);
 							break;
 						case ResultCode.LOGIN_CANCEL:
-							platformCallBack.loginCallBack(
-									IPlatformCallBack.ErrorCode.LoginCancel
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.LoginCancel,resultDesc);
 							break;
 						case ResultCode.LOGIN_FAIL:
 						default:
 							uid = "";
-							platformCallBack.loginCallBack(
-									IPlatformCallBack.ErrorCode.LoginFail
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.LoginFail,resultDesc);
 							break;
 						}
 					}
@@ -111,25 +101,17 @@ public class PlatformProxy extends PlatformProxyBase {
 							PayOrderInfo extraData) {
 						switch (resultCode) {
 						case ResultCode.PAY_SUCCESS:
-							platformCallBack.payCallBack(
-									IPlatformCallBack.ErrorCode.PaySuccess
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.PaySuccess,resultDesc);
 							break;
 						case ResultCode.PAY_CANCEL:
-							platformCallBack.payCallBack(
-									IPlatformCallBack.ErrorCode.PayCancel
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.PayCancel,resultDesc);
 							break;
 						case ResultCode.PAY_FAIL: 
-							platformCallBack.payCallBack(
-									IPlatformCallBack.ErrorCode.PayFail
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.PayFail,resultDesc);
 							break;
 						case ResultCode.PAY_SUBMIT_ORDER:
 						default:
-							platformCallBack.payCallBack(
-									IPlatformCallBack.ErrorCode.PayOthers
-											.ordinal(), resultDesc);
+							sendCallBack2Unity(UsdkCallBackErrorCode.PayOthers,resultDesc);
 							break;
 						}
 					}
@@ -138,8 +120,9 @@ public class PlatformProxy extends PlatformProxyBase {
 
 	@Override
 	public void OnCreate(Activity activity, Bundle savedInstanceState) {
-		super.onCreate(activity, savedInstanceState);
-
+		// TODO Auto-generated method stub
+		super.OnCreate(activity, savedInstanceState);
+		
 		BDGameSDKSetting mBDGameSDKSetting = new BDGameSDKSetting();
 		mBDGameSDKSetting.setAppID(Integer.parseInt(this.getConfig("AppID"))); 
 		mBDGameSDKSetting.setAppKey(this.getConfig("AppKey"));
@@ -151,15 +134,11 @@ public class PlatformProxy extends PlatformProxyBase {
 					Void extraData) {
 				switch (resultCode) {
 				case ResultCode.INIT_SUCCESS:
-					platformCallBack.initSDKCallBack(
-							IPlatformCallBack.ErrorCode.InitSuccess.ordinal(),
-							resultDesc);
+					sendCallBack2Unity(UsdkCallBackErrorCode.InitSuccess,resultDesc);
 					break;
 				case ResultCode.INIT_FAIL:
 				default:
-					platformCallBack.initSDKCallBack(
-							IPlatformCallBack.ErrorCode.InitFail.ordinal(),
-							resultDesc);
+					sendCallBack2Unity(UsdkCallBackErrorCode.InitFail,resultDesc);
 					break;
 				}
 			}
@@ -190,9 +169,7 @@ public class PlatformProxy extends PlatformProxyBase {
 					String arg1 = "arg1@" + BDGameSDK.getLoginUid();
 					mtoken = arg0 + "&" + arg1;
 			
-					platformCallBack.logoutCallBack(
-							IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
-							resultDesc);
+					sendCallBack2Unity(UsdkCallBackErrorCode.LogoutFinish,resultDesc);
 					break;
 				case ResultCode.LOGIN_CANCEL:
 					break;
@@ -203,8 +180,6 @@ public class PlatformProxy extends PlatformProxyBase {
 			}
 		});
 	}
-
-	
 	
 	@Override
 	public void OnFinish() {

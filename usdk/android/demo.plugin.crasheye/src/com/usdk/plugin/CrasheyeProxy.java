@@ -14,11 +14,11 @@ public class CrasheyeProxy extends UsdkBase implements ICrasheye{
 	public void OnCreate(Activity activity, Bundle savedInstanceState) {
 		super.onCreate(activity, savedInstanceState);
 		this.parseXmlConfig("CrasheyeConfig.xml");	
-		PlatformProxyBase proxy = Usdk.getPlatform();
-		
+		PlatformProxyBase proxy = (PlatformProxyBase)Usdk.getPlugin("com.usdk.plugin.PlatformProxy");
 		String crasheyeAppkey = this.getConfig("AppKey");
 		Crasheye.enableDebug();
-		Crasheye.setChannelID(proxy.getConfig("ChannelId")+"_"+proxy.getConfig("AdId"));
+		if(proxy != null)
+			Crasheye.setChannelID(proxy.getConfig("ChannelId")+"_"+proxy.getConfig("AdId"));
 		Crasheye.setLogging(100, "Unity");
 		Crasheye.initWithNativeHandleUserspaceSig(activity.getApplicationContext(), crasheyeAppkey);
 		Crasheye.initWithMonoNativeHandle(activity.getApplicationContext(), crasheyeAppkey);

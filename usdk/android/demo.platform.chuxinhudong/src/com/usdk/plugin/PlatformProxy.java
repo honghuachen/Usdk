@@ -25,8 +25,6 @@ import com.chuxin.game.model.UpdateInfo;
 import com.chuxin.game.utils.SGResourceUtil;
 import com.chuxin.sdk.utils.SGToast;
 import  com.chuxin.sdk.utils.ChuXinAppsFlyer;
-import com.usdk.platform.adapter.IPlatformCallBack;
-import com.usdk.platform.adapter.PlatformCallback;
 import com.usdk.platform.adapter.PlatformProxyBase;
 import com.usdk.platform.adapter.SdkPayInfo;
 import com.usdk.platform.adapter.SdkRoleInfo;
@@ -112,16 +110,12 @@ public class PlatformProxy extends PlatformProxyBase {
 				if (result != null && result.isOK()) {
 					//鍒濆鍖栨垚鍔�
 					debug("*** 鍒濆鍖栨垚鍔�");
-					platformCallBack.initSDKCallBack(
-							IPlatformCallBack.ErrorCode.InitSuccess.ordinal(),
-							"");
+					sendCallBack2Unity(UsdkCallBackErrorCode.InitSuccess);
 				}
 				else
 				{
 					debug("*** 鍒濆鍖栧け璐�");
-					platformCallBack.initSDKCallBack(
-							IPlatformCallBack.ErrorCode.InitFail.ordinal(),
-							"");
+					sendCallBack2Unity(UsdkCallBackErrorCode.InitFail);
 				}
 			}
 		});
@@ -149,16 +143,12 @@ public class PlatformProxy extends PlatformProxyBase {
 				mTokens.add(m_signKey);
 				debug("mToken: "+mToken);
 				
-				platformCallBack.loginCallBack(
-						IPlatformCallBack.ErrorCode.LoginSuccess.ordinal(),
-						"");
+				sendCallBack2Unity(UsdkCallBackErrorCode.LoginSuccess);
 			}
 			else{
 				debug("*** login fail");
 				
-				platformCallBack.loginCallBack(
-						IPlatformCallBack.ErrorCode.LoginFail.ordinal(),
-						"");
+				sendCallBack2Unity(UsdkCallBackErrorCode.LoginFail);
 			}
 		}
 
@@ -167,14 +157,10 @@ public class PlatformProxy extends PlatformProxyBase {
 			logined = false;
 			if (ret.isOK()) {
 				debug("*** logout success!");
-				platformCallBack.logoutCallBack(
-						IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
-						"");
+				sendCallBack2Unity(UsdkCallBackErrorCode.LogoutFinish);
 			} else {
 				debug("*** logout failed!");
-				platformCallBack.logoutCallBack(
-						IPlatformCallBack.ErrorCode.LogoutFinish.ordinal(),
-						"");
+				sendCallBack2Unity(UsdkCallBackErrorCode.LogoutFinish);
 			}
 		}
 	};
@@ -366,15 +352,10 @@ public class PlatformProxy extends PlatformProxyBase {
 							public void onPay(SGResult result) {
 								if (result.isOK()) {
 									debug("*** linyou pay successed");
-									
-									platformCallBack.payCallBack(
-											IPlatformCallBack.ErrorCode.PaySuccess.ordinal(),
-		     								"");
+									sendCallBack2Unity(UsdkCallBackErrorCode.PaySuccess);
 								} else {
 									debug("*** linyou pay fail:" + result.getMsg());
-									platformCallBack.payCallBack(
-											IPlatformCallBack.ErrorCode.PayFail.ordinal(),
-		     								"");
+									sendCallBack2Unity(UsdkCallBackErrorCode.PayFail);
 								}
 							}
 						});
@@ -398,15 +379,10 @@ public class PlatformProxy extends PlatformProxyBase {
 							public void onPay(SGResult result) {
 								if (result.isOK()) {
 									debug("*** linyou pay successed");
-									
-									platformCallBack.payCallBack(
-											IPlatformCallBack.ErrorCode.PaySuccess.ordinal(),
-		     								"");
+									sendCallBack2Unity(UsdkCallBackErrorCode.PaySuccess);
 								} else {
 									debug("*** linyou pay fail:" + result.getMsg());
-									platformCallBack.payCallBack(
-											IPlatformCallBack.ErrorCode.PayFail.ordinal(),
-		     								"");
+									sendCallBack2Unity(UsdkCallBackErrorCode.PayFail);
 								}
 							}
 						});

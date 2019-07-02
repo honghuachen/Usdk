@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.usdk.platform.adapter.ProxyBase;
+import com.usdk.platform.adapter.PlatformProxyBase;
 import com.usdk.sdk.UsdkBase;
-import com.usdk.sdk.UsdkFactory;
+import com.usdk.sdk.Usdk;
 import com.xsj.crasheye.Crasheye;
 
 public class CrasheyeProxy extends UsdkBase implements ICrasheye{
@@ -14,11 +14,11 @@ public class CrasheyeProxy extends UsdkBase implements ICrasheye{
 	public void OnCreate(Activity activity, Bundle savedInstanceState) {
 		super.onCreate(activity, savedInstanceState);
 		this.parseXmlConfig("CrasheyeConfig.xml");	
-		ProxyBase proxy = UsdkFactory.getPlatform();
-		
+		PlatformProxyBase proxy = (PlatformProxyBase)Usdk.getPlugin("com.usdk.plugin.PlatformProxy");
 		String crasheyeAppkey = this.getConfig("AppKey");
 		Crasheye.enableDebug();
-		Crasheye.setChannelID(proxy.getConfig("ChannelId")+"_"+proxy.getConfig("AdId"));
+		if(proxy != null)
+			Crasheye.setChannelID(proxy.getConfig("ChannelId")+"_"+proxy.getConfig("AdId"));
 		Crasheye.setLogging(100, "Unity");
 		Crasheye.initWithNativeHandleUserspaceSig(activity.getApplicationContext(), crasheyeAppkey);
 		Crasheye.initWithMonoNativeHandle(activity.getApplicationContext(), crasheyeAppkey);
