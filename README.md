@@ -11,6 +11,7 @@
 [Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
 [Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
 [智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)  
+[Unity端API使用](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E7%AB%AFAPI%E4%BD%BF%E7%94%A8.doc)  
 
 # 系统要求
 #android：
