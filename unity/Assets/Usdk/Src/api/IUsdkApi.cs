@@ -7,8 +7,8 @@ namespace Usdk
 {
     public interface IUsdkApi
     {
-        void CallPlugin(string pluginName, string methodName, params string[] parameters);
-        R CallPlugin<R>(string pluginName, string methodName, params string[] parameters);
+        void CallPlugin(string pluginName, string methodName, params object[] parameters);
+        R CallPlugin<R>(string pluginName, string methodName, params object[] parameters);
     }
 
     public class SdkPayInfo

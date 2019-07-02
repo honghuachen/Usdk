@@ -24,7 +24,7 @@ namespace Usdk
         }
 #endif
 
-        private void SendAndroidMessage(string pluginName, string method, params string[] parameters)
+        private void SendAndroidMessage(string pluginName, string method, params object[] parameters)
         {
 #if UNITY_ANDROID
             try
@@ -40,7 +40,7 @@ namespace Usdk
 #endif
         }
 
-        private R SendAndroidMessage<R>(string pluginName,string method, params string[] parameters)
+        private R SendAndroidMessage<R>(string pluginName,string method, params object[] parameters)
         {
 #if UNITY_ANDROID
 		    try
@@ -59,12 +59,12 @@ namespace Usdk
             return default(R);
         }
 
-        public void CallPlugin(string pluginName, string methodName, params string[] parameters)
+        public void CallPlugin(string pluginName, string methodName, params object[] parameters)
         {
            SendAndroidMessage<string>(pluginName, methodName, parameters);
         }
 
-        public R CallPlugin<R>(string pluginName, string methodName, params string[] parameters)
+        public R CallPlugin<R>(string pluginName, string methodName, params object[] parameters)
         {
             return SendAndroidMessage<R>(pluginName, methodName, parameters);
         }

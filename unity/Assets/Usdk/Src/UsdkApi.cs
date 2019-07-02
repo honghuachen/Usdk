@@ -60,11 +60,11 @@ namespace Usdk {
             CallPlugin (PLATFORM_NAME, "releaseSdkResource");
         }
 
-        public static void CallPlugin (string pluginName, string methodName, params string[] parameters) {
+        public static void CallPlugin (string pluginName, string methodName, params object[] parameters) {
             api.CallPlugin (pluginName, methodName, parameters);
         }
 
-        public static R CallPlugin<R> (string pluginName, string methodName, params string[] parameters) {
+        public static R CallPlugin<R> (string pluginName, string methodName, params object[] parameters) {
             return api.CallPlugin<R> (pluginName, methodName, parameters);
         }
         #endregion
