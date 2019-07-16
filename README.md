@@ -32,6 +32,9 @@ Usdk可以做到按需调用各种Native插件，各种Native插件可以按需�
 # 强大的多渠道打包平台
 Usdk不仅仅是一个sdk适配框架，更是一个功能强大的多渠道打包平台，通过强大的sdk适配机制能够快速的实现单渠道和多渠道的出包，并且可以大大的减少出包时间。
 
+# Jinkens远程构建支持
+Usdk实现了本地命令行打包工具（build.bat\build.sh），使用Jinkens远程构建只需要把本地的命令行工具稍作修改，把本地输入参数操作去掉并在Jinkens平台上进行参数设置再调用本地命令行工具打包即可。
+
 # Unity导出xcode自动配置工具([文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx))
 [Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
 在unity4.x通过xupoter插件来设置unity导出xcode自动配置，到了unity5.x unity自己实现了一套工具，并且比xupoter提供了更多的操作可能。但是unity的工具集成在了unity编辑器里面，所以如果要想使用只能在unity工程中通过编辑器功能来操作导出xcode工程的自动配置。这样有一个缺点就是对于unity工程不需要变化但是又要打多个渠道的iOS包的情况下需要每次都要重新从Unity导出到xcode，对于大项目这是十分浪费时间的。针对上述情况，Usdk独立出了unity这套自动配置工具，完全脱离了Unity体系，能够单独作为一个外部工具随时随地的操作xcode工程下的工程配置文件和Info.plist配置文件，可以添加或者移除指定库、源码、资源等，操作非常灵活，只要你能想得到的操作都能够实现。
