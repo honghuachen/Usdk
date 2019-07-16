@@ -32,8 +32,8 @@ Usdk可以做到按需调用各种Native插件，各种Native插件可以按需�
 # 强大的多渠道打包平台
 Usdk不仅仅是一个sdk适配框架，更是一个功能强大的多渠道打包平台，通过强大的sdk适配机制能够快速的实现单渠道和多渠道的出包，并且可以大大的减少出包时间。
 
-# Jinkens远程构建支持
-Usdk实现了本地命令行打包工具（build.bat\build.sh），使用Jinkens远程构建只需要把本地的命令行工具稍作修改，把本地输入参数操作去掉并在Jinkens平台上进行参数设置再调用本地命令行工具打包即可。
+# jenkins远程构建支持
+Usdk实现了本地命令行打包工具（build.bat\build.sh），使用jenkins远程构建只需要把本地的命令行工具稍作修改，把本地输入参数操作去掉并在jenkins平台上进行参数设置再调用本地命令行工具打包即可。
 
 # Unity导出xcode自动配置工具([文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx))
 [Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
