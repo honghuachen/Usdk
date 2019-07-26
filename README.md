@@ -28,6 +28,10 @@ ios支持xcode工程适配
 Usdk能够快速的适配各个渠道sdk和Native插件，适配过程无需修改和添加任何C#代码，做到C#代码的零入侵。
 Usdk可以做到按需调用各种Native插件，各种Native插件可以按需打入各个渠道包，剔除无用的Native插件，从而节省包体。
 
+# 支持项目依赖
+android：android平台通过gradle打包，所以天然的就支持项目依赖。只需要把依赖项目做成一个module放到渠道libs文件夹下，在settings.gradle中配置module的依赖路径，再在build.gradle的dependencies节点下依赖相应的module即可。
+iOS：可以通过Framework、cocoaPods、workspace的方式建立私有库的依赖。
+
 # 强大的多渠道打包平台
 Usdk不仅仅是一个sdk适配框架，更是一个功能强大的多渠道打包平台，通过强大的sdk适配机制能够快速的实现单渠道和多渠道的出包，并且可以大大的减少出包时间。
 
