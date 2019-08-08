@@ -49,4 +49,4 @@ Usdk加入了CocoaPods自动构建工具，使得cocoapods方式构建xcode工�
 iOS多渠道多插件出包不仅支持本地Framework的导入，还智能支持CocoaPods远程仓库依赖的构建，并且两种方式可以混用。只需要在插件或者渠道的module文件夹下加入一个CocoaPods.json的依赖配置文件即可，打包工具即会智能识别依赖并构建CocoaPods项目。
 
 # 技术支持
-QQ群：3112035
+QQ群：[3112035](https://jq.qq.com/?_wv=1027&k=5RKFifT)
