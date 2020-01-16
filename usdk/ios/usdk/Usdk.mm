@@ -93,7 +93,7 @@ static Usdk* _instance = nil;
     UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
-        NSString *selMethodName = [NSString stringWithFormat:@"%@:", methodName];
+        NSString *selMethodName = args.count>0 ? [NSString stringWithFormat:@"%@:", methodName] : [NSString stringWithFormat:@"%@", methodName];
         SEL sel = NSSelectorFromString(selMethodName);
         if ([plugin respondsToSelector:sel])
             [plugin performSelector:sel withObject:args];
@@ -106,7 +106,7 @@ static Usdk* _instance = nil;
     UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
-        NSString *selMethodName = [NSString stringWithFormat:@"%@:", methodName];
+        NSString *selMethodName = args.count>0 ? [NSString stringWithFormat:@"%@:", methodName] : [NSString stringWithFormat:@"%@", methodName];
         SEL sel = NSSelectorFromString(selMethodName);
         if ([plugin respondsToSelector:sel])
             ret = [plugin performSelector:sel withObject:args];
