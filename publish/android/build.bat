@@ -152,7 +152,7 @@ echo StorePassword=%storepass%>>%gradle_properties%
 echo KeyAlias=%alias%>>%gradle_properties%
 echo KeyPassword=%keypass%>>%gradle_properties%
 
-echo org.gradle.jvmargs=-Xmx4098m -Xms2048m -XX:MaxPermSize=1024m>>%gradle_properties%
+rem echo org.gradle.jvmargs=-Xmx4098m -Xms2048m -XX:MaxPermSize=1024m>>%gradle_properties%
 echo android.enableAapt2=false>>%gradle_properties%
 echo org.gradle.parallel=true>>%gradle_properties%
 echo org.gradle.daemon=true>>%gradle_properties%

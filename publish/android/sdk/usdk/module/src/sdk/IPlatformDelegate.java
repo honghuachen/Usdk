@@ -9,4 +9,5 @@ public interface IPlatformDelegate {
 	public void switchAccount(String custom_params_);
 	public void openUserCenter(String custom_params_);
 	public String getConfig(String key);
+	public void openAppstoreComment(String id);
 }

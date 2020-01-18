@@ -1,9 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-		//jcenter()
+		jcenter()
 		google()
-        jcenter{url 'http://jcenter.bintray.com/'}
+        //jcenter{url 'http://jcenter.bintray.com/'}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -13,9 +13,9 @@ buildscript {
 
 allprojects {
     repositories {
-		//jcenter()
+		jcenter()
 		google()
-		jcenter{url 'http://jcenter.bintray.com/'}
+		//jcenter{url 'http://jcenter.bintray.com/'}
 		flatDir {
             dirs 'libs'
         }
