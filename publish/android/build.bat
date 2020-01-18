@@ -125,6 +125,8 @@ xcopy .\tools\gradle\wrapper %gradlebuildTemp% /e/y/q/z
 
 rem gradle.properties
 set storePath=./sdk/keystore/%keystore%
+call :ReadIni %global_properties% Unity project.dir
+set UnityProjectDir=%result%
 call :ReadIni %global_properties% Unity export.type
 set UnityProjectType=%result%
 call :ReadIni %global_properties% Java java.version
@@ -171,16 +173,18 @@ echo ndk.dir=%NdkDir%>>%local_properties%
 rem settings.gradle
 echo include ':app'>%settings_gradle%
 echo include ':unity'>>%settings_gradle%
+
+set TempUnityProjectDir=%UnityProjectDir:\=/%
+echo project^(':unity'^).projectDir=new File^('%TempUnityProjectDir%'^)>>%settings_gradle%
+
+set unityAndroidPath=%UnityProjectDir%
 if %UnityProjectType% equ eclipse (
-    echo project^(':unity'^).projectDir=new File^('../unity/unity-eclipse'^)>>%settings_gradle%
-    set unityAndroidPath=.\unity\unity-eclipse
-    set appNameXmlPath=.\unity\unity-eclipse\res\values\strings.xml
+	set appNameXmlPath=%unityAndroidPath%\res\values\strings.xml
 )
 if %UnityProjectType% equ as (
-    echo project^(':unity'^).projectDir=new File^('../unity/unity-as'^)>>%settings_gradle%
-    set unityAndroidPath=.\unity\unity-as
-    set appNameXmlPath=.\unity\unity-as\src\main\res\values\strings.xml
+	set appNameXmlPath=%unityAndroidPath%\src\main\res\values\strings.xml
 )
+	
 for %%i in (%plugins%) do (
     echo include ':%%i'>>%settings_gradle%
     echo project^(':%%i'^).projectDir=new File^('../sdk/plugins/%%i/module'^)>>%settings_gradle%
