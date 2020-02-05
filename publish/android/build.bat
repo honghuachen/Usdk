@@ -25,7 +25,8 @@ call :InitPlatformConfig
 call :GenGradleProperties
 call :ReadySdkRes
 cd %gradlebuildTemp%
-call %gradle% assembleRelease --stacktrace
+::call %gradle% assembleRelease --stacktrace
+call gradlew assembleRelease --stacktrace
 pause
 goto :eof
 
@@ -140,8 +141,10 @@ set alias=%result%
 call :ReadIni %storePath% keystore keypass
 set keypass=%result%
  
-set keystorePath=%~dp0sdk/keystore
-set keystorePath=%keystorePath:\=/%
+set keystoreRootPath=%~dp0sdk/keystore
+set keystoreRootPath=%keystorePath:\=/%
+set	keystorePath=%keystoreRootPath%/%keystorename%
+copy %keystorePath% %UnityProjectDir%/%keystorename%
 echo VersionName=%versionName%>%gradle_properties%
 echo VersionCode=%versionCode%>>%gradle_properties%
 echo Package=%package%>>%gradle_properties%
@@ -149,7 +152,7 @@ echo AppName=%appname%>>%gradle_properties%
 echo UnityProjectType=%UnityProjectType%>>%gradle_properties%
 echo JavaVersion=%JavaVersion%>>%gradle_properties%
 echo AppReleaseDir=./outputs/apk>>%gradle_properties%
-echo Keystore=%keystorePath%/%keystorename%>>%gradle_properties%
+echo Keystore=%keystorename%>>%gradle_properties%
 echo StorePassword=%storepass%>>%gradle_properties%
 echo KeyAlias=%alias%>>%gradle_properties%
 echo KeyPassword=%keypass%>>%gradle_properties%
@@ -168,7 +171,7 @@ set SdkDir=%result%
 call :ReadIni %global_properties% AndroidSdk ndk.dir
 set NdkDir=%result%
 echo sdk.dir=%SdkDir%>%local_properties%
-echo ndk.dir=%NdkDir%>>%local_properties%
+rem echo ndk.dir=%NdkDir%>>%local_properties%
 
 rem settings.gradle
 echo include ':app'>%settings_gradle%
