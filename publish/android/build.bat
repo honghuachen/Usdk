@@ -142,9 +142,10 @@ call :ReadIni %storePath% keystore keypass
 set keypass=%result%
  
 set keystoreRootPath=%~dp0sdk/keystore
-set keystoreRootPath=%keystorePath:\=/%
+set keystoreRootPath=%keystoreRootPath:\=/%
 set	keystorePath=%keystoreRootPath%/%keystorename%
-copy %keystorePath% %UnityProjectDir%/%keystorename%
+copy %keystoreRootPath:/=\%\%keystorename% %UnityProjectDir:/=\%
+
 echo VersionName=%versionName%>%gradle_properties%
 echo VersionCode=%versionCode%>>%gradle_properties%
 echo Package=%package%>>%gradle_properties%
