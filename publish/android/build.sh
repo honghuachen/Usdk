@@ -53,7 +53,7 @@ function __showPlatforms(){
 		then
 		  t="包含"
 		else
-		  val=${val}" "${array[0]}
+		  val=${val}" ["${array[0]}]
 		fi
 	done
 	echo $val
@@ -69,7 +69,7 @@ function __showSubPlatforms(){
 		array=(${var//-/ })  
 		if [ "${array[0]}" == "${platform}" ]
 		then
-			val=${val}" "${array[1]}
+			val=${val}" ["${array[1]}]
 		fi
 	done
 	echo $val
@@ -248,8 +248,8 @@ function __readySdkRes(){
 function __showMenu(){
 	echo :Main
 	echo -----------------------------------
-	echo 1.Publish game to debug                  [Debug ipa]
-	echo 2.Publish game to release                [Release ipa]
+	echo 1.Publish game to debug                  [Debug apk]
+	echo 2.Publish game to release                [Release apk]
 	echo 3.Modify version information             [Modify version]
 	echo -----------------------------------
 
