@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:theme="@android:style/Theme.NoTitleBar" package="com.none.sdk">
+	
+    <uses-sdk android:minSdkVersion="12" android:targetSdkVersion="22"/>
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+	
+    <application>     
+    </application>
+</manifest>
