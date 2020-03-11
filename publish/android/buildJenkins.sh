@@ -197,12 +197,17 @@ function __genGradleProperties(){
 		appNameXmlPath=${unityAndroidPath}/src/main/res/values/strings.xml
 	fi
 
-	array=(${plugins//,/ }) 
-	for var in ${array[@]}
-	do
-		echo include \':${var}\'>>${settings_gradle}
-		echo project\(\':${var}\'\).projectDir=new File\(\'../sdk/plugins/${var}/module\'\)>>${settings_gradle}
-	done
+	if [ ! $plugins ]; then
+		echo "plugins is NULL"
+	else
+		array=(${plugins//,/ }) 
+		for var in ${array[@]}
+		do
+			echo include \':${var}\'>>${settings_gradle}
+			echo project\(\':${var}\'\).projectDir=new File\(\'../sdk/plugins/${var}/module\'\)>>${settings_gradle}
+		done
+	fi
+	
 	echo include \':${platform}\'>>${settings_gradle}
 	echo project\(\':${platform}\'\).projectDir=new File\(\'../sdk/platforms/${platform}/module\'\)>>${settings_gradle}
 	echo include \':usdk\'>>${settings_gradle}
@@ -287,4 +292,3 @@ function __main(){
 }
 
 __main
-read -p "按回车键继续"
