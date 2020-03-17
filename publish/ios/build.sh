@@ -230,7 +230,7 @@ function __buildIPA(){
 		
 		xcodebuild clean -xcodeproj $xcodeproj -configuration ${buildType} -alltargets
 		xcodebuild -project $xcodeproj -scheme $xcodeprojname -configuration ${buildType} -archivePath build/$targetname-$var.xcarchive clean archive build CODE_SIGN_IDENTITY=$CODE_SIGN_IDENTITY PROVISIONING_PROFILE=$PROVISIONING_PROFILE PRODUCT_BUNDLE_IDENTIFIER=${package}
-		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $AppStoreExportOptionsPlist -exportPath $ipaoutpath
+		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath $ipaoutpath
 	done
 }
 
