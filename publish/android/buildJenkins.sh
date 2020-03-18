@@ -1,5 +1,5 @@
 #!/bin/bash
-export LANG="en_US.UTF-8"
+export LANG="zh_CN.UTF-8"
 
 RootPath=$(pwd)
 gradlebuildTemp=${RootPath}/buildTemp
@@ -148,6 +148,9 @@ function __genGradleProperties(){
 	cp -r $RootPath/tools/gradle/wrapper/. ${gradlebuildTemp}
 
 	storePath=$RootPath/sdk/keystore/${keystore}
+	chmod +x $storePath
+	dos2unix $storePath
+
 	UnityProjectDir=( "$( __readINI ${global_properties} Unity project.dir )" )
 	UnityProjectType=( "$( __readINI ${global_properties} Unity export.type )" )
 	JavaVersion=( "$( __readINI ${global_properties} Java java.version )" )
@@ -278,6 +281,13 @@ function __showMenu(){
 }
 
 function __main(){
+	chmod +x ${RootPath}/global.properties
+	chmod +x ${RootPath}/version.properties
+	chmod +x ${RootPath}/publish.properties
+	dos2unix ${RootPath}/global.properties
+	dos2unix ${RootPath}/version.properties
+	dos2unix ${RootPath}/publish.properties
+	
 	echo $versionName > ${version_properties}
 	echo $versionCode >>  ${version_properties}
 	__showVersion

@@ -146,6 +146,9 @@ function __genGradleProperties(){
 	cp -r $RootPath/tools/gradle/wrapper/. ${gradlebuildTemp}
 
 	storePath=$RootPath/sdk/keystore/${keystore}
+	chmod +x $storePath
+	dos2unix $storePath
+	
 	UnityProjectDir=( "$( __readINI ${global_properties} Unity project.dir )" )
 	UnityProjectType=( "$( __readINI ${global_properties} Unity export.type )" )
 	JavaVersion=( "$( __readINI ${global_properties} Java java.version )" )
@@ -271,6 +274,13 @@ function __showMenu(){
 }
 
 function __main(){
+	chmod +x ${RootPath}/global.properties
+	chmod +x ${RootPath}/version.properties
+	chmod +x ${RootPath}/publish.properties
+	dos2unix ${RootPath}/global.properties
+	dos2unix ${RootPath}/version.properties
+	dos2unix ${RootPath}/publish.properties
+	
 	__showVersion
 	__showMenu
 	__initPlatformConfig
