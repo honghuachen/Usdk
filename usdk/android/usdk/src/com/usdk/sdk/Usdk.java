@@ -28,6 +28,8 @@ public class Usdk {
 	}
 
 	private static UsdkBase load(String name) {
+		if (name==null||name.equals(""))
+			return null;
 		UsdkBase plugin = loadClass(Usdk.class.getClassLoader(), name,
 				UsdkBase.class);
 		m_pluginMap.put(name, plugin);
@@ -35,12 +37,12 @@ public class Usdk {
 		if (plugin == null)
 			Log.e(TAG, String.format("not found '%s' class.", name));
 		else {
-			try {
+//			try {
 				plugin.onCreate(unityActivity, unityBundle);
-				Log.i(TAG, "init sdk success: " + name);
-			} catch (Exception ex) {
-				Log.e(TAG, "init sdk fail: " + ex.toString());
-			}
+//				Log.i(TAG, "init sdk success: " + name);
+//			} catch (Exception ex) {
+//				Log.e(TAG, "init sdk fail: " + ex.getStackTrace());
+//			}
 		}
 			
 		return plugin;
@@ -69,7 +71,7 @@ public class Usdk {
 		unityActivity = activity;
 		unityBundle = savedInstanceState;
 	
-		load("com.usdk.platform.PlatformProxy");
+		load("com.usdk.plugin.PlatformProxy");
 	}
 
 	public static void onStart() {
