@@ -1,0 +1,149 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+	buildToolsVersion "26.0.3"
+    defaultConfig {
+        applicationId project.Package
+		//此方法需要删除string.xml中的app_name字段
+		//resValue "string", "app_name", "上述"//此方法需要删除string.xml中的app_name字段
+		//manifestPlaceholders = [App_Name : project.AppName]//此方法需要把mainfest中的app_name替换成变量"${App_Name}"
+		versionCode Integer.parseInt(project.VersionCode)
+        versionName project.VersionName
+		
+        minSdkVersion 16
+        targetSdkVersion 26
+		
+		// //是否启动自动拆分多个DEx。dex突破65535的限制,为大程序而设
+		multiDexEnabled true
+		ndk {
+			abiFilters "x86", "armeabi-v7a", "armeabi"
+        }
+		//jackOptions {
+        //    enabled true
+        //}
+    }
+
+	lintOptions {
+        checkReleaseBuilds false
+		// lint发现错误时是否退出Gradle构建
+        abortOnError false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+	
+	aaptOptions {
+		noCompress '.unity3d', '.ress', '.resource', '.obb'
+	}
+	
+	//DEX配置选项
+	dexOptions {
+		//是否启动DEX增量模式，可以加快速度，但是目前这个特性不是很稳定
+        incremental true
+		//执行DX命令是为其分配的最大堆内存，主要用来解决执行DX命令是内存不足的情况
+        javaMaxHeapSize "8g"
+		//是否开启jumbo模式，有时方法数超过了65525，需要开启次模式才能编译成功
+        jumboMode = true
+		//它从库中构建Dex文件，以便在增量构建。关闭会提升构建速度。
+        preDexLibraries = false
+		//执行DX开启的线程数，适当的线程数量可以提高编译速度
+        threadCount = 8
+    }
+	
+	//ADE配置选项
+    adbOptions{
+        //ADB命令执行的超时时间，超时时会返回CommandRectException异常。
+        timeOutInMs = 5 * 1000//5秒
+        //ADB安装选项，例如-r代表替换安装
+        installOptions '-r', '-s'
+    }
+	
+	signingConfigs {
+         release {
+             storeFile file(project.Keystore)
+             storePassword project.StorePassword
+             keyAlias project.KeyAlias
+             keyPassword project.KeyPassword
+         }
+    }
+	
+	// Java编译选项
+    compileOptions {
+		//编码
+		encoding = 'utf-8'
+		if (project.JavaVersion == 'VERSION_1_8'){
+			//Java编译级别
+			sourceCompatibility JavaVersion.VERSION_1_8
+			//生成的Java字节码版本
+			targetCompatibility JavaVersion.VERSION_1_8
+		}
+		else if (project.JavaVersion == 'VERSION_1_7'){
+			//Java编译级别
+			sourceCompatibility JavaVersion.VERSION_1_7
+			//生成的Java字节码版本
+			targetCompatibility JavaVersion.VERSION_1_7
+		}
+    }
+
+    buildTypes {
+		debug {
+			//签名信息
+			signingConfig signingConfigs.debug
+			//是否启用混淆
+            minifyEnabled false
+			//是否开启APK优化，zipAlign是Android提供的一个整理优化APK文件的工具，它可以提高系统和应用的运行效率，更快的读写APK里面的资源，降低内存的优化
+			zipAlignEnabled true
+			//指定多个混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard-user.txt'
+			//是否可调试jni
+			jniDebuggable true
+			//是否可调试
+			debuggable true
+			//是否自动清理未使用的资源
+            shrinkResources false
+        }
+        release {
+			signingConfig signingConfigs.release
+            minifyEnabled false
+			zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard-user.txt'
+        }
+    }
+
+    //配置eclipse工程结构布局，然后所有的文件就可以按照eclipse的结构放置
+    sourceSets {
+		main {
+			//如果unity导出是eclipse则使用eclipse的工程结构
+			if(project.UnityProjectType == 'eclipse'){
+				manifest.srcFile 'AndroidManifest.xml'
+				java.srcDirs = ['src']
+				resources.srcDirs = ['src']
+				aidl.srcDirs = ['src']
+				renderscript.srcDirs = ['src']
+				res.srcDirs = ['res']
+				assets.srcDirs = ['assets']
+				jniLibs.srcDirs = ['libs']
+			}
+		}
+    }
+
+	android.applicationVariants.all { variant ->  
+		//修改apk输出路径
+		variant.getPackageApplication().outputDirectory = new File(project.AppReleaseDir)
+		variant.outputs.all { output ->  
+			//修改apk名字
+			def releaseTime = new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("UTC"))
+			outputFileName = "app_${buildType.name}_v${defaultConfig.versionName}-${releaseTime}.apk"
+		}  
+	}
+}
+
+dependencies {
+	//compile fileTree(dir: 'libs', include: ['*.jar'], exclude: ['unity-classes.jar'])
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+dependencies {
+   compile project(':app')
+   compile project(':usdk')
+   compile project(':none')
+}
