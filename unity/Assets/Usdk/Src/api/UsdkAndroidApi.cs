@@ -17,7 +17,9 @@ namespace Usdk
                     AndroidJavaClass sdk = new AndroidJavaClass("com.usdk.sdk.Usdk");
                     return sdk;
                 }
-                catch(Exception ex){
+                catch (Exception ex)
+                {
+                    Debug.LogError(ex.Message);
                     return null;
                 }
             }
@@ -30,29 +32,33 @@ namespace Usdk
             try
             {
                 pluginName = pluginPreName + pluginName;
-		        if(usdk != null){
-                    AndroidJavaObject context = usdk.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
-                    if(context != null)
+                if (usdk != null)
+                {
+                    AndroidJavaObject context = usdk.CallStatic<AndroidJavaObject>("getPlugin", pluginName);
+                    if (context != null)
                         context.Call(method, parameters);
                 }
             }
-            catch(Exception ex){}
+            catch (Exception ex) { Debug.LogError(ex.Message); }
 #endif
         }
 
-        private R SendAndroidMessage<R>(string pluginName,string method, params object[] parameters)
+        private R SendAndroidMessage<R>(string pluginName, string method, params object[] parameters)
         {
 #if UNITY_ANDROID
-		    try
+            try
             {
                 pluginName = pluginPreName + pluginName;
-		        if(usdk != null){
-                    AndroidJavaObject context = usdk.CallStatic<AndroidJavaObject>("getPlugin",pluginName);
-                    if(context != null)
+                if (usdk != null)
+                {
+                    AndroidJavaObject context = usdk.CallStatic<AndroidJavaObject>("getPlugin", pluginName);
+                    if (context != null)
                         return context.Call<R>(method, parameters);
                 }
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
+                Debug.LogError(ex.Message);
                 return default(R);
             }
 #endif
@@ -61,7 +67,7 @@ namespace Usdk
 
         public void CallPlugin(string pluginName, string methodName, params object[] parameters)
         {
-           SendAndroidMessage<string>(pluginName, methodName, parameters);
+            SendAndroidMessage(pluginName, methodName, parameters);
         }
 
         public R CallPlugin<R>(string pluginName, string methodName, params object[] parameters)
