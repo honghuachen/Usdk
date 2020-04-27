@@ -60,10 +60,10 @@ android {
 	
 	signingConfigs {
          release {
-             storeFile file(project.keystore)
-             storePassword project.storePassword
-             keyAlias project.keyAlias
-             keyPassword project.keyPassword
+             storeFile file(project.Keystore)
+             storePassword project.StorePassword
+             keyAlias project.KeyAlias
+             keyPassword project.KeyPassword
          }
     }
 	
@@ -129,7 +129,7 @@ android {
 
 	android.applicationVariants.all { variant ->  
 		//修改apk输出路径
-		variant.getPackageApplication().outputDirectory = new File(project.appReleaseDir)
+		variant.getPackageApplication().outputDirectory = new File(project.AppReleaseDir)
 		variant.outputs.all { output ->  
 			//修改apk名字
 			def releaseTime = new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("UTC"))
@@ -141,8 +141,9 @@ android {
 dependencies {
 	//compile fileTree(dir: 'libs', include: ['*.jar'], exclude: ['unity-classes.jar'])
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	
-	compile project(':usdk')
-	compile project(':baidu')
-	compile project(':crasheye')
+}
+dependencies {
+   compile project(':app')
+   compile project(':usdk')
+   compile project(':none')
 }
