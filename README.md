@@ -48,11 +48,14 @@ Usdk实现了本地命令行打包工具（build.bat\build.sh），使用jenkins
 Usdk加入了CocoaPods自动构建工具，使得cocoapods方式构建xcode工程成为可能，内置工具可以实现Project\Workspace xcode项目类型的构建。
 iOS多渠道多插件出包不仅支持本地Framework的导入，还智能支持CocoaPods远程仓库依赖的构建，并且两种方式可以混用。只需要在插件或者渠道的module文件夹下加入一个CocoaPods.json的依赖配置文件即可，打包工具即会智能识别依赖并构建CocoaPods项目。
 
+# FAQ
+1、打的usdk自带渠道包崩溃问题？  
+由于我之前适配的百度SDK和其他的插件或者其他渠道SDK都太老，打出来的包会崩溃，就不要打我以前适配的渠道包了，看下示例怎么适配然后自己适配自己的渠道就行了。
+要想看打包后的运行usdk运行情况，请打none(裸包)渠道。  
+2、打出来的包名字乱码问题？  
+如果出现打包出来的包的名字是乱码，请publish.properties文件转成utf8编码。  
+3、打出来的包安装好后出现2个应用图标？  
+由于gradle合并的时候会把unity自动生成的AndroidManifest.xml中的main activity配置和usdk的AndroidManifest.xml的main activity合并到一起，所以出现了2个应用图标。需要把usdk/unity工程中的plugins/android/AndroidManifest.xml文件夹中的文件复制到你自己的工程中。
+
 # 技术支持
 QQ群：[3112035](https://jq.qq.com/?_wv=1027&k=5RKFifT)
-
-# FAQ
-1、由于我之前适配的百度SDK和其他的插件或者其他渠道SDK都太老，打出来的包会崩溃，就不要打我以前适配的渠道包了，看下示例怎么适配然后自己适配自己的渠道就行了。
-要想看打包后的运行usdk运行情况，请打none(裸包)渠道。  
-2、如果出现打包出来的包的名字是乱码，请publish.properties文件转成utf8编码。  
-3、android平台出现两个应用图标：由于gradle合并的时候会把unity自动生成的AndroidManifest.xml中的main activity配置和usdk的AndroidManifest.xml的main activity合并到一起，所以出现了2个应用图标。需要把usdk/unity工程中的plugins文件夹中的文件复制到你自己的工程中。
