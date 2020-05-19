@@ -15,8 +15,6 @@
 	"plist":{},
 	"files":{},
 	"folders":{
-		"libs":"Frameworks/Plugins/iOS/Usdk",
-		"res":"Resources/Plugins/iOS/Usdk",
 		"src":"Libraries/Plugins/iOS/Usdk"
 	},
 	"filesCompileFlag":{}
