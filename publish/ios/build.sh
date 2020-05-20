@@ -210,9 +210,8 @@ function __buildIPA(){
 		CODE_SIGN_IDENTITY=( "$( __readINI ${global_properties} CODE_SIGN_IDENTITY $var )" )
 		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
 		time=$(date "+%Y%m%d%H%M%S")
-		ipaoutpath=${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
 
-		echo -e "\n------------build ipa [$ipaoutpath],please wait------------"
+		echo -e "\n------------build ipa,please wait------------"
 		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
 		echo -e "<plist version=\"1.0\">">$ExportOptionsPlist
 		echo -e	"<dict>">>$ExportOptionsPlist
@@ -230,7 +229,7 @@ function __buildIPA(){
 
 		xcodebuild clean -project $xcodeproj -configuration ${buildType} -alltargets
 		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
-		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa/app.ipa
+		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 	done
 }
 
