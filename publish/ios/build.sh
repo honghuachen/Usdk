@@ -210,7 +210,7 @@ function __buildIPA(){
 		CODE_SIGN_IDENTITY=( "$( __readINI ${global_properties} CODE_SIGN_IDENTITY $var )" )
 		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
 		time=$(date "+%Y%m%d%H%M%S")
-		ipaoutpath==${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
+		ipaoutpath=${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
 
 		echo -e "\n------------build ipa [$ipaoutpath],please wait------------"
 		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
