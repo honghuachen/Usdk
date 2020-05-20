@@ -281,8 +281,8 @@ function __main(){
 	echo $versionCode >>  ${version_properties}
 	
 	__showVersion
-	__buildUnity2Xcode2
-	__buildIPA
+	__buildUnity2Xcode
+	__buildIPA2
 }
 
 __main
