@@ -211,7 +211,7 @@ function __buildIPA(){
 		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
 		time=$(date "+%Y%m%d%H%M%S")
 		ipaoutpath==${RootPath}/ipa/${platform}[${subPlatform}]-$var-${buildType}-$time.ipa
-		
+
 		echo -e "\n------------build ipa [$ipaoutpath],please wait------------"
 		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
 		echo -e "<plist version=\"1.0\">">$ExportOptionsPlist
@@ -227,9 +227,9 @@ function __buildIPA(){
 		echo -e	"		<false/>">>$ExportOptionsPlist
 		echo -e	"</dict>">>$ExportOptionsPlist
 		echo -e	"</plist>">>$ExportOptionsPlist
-		
-		xcodebuild clean -xcodeproj $xcodeproj -configuration ${buildType} -alltargets
-		xcodebuild -project $xcodeproj -scheme $xcodeprojname -configuration ${buildType} -archivePath build/$targetname-$var.xcarchive clean archive build CODE_SIGN_IDENTITY=$CODE_SIGN_IDENTITY PROVISIONING_PROFILE=$PROVISIONING_PROFILE PRODUCT_BUNDLE_IDENTIFIER=${package}
+
+		xcodebuild clean -project $xcodeproj -configuration ${buildType} -alltargets
+		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
 		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath $ipaoutpath
 	done
 }
@@ -242,6 +242,13 @@ function __main(){
 	echo 2.Publish game to release                [Release ipa]
 	echo 3.Modify version information             [Modify version]
 	echo -----------------------------------
+
+	chmod +x global.properties
+	dos2unix global.properties
+	chmod +x publish.properties
+	dos2unix publish.properties
+	chmod +x version.properties
+	dos2unix version.properties
 
 	read -p "select item:" select
 	if [ $select == 1 ]
