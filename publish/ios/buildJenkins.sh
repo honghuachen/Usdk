@@ -233,7 +233,7 @@ function __buildIPA(){
 
 		xcodebuild clean -project $xcodeproj -configuration ${buildType} -alltargets
 		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
-		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath $ipaoutpath
+		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa/app.ipa
 	done
 }
 
@@ -266,7 +266,7 @@ function __buildIPA2(){
 
 	xcodebuild clean -project $xcodeproj -configuration ${buildType} -alltargets
 	xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
-	xcodebuild -exportArchive -archivePath build/$targetname-$IPAType.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath $ipaoutpath
+	xcodebuild -exportArchive -archivePath build/$targetname-$IPAType.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa/app.ipa
 }
 
 function __main(){
