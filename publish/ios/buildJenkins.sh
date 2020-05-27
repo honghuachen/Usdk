@@ -284,5 +284,3 @@ function __main(){
 }
 
 __main
-read -p "按回车键继续"
-
