@@ -1,4 +1,4 @@
-package com.usdk.plugin.uuidkit;
+package com.usdk.plugin;
 
 import com.usdk.sdk.UsdkBase;
 

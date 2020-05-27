@@ -1,4 +1,4 @@
-package com.usdk.plugin.uuidkit;
+package com.usdk.plugin;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -75,7 +75,7 @@ public class DeviceUuidFactory {
             while ((readCount = fileReader.read(buffer)) > 0) {
                 sb.append(buffer, 0, readCount);
             }
-            //通过UUID.fromString来检查uuid的格式正确性
+            //通过UUID.fromString来检查uuid的格式正确�??
             UUID uuid = UUID.fromString(EncryptUtils.decryptDES(sb.toString(), KEY));
             return uuid.toString();
         } catch (Exception e) {

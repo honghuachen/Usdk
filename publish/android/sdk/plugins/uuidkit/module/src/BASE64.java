@@ -1,4 +1,4 @@
-package com.usdk.plugin.uuidkit;
+package com.usdk.plugin;
 
 public class BASE64 {
     private static char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
