@@ -7,8 +7,7 @@ namespace UnityEditor.iOS.Xcode.Custom
     /// <summary>
     /// List of all the capabilities available.
     /// </summary>
-    public sealed class PBXCapabilityType
-    {
+    public sealed class PBXCapabilityType {
         public static readonly PBXCapabilityType ApplePay = new PBXCapabilityType ("com.apple.ApplePay", true);
         public static readonly PBXCapabilityType AppGroups = new PBXCapabilityType ("com.apple.ApplicationGroups.iOS", true);
         public static readonly PBXCapabilityType AssociatedDomains = new PBXCapabilityType ("com.apple.SafariKeychain", true);
@@ -17,49 +16,46 @@ namespace UnityEditor.iOS.Xcode.Custom
         public static readonly PBXCapabilityType GameCenter = new PBXCapabilityType ("com.apple.GameCenter", false, "GameKit.framework");
         public static readonly PBXCapabilityType HealthKit = new PBXCapabilityType ("com.apple.HealthKit", true, "HealthKit.framework");
         public static readonly PBXCapabilityType HomeKit = new PBXCapabilityType ("com.apple.HomeKit", true, "HomeKit.framework");
-        public static readonly PBXCapabilityType iCloud = new PBXCapabilityType("com.apple.iCloud", true, "CloudKit.framework", true);
+        public static readonly PBXCapabilityType iCloud = new PBXCapabilityType ("com.apple.iCloud", true, "CloudKit.framework", true);
         public static readonly PBXCapabilityType InAppPurchase = new PBXCapabilityType ("com.apple.InAppPurchase", false);
         public static readonly PBXCapabilityType InterAppAudio = new PBXCapabilityType ("com.apple.InterAppAudio", true, "AudioToolbox.framework");
         public static readonly PBXCapabilityType KeychainSharing = new PBXCapabilityType ("com.apple.KeychainSharing", true);
-        public static readonly PBXCapabilityType Maps = new PBXCapabilityType("com.apple.Maps.iOS", false, "MapKit.framework");
-        public static readonly PBXCapabilityType PersonalVPN = new PBXCapabilityType("com.apple.VPNLite", true, "NetworkExtension.framework");
+        public static readonly PBXCapabilityType Maps = new PBXCapabilityType ("com.apple.Maps.iOS", false, "MapKit.framework");
+        public static readonly PBXCapabilityType PersonalVPN = new PBXCapabilityType ("com.apple.VPNLite", true, "NetworkExtension.framework");
         public static readonly PBXCapabilityType PushNotifications = new PBXCapabilityType ("com.apple.Push", true);
         public static readonly PBXCapabilityType Siri = new PBXCapabilityType ("com.apple.Siri", true);
         public static readonly PBXCapabilityType Wallet = new PBXCapabilityType ("com.apple.Wallet", true, "PassKit.framework");
-        public static readonly PBXCapabilityType WirelessAccessoryConfiguration = new PBXCapabilityType("com.apple.WAC", true, "ExternalAccessory.framework");
+        public static readonly PBXCapabilityType WirelessAccessoryConfiguration = new PBXCapabilityType ("com.apple.WAC", true, "ExternalAccessory.framework");
+        public static readonly PBXCapabilityType SignInWithApple = new PBXCapabilityType ("com.apple.SignInWithApple", true, "AuthenticationServices.framework");
+        public static readonly PBXCapabilityType AccessWiFiInformation = new PBXCapabilityType ("com.apple.AccessWiFiInformation", true, "SystemConfiguration.framework");
+        public static readonly PBXCapabilityType AutoFillCredentialProvider = new PBXCapabilityType ("com.apple.AutoFillCredentialProvider", true, "AuthenticationServices.framework");
 
         private readonly string m_ID;
         private readonly bool m_RequiresEntitlements;
         private readonly string m_Framework;
         private readonly bool m_OptionalFramework;
 
-        public bool optionalFramework
-        {
+        public bool optionalFramework {
             get { return m_OptionalFramework; }
         }
 
-        public string framework
-        {
+        public string framework {
             get { return m_Framework; }
         }
 
-        public string id
-        {
+        public string id {
             get { return m_ID; }
         }
 
-        public bool requiresEntitlements
-        {
+        public bool requiresEntitlements {
             get { return m_RequiresEntitlements; }
         }
 
-        public struct TargetCapabilityPair
-        {
+        public struct TargetCapabilityPair {
             public string targetGuid;
             public PBXCapabilityType capability;
 
-            public TargetCapabilityPair(string guid, PBXCapabilityType type)
-            {
+            public TargetCapabilityPair (string guid, PBXCapabilityType type) {
                 targetGuid = guid;
                 capability = type;
             }
@@ -73,18 +69,15 @@ namespace UnityEditor.iOS.Xcode.Custom
         /// <param name="framework">Specify which framework need to be added to the project for this capability, if "" no framework are added.</param>
         /// <param name="optionalFramework">Some capability (right now only iCloud) adds a framework, not all the time but just when some option are checked
         /// this parameter indicates if one of them is checked.</param>
-        private PBXCapabilityType(string _id, bool _requiresEntitlements, string _framework = "", bool _optionalFramework = false)
-        {
+        private PBXCapabilityType (string _id, bool _requiresEntitlements, string _framework = "", bool _optionalFramework = false) {
             m_ID = _id;
             m_RequiresEntitlements = _requiresEntitlements;
             m_Framework = _framework;
             m_OptionalFramework = _optionalFramework;
         }
 
-        public static PBXCapabilityType StringToPBXCapabilityType(string cap)
-        {
-            switch (cap)
-            {
+        public static PBXCapabilityType StringToPBXCapabilityType (string cap) {
+            switch (cap) {
                 case "com.apple.ApplePay":
                     return ApplePay;
                 case "com.apple.ApplicationGroups.iOS":
@@ -121,6 +114,12 @@ namespace UnityEditor.iOS.Xcode.Custom
                     return Wallet;
                 case "WAC":
                     return WirelessAccessoryConfiguration;
+                case "com.apple.SignInWithApple":
+                    return SignInWithApple;
+                case "com.apple.AccessWiFiInformation":
+                    return AccessWiFiInformation;
+                case "com.apple.AutoFillCredentialProvider":
+                    return AutoFillCredentialProvider;
                 default:
                     return null;
             }

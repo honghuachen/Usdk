@@ -1,4 +1,4 @@
 @echo off
-call "D:\Program Files\Unity2017.4.15f1\Editor\Data\MonoBleedingEdge\bin\mono.exe" ./bin/XcodeSetting.exe "E:\Usdk\unity\xcode\yuenan_2019131624" "E:\Usdk\tools\XcodeProjectSetting\Xcode\XcodeSetting\XcodeSetting.json"
+call "D:\Program Files\2018.4.14f1\Editor\Data\MonoBleedingEdge\bin\mono.exe" ./../../XcodeSetting.exe --pbx xcode "D:\workspace\pk\trunk\usdk\publish\ios\sdk\platforms\lightgame\module\XcodeSetting.json"
 
 pause
