@@ -41,7 +41,8 @@ Usdk实现了本地命令行打包工具（build.bat\build.sh），使用jenkins
 # Unity导出xcode自动配置工具([文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx))
 [Unity导出xcode自动配置工具文档](https://github.com/honghuachen/Usdk/blob/master/doc/Unity%E5%AF%BC%E5%87%BAxcode%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7.docx)  
 在unity4.x通过xupoter插件来设置unity导出xcode自动配置，到了unity5.x unity自己实现了一套工具，并且比xupoter提供了更多的操作可能。但是unity的工具集成在了unity编辑器里面，所以如果要想使用只能在unity工程中通过编辑器功能来操作导出xcode工程的自动配置。这样有一个缺点就是对于unity工程不需要变化但是又要打多个渠道的iOS包的情况下需要每次都要重新从Unity导出到xcode，对于大项目这是十分浪费时间的。针对上述情况，Usdk独立出了unity这套自动配置工具，完全脱离了Unity体系，能够单独作为一个外部工具随时随地的操作xcode工程下的工程配置文件和Info.plist配置文件，可以添加或者移除指定库、源码、资源等，操作非常灵活，只要你能想得到的操作都能够实现。
-并且工具通过unity安装目录下的mono虚拟机进行运行，所以具有跨平台的能力，不管是windows还是mac都能够使用。
+并且工具通过unity安装目录下的mono虚拟机进行运行，所以具有跨平台的能力，不管是windows还是mac都能够使用。 
+XcodeSetting配置格式参考Usdk\publish\ios\tools\XcodeSettingTemplate.json文件
 
 # iOS打包智能支持CocoaPods项目的构建([文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx))
 [智能支持CocoaPods项目的构建文档](https://github.com/honghuachen/Usdk/blob/master/doc/CocoaPods%E6%9E%84%E5%BB%BA%E9%85%8D%E7%BD%AE.docx)  

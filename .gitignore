@@ -9,7 +9,6 @@
 *.meta
 /publish/ios/tools/XcodeSetting/obj
 /publish/ios/tools/XcodeSetting/bin
-bin
 obj
 Temp
 build
