@@ -225,7 +225,7 @@ goto :eof
 ::==================================================================================
 :ReadySdkRes
 ::修改appName
-call .\tools\assetconfigtool\ModifyAppName.bat %appNameXmlPath% app_name %appname%
+call .\tools\assetconfigtool\ModifyAppName.bat %appNameXmlPath% app_name "%appname%"
 
 ::构建临时module用于不同渠道构建差异资源
 mkdir %gradlebuildTemp%\app

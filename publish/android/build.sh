@@ -87,11 +87,11 @@ function __inputPlatforms(){
 
 # __getPublishProperties [键值]
 function __getPublishProperties(){
-	_value=( $( __readINI ${publish_properties} ${platform}-${subPlatform} $1 ) )
+	_value=( "$( __readINI ${publish_properties} ${platform}-${subPlatform} $1 )" )
 	if [ -z "$_value" ]; then
-		_value=( $( __readINI ${publish_properties} ${platform}-default $1 ) )
+		_value=( "$( __readINI ${publish_properties} ${platform}-default $1 )" )
 	fi
-
+	
 	echo $_value
 }
 
@@ -125,14 +125,16 @@ function __modifyVersion(){
 }
 
 function __initPlatformConfig(){
-	build=( $( __getPublishProperties build ) )
-	keystore=( $( __getPublishProperties keystore ) )
-	package=( $( __getPublishProperties package ) )
-	appname=( $( __getPublishProperties appname ) )
-	cdn=( $( __getPublishProperties cdn ) )
-	plugins=( $( __getPublishProperties plugins ) )
-	icon=( $( __getPublishProperties icon ) )
-	splash=( $( __getPublishProperties splash ) )
+	build=( "$( __getPublishProperties build )" )
+	keystore=( "$( __getPublishProperties keystore )" )
+	package=( "$( __getPublishProperties package )" )
+	appname=( "$( __getPublishProperties appname )" )
+	cdn=( "$( __getPublishProperties cdn )" )
+	plugins=( "$( __getPublishProperties plugins )" )
+	icon=( "$( __getPublishProperties icon )" )
+	splash=( "$( __getPublishProperties splash )" )
+
+	echo ---------------------------------------$appname
 	echo $build $keystore $package $appname $cdn $plugins $icon $splash
 }
 
@@ -180,6 +182,7 @@ function __genGradleProperties(){
 	echo org.gradle.parallel=true>>${gradle_properties}
 	echo org.gradle.daemon=true>>${gradle_properties}
 	echo org.gradle.configureondemand=true>>${gradle_properties}
+	echo org.gradle.jvmargs=-Xmx4096m -Xms2048m -XX:MaxPermSize=2048m>>${gradle_properties}
 
 	echo sdk.dir=${SdkDir}>${local_properties}
 	#echo ndk.dir=${NdkDir}>>${local_properties}
