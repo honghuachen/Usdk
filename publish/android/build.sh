@@ -237,7 +237,7 @@ function __genGradleProperties(){
 
 function __readySdkRes(){
 	#修改appName
-	java -jar ${RootPath}/tools/assetconfigtool/ModifyAppName.jar ${appNameXmlPath} 'app_name' ${appname}
+	java -jar ${RootPath}/tools/assetconfigtool/ModifyAppName.jar ${appNameXmlPath} 'app_name' "${appname}"
 	#构建临时module用于不同渠道构建差异资源
 	mkdir ${gradlebuildTemp}/app
 	mkdir ${gradlebuildTemp}/app/res
