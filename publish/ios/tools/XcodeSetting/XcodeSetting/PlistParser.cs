@@ -15,14 +15,14 @@ namespace UnityEditor.iOS.Xcode.Custom
 
     public class PlistElement
     {
-        protected PlistElement() {}
+        protected PlistElement() { }
 
         // convenience methods
         public string AsString() { return ((PlistElementString)this).value; }
-        public int AsInteger()   { return ((PlistElementInteger)this).value; }
-        public bool AsBoolean()  { return ((PlistElementBoolean)this).value; }
+        public int AsInteger() { return ((PlistElementInteger)this).value; }
+        public bool AsBoolean() { return ((PlistElementBoolean)this).value; }
         public PlistElementArray AsArray() { return (PlistElementArray)this; }
-        public PlistElementDict AsDict()   { return (PlistElementDict)this; }
+        public PlistElementDict AsDict() { return (PlistElementDict)this; }
         public float AsReal() { return ((PlistElementReal)this).value; }
         public DateTime AsDate() { return ((PlistElementDate)this).value; }
 
@@ -70,14 +70,15 @@ namespace UnityEditor.iOS.Xcode.Custom
 
     public class PlistElementDict : PlistElement
     {
-        public PlistElementDict() : base() {}
+        public PlistElementDict() : base() { }
 
         private SortedDictionary<string, PlistElement> m_PrivateValue = new SortedDictionary<string, PlistElement>();
-        public IDictionary<string, PlistElement> values { get { return m_PrivateValue; }}
+        public IDictionary<string, PlistElement> values { get { return m_PrivateValue; } }
 
         new public PlistElement this[string key]
         {
-            get {
+            get
+            {
                 if (values.ContainsKey(key))
                     return values[key];
                 return null;
@@ -129,7 +130,7 @@ namespace UnityEditor.iOS.Xcode.Custom
 
     public class PlistElementArray : PlistElement
     {
-        public PlistElementArray() : base() {}
+        public PlistElementArray() : base() { }
         public List<PlistElement> values = new List<PlistElement>();
 
         // convenience methods
@@ -236,63 +237,63 @@ namespace UnityEditor.iOS.Xcode.Custom
             switch (xml.Name.LocalName)
             {
                 case "dict":
-                {
-                    List<XElement> children = xml.Elements().ToList();
-                    var el = new PlistElementDict();
-
-                    if (children.Count % 2 == 1)
-                        throw new Exception("Malformed plist file");
-
-                    for (int i = 0; i < children.Count - 1; i++)
                     {
-                        if (children[i].Name != "key")
-                            throw new Exception("Malformed plist file. Found '"+children[i].Name+"' where 'key' was expected.");
-                        string key = GetText(children[i]).Trim();
-                        var newChild = ReadElement(children[i+1]);
-                        if (newChild != null)
+                        List<XElement> children = xml.Elements().ToList();
+                        var el = new PlistElementDict();
+
+                        if (children.Count % 2 == 1)
+                            throw new Exception("Malformed plist file");
+
+                        for (int i = 0; i < children.Count - 1; i++)
                         {
-                            i++;
-                            el[key] = newChild;
+                            if (children[i].Name != "key")
+                                throw new Exception("Malformed plist file. Found '" + children[i].Name + "' where 'key' was expected.");
+                            string key = GetText(children[i]).Trim();
+                            var newChild = ReadElement(children[i + 1]);
+                            if (newChild != null)
+                            {
+                                i++;
+                                el[key] = newChild;
+                            }
                         }
+                        return el;
                     }
-                    return el;
-                }
                 case "array":
-                {
-                    List<XElement> children = xml.Elements().ToList();
-                    var el = new PlistElementArray();
-
-                    foreach (var childXml in children)
                     {
-                        var newChild = ReadElement(childXml);
-                        if (newChild != null)
-                            el.values.Add(newChild);
+                        List<XElement> children = xml.Elements().ToList();
+                        var el = new PlistElementArray();
+
+                        foreach (var childXml in children)
+                        {
+                            var newChild = ReadElement(childXml);
+                            if (newChild != null)
+                                el.values.Add(newChild);
+                        }
+                        return el;
                     }
-                    return el;
-                }
                 case "string":
                     return new PlistElementString(GetText(xml));
                 case "integer":
-                {
-                    int r;
-                    if (int.TryParse(GetText(xml), out r))
-                        return new PlistElementInteger(r);
-                    return null;
-                }
+                    {
+                        int r;
+                        if (int.TryParse(GetText(xml), out r))
+                            return new PlistElementInteger(r);
+                        return null;
+                    }
                 case "real":
-                {
-                    float f;
-                    if (float.TryParse(GetText(xml), out f))
-                        return new PlistElementReal(f);
-                    return null;
-                }
+                    {
+                        float f;
+                        if (float.TryParse(GetText(xml), out f))
+                            return new PlistElementReal(f);
+                        return null;
+                    }
                 case "date":
-                {
-                    DateTime date;
-                    if (DateTime.TryParse(GetText(xml), out date))
-                        return new PlistElementDate(date.ToUniversalTime());
-                    return null;
-                }
+                    {
+                        DateTime date;
+                        if (DateTime.TryParse(GetText(xml), out date))
+                            return new PlistElementDate(date.ToUniversalTime());
+                        return null;
+                    }
                 case "true":
                     return new PlistElementBoolean(true);
                 case "false":
@@ -326,7 +327,7 @@ namespace UnityEditor.iOS.Xcode.Custom
         public void ReadFromString(string text)
         {
             XDocument doc = ParseXmlNoDtd(text);
-            version = (string) doc.Root.Attribute("version");
+            version = (string)doc.Root.Attribute("version");
             XElement xml = doc.XPathSelectElement("plist/dict");
 
             var dict = ReadElement(xml);
@@ -399,7 +400,8 @@ namespace UnityEditor.iOS.Xcode.Custom
         public void WriteToFile(string path)
         {
             System.Text.Encoding utf8WithoutBom = new System.Text.UTF8Encoding(false);
-            File.WriteAllText(path, WriteToString(), utf8WithoutBom);
+            string info = WriteToString();
+            File.WriteAllText(path, info, utf8WithoutBom);
         }
 
         public void WriteToStream(TextWriter tw)

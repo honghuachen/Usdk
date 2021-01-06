@@ -1,26 +1,40 @@
 ﻿using System;
 using Google;
 
-namespace UnityEditor.iOS.Xcode.Custom {
-    class main {
-        public static void Main (string[] args) {
+namespace UnityEditor.iOS.Xcode.Custom
+{
+    class main
+    {
+        public static void Main(string[] args)
+        {
+            // args = new string[] {
+            //     "--pbx",
+            //     "D:\\workspace\\pk\\trunk\\usdk\\publish\\ios\\sdk\\platforms\\lightgame165\\xcode",
+            //     "D:\\workspace\\pk\\trunk\\usdk\\publish\\ios\\sdk\\platforms\\lightgame165\\module\\XcodeSetting.json"
+            // };
             string command = args[0];
-            if (command == "--pbx") {
+            if (command == "--pbx")
+            {
                 string xcodePath = args[1];
                 string configPath = args[2];
-                Console.WriteLine ("xcodePath=" + xcodePath + " configPath=" + configPath);
-                XcodeSetting.OnPostprocessBuild (xcodePath, configPath);
-                Console.WriteLine ("********XcodeSetting success");
-            } else if (command == "--pod") {
+                Console.WriteLine("xcodePath=" + xcodePath + " configPath=" + configPath);
+                XcodeSetting.OnPostprocessBuild(xcodePath, configPath);
+                Console.WriteLine("********XcodeSetting success");
+            }
+            else if (command == "--pod")
+            {
                 string xcodePath = args[1];
                 string configPath = args[2];
                 string podType = args[3]; //workspace,project
-                try {
-                    object cocoaPodType = Enum.Parse (typeof (IOSResolver.CocoapodsIntegrationMethod), podType);
-                    IOSResolver.OnPosetProcess (xcodePath, configPath, cocoaPodType);
-                } catch (Exception ex) {
-                    Console.WriteLine (string.Format("CocoaPodType is null.['Workspace','Project','None']   msg:{0} \nStackTrace:{1}"
-                    ,ex.Message,ex.StackTrace));
+                try
+                {
+                    object cocoaPodType = Enum.Parse(typeof(IOSResolver.CocoapodsIntegrationMethod), podType);
+                    IOSResolver.OnPosetProcess(xcodePath, configPath, cocoaPodType);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(string.Format("CocoaPodType is null.['Workspace','Project','None']   msg:{0} \nStackTrace:{1}"
+                    , ex.Message, ex.StackTrace));
                 }
             }
 

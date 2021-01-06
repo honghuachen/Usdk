@@ -32,6 +32,10 @@ namespace UnityEditor.iOS.Xcode.Custom
             string json = File.ReadAllText(configPath);
             Hashtable table = json.hashtableFromJson();
 
+            //plist
+            SetPlist(proj, rootDict, table.SGet<Hashtable>("plist"));
+            plist.WriteToFile(plistPath);
+
             //lib
             SetLibs(proj, table.SGet<Hashtable>("libs"));
             //framework
@@ -48,9 +52,8 @@ namespace UnityEditor.iOS.Xcode.Custom
             SetCapabilitys(pcbManager, table.SGet<Hashtable>("capabilitys"));
             //写入
             File.WriteAllText(projPath, proj.WriteToString());
-            //plist
-            SetPlist(proj, rootDict, table.SGet<Hashtable>("plist"));
-            plist.WriteToFile(plistPath);
+
+            Console.WriteLine("***Info.plist*****\n" + File.ReadAllText(plistPath));
         }
 
         private static void AddLibToProject(PBXProject inst, string targetGuid, string lib)
@@ -438,8 +441,7 @@ namespace UnityEditor.iOS.Xcode.Custom
                     break;
                 case "BackgroundModes":
                     BackgroundModesOptions ops = BackgroundModesOptions.None;
-                    string[] pars = args as string[];
-                    foreach (string op in pars)
+                    foreach (string op in args)
                     {
                         BackgroundModesOptions bmop;
                         if (Enum.TryParse(op, out bmop))
@@ -483,8 +485,7 @@ namespace UnityEditor.iOS.Xcode.Custom
                     break;
                 case "Maps":
                     MapsOptions mops = MapsOptions.None;
-                    string[] mopars = args as string[];
-                    foreach (string op in mopars)
+                    foreach (string op in args)
                     {
                         MapsOptions mop;
                         if (Enum.TryParse(op, out mop))
