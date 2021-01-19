@@ -31,6 +31,11 @@
 		},
 		"-": {}
 	},
+	"runscript": {
+		"+": {
+			"Run Script Name": "shellScript"
+		}
+	},
 	"plist": {
 		"AppID": "123456",
 		"CFBundleDisplayName": "我爱我的祖国",
@@ -167,7 +172,6 @@
 		],
 		"WirelessAccessoryConfiguration": [],
 		"SignInWithApple": [],
-		"AccessWiFiInformation": [],
-		"AutoFillCredentialProvider": []
+		"AccessWiFiInformation": []
 	}
 }
