@@ -129,11 +129,11 @@ android {
 
 	android.applicationVariants.all { variant ->  
 		//修改apk输出路径
-		variant.getPackageApplicationProvider().get().outputDirectory = new File(project.AppReleaseDir)
+		//variant.getPackageApplicationProvider().get().outputDirectory = new File(project.AppReleaseDir)
 		variant.outputs.all { output ->  
 			//修改apk名字
 			def releaseTime = new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("UTC"))
-			outputFileName = "app.apk"
+			//outputFileName = "app.apk"
 		}  
 	}
 }

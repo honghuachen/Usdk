@@ -30,6 +30,8 @@ cd %gradlebuildTemp%
 call gradlew assembleRelease --stacktrace
 ::aab打包
 call gradlew bundleRelease --stacktrace
+
+xcopy %UnityProjectDir%\build\outputs\ %gradlebuildTemp%\outputs\ /e/y/q/z 
 pause
 goto :eof
 
@@ -160,7 +162,7 @@ echo AppName=%appname%>>%gradle_properties%
 echo UnityProjectType=%UnityProjectType%>>%gradle_properties%
 echo JavaVersion=%JavaVersion%>>%gradle_properties%
 
-set AppReleaseDir=%gradlebuildTemp%\outputs\apk
+set AppReleaseDir=%gradlebuildTemp%\outputs
 set AppReleaseDir=%AppReleaseDir:\=/%
 echo AppReleaseDir=%AppReleaseDir%>>%gradle_properties%
 
@@ -170,10 +172,12 @@ echo KeyAlias=%alias%>>%gradle_properties%
 echo KeyPassword=%keypass%>>%gradle_properties%
 
 rem echo org.gradle.jvmargs=-Xmx4098m -Xms2048m -XX:MaxPermSize=1024m>>%gradle_properties%
-echo android.enableAapt2=false>>%gradle_properties%
+::echo android.enableAapt2=false>>%gradle_properties%
 echo org.gradle.parallel=true>>%gradle_properties%
 echo org.gradle.daemon=true>>%gradle_properties%
 echo org.gradle.configureondemand=true>>%gradle_properties%
+echo unityStreamingAssets=.unity3d>>%gradle_properties%
+
 
 rem local.properties
 rem set android_home=%Android_Home%
@@ -183,14 +187,26 @@ set SdkDir=%result%
 call :ReadIni %global_properties% AndroidSdk ndk.dir
 set NdkDir=%result%
 echo sdk.dir=%SdkDir%>%local_properties%
-rem echo ndk.dir=%NdkDir%>>%local_properties%
+echo ndk.dir=%NdkDir%>>%local_properties%
 
 rem settings.gradle
 echo include ':app'>%settings_gradle%
 echo include ':unity'>>%settings_gradle%
 
+::判断unity版本
+set UNITY_VER=2018
+echo %UnityProjectDir% | findstr "launcher" && (
+	set UNITY_VER=2019
+)
+
 set TempUnityProjectDir=%UnityProjectDir:\=/%
 echo project^(':unity'^).projectDir=new File^('%TempUnityProjectDir%'^)>>%settings_gradle%
+
+set TempUnityLibProjectDir=%TempUnityProjectDir:launcher=unityLibrary%
+if %UNITY_VER% equ 2019 (
+	echo include ':unityLibrary'>>%settings_gradle%
+	echo project^(':unityLibrary'^).projectDir=new File^('%TempUnityLibProjectDir%'^)>>%settings_gradle%
+)
 
 set unityAndroidPath=%UnityProjectDir%
 if %UnityProjectType% equ eclipse (
@@ -229,6 +245,9 @@ echo.>>%unityAndroidPath%\build.gradle
 echo dependencies {>>%unityAndroidPath%\build.gradle
 echo    compile project(':app')>>%unityAndroidPath%\build.gradle
 echo    compile project(':usdk')>>%unityAndroidPath%\build.gradle
+if %UNITY_VER% equ 2019 (
+	echo    compile project^(':unityLibrary'^)>>%unityAndroidPath%\build.gradle
+)
 echo    compile project(':%platform%')>>%unityAndroidPath%\build.gradle
 for %%i in (%plugins%) do (
 	echo    compile project^(':%%i'^)>>%unityAndroidPath%\build.gradle
