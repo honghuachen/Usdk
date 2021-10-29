@@ -50,7 +50,11 @@ Usdk加入了CocoaPods自动构建工具，使得cocoapods方式构建xcode工�
 iOS多渠道多插件出包不仅支持本地Framework的导入，还智能支持CocoaPods远程仓库依赖的构建，并且两种方式可以混用。只需要在插件或者渠道的module文件夹下加入一个CocoaPods.json的依赖配置文件即可，打包工具即会智能识别依赖并构建CocoaPods项目。
 
 # [google aab包支持](https://github.com/honghuachen/aab_convert)
-google现在上架必须使用aab包，但是aab包大于150m就无法上传了，必须把资源转成install-time或者fast-time模式。[aab_convert](https://github.com/honghuachen/aab_convert)工具能够帮助把unity打好的aab包自动转换成install-time模式，解除150m的上传限制，最大可以上传4g大的包，并且unity内的加载代码和逻辑都不用修改。打包脚本中也增加了aab打包的命令，如果没有aab打包需求，只需要注释掉打包脚本中的./gradlew bundleRelease --stacktrace命令即可。
+google现在上架必须使用aab包，但是aab包大于150m就无法上传了，必须把资源转成install-time或者fast-time模式。[aab_convert](https://github.com/honghuachen/aab_convert)工具能够帮助把unity打好的aab包自动转换成install-time模式，解除150m的上传限制，最大可以上传1g大的包，并且unity内的加载代码和逻辑都不用修改。打包脚本中也增加了aab打包的命令，如果没有aab打包需求，只需要注释掉打包脚本中的./gradlew bundleRelease --stacktrace命令即可。
+1、每个 fast-follow 和 on-demand Asset Pack 的下载大小上限为 512 MB。  
+2、所有 install-time Asset Pack 的总下载大小上限为 1 GB。  
+3、一个 Android App Bundle 中的所有 Asset Pack 的总下载大小上限为 2 GB。  
+4、一个 Android App Bundle 中最多可以使用 50 个资源包。  
 
 # FAQ
 1、打的usdk自带渠道包崩溃问题？  
