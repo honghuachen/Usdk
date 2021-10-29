@@ -26,7 +26,10 @@ call :GenGradleProperties
 call :ReadySdkRes
 cd %gradlebuildTemp%
 ::call %gradle% assembleRelease --stacktrace
+::apk打包
 call gradlew assembleRelease --stacktrace
+::aab打包
+call gradlew bundleRelease --stacktrace
 pause
 goto :eof
 

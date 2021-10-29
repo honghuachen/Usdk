@@ -299,7 +299,10 @@ function __main(){
 
 	cd ${gradlebuildTemp}
 	chmod +x gradlew
+	#apk打包
 	./gradlew assembleRelease --stacktrace
+	#aab打包
+	./gradlew bundleRelease --stacktrace
 }
 
 __main
