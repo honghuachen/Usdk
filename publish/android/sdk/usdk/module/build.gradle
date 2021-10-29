@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
-	buildToolsVersion "27.0.3"
+    compileSdkVersion 29
+	buildToolsVersion "29.0.3"
 	
     defaultConfig {	
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 29
 		
 		multiDexEnabled true
 		ndk {
-			abiFilters "x86", "armeabi-v7a", "armeabi"
+			abiFilters "armeabi-v7a"
         }
     }
 
@@ -55,5 +55,6 @@ android {
 }
 
 dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.aar'])
 	provided files('libs/classes.jar')
 }

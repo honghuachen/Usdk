@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 set buildPath=%~dp0
 set gradle=%~dp0\tools\gradle-4.4\bin\gradle.bat
 set gradletool_path=.\tools\gradle
-set gradlebuildTemp=.\buildTemp
+set gradlebuildTemp=%buildPath%\buildTemp
 set global_properties=global.properties
 set publish_properties=publish.properties
 set version_properties=version.properties
@@ -159,7 +159,11 @@ echo Package=%package%>>%gradle_properties%
 echo AppName=%appname%>>%gradle_properties%
 echo UnityProjectType=%UnityProjectType%>>%gradle_properties%
 echo JavaVersion=%JavaVersion%>>%gradle_properties%
-echo AppReleaseDir=./outputs/apk>>%gradle_properties%
+
+set AppReleaseDir=%gradlebuildTemp%\outputs\apk
+set AppReleaseDir=%AppReleaseDir:\=/%
+echo AppReleaseDir=%AppReleaseDir%>>%gradle_properties%
+
 echo Keystore=%keystorename%>>%gradle_properties%
 echo StorePassword=%storepass%>>%gradle_properties%
 echo KeyAlias=%alias%>>%gradle_properties%
@@ -214,6 +218,13 @@ if exist %platformSettingGradle% (
 ::extend build.gradle
 if exist %unityAndroidPath%\build.gradle (del %unityAndroidPath%\build.gradle)
 copy %gradletool_path%\templates\mainTemplate.gradle %unityAndroidPath%\build.gradle
+
+set mainGradle=.\sdk\platforms\%platform%\module\main_build.gradle
+if exist %mainGradle% (
+	del %unityAndroidPath%\build.gradle
+	copy %mainGradle% %unityAndroidPath%\build.gradle
+)
+
 echo.>>%unityAndroidPath%\build.gradle
 echo dependencies {>>%unityAndroidPath%\build.gradle
 echo    compile project(':app')>>%unityAndroidPath%\build.gradle
@@ -228,6 +239,7 @@ goto :eof
 ::==================================================================================
 :ReadySdkRes
 ::修改appName
+echo 修改appName %appname%
 call .\tools\assetconfigtool\ModifyAppName.bat %appNameXmlPath% app_name "%appname%"
 
 ::构建临时module用于不同渠道构建差异资源

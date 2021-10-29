@@ -165,14 +165,17 @@ function __genGradleProperties(){
 	keystoreRootPath=${RootPath}/sdk/keystore
 	keystorePath=${keystoreRootPath}/${keystorename}
 	cp ${keystorePath} ${UnityProjectDir}/${keystorename}
-	echo VersionName=${versionName}>${gradle_properties}
+	
+	cp ${gradletool_path}/templates/gradle.properties ${gradle_properties}
+	echo -e >>${gradle_properties}
+	echo VersionName=${versionName}>>${gradle_properties}
 	echo VersionCode=${versionCode}>>${gradle_properties}
 	echo Package=${package}>>${gradle_properties}
 	echo AppName=${appname}>>${gradle_properties}
 	echo UnityProjectType=${UnityProjectType}>>${gradle_properties}
 	echo JavaVersion=${JavaVersion}>>${gradle_properties}
 
-	echo AppReleaseDir=./outputs/apk>>${gradle_properties}
+	echo AppReleaseDir=${gradlebuildTemp}/outputs/apk>>${gradle_properties}
 	echo Keystore=${keystorename}>>${gradle_properties}
 	echo StorePassword=${storepass}>>${gradle_properties}
 	echo KeyAlias=${alias}>>${gradle_properties}
@@ -209,13 +212,20 @@ function __genGradleProperties(){
 		do
 			echo include \':${var}\'>>${settings_gradle}
 			echo project\(\':${var}\'\).projectDir=new File\(\'../sdk/plugins/${var}/module\'\)>>${settings_gradle}
+			
+			if [ -f ./sdk/plugins/${var}/module/settings.gradle ];then
+				cat ./sdk/plugins/${var}/module/settings.gradle >> ${settings_gradle}
+			fi
 		done
 	fi
 	
+	echo -e >>${settings_gradle}
 	echo include \':${platform}\'>>${settings_gradle}
 	echo project\(\':${platform}\'\).projectDir=new File\(\'../sdk/platforms/${platform}/module\'\)>>${settings_gradle}
 	echo include \':usdk\'>>${settings_gradle}
 	echo project\(\':usdk\'\).projectDir=new File\(\'../sdk/usdk/module\'\)>>${settings_gradle}
+	
+	echo -e >>${settings_gradle}
 	platformSettingGradle=./sdk/platforms/${platform}/module/settings.gradle
 	if [ -f ${platformSettingGradle} ];then
 		cat ${platformSettingGradle} >> ${settings_gradle}
@@ -227,6 +237,12 @@ function __genGradleProperties(){
 		rm -rf ${BuildGradle}
 	fi
 	cp ${gradletool_path}/templates/mainTemplate.gradle ${BuildGradle}
+	
+	mainGradle=${RootPath}/sdk/platforms/${platform}/module/main_build.gradle
+	if [ -f ${mainGradle} ];then
+		rm -rf ${BuildGradle}
+		cp ${mainGradle} ${BuildGradle}
+	fi
 
 	echo -e >>${BuildGradle}
 	echo dependencies {>>${BuildGradle}

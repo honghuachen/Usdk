@@ -117,6 +117,7 @@ public class UsdkMainActivity extends UnityPlayerActivity{
 	@Override
 	public boolean onKeyDown(int arg0, KeyEvent arg1) {
 		// TODO Auto-generated method stub
+		super.onKeyDown(arg0,arg1);
 		return Usdk.onKeyDown(arg0, arg1);
 		
 	}
@@ -124,6 +125,7 @@ public class UsdkMainActivity extends UnityPlayerActivity{
 	@Override
 	public boolean onKeyUp(int arg0, KeyEvent arg1) {
 		// TODO Auto-generated method stub
+		super.onKeyUp(arg0,arg1);
 		return Usdk.onKeyUp(arg0, arg1);
 	}
 	

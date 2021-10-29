@@ -15,6 +15,8 @@ import com.usdk.sdk.UsdkBase;
 public class PlatformProxyBase extends UsdkBase implements IPlatformDelegate {
 	protected List<String> mTokens = new ArrayList<String>();
 	
+	public String getPlatformName(){return "usdk";}
+	
 	@Override
 	public void OnCreate(Activity activity, Bundle savedInstanceState) {
 		this.parseXmlConfig("usdkconfig.xml");

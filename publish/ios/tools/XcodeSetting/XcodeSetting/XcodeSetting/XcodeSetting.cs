@@ -10,6 +10,7 @@ using ProjectCapabilityManager = UnityEditor.iOS.Xcode.ProjectCapabilityManager;
 using PBXSourceTree = UnityEditor.iOS.Xcode.PBXSourceTree;
 using BackgroundModesOptions = UnityEditor.iOS.Xcode.BackgroundModesOptions;
 using MapsOptions = UnityEditor.iOS.Xcode.MapsOptions;
+using PBXProjectExtensions = UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions;
 
 
 // namespace UnityEditor.iOS.Xcode.Custom
@@ -17,6 +18,7 @@ using MapsOptions = UnityEditor.iOS.Xcode.MapsOptions;
 public class XcodeSetting
 {
     private static string pluginPath = "";
+    private static Hashtable embedFrameworksTable = null;
     public static void OnPostprocessBuild(string xcodePath, string configPath)
     {
         pluginPath = configPath.Replace("XcodeSetting.json", "");
@@ -36,6 +38,7 @@ public class XcodeSetting
         //读取配置文件
         string json = File.ReadAllText(configPath);
         Hashtable table = json.hashtableFromJson();
+        embedFrameworksTable = table.SGet<Hashtable>("embedframeworks");
 
         //plist
         SetPlist(proj, rootDict, table.SGet<Hashtable>("plist"));
@@ -107,6 +110,24 @@ public class XcodeSetting
                 foreach (string i in removeList)
                 {
                     proj.RemoveFrameworkFromProject(target, i);
+                }
+            }
+        }
+    }
+
+    private static void SetEmbedFrameworks(PBXProject proj, string filePath, string fileGuid)
+    {
+        if (embedFrameworksTable != null)
+        {
+            string fileName = Path.GetFileName(filePath);
+            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            ArrayList addList = embedFrameworksTable["+"] as ArrayList;
+            if (addList != null)
+            {
+                foreach (string i in addList)
+                {
+                    if (fileName == i)
+                        PBXProjectExtensions.AddFileToEmbedFrameworks(proj, target, fileGuid);
                 }
             }
         }
@@ -302,8 +323,10 @@ public class XcodeSetting
             string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
             // The path is relative to the source folder
             string relativePath = des.Replace(xcodePath + "/", "");
-            proj.AddFileToBuild(target, proj.AddFile(relativePath, relativePath, PBXSourceTree.Source));
+            string fileGuid = proj.AddFile(relativePath, relativePath, PBXSourceTree.Source);
+            proj.AddFileToBuild(target, fileGuid);
             AutoAddSearchPath(proj, xcodePath, des);
+            SetEmbedFrameworks(proj, src, fileGuid);
             Console.WriteLine("copy file " + src + " -> " + des);
         }
     }
@@ -334,11 +357,13 @@ public class XcodeSetting
     {
         //获得源文件下所有目录文件
         string currDir = Path.Combine(xcodePath, root);
-        if (root.EndsWith(".framework") || root.EndsWith(".bundle"))
+        if (root.EndsWith(".framework") || root.EndsWith(".xcframework") || root.EndsWith(".bundle"))
         {
             string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string fileGuid = proj.AddFile(root, root, PBXSourceTree.Source);
+            proj.AddFileToBuild(target, fileGuid);
+            SetEmbedFrameworks(proj, root, fileGuid);
             Console.WriteLine(string.Format("add framework or bundle to build:{0}->{1}", currDir, root));
-            proj.AddFileToBuild(target, proj.AddFile(root, root, PBXSourceTree.Source));
             return;
         }
         List<string> folders = new List<string>(Directory.GetDirectories(currDir));
@@ -347,12 +372,14 @@ public class XcodeSetting
             string name = Path.GetFileName(folder);
             string t_path = Path.Combine(currDir, name);
             string t_projPath = Path.Combine(root, name);
-            if (folder.EndsWith(".framework") || folder.EndsWith(".bundle"))
+            if (folder.EndsWith(".framework") || folder.EndsWith(".xcframework") || folder.EndsWith(".bundle"))
             {
                 string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-                Console.WriteLine(string.Format("add framework or bundle to build:{0}->{1}", t_path, t_projPath));
-                proj.AddFileToBuild(target, proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source));
+                string fileGuid = proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source);
+                proj.AddFileToBuild(target, fileGuid);
                 AutoAddSearchPath(proj, xcodePath, t_path);
+                SetEmbedFrameworks(proj, t_projPath, fileGuid);
+                Console.WriteLine(string.Format("add framework or bundle to build:{0}->{1}", t_path, t_projPath));
             }
             else
             {
@@ -368,8 +395,10 @@ public class XcodeSetting
                 string t_path = Path.Combine(currDir, name);
                 string t_projPath = Path.Combine(root, name);
                 string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-                proj.AddFileToBuild(target, proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source));
+                string fileGuid = proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source);
+                proj.AddFileToBuild(target, fileGuid);
                 AutoAddSearchPath(proj, xcodePath, t_path);
+                SetEmbedFrameworks(proj, t_projPath, fileGuid);
                 Console.WriteLine("add file to build:" + Path.Combine(root, file));
             }
         }
@@ -378,7 +407,7 @@ public class XcodeSetting
     //在复制文件加入工程时，当文件中有framework、h、a文件时，自动添加相应的搜索路径
     private static void AutoAddSearchPath(PBXProject proj, string xcodePath, string filePath)
     {
-        if (filePath.EndsWith(".framework"))
+        if (filePath.EndsWith(".framework") || filePath.EndsWith(".xcframework"))
         { //添加框架搜索路径
             string addStr = "$PROJECT_DIR" + Path.GetDirectoryName(filePath.Replace(xcodePath, ""));
             Hashtable arg = new Hashtable();

@@ -35,15 +35,33 @@ extern "C" {
         printf("length %d\n", len);
         return len;
     }
-    
+
+    BOOL __IsExistPlugin(const char* pluginName)
+    {
+        NSLog(@"__IsExistPlugin pluginName:%s",pluginName);
+        BOOL ret =[[Usdk instance] isExistPlugin:CreateNSString(pluginName)];
+        if(ret == YES)
+            return true;
+        return false;
+    }
+
+    BOOL __IsExistMethod(const char* pluginName,const char* methodName)
+    {
+        NSLog(@"__IsExistMethod pluginName:%s methodName=%s",pluginName,methodName);
+        BOOL ret =[[Usdk instance] isExistMethod:CreateNSString(pluginName) methodName:CreateNSString(methodName)];
+        if(ret == YES)
+            return true;
+        return false;
+    }
+
     void __CallPlugin(const char* pluginName,const char* method, const char** args)
     {
-        printf("iOSMethod method %s\n", method);
+        NSLog(@"__CallPlugin pluginName:%s method:%s\n",pluginName, method);
         int length = GetArgsLen(args);
         NSMutableArray *params = [[NSMutableArray alloc] init];
         for(int i=0;i<length;i++)
         {
-            printf("arg %d = %s \n",i,args[i]);
+            NSLog(@"arg %d = %s \n",i,args[i]);
             NSString *param = CreateNSString(args[i]);
             [params addObject:param];
         }
@@ -55,12 +73,12 @@ extern "C" {
     
     const char* __CallPluginR(const char* pluginName,const char* method, const char** args)
     {
-        printf("IosMethodReturnInt method %s\n", method);
+        NSLog(@"__CallPluginR pluginName:%s method:%s\n",pluginName, method);
         int length = GetArgsLen(args);
         NSMutableArray *params = [[NSMutableArray alloc] init];
         for(int i=0;i<length;i++)
         {
-            printf("arg %d = %s \n",i,args[i]);
+            NSLog(@"arg %d = %s \n",i,args[i]);
             NSString *param = CreateNSString(args[i]);
             [params addObject:param];
         }
@@ -88,11 +106,35 @@ static Usdk* _instance = nil;
     return _instance;
 }
 
-- (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
+- (BOOL)isExistPlugin:(NSString*)pluginName
 {
+    NSLog(@"isExistPlugin");
+    UsdkBase *plugin = [self loadPlugin:pluginName];
+    if(plugin != nil)
+        return YES;
+    return NO;
+}
+
+- (BOOL)isExistMethod:(NSString*)pluginName methodName:(NSString*)methodName{
+    NSLog(@"isExistMethod pluginName=%@ methodName=%@",pluginName,methodName);
     UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
+        NSString *selMethodName = [NSString stringWithFormat:@"%@:", methodName];
+        SEL sel = NSSelectorFromString(selMethodName);
+        if ([plugin respondsToSelector:sel])
+            return YES;
+    }
+    return NO;
+}
+
+- (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
+{
+	NSLog(@"callPlugin");
+    UsdkBase *plugin = [self loadPlugin:pluginName];
+    if(plugin != nil)
+    {
+		NSLog(@"callPlugin pluginName:%@ methodName:%@\n",pluginName, methodName);
         NSString *selMethodName = [NSString stringWithFormat:@"%@:", methodName];
         SEL sel = NSSelectorFromString(selMethodName);
         if ([plugin respondsToSelector:sel])
@@ -102,10 +144,12 @@ static Usdk* _instance = nil;
 
 - (NSString*)callPluginR:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args
 {
+	NSLog(@"callPluginR");
     NSString *ret = @"";
     UsdkBase *plugin = [self loadPlugin:pluginName];
     if(plugin != nil)
     {
+		NSLog(@"callPluginR pluginName:%@ methodName:%@\n",pluginName, methodName);
         NSString *selMethodName = [NSString stringWithFormat:@"%@:", methodName];
         SEL sel = NSSelectorFromString(selMethodName);
         if ([plugin respondsToSelector:sel])

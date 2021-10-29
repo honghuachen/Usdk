@@ -36,7 +36,10 @@ public class ReflectionUtils {
 		
 		return null;
 	}
-	
+
+	public static boolean isExistMethod(Object object,String methodName){
+		Method method = getDeclaredMethod(object, methodName); return method != null;}
+
 	/**
 	 * 直接调用对象方法, 而忽略修饰符(private, protected, default)
 	 * @param object : 子类对象
@@ -95,7 +98,10 @@ public class ReflectionUtils {
 		}
 	
 		return null;
-	}	
+	}
+
+	public static boolean isExistField(Object object,String fieldName){
+		Field field = getDeclaredField(object, fieldName); return field != null;}
 	
 	/**
 	 * 直接设置对象属�?��??, 忽略 private/protected 修饰�?, 也不经过 setter

@@ -1,10 +1,10 @@
 {
 	"libs":{
-		"+":[],
+		"+":["libc++.tbd"],
 		"-":[]
 	},
 	"frameworks":{
-		"+":[],
+		"+":["AdSupport.framework","AudioToolbox.framework", "Security.framework","UIKit.framework"],
 		"-":[]
 	},
 	"properties":{

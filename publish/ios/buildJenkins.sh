@@ -82,9 +82,9 @@ function __inputPlatforms(){
 
 # __getPublishProperties [键值]
 function __getPublishProperties(){
-	_value=( $( __readINI ${publish_properties} ${platform}-${subPlatform} $1 ) )
+	_value=( "$( __readINI ${publish_properties} ${platform}-${subPlatform} $1 )" )
 	if [ -z "$_value" ]; then
-		_value=( $( __readINI ${publish_properties} ${platform}-default $1 ) )
+		_value=( "$( __readINI ${publish_properties} ${platform}-default $1 )" )
 	fi
 
 	echo $_value
@@ -130,12 +130,12 @@ function __buildUnity2Xcode(){
 		mkdir ipa
 	fi
 
-	package=( $( __getPublishProperties package ) )
-	appname=( $( __getPublishProperties appname ) )
-	cdn=( $( __getPublishProperties cdn ) )
-	plugins=( $( __getPublishProperties plugins ) )
-	icon=( $( __getPublishProperties icon ) )
-	splash=( $( __getPublishProperties splash ) )
+	package=( "$( __getPublishProperties package )" )
+	appname=( "$( __getPublishProperties appname )" )
+	cdn=( "$( __getPublishProperties cdn )" )
+	plugins=( "$( __getPublishProperties plugins )" )
+	icon=( "$( __getPublishProperties icon )" )
+	splash=( "$( __getPublishProperties splash )" )
 	echo $package $appname $cdn $plugins $icon $splash
 	
 	echo -e "\n------------Xcode export,please wait------------"
@@ -231,7 +231,7 @@ function __buildIPA(){
 		echo -e	"</plist>">>$ExportOptionsPlist
 
 		xcodebuild clean -project $xcodeproj -configuration Release -alltargets
-		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
+		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive  CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration  CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
 		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 	done
 }
@@ -263,7 +263,7 @@ function __buildIPA2(){
 	echo -e	"</plist>">>$ExportOptionsPlist
 
 	xcodebuild clean -project $xcodeproj -configuration Release -alltargets
-	xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
+	xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive  CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
 	xcodebuild -exportArchive -archivePath build/$targetname-$IPAType.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 }
 

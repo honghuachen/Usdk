@@ -19,6 +19,11 @@
 		],
 		"-": []
 	},
+	"embedframeworks": {
+		"+": [
+			"xxxx.framework"
+		]
+	},
 	"properties": {
 		"=": {
 			"ENABLE_BITCODE": "YES",
@@ -93,7 +98,11 @@
 		]
 	},
 	"files": {},
-	"folders": {},
+	"folders": {
+		"libs": "Frameworks/Plugins/iOS/lightgame",
+		"res": "Resources/Plugins/iOS/lightgame",
+		"src": "Libraries/Plugins/iOS/lightgame"
+	},
 	"filesCompileFlag": {
 		"Libraries/Plugins/iOS/JSONKit.m": [
 			"-fno-objc-arc"

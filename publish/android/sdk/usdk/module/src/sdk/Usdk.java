@@ -9,11 +9,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 
+import com.unity3d.player.UnityPlayer;
+import com.usdk.util.ReflectionUtils;
+
 public class Usdk {
 	private static LinkedHashMap<String, UsdkBase> m_pluginMap = new LinkedHashMap<String, UsdkBase>();
-	private static Activity unityActivity = null;
-	private static Bundle unityBundle = null;
+	public static Activity unityActivity = null;
+	public static Bundle unityBundle = null;
 	private static String TAG = "usdk";
+
+	public static void sendUnityMessage(String receiverName,String method,String ret){
+		UnityPlayer.UnitySendMessage(receiverName, method, ret);}
 
 	public static void addPlugin(String name) {
 		if (!m_pluginMap.containsKey(name))
@@ -25,6 +31,20 @@ public class Usdk {
 			return m_pluginMap.get(name);
 		else
 			return load(name);
+	}
+
+	public static boolean isExistField(String pluginName, String fieldName) {
+		UsdkBase plugin = getPlugin(pluginName);
+		if (plugin != null)
+			return ReflectionUtils.isExistField(plugin, fieldName);
+		return false;
+	}
+
+	public static boolean isExistMethod(String pluginName, String methodName) {
+		UsdkBase plugin = getPlugin(pluginName);
+		if (plugin != null)
+			return ReflectionUtils.isExistMethod(plugin, methodName);
+		return false;
 	}
 
 	private static UsdkBase load(String name) {
