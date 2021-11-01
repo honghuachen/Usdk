@@ -11,7 +11,7 @@ namespace Usdk {
                 BindingFlags.NonPublic |
                 BindingFlags.Public);
             if (methodInfo == null)
-                return null;
+                return (default);
 
             return methodInfo.Invoke (obj, objects);
         }
@@ -21,7 +21,10 @@ namespace Usdk {
         }
 
         public R CallPlugin<R> (string pluginName, string methodName, params object[] parameters) {
-            return (R) Invoke (this, this.GetType (), methodName, parameters);
+            object ret = Invoke(this, this.GetType(), methodName, parameters);
+            if (ret == null)
+                ret = default(R);
+            return (R)ret ;
         }
 
         public bool IsExistPlugin (string pluginName) {
