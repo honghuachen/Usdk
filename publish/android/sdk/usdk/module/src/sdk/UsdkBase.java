@@ -83,7 +83,7 @@ public class UsdkBase implements IUsdkApplicationDelegate {
 		this.configInfo = argsMap;
 	}
 
-	public static void sendCallBack2Unity(String eventName,String msg){
+	protected void sendCallBack2Unity(String eventName,String msg){
 		Usdk.sendCallBack2Unity(eventName,msg);
 	}
 	
