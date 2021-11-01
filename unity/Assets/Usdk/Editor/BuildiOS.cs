@@ -27,6 +27,7 @@ public class BuildiOS : Editor
     //导出xcode工程
     public static void Build()
     {
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.iOS, BuildTarget.iOS);
         string buildType = string.Empty, platform = string.Empty, subPlatform = string.Empty, versionName = string.Empty, versionCode = string.Empty,
             package = string.Empty, appName = string.Empty, cdn = string.Empty, plugins = string.Empty, splash = string.Empty, icon = string.Empty,
             xcodeOut = string.Empty;

@@ -39,8 +39,9 @@ public class BuildAndroid : Editor
 		return names.ToArray();
 	}
 
-    static void BuildForAndroid()
+    static void Build()
     {
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
         string keystoreName = string.Empty;
         string keystorePass = string.Empty;
         string keyaliasName = string.Empty;
