@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 
 import com.unity3d.player.UnityPlayer;
+import com.usdk.main.UsdkMainActivity;
 import com.usdk.util.ReflectionUtils;
 
 public class Usdk {
@@ -28,7 +29,7 @@ public class Usdk {
 	}
 
 	public static UnityPlayer getUnityPlayer(){
-		UsdkMainActivity unityActivity = getUnityActivity();
+		UsdkMainActivity unityActivity = (UsdkMainActivity) getUnityActivity();
 		return unityActivity.getUnityPlayer();
 	}
 
@@ -75,7 +76,7 @@ public class Usdk {
 		if (plugin == null)
 			Log.e(TAG, String.format("not found '%s' class.", name));
 		else {
-			plugin.onCreate(unityActivity, unityBundle);
+			plugin.onCreate(_unityActivity, _unityBundle);
 		}
 			
 		return plugin;
