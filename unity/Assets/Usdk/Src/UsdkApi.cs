@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Usdk
 {
+    
     public class UsdkApi
     {
         public const string PLATFORM_NAME = "PlatformProxy";
@@ -16,18 +17,14 @@ namespace Usdk
         private static IUsdkApi api = new UsdkWindowsApi();
 #endif
 
-        public static UsdkCallBack CreateCallBack()
-        {
-            //sdk callback
-            UsdkCallBack callBack = UsdkCallBack.Create();
-            callBack.OnCallBack = OnUsdkCallBack;
-            return callBack;
+        static UsdkApi(){
+            SetCallBack(new UsdkCallBackListener(new UsdkCallBack()));
         }
 
         #region sdk api
-        public static void SetCallBack(string pluginName, UsdkCallBackListener callBack)
+        public static void SetCallBack(UsdkCallBackListener callBack)
         {
-            CallPlugin(pluginName, "setCallBack", callBack);
+            api.SetCallBack(callBack);
         }
 
         public static string GetConfig(string key)
@@ -80,81 +77,6 @@ namespace Usdk
         public bool isExistMethod(string pluginName, string methodName)
         {
             return api.isExistMethod(pluginName, methodName);
-        }
-        #endregion
-
-        #region sdk callback
-        private static void OnUsdkCallBack(int errorCode, List<string> msg)
-        {
-            if (errorCode == (int)UsdkCallBackErrorCode.InitSuccess)
-            {
-                //初始化成功
-                Debug.Log("sdk init success");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.InitFail)
-            {
-                //初始化失败
-                Debug.Log("sdk init failed");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.ExitNoChannelExiter)
-            {
-                //SDK无退出页，需要调用游戏内部退出页
-                Application.Quit();
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.ExitSuccess)
-            {
-                //SDK自带退出页并且已经确认退出
-                Application.Quit();
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.LogoutFinish)
-            {
-                //SDK退出成功
-                Debug.Log("logout success");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.LoginSuccess)
-            {
-                //SDK登录成功
-                Debug.Log("login success");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.LoginCancel)
-            {
-                //SDK取消登录
-                Debug.Log("login cancel");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.LoginFail)
-            {
-                //SDK登录失败
-                Debug.Log("login failed");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.PaySuccess)
-            {
-                //SDK支付成功
-                Debug.Log("pay success");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.PayCancel)
-            {
-                //SDK取消支付
-                Debug.Log("pay cancel");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.PayProgress)
-            {
-                //SDK支付进行中
-                Debug.Log("pay progress");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.PayOthers)
-            {
-                //SDK其他支付错误码
-                Debug.Log("pay other errorcode");
-            }
-            else if (errorCode == (int)UsdkCallBackErrorCode.PayFail)
-            {
-                //SDK支付失败
-                Debug.Log("pay failed");
-            }
-            else
-            {
-                Debug.LogError(string.Format("usdk call back error.'{0}' undefine in 'UsdkCallBackErrorCode'", errorCode));
-            }
         }
         #endregion
     }

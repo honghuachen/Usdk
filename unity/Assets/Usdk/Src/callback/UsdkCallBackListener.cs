@@ -4,7 +4,14 @@ namespace Usdk
 {
     public interface IUsdkCallBackListener
     {
-        void OnCallBack(string callbackName, string jsonMsg);
+        void OnCallBack(string eventName, string jsonMsg);
+    }
+
+    public class UsdkCallBack : IUsdkCallBackListener
+    {
+        public void OnCallBack(string eventName, string msg)
+        {
+        }
     }
 
 #if UNITY_ANDROID
@@ -15,16 +22,15 @@ namespace Usdk
         {
             this.callback = callback;
         }
-        
-        public void OnCallBack(string callbackName, string jsonMsg)
+
+        public void OnCallBack(string eventName, string msg)
         {
-            Debug.LogFormat("[UsdkCallBackListener]callbackName={0} jsonMsg={1}", callbackName, jsonMsg);
+            Debug.LogFormat("[UsdkCallBackListener]eventName={0} jsonMsg={1}", eventName, msg);
             UnityDispatcher.PostTask(() =>
             {
                 if (this.callback != null)
                 {
-                    Debug.LogFormat("[callback]callbackName={0} jsonMsg={1}", callbackName, jsonMsg);
-                    this.callback.OnCallBack(callbackName, jsonMsg);
+                    this.callback.OnCallBack(eventName, msg);
                 }
             });
         }
@@ -37,16 +43,15 @@ namespace Usdk
         {
             this.callback = callback;
         }
-        
-        public void OnCallBack(string callbackName, string jsonMsg)
+
+        public void OnCallBack(string eventName, string msg)
         {
-            Debug.LogFormat("[UsdkCallBackListener]callbackName={0} jsonMsg={1}", callbackName, jsonMsg);
+            Debug.LogFormat("[UsdkCallBackListener]eventName={0} jsonMsg={1}", eventName, msg);
             UnityDispatcher.PostTask(() =>
             {
                 if (this.callback != null)
                 {
-                    Debug.LogFormat("[callback]callbackName={0} jsonMsg={1}", callbackName, jsonMsg);
-                    this.callback.OnCallBack(callbackName, jsonMsg);
+                    this.callback.OnCallBack(eventName, msg);
                 }
             });
         }
