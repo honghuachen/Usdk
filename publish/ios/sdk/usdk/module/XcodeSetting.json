@@ -4,7 +4,7 @@
 		"-":[]
 	},
 	"frameworks":{
-		"+":["AdSupport.framework","AudioToolbox.framework", "Security.framework","UIKit.framework"],
+		"+":["UIKit.framework"],
 		"-":[]
 	},
 	"properties":{

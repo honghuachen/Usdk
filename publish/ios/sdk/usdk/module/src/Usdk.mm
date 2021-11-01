@@ -1,19 +1,19 @@
 #import "Usdk.h"
 
+const char* MakeStringCopy(NSString * str)
+{
+        if (NULL == string) {
+        return NULL;
+    }
+    const char* string = [str UTF8String];
+    char* res = (char*)malloc(strlen(string)+1);
+    strcpy(res, string);
+    return res;
+}
+
 #if defined(__cplusplus)
 extern "C" {
 #endif
-    char* MakeStringCopy( NSString * str)
-    {
-        const char* string = [str UTF8String];
-        if (NULL == string) {
-            return NULL;
-        }
-        char* res = (char*)malloc(strlen(string)+1);
-        strcpy(res, string);
-        return res;
-    }
-    
     NSString* CreateNSString (const char* string)
     {
         if (string)
@@ -34,6 +34,11 @@ extern "C" {
         }
         printf("length %d\n", len);
         return len;
+    }
+
+    void __SetCallBack(UsdkCallBackListener_Callback callback)
+    {
+        [Usdk instance].usdkCallback = callback;
     }
 
     BOOL __IsExistPlugin(const char* pluginName)
@@ -101,7 +106,6 @@ static Usdk* _instance = nil;
     {
         _instance = [[Usdk alloc] init];
         _instance.m_pluginMap = [NSMutableDictionary dictionary];
-//        [_instance loadPlugin:PLATFORM_NAME];
     }
     return _instance;
 }

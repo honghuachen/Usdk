@@ -4,9 +4,13 @@
 #import "UsdkApplicationDelegate.h"
 #import "UsdkPlatformDelegate.h"
 #define PLATFORM_NAME               @"PlatformProxy"
+typedef void (*UsdkCallBackListener_Callback)(const char* callbackName, const char* jsonMsg);
+// 字符串转换 NSString -> char *
+extern const char* MakeStringCopy(NSString * str);
 
 @interface Usdk : NSObject
 +(Usdk*) instance;
+@property(nonatomic, assign) UsdkCallBackListener_Callback usdkCallback;
 @property NSMutableDictionary *m_pluginMap;
 @property UIApplication *m_application;
 @property NSDictionary *m_launchOptions;
