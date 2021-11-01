@@ -4,53 +4,39 @@ using UnityEngine;
 
 namespace Usdk {
     public class UsdkWindowsApi : IUsdkApi {
+        private object Invoke (object obj, Type type, string method, params object[] objects) {
+            MethodInfo methodInfo = type.GetMethod (method,
+                BindingFlags.Static |
+                BindingFlags.Instance |
+                BindingFlags.NonPublic |
+                BindingFlags.Public);
+            if (methodInfo == null)
+                return null;
+
+            return methodInfo.Invoke (obj, objects);
+        }
+
         public void CallPlugin (string pluginName, string methodName, params object[] parameters) {
-            MethodInfo method = this.GetType ().GetMethod (methodName);
-            BindingFlags flag = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
-            if (method != null)
-                method.Invoke (this, flag, Type.DefaultBinder, parameters, null);
+            Invoke (this, this.GetType (), methodName, parameters);
         }
 
         public R CallPlugin<R> (string pluginName, string methodName, params object[] parameters) {
-            MethodInfo method = this.GetType ().GetMethod (methodName);
-            BindingFlags flag = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
-            if (method != null)
-                return (R) method.Invoke (this, flag, Type.DefaultBinder, parameters, null);
-            return default (R);
+            return (R) Invoke (this, this.GetType (), methodName, parameters);
         }
 
-        private void SendCallBack (UsdkCallBackErrorCode code) {
-            SendCallBack (code, null);
+        public bool IsExistPlugin (string pluginName) {
+            return true;
         }
 
-        private void SendCallBack (UsdkCallBackErrorCode code, string ret) {
-            string msg = string.Format ("errorCode={0}", (int) code);
-            if (!string.IsNullOrEmpty (ret)) {
-                msg = string.Format ("{0}&paramString={1}", msg, ret);
-            }
-            GameObject.Find ("UsdkCallBack").SendMessage ("CallBack", msg);
+        public bool isExistField (string pluginName, string fieldName) {
+            return true;
         }
 
-        #region 扩展windows层接口示例（CallPlugin通过反射调用）
-        private void login () {
-            Debug.Log ("Invoke 'login'");
-            SendCallBack (UsdkCallBackErrorCode.LoginSuccess, "login");
+        public bool isExistMethod (string pluginName, string methodName) {
+            return true;
         }
 
-        private void logout () {
-            Debug.Log ("Invoke 'logout'");
-            SendCallBack (UsdkCallBackErrorCode.LogoutFinish);
+        public void SetCallBack(UsdkCallBackListener callback) { 
         }
-
-        private void pay (SdkPayInfo payInfo) {
-            Debug.Log ("Invoke 'pay'");
-            SendCallBack (UsdkCallBackErrorCode.PaySuccess, "pay");
-        }
-
-        private void exitGame () {
-            Debug.Log ("Invoke 'exitGame'");
-            Application.Quit ();
-        }
-        #endregion
     }
 }

@@ -1,75 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace Usdk
 {
-    public static class UsdkApi
+    public class UsdkApi
     {
         public const string PLATFORM_NAME = "PlatformProxy";
-        private static IUsdkApi api = null;
+#if UNITY_ANDROID
+        private static IUsdkApi api = new UsdkAndroidApi ();
+#elif UNITY_IOS
+        private static IUsdkApi api = new UsdkiOSApi ();
+#else
+        private static IUsdkApi api = new UsdkWindowsApi();
+#endif
 
-        static UsdkApi()
+        public static UsdkCallBack CreateCallBack()
         {
-            //sdk api
-            if (Application.platform == RuntimePlatform.Android)
-                api = new UsdkAndroidApi();
-            else if (Application.platform == RuntimePlatform.IPhonePlayer)
-                api = new UsdkiOSApi();
-            else
-                api = new UsdkWindowsApi();
-
             //sdk callback
             UsdkCallBack callBack = UsdkCallBack.Create();
             callBack.OnCallBack = OnUsdkCallBack;
+            return callBack;
         }
 
         #region sdk api
+        public static void SetCallBack(string pluginName, UsdkCallBackListener callBack)
+        {
+            CallPlugin(pluginName, "setCallBack", callBack);
+        }
+
         public static string GetConfig(string key)
         {
             if (key == null)
                 return string.Empty;
-            return CallPlugin<string>(PLATFORM_NAME, "getConfig", key);
-        }
-
-        public static void Login(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "login", custom_params_);
-        }
-
-        public static void Logout(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "logout", custom_params_);
-        }
-
-        public static void Pay(SdkPayInfo payInfo)
-        {
-            CallPlugin(PLATFORM_NAME, "pay", payInfo.ToString());
-        }
-
-        public static void Quit(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "exit", custom_params_);
-        }
-
-        public static void OpenUserCenter(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "openUserCenter", custom_params_);
-        }
-
-        public static void SwitchAccount(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "switchAccount", custom_params_);
-        }
-
-        public static void OpenAppstoreComment(string appid)
-        {
-            CallPlugin(PLATFORM_NAME, "openAppstoreComment", appid);
-        }
-
-        public static void ReleaseSdkResource(string custom_params_)
-        {
-            CallPlugin(PLATFORM_NAME, "releaseSdkResource", custom_params_);
+            return CallPluginR<string>(PLATFORM_NAME, "getConfig", key);
         }
 
         public static void CallPlugin(string pluginName, string methodName, params object[] parameters)
@@ -77,9 +42,44 @@ namespace Usdk
             api.CallPlugin(pluginName, methodName, parameters);
         }
 
-        public static R CallPlugin<R>(string pluginName, string methodName, params object[] parameters)
+        public static R CallPluginR<R>(string pluginName, string methodName, params object[] parameters)
         {
             return api.CallPlugin<R>(pluginName, methodName, parameters);
+        }
+
+        public static object CallPluginR(string type, string pluginName, string methodName, params object[] parameters)
+        {
+            if (type == "int")
+                return CallPluginR<int>(pluginName, methodName, parameters);
+            else if (type == "float")
+                return CallPluginR<float>(pluginName, methodName, parameters);
+            else if (type == "long")
+                return CallPluginR<long>(pluginName, methodName, parameters);
+            else if (type == "bool")
+                return CallPluginR<bool>(pluginName, methodName, parameters);
+            else if (type == "string")
+                return CallPluginR<string>(pluginName, methodName, parameters);
+            else if (type == "double")
+                return CallPluginR<double>(pluginName, methodName, parameters);
+            else if (type == "object")
+                return CallPluginR<AndroidJavaObject>(pluginName, methodName, parameters);
+
+            return null;
+        }
+
+        public bool IsExistPlugin(string pluginName)
+        {
+            return api.IsExistPlugin(pluginName);
+        }
+
+        public bool isExistField(string pluginName, string fieldName)
+        {
+            return api.isExistField(pluginName, fieldName);
+        }
+
+        public bool isExistMethod(string pluginName, string methodName)
+        {
+            return api.isExistMethod(pluginName, methodName);
         }
         #endregion
 
