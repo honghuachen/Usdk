@@ -17,9 +17,8 @@ import android.util.Log;
 import android.util.Xml;
 import android.view.KeyEvent;
 
-public class UsdkBase implements IUsdkCallBack, IUsdkApplicationDelegate {
+public class UsdkBase implements IUsdkApplicationDelegate {
 	protected String TAG = "usdk";
-	private String callBackReceiverName = "UsdkCallBack";
 	protected String packageName;
 	protected String versionName;
 	protected int versionCode;
@@ -82,6 +81,10 @@ public class UsdkBase implements IUsdkCallBack, IUsdkApplicationDelegate {
 		}
 		
 		this.configInfo = argsMap;
+	}
+
+	public static void sendCallBack2Unity(String eventName,String msg){
+		Usdk.sendCallBack2Unity(eventName,msg);
 	}
 	
 	protected void OnCreate(Activity activity, Bundle savedInstanceState){}
@@ -192,18 +195,5 @@ public class UsdkBase implements IUsdkCallBack, IUsdkApplicationDelegate {
 	@Override
 	public final boolean onKeyUp(int keyCode, KeyEvent event) {
 		return OnKeyUp(keyCode,event);
-	}
-	
-	@Override
-	public void sendCallBack2Unity(UsdkCallBackErrorCode errorCode) {
-		sendCallBack2Unity(errorCode,null);
-	}
-	
-	@Override
-	public void sendCallBack2Unity(UsdkCallBackErrorCode errorCode, String paramString) {
-		String retMsg = "errorCode=" + errorCode.ordinal();
-		if(paramString != null && paramString.length() > 0)
-			retMsg = retMsg + "&paramString=" + paramString;
-		UnityPlayer.UnitySendMessage(callBackReceiverName, "CallBack", retMsg);
 	}
 }

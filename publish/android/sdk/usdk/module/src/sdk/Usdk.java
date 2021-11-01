@@ -14,12 +14,32 @@ import com.usdk.util.ReflectionUtils;
 
 public class Usdk {
 	private static LinkedHashMap<String, UsdkBase> m_pluginMap = new LinkedHashMap<String, UsdkBase>();
-	public static Activity unityActivity = null;
-	public static Bundle unityBundle = null;
+	private static Activity _unityActivity = null;
+	private static Bundle _unityBundle = null;
+	private static UsdkCallBackListener _callback;
 	private static String TAG = "usdk";
 
-	public static void sendUnityMessage(String receiverName,String method,String ret){
-		UnityPlayer.UnitySendMessage(receiverName, method, ret);}
+	public static Activity getUnityActivity(){
+		return _unityActivity;
+	}
+
+	public static Bundle getUnityBundle(){
+		return _unityBundle;
+	}
+
+	public static UnityPlayer getUnityPlayer(){
+		UsdkMainActivity unityActivity = getUnityActivity();
+		return unityActivity.getUnityPlayer();
+	}
+
+	public static void setCallBack(UsdkCallBackListener callback){
+		_callback = callback;
+	}
+
+	public static void sendCallBack2Unity(String eventName,String msg){
+		if(_callback != null)
+			_callback.OnCallBack(eventName,msg);
+	}
 
 	public static void addPlugin(String name) {
 		if (!m_pluginMap.containsKey(name))
@@ -81,8 +101,8 @@ public class Usdk {
 	}
 
 	public static void onCreate(Activity activity, Bundle savedInstanceState) {
-		unityActivity = activity;
-		unityBundle = savedInstanceState;
+		_unityActivity = activity;
+		_unityBundle = savedInstanceState;
 	
 		load("com.usdk.plugin.PlatformProxy");
 	}
