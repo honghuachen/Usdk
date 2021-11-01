@@ -1,8 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="mobisocial.omlet.overlaybar.ui.activity.VideoEditActivity">
-    <item android:id="@+id/action_settings" android:title="@string/omp_action_settings"
-        android:orderInCategory="100" tools:showAsAction="never" />
-</menu>
-

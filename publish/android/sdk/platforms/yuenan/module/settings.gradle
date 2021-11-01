@@ -1,4 +1,0 @@
-include ':sDKSoha'
-project(':sDKSoha').projectDir=new File('../sdk/platforms/yuenan/module/libs/sDKSoha')
-include ':facebookSDK'
-project(':facebookSDK').projectDir=new File('../sdk/platforms/yuenan/module/libs/facebookSDK')

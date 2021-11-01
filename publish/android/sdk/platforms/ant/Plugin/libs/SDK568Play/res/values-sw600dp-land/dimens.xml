@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="sdk568_size_3dp">5.4dp</dimen>
-    <dimen name="sdk568_size_300dp">540dp</dimen>
-    <dimen name="sdk568_size_305dp">549dp</dimen>
-    <dimen name="sdk568_as_icon_web_margin">16dp</dimen>
-
-</resources>

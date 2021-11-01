@@ -1,7 +1,0 @@
-include ':app'
-project(':app').projectDir = new File('../channel/app')
-
-include ':SGFrameworkChuXin-2.0'
-project(':SGFrameworkChuXin-2.0').projectDir = new File('../channel/chuxinhudong/Plugin/libs/SGFrameworkChuXin-2.0')
-include ':chuXinSDK-2.0'
-project(':chuXinSDK-2.0').projectDir = new File('../channel/chuxinhudong/Plugin/libs/chuXinSDK-2.0')

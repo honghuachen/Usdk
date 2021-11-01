@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Pressed -->
-    <item android:state_pressed="true" android:color="@color/dk_download_white"/>
-    <item android:state_window_focused="false" android:color="@color/dk_download_btn_open"/>
-    <item android:color="@color/dk_download_btn_open"/>
-
-</selector>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
-  -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:color="@color/ebpay_button_disable_ec6d6b"/>
-    <item android:color="@color/bd_wallet_white"/>
-</selector>

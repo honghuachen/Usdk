@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<lint>
-    <issue id="NewApi">
-        <ignore path="src/vn/soha/game/sdk/SohaSDK.java" />
-        <ignore path="src/vn/soha/game/sdk/dialogs/DialogDetailDashBoard.java" />
-        <ignore path="src/vn/soha/game/sdk/dialogs/DialogLogin.java" />
-    </issue>
-</lint>
