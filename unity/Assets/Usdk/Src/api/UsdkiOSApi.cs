@@ -4,7 +4,7 @@ namespace Usdk
 {
     public class UsdkiOSApi : IUsdkApi
     {
-        private UsdkCallBackListener _callback;
+        private static UsdkCallBackListener _callback;
         private delegate void UsdkCallBackListener_Callback(string callbackName, string jsonMsg);
         [AOT.MonoPInvokeCallback(typeof(UsdkCallBackListener_Callback))]
         private static void UsdkCallBackListener_Method(string callbackName, string jsonMsg)
@@ -88,16 +88,16 @@ namespace Usdk
 
 #if UNITY_IOS
         [DllImport ("__Internal")]
-        private static extern void __SetCallBack (UsdkCallBackListener_Method callback);
+        private static extern void __SetCallBack (UsdkCallBackListener_Callback callback);
 #else
-        private static void __SetCallBack(UsdkCallBackListener_Method callback)
+        private static void __SetCallBack(UsdkCallBackListener_Callback callback)
         {
         }
 #endif
         public void SetCallBack(UsdkCallBackListener callback)
         {
-            this._callback = callback;
-            return __SetCallBack(UsdkCallBackListener_Method);
+            _callback = callback;
+            __SetCallBack(UsdkCallBackListener_Method);
         }
     }
 }

@@ -99,10 +99,12 @@ namespace Usdk
 
         public void SetCallBack(UsdkCallBackListener callback)
         {
+#if UNITY_ANDROID
             if (usdk != null)
             {
                 usdk.CallStatic("setCallBack", callback);
             }
+#endif
         }
     }
 }
