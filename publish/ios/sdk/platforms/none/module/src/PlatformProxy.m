@@ -1,8 +1,7 @@
 #import "UsdkBase.h"
 #import "UsdkApplicationDelegate.h"
-#import "UsdkPlatformDelegate.h"
 
-@interface PlatformProxy : UsdkBase<UsdkApplicationDelegate,UsdkPlatformDelegate>
+@interface PlatformProxy : UsdkBase<UsdkApplicationDelegate>
 @end
 
 @implementation PlatformProxy
@@ -59,42 +58,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
      NSLog(@"[PlatformProxy13]applicationWillTerminate:(UIApplication *)application");
-}
-
-- (void)exitGame{
-    NSLog(@"[PlatformProxy14]exitGame");
-}
-
-- (void)login{
-    NSLog(@"[PlatformProxy]login");
-}
-
-- (void)logout {
-    NSLog(@"[PlatformProxy]logout");
-}
-
-- (void)openUserCenter {
-    NSLog(@"[PlatformProxy]openUserCenter");
-}
-
-- (void)pay {
-    NSLog(@"[PlatformProxy]pay");
-}
-
-- (void)releaseSdkResource {
-    NSLog(@"[PlatformProxy]releaseSdkResource");
-}
-
-- (void)setProductIdentifiers:(NSArray *)identifers {
-    NSLog(@"[PlatformProxy]setProductIdentifiers");
-}
-
-- (void)setSdkCallBackReceiver:(NSArray *)receiverName {
-    NSLog(@"[PlatformProxy]setSdkCallBackReceiver receiverName=%@",receiverName[0]);
-}
-
-- (void)switchAccount {
-    NSLog(@"[PlatformProxy]switchAccount");
 }
 
 - (void)callPlugin:(NSArray *)arg{

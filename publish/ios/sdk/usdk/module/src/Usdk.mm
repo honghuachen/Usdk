@@ -1,15 +1,5 @@
 #import "Usdk.h"
-
-const char* MakeStringCopy(NSString * str)
-{
-        if (NULL == string) {
-        return NULL;
-    }
-    const char* string = [str UTF8String];
-    char* res = (char*)malloc(strlen(string)+1);
-    strcpy(res, string);
-    return res;
-}
+#import "UsdkUtils.h"
 
 #if defined(__cplusplus)
 extern "C" {

@@ -1,4 +1,6 @@
 #import "UsdkBase.h"
+#import "Usdk.h"
+#import "UsdkUtils.h"
 
 @implementation UsdkBase
 - (NSString*) getConfig:(NSString*)key{return @"";}

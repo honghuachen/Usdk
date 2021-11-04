@@ -15,9 +15,9 @@
 	"plist":{},
 	"files":{},
 	"folders":{
-		"libs":"Frameworks/Plugins/iOS/xiaomi",
-		"res":"Resources/Plugins/iOS/xiaomi",
-		"src":"Libraries/Plugins/iOS/xiaomi"
+		"libs":"Frameworks/Plugins/iOS/none",
+		"res":"Resources/Plugins/iOS/none",
+		"src":"Libraries/Plugins/iOS/none"
 	},
 	"filesCompileFlag":{}
 }

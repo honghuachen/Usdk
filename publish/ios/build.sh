@@ -227,7 +227,7 @@ function __buildIPA(){
 		echo -e	"</dict>">>$ExportOptionsPlist
 		echo -e	"</plist>">>$ExportOptionsPlist
 
-		xcodebuild clean -project $xcodeproj -configuration ${buildType} -alltargets
+		xcodebuild clean -project $xcodeproj -configuration Release -alltargets
 		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
 		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 	done
