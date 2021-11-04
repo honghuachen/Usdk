@@ -175,25 +175,39 @@ function __genGradleProperties(){
 	echo UnityProjectType=${UnityProjectType}>>${gradle_properties}
 	echo JavaVersion=${JavaVersion}>>${gradle_properties}
 
-	echo AppReleaseDir=${gradlebuildTemp}/outputs/apk>>${gradle_properties}
+	echo AppReleaseDir=${gradlebuildTemp}/outputs>>${gradle_properties}
 	echo Keystore=${keystorename}>>${gradle_properties}
 	echo StorePassword=${storepass}>>${gradle_properties}
 	echo KeyAlias=${alias}>>${gradle_properties}
 	echo KeyPassword=${keypass}>>${gradle_properties}
 
-	echo android.enableAapt2=false>>${gradle_properties}
+	#echo android.enableAapt2=false>>${gradle_properties}
 	echo org.gradle.parallel=true>>${gradle_properties}
 	echo org.gradle.daemon=true>>${gradle_properties}
 	echo org.gradle.configureondemand=true>>${gradle_properties}
-	echo org.gradle.jvmargs=-Xmx4096m -Xms2048m -XX:MaxPermSize=2048m>>${gradle_properties}
-
+	echo org.gradle.jvmargs=-Xmx200m -Xms200m>>${gradle_properties}
+	echo unityStreamingAssets=.unity3d>>${gradle_properties}
+	
 	echo sdk.dir=${SdkDir}>${local_properties}
-	#echo ndk.dir=${NdkDir}>>${local_properties}
+	echo ndk.dir=${NdkDir}>>${local_properties}
 
 	echo include \':app\'>${settings_gradle}
 	echo include \':unity\'>>${settings_gradle}
+	
+	UNITY_VER=2018
+	CONTAIN_LAUNCHER=$(echo $UnityProjectDir | grep "launcher")
+	if [[ "$CONTAIN_LAUNCHER" != "" ]];then
+		UNITY_VER=2019
+	fi
+		
 	TempUnityProjectDir=$( echo ${UnityProjectDir} | sed 's:\\:\/:g' )
 	echo project\(\':unity\'\).projectDir=new File\(\'${TempUnityProjectDir}\'\)>>${settings_gradle}
+
+	if [ ${UNITY_VER} == 2019 ]; then
+		TempUnityLibProjectDir=$( echo ${TempUnityProjectDir} | sed 's:launcher:unityLibrary:g' )
+		echo include \':unityLibrary\'>>${settings_gradle}
+		echo project\(\':unityLibrary\'\).projectDir=new File\(\'${TempUnityLibProjectDir}\'\)>>${settings_gradle}
+	fi
 
 	unityAndroidPath=${UnityProjectDir}
 	if [ ${UnityProjectType} == "eclipse" ]
@@ -248,17 +262,23 @@ function __genGradleProperties(){
 	echo dependencies {>>${BuildGradle}
 	echo "	compile project(':app')">>${BuildGradle}
 	echo "	compile project(':usdk')">>${BuildGradle}
+	if [ ${UNITY_VER} == 2019 ]; then
+		echo "	compile project(':unityLibrary')">>${BuildGradle}
+	fi
 	echo "	compile project(':${platform}')">>${BuildGradle}
-	for var in ${array[@]}
-	do
-		echo "	compile project(':${var}')">>${BuildGradle}
-	done
+	if [ $plugins ]; then
+		for var in ${array[@]}
+		do
+			echo "	compile project(':${var}')">>${BuildGradle}
+		done
+	fi
 	echo }>>${BuildGradle}
 }
 
-function __readySdkRes(){
+function __readySdkRes(){	
 	#修改appName
 	java -jar ${RootPath}/tools/assetconfigtool/ModifyAppName.jar ${appNameXmlPath} 'app_name' "${appname}"
+	
 	#构建临时module用于不同渠道构建差异资源
 	mkdir ${gradlebuildTemp}/app
 	mkdir ${gradlebuildTemp}/app/res
@@ -315,10 +335,13 @@ function __main(){
 
 	cd ${gradlebuildTemp}
 	chmod +x gradlew
+	dos2unix gradlew
 	#apk打包
 	./gradlew assembleRelease --stacktrace
 	#aab打包
 	./gradlew bundleRelease --stacktrace
+	
+	cp -r ${UnityProjectDir}/build/outputs ${gradlebuildTemp}/outputs
 }
 
 __main

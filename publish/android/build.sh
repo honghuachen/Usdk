@@ -218,16 +218,20 @@ function __genGradleProperties(){
 		appNameXmlPath=${unityAndroidPath}/src/main/res/values/strings.xml
 	fi
 
-	array=(${plugins//,/ }) 
-	for var in ${array[@]}
-	do
-		echo include \':${var}\'>>${settings_gradle}
-		echo project\(\':${var}\'\).projectDir=new File\(\'../sdk/plugins/${var}/module\'\)>>${settings_gradle}
-		
-		if [ -f ./sdk/plugins/${var}/module/settings.gradle ];then
-			cat ./sdk/plugins/${var}/module/settings.gradle >> ${settings_gradle}
-		fi
-	done
+	if [ ! $plugins ]; then
+		echo "plugins is NULL"
+	else
+		array=(${plugins//,/ }) 
+		for var in ${array[@]}
+		do
+			echo include \':${var}\'>>${settings_gradle}
+			echo project\(\':${var}\'\).projectDir=new File\(\'../sdk/plugins/${var}/module\'\)>>${settings_gradle}
+			
+			if [ -f ./sdk/plugins/${var}/module/settings.gradle ];then
+				cat ./sdk/plugins/${var}/module/settings.gradle >> ${settings_gradle}
+			fi
+		done
+	fi
 	
 	echo -e >>${settings_gradle}
 	echo include \':${platform}\'>>${settings_gradle}
@@ -262,10 +266,12 @@ function __genGradleProperties(){
 		echo "	compile project(':unityLibrary')">>${BuildGradle}
 	fi
 	echo "	compile project(':${platform}')">>${BuildGradle}
-	for var in ${array[@]}
-	do
-		echo "	compile project(':${var}')">>${BuildGradle}
-	done
+	if [ $plugins ]; then
+		for var in ${array[@]}
+		do
+			echo "	compile project(':${var}')">>${BuildGradle}
+		done
+	fi
 	echo }>>${BuildGradle}
 }
 
@@ -327,6 +333,7 @@ function __main(){
 
 	cd ${gradlebuildTemp}
 	chmod +x gradlew
+	dos2unix gradlew
 	#apk打包
 	./gradlew assembleRelease --stacktrace
 	#aab打包
