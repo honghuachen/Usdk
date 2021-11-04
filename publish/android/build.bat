@@ -253,6 +253,14 @@ for %%i in (%plugins%) do (
 	echo    compile project^(':%%i'^)>>%unityAndroidPath%\build.gradle
 )
 echo }>>%unityAndroidPath%\build.gradle
+
+if %UNITY_VER% equ 2019 (
+    echo repositories {>>%unityAndroidPath%\build.gradle
+    echo     flatDir {>>%unityAndroidPath%\build.gradle
+    echo         dirs "${project(':unityLibrary').projectDir}/libs">>%unityAndroidPath%\build.gradle
+    echo     }>>%unityAndroidPath%\build.gradle
+    echo }>>%unityAndroidPath%\build.gradle
+)
 goto :eof
 
 ::==================================================================================

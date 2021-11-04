@@ -273,6 +273,14 @@ function __genGradleProperties(){
 		done
 	fi
 	echo }>>${BuildGradle}
+
+	if [ ${UNITY_VER} == 2019 ]; then
+		echo "repositories {">>${BuildGradle}
+		echo "    flatDir {">>${BuildGradle}
+		echo "        dirs \"\${project(':unityLibrary').projectDir}/libs\"">>${BuildGradle}
+		echo "    }">>${BuildGradle}
+		echo "}">>${BuildGradle}
+	fi
 }
 
 function __readySdkRes(){	
