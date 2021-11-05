@@ -185,7 +185,7 @@ function __genGradleProperties(){
 	echo org.gradle.parallel=true>>${gradle_properties}
 	echo org.gradle.daemon=true>>${gradle_properties}
 	echo org.gradle.configureondemand=true>>${gradle_properties}
-	echo org.gradle.jvmargs=-Xmx200m -Xms200m>>${gradle_properties}
+	echo org.gradle.jvmargs=-Xmx1024m -Xms1024m>>${gradle_properties}
 	echo unityStreamingAssets=.unity3d>>${gradle_properties}
 	
 	echo sdk.dir=${SdkDir}>${local_properties}
