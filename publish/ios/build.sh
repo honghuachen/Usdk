@@ -162,7 +162,8 @@ function __buildUnity2Xcode(){
 	echo -e	"	\"plist\":{">>$appConfigPath
 	echo -e	"		\"CFBundleDisplayName\":\"$appname\",">>$appConfigPath
 	echo -e	"		\"CFBundleIdentifier\":\"$package\",">>$appConfigPath
-	echo -e	"		\"CFBundleShortVersionString\":\"$versionCode\"">>$appConfigPath
+	echo -e	"		\"CFBundleShortVersionString\":\"$versionName\"">>$appConfigPath
+	echo -e	"		\"CFBundleVersion\":\"$versionCode\"">>$appConfigPath
 	echo -e	"	}">>$appConfigPath
 	echo }>>$appConfigPath
 	
