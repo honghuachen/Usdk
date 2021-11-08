@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Xml;
 using UnityEditor;
-using UnityEngine;
-using Object = UnityEngine.Object;
 
 public class BuildiOS : Editor
 {
@@ -74,7 +68,7 @@ public class BuildiOS : Editor
 
         PlayerSettings.iOS.appleEnableAutomaticSigning = false;
         PlayerSettings.iOS.targetDevice = iOSTargetDevice.iPhoneAndiPad; //目标设备
-        PlayerSettings.iOS.targetOSVersionString = "8.0"; //最低iOS版本要求
+        // PlayerSettings.iOS.targetOSVersionString = "8.0"; //最低iOS版本要求
         PlayerSettings.iOS.statusBarStyle = iOSStatusBarStyle.Default;
         PlayerSettings.statusBarHidden = true;
         PlayerSettings.allowedAutorotateToLandscapeLeft = true;
