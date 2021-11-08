@@ -67,20 +67,34 @@ public class BuildiOS : Editor
         }
 
         PlayerSettings.iOS.appleEnableAutomaticSigning = false;
-        PlayerSettings.iOS.targetDevice = iOSTargetDevice.iPhoneAndiPad; //目标设备
+        // SetAutomaticallyAddCapabilities(false);
+        
+        // PlayerSettings.iOS.targetDevice = iOSTargetDevice.iPhoneAndiPad; //目标设备
         // PlayerSettings.iOS.targetOSVersionString = "8.0"; //最低iOS版本要求
-        PlayerSettings.iOS.statusBarStyle = iOSStatusBarStyle.Default;
-        PlayerSettings.statusBarHidden = true;
-        PlayerSettings.allowedAutorotateToLandscapeLeft = true;
-        PlayerSettings.allowedAutorotateToLandscapeRight = true;
-        PlayerSettings.allowedAutorotateToPortrait = false;
-        PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
-        PlayerSettings.accelerometerFrequency = 30;
+        // PlayerSettings.iOS.statusBarStyle = iOSStatusBarStyle.Default;
+        // PlayerSettings.statusBarHidden = true;
+        // PlayerSettings.allowedAutorotateToLandscapeLeft = true;
+        // PlayerSettings.allowedAutorotateToLandscapeRight = true;
+        // PlayerSettings.allowedAutorotateToPortrait = false;
+        // PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
+        // PlayerSettings.accelerometerFrequency = 30;
+
         PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.iOS, ApiCompatibilityLevel.NET_Standard_2_0);
-        PlayerSettings.SetPropertyInt("ScriptingBackend", (int)ScriptingImplementation.IL2CPP, BuildTargetGroup.iOS);
-        PlayerSettings.SetPropertyInt("Architecture", (int)iOSTargetDevice.iPhoneAndiPad, BuildTargetGroup.iOS); //支持armv7和arm64
-        PlayerSettings.iOS.requiresPersistentWiFi = true;
-        string build_time = string.Format("{0}{1}{2}{3}{4}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute);
+        // PlayerSettings.SetPropertyInt("ScriptingBackend", (int)ScriptingImplementation.IL2CPP, BuildTargetGroup.iOS);
+        // PlayerSettings.SetPropertyInt("Architecture", (int)iOSTargetDevice.iPhoneAndiPad, BuildTargetGroup.iOS); //支持armv7和arm64
+        PlayerSettings.SetScriptingBackend(BuildTargetGroup.iOS, ScriptingImplementation.IL2CPP);
+        // PlayerSettings.SetArchitecture(BuildTargetGroup.iOS, 2);
+        // PlayerSettings.iOS.requiresPersistentWiFi = true;
+
+
         BuildPipeline.BuildPlayer(GetBuildScenes(), xcodeOut, BuildTarget.iOS, BuildOptions.None);
+    }
+
+    private static void SetAutomaticallyAddCapabilities(bool auto)
+    {
+        System.Reflection.Assembly editorAsm = System.Reflection.Assembly.GetAssembly(typeof(Editor));
+        System.Type t = typeof(UnityEditor.PlayerSettings.iOS);
+        System.Reflection.PropertyInfo method = t.GetProperty("automaticallyDetectAndAddCapabilities", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+        method.SetValue(null, auto);
     }
 }
