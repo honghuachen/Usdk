@@ -33,7 +33,7 @@ public class XcodeSetting
 
         string productName = GetProductName(xcodePath);
         string entitlementFilePath = Path.Combine(PBXProject.GetUnityTargetName(), productName + ".entitlements");
-        ProjectCapabilityManager pcbManager = new ProjectCapabilityManager(projPath, entitlementFilePath, PBXProject.GetUnityTargetName());
+        ProjectCapabilityManager pcbManager = new ProjectCapabilityManager(proj, projPath, entitlementFilePath, PBXProject.GetUnityTargetName());
 
         //读取配置文件
         string json = File.ReadAllText(configPath);
