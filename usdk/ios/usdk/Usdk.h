@@ -1,18 +1,20 @@
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "UsdkBase.h"
 #import "UsdkApplicationDelegate.h"
-#import "UsdkPlatformDelegate.h"
+
 #define PLATFORM_NAME               @"PlatformProxy"
+typedef void (*UsdkCallBackListener_Callback)(const char* callbackName, const char* jsonMsg);
 
 @interface Usdk : NSObject
 +(Usdk*) instance;
+@property(nonatomic, assign) UsdkCallBackListener_Callback usdkCallback;
 @property NSMutableDictionary *m_pluginMap;
 @property UIApplication *m_application;
 @property NSDictionary *m_launchOptions;
 - (void)callPlugin:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (NSString*)callPluginR:(NSString*)pluginName methodName:(NSString*)methodName with:(NSArray*) args;
 - (UsdkBase*)loadPlugin:(NSString*)pluginName;
+- (BOOL)isExistPlugin:(NSString*)pluginName;
+- (BOOL)isExistMethod:(NSString*)pluginName methodName:(NSString*)methodName;
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation NS_AVAILABLE_IOS(4_2);
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
