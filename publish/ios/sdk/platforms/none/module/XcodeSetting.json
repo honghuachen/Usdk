@@ -1,23 +1,24 @@
 {
-	"libs":{
-		"+":[],
-		"-":[]
+	"libs": {
+		"+": [],
+		"-": []
 	},
-	"frameworks":{
-		"+":[],
-		"-":[]
+	"frameworks": {
+		"+": [],
+		"-": []
 	},
-	"properties":{
-		"=":{},
-		"+":{},
-		"-":{}
+	"properties": {
+		"=": {},
+		"+": {},
+		"-": {}
 	},
-	"plist":{},
-	"files":{},
-	"folders":{
-		"libs":"Frameworks/Plugins/iOS/none",
-		"res":"Resources/Plugins/iOS/none",
-		"src":"Libraries/Plugins/iOS/none"
+	"plist": {},
+	"files": {},
+	"folders": {
+		"libs": "Frameworks/Plugins/iOS/none",
+		"res": "Resources/Plugins/iOS/none",
+		"src": "Libraries/Plugins/iOS/none"
 	},
-	"filesCompileFlag":{}
+	"filesCompileFlag": {},
+	"capabilitys": {}
 }

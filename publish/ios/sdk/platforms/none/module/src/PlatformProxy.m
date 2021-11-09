@@ -64,12 +64,14 @@
     for(id obj in arg){
         NSLog(@"[PlatformProxy]callPlugin obj=%@",obj);
     }
+    [self sendCallBack2Unity:@"callPlugin" Param:@"callPlugin"];
 }
 
 - (NSString*)callPluginRInt:(NSArray *)arg{
     for(id obj in arg){
         NSLog(@"[PlatformProxy]callPluginRInt obj=%@",obj);
     }
+    [self sendCallBack2Unity:@"callPluginRInt" Param:@"callPluginRInt"];
     return @"2";
 }
 
@@ -77,6 +79,7 @@
     for(id obj in arg){
         NSLog(@"[PlatformProxy]callPluginRString obj=%@",obj);
     }
+    [self sendCallBack2Unity:@"callPluginRString" Param:@"callPluginRString"];
     return @"iOS return";
 }
 
@@ -84,6 +87,7 @@
     for(id obj in arg){
         NSLog(@"[PlatformProxy]callPluginRBool obj=%@",obj);
     }
+    [self sendCallBack2Unity:@"callPluginRBool" Param:@"callPluginRBool"];
     return @"true";
 }
 
@@ -91,6 +95,7 @@
     for(id obj in arg){
         NSLog(@"[PlatformProxy]callPluginRFloat obj=%@",obj);
     }
+    [self sendCallBack2Unity:@"callPluginRFloat" Param:@"callPluginRFloat"];
     return @"3.1415926";
 }
 @end
