@@ -20,5 +20,13 @@
 		"src": "Libraries/Plugins/iOS/none"
 	},
 	"filesCompileFlag": {},
-	"capabilitys": {}
+	"capabilitys": {
+		"SignInWithApple": [],
+		"PushNotifications": [
+			true
+		],
+		"BackgroundModes": [
+			"RemoteNotifications"
+		]
+	}
 }

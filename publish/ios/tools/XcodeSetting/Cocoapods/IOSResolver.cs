@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
 using GooglePlayServices;
-using UnityEditor.iOS.Xcode.Custom;
+using UnityEditor.iOS.Xcode;
 
 namespace Google {
 	public class IOSResolver {
@@ -361,9 +361,9 @@ namespace Google {
 
 		private static string TargetSdk {
 			get {
-				List<string> val = GetBuildSettingProperties ("IPHONEOS_DEPLOYMENT_TARGET");
-				if (val.Count > 0)
-					return val[0];
+				string val = GetBuildSettingProperties ("IPHONEOS_DEPLOYMENT_TARGET");
+				if (!string.IsNullOrEmpty(val))
+					return val;
 				return "8.2";
 			}
 			set {
@@ -386,7 +386,18 @@ namespace Google {
 		private static string configPath;
 
 		public static void Init (string xcodePath, string configPath) {
-			IOSResolver.xcodePath = xcodePath;
+            //plist
+            string plistPath = xcodePath + "/Info.plist";
+            PlistDocument plist = new PlistDocument();
+            plist.ReadFromString(File.ReadAllText(plistPath));
+            plistRootDict = plist.root;
+
+            //build setting
+            string projPath = PBXProject.GetPBXProjectPath(xcodePath);
+            proj = new PBXProject();
+            proj.ReadFromString(File.ReadAllText(projPath));
+
+            IOSResolver.xcodePath = xcodePath;
 			IOSResolver.configPath = configPath;
 
 			IOSResolver.pods = new SortedDictionary<string, IOSResolver.Pod> ();
@@ -444,22 +455,11 @@ namespace Google {
 			if (IOSResolver.AutoPodToolInstallInEditorEnabled && IOSResolver.CocoapodsIntegrationEnabled && !ExecutionEnvironment.InBatchMode) {
 				IOSResolver.AutoInstallCocoapods ();
 			}
-
-			//plist
-			string plistPath = xcodePath + "/Info.plist";
-			PlistDocument plist = new PlistDocument ();
-			plist.ReadFromString (File.ReadAllText (plistPath));
-			plistRootDict = plist.root;
-
-			//build setting
-			string projPath = PBXProject.GetPBXProjectPath (xcodePath);
-			proj = new PBXProject ();
-			proj.ReadFromString (File.ReadAllText (projPath));
 		}
 
-		private static List<string> GetBuildSettingProperties (string key) {
-			string target = proj.TargetGuidByName (PBXProject.GetUnityTargetName ());
-			return proj.GetBuildProperty (target, key);
+		private static string GetBuildSettingProperties (string key) {
+			string target = proj.TargetGuidByName (IOSResolver.TARGET_NAME);
+			return proj.GetBuildPropertyForAnyConfig(target, key);
 		}
 
 		private static List<string> FindFile (string searchPath, string fileToFind, int maxDepth, int currentDepth = 0) {
@@ -488,7 +488,7 @@ namespace Google {
 		}
 
 		private static void InitializeTargetName () {
-			IOSResolver.TARGET_NAME = PBXProject.GetUnityTargetName ();
+			IOSResolver.TARGET_NAME = proj.GetTargetName ();
 		}
 
 		internal static void Log (string message, bool verbose = false, LogLevel level = LogLevel.Info) {

@@ -7,11 +7,11 @@ namespace UnityEditor.iOS.Xcode.Custom
     {
         public static void Main(string[] args)
         {
-             //args = new string[] {
-             //    "--pbx",
-             //    "D:\\workspace\\pk\\trunk\\usdk\\publish\\ios\\sdk\\platforms\\lightgame1680\\xcode",
-              //   "D:\\workspace\\pk\\trunk\\usdk\\publish\\ios\\sdk\\platforms\\lightgame1680\\module\\XcodeSetting.json"
-             //};
+             /*args = new string[] {
+                 "--pbx",
+                 "F:\\git\\Usdk\\unity\\xcode",
+                 "F:\\git\\Usdk\\publish\\ios\\sdk\\platforms\\none\\module\\XcodeSetting.json"
+             };*/
             string command = args[0];
             if (command == "--pbx")
             {

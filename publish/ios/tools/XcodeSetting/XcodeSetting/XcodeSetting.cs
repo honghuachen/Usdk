@@ -31,8 +31,10 @@ public class XcodeSetting
         plist.ReadFromString(File.ReadAllText(plistPath));
         PlistElementDict rootDict = plist.root;
 
-        string productName = GetProductName(xcodePath);
-        string entitlementFilePath = Path.Combine(PBXProject.GetUnityTargetName(), productName + ".entitlements");
+        //string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+        //string target = proj.TargetGuidByName("UnityFramework");
+        //string productName = proj.GetBuildPropertyForAnyConfig(target, "PRODUCT_NAME");
+        string entitlementFilePath = Path.Combine(PBXProject.GetUnityTargetName(), "usdk.entitlements");
         ProjectCapabilityManager pcbManager = new ProjectCapabilityManager(proj, projPath, entitlementFilePath, PBXProject.GetUnityTargetName());
 
         //读取配置文件
@@ -50,7 +52,7 @@ public class XcodeSetting
         SetFrameworks(proj, table.SGet<Hashtable>("frameworks"));
         //building setting
         SetBuildProperties(proj, table.SGet<Hashtable>("properties"));
-        SetShellScriptBuildPhase(proj, table.SGet<Hashtable>("runscript"));
+        SetShellScriptBuildPhase(proj, table.SGet<Hashtable>("shellscript"));
         //复制文件
         CopyFiles(proj, xcodePath, table.SGet<Hashtable>("files"));
         //复制文件夹
@@ -63,19 +65,6 @@ public class XcodeSetting
         File.WriteAllText(projPath, proj.WriteToString());
 
         Console.WriteLine("***Info.plist*****\n" + File.ReadAllText(plistPath));
-    }
-
-    private static string GetProductName(string xcodePath)
-    {
-        string projPath = PBXProject.GetPBXProjectPath(xcodePath);
-        UnityEditor.iOS.Xcode.Custom.PBXProject proj = new UnityEditor.iOS.Xcode.Custom.PBXProject();
-        proj.ReadFromString(File.ReadAllText(projPath));
-        string productName = "usdk";
-        string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-        List<string> names = proj.GetBuildProperty(target, "PRODUCT_NAME");
-        if (names.Count > 0)
-            productName = names[0];
-        return productName;
     }
 
     private static void AddLibToProject(PBXProject inst, string targetGuid, string lib)
@@ -95,7 +84,7 @@ public class XcodeSetting
     {
         if (table != null)
         {
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             ArrayList addList = table["+"] as ArrayList;
             if (addList != null)
             {
@@ -120,7 +109,7 @@ public class XcodeSetting
         if (embedFrameworksTable != null)
         {
             string fileName = Path.GetFileName(filePath);
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             ArrayList addList = embedFrameworksTable["+"] as ArrayList;
             if (addList != null)
             {
@@ -138,7 +127,7 @@ public class XcodeSetting
     {
         if (table != null)
         {
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             ArrayList addList = table["+"] as ArrayList;
             if (addList != null)
             {
@@ -163,7 +152,7 @@ public class XcodeSetting
     {
         if (table != null)
         {
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             Hashtable setTable = table.SGet<Hashtable>("=");
             foreach (DictionaryEntry i in setTable)
             {
@@ -320,7 +309,7 @@ public class XcodeSetting
         if (needCopy)
         {
             File.Copy(src, des);
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             // The path is relative to the source folder
             string relativePath = des.Replace(xcodePath + "/", "");
             string fileGuid = proj.AddFile(relativePath, relativePath, PBXSourceTree.Source);
@@ -359,7 +348,7 @@ public class XcodeSetting
         string currDir = Path.Combine(xcodePath, root);
         if (root.EndsWith(".framework") || root.EndsWith(".xcframework") || root.EndsWith(".bundle"))
         {
-            string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+            string target = proj.GetTargetGuid();
             string fileGuid = proj.AddFile(root, root, PBXSourceTree.Source);
             proj.AddFileToBuild(target, fileGuid);
             SetEmbedFrameworks(proj, root, fileGuid);
@@ -374,7 +363,7 @@ public class XcodeSetting
             string t_projPath = Path.Combine(root, name);
             if (folder.EndsWith(".framework") || folder.EndsWith(".xcframework") || folder.EndsWith(".bundle"))
             {
-                string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+                string target = proj.GetTargetGuid();
                 string fileGuid = proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source);
                 proj.AddFileToBuild(target, fileGuid);
                 AutoAddSearchPath(proj, xcodePath, t_path);
@@ -394,7 +383,7 @@ public class XcodeSetting
                 string name = Path.GetFileName(file);
                 string t_path = Path.Combine(currDir, name);
                 string t_projPath = Path.Combine(root, name);
-                string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+                string target = proj.GetTargetGuid();
                 string fileGuid = proj.AddFile(t_projPath, t_projPath, PBXSourceTree.Source);
                 proj.AddFileToBuild(target, fileGuid);
                 AutoAddSearchPath(proj, xcodePath, t_path);
@@ -452,7 +441,7 @@ public class XcodeSetting
     {
         if (arg == null)
             return;
-        string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
+        string target = proj.GetTargetGuid();
         foreach (DictionaryEntry i in arg)
         {
             string fileProjPath = i.Key.ToString();

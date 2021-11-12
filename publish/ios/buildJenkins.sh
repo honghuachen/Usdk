@@ -203,46 +203,15 @@ function __buildUnity2Xcode(){
 
 #构建ipa包
 function __buildIPA(){
-	ipatypes=( $( __getPublishProperties ipatypes ) )
 	targetname=Unity-iPhone
 	xcodeprojname=$targetname.xcodeproj
 	xcodeproj=${tempXcodeDir}/$xcodeprojname
 	
-	array=(${ipatypes//,/ }) 
-	for var in ${array[@]}
-	do
-		CODE_SIGN_IDENTITY=( "$( __readINI ${global_properties} CODE_SIGN_IDENTITY $var )" )
-		PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $var )" )
-		time=$(date "+%Y%m%d%H%M%S")
+	UNITY_VER=2018
+	if [ -d "${tempXcodeDir}/UnityFramework/" ];then
+		UNITY_VER=2019
+	fi
 
-		echo -e "\n------------build ipa,please wait------------"
-		ExportOptionsPlist=${tempXcodeDir}/ExportOptionsPlist.plist
-		echo -e "<plist version=\"1.0\">">$ExportOptionsPlist
-		echo -e	"<dict>">>$ExportOptionsPlist
-		echo -e	"		<key>provisioningProfiles</key>">>$ExportOptionsPlist
-		echo -e	"		<dict>">>$ExportOptionsPlist
-		echo -e	"			<key>${package}</key>">>$ExportOptionsPlist
-		echo -e	"			<string>$PROVISIONING_PROFILE</string>">>$ExportOptionsPlist
-		echo -e	"		</dict>">>$ExportOptionsPlist
-		echo -e	"		<key>method</key>">>$ExportOptionsPlist
-		echo -e	"		<string>$var</string>">>$ExportOptionsPlist
-		echo -e	"		<key>uploadBitcode</key>">>$ExportOptionsPlist
-		echo -e	"		<false/>">>$ExportOptionsPlist
-		echo -e	"</dict>">>$ExportOptionsPlist
-		echo -e	"</plist>">>$ExportOptionsPlist
-
-		xcodebuild clean -project $xcodeproj -configuration Release -alltargets
-		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive  CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration  CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
-		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
-	done
-}
-
-#构建ipa包
-function __buildIPA2(){
-	targetname=Unity-iPhone
-	xcodeprojname=$targetname.xcodeproj
-	xcodeproj=${tempXcodeDir}/$xcodeprojname
-	
 	CODE_SIGN_IDENTITY=( "$( __readINI ${global_properties} CODE_SIGN_IDENTITY $IPAType )" )
 	PROVISIONING_PROFILE=( "$( __readINI ${global_properties} PROVISIONING_PROFILE $IPAType )" )
 	time=$(date "+%Y%m%d%H%M%S")
@@ -264,7 +233,12 @@ function __buildIPA2(){
 	echo -e	"</plist>">>$ExportOptionsPlist
 
 	xcodebuild clean -project $xcodeproj -configuration Release -alltargets
-	xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive  CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
+	if [ ${UNITY_VER} == 2019 ];then
+		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive clean archive CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration CODE_SIGN_IDENTITY_APP="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE_APP=$PROVISIONING_PROFILE
+	else
+		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$IPAType.xcarchive clean archive CONFIGURATION_BUILD_DIR=$tempXcodeDir/configuration CODE_SIGN_IDENTITY_="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE_=$PROVISIONING_PROFILE
+	fi
+
 	xcodebuild -exportArchive -archivePath build/$targetname-$IPAType.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 }
 
@@ -281,7 +255,7 @@ function __main(){
 	
 	__showVersion
 	__buildUnity2Xcode
-	__buildIPA2
+	__buildIPA
 }
 
 __main

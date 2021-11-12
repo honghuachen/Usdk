@@ -1,21 +1,25 @@
 {
-	"libs":{
-		"+":["libc++.tbd"],
-		"-":[]
+	"libs": {
+		"+": [
+			"libc++.tbd"
+		],
+		"-": []
 	},
-	"frameworks":{
-		"+":[],
-		"-":[]
+	"frameworks": {
+		"+": [],
+		"-": []
 	},
-	"properties":{
-		"=":{},
-		"+":{},
-		"-":{}
+	"properties": {
+		"=": {},
+		"+": {},
+		"-": {}
 	},
-	"plist":{},
-	"files":{},
-	"folders":{
-		"src":"Libraries/Plugins/iOS/Usdk"
+	"plist": {
+		"ITSAppUsesNonExemptEncryption": "false"
 	},
-	"filesCompileFlag":{}
+	"files": {},
+	"folders": {
+		"src": "Libraries/Plugins/iOS/Usdk"
+	},
+	"filesCompileFlag": {}
 }

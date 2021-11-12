@@ -88,11 +88,27 @@
 		]
 	},
 	"files": {},
-	"folders": {},
+	"folders": {
+		"libs": "Frameworks/Plugins/iOS/xxxx",
+		"res": "Resources/Plugins/iOS/xxxx",
+		"src": "Libraries/Plugins/iOS/xxxx"
+	},
 	"filesCompileFlag": {
 		"Libraries/Plugins/iOS/JSONKit.m": [
 			"-fno-objc-arc"
 		]
+	},
+	"embedframeworks": {
+		"+": [
+			"CFNetwork.framework",
+			"ImageIO.framework"
+		]
+	},
+	"shellscript": {
+		"+": {
+			"shellname1": "shellscript1",
+			"shellname2": "shellscript2"
+		}
 	},
 	"capabilitys": {
 		"ApplePay": [

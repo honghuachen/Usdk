@@ -204,6 +204,11 @@ function __buildIPA(){
 	targetname=Unity-iPhone
 	xcodeprojname=$targetname.xcodeproj
 	xcodeproj=${tempXcodeDir}/$xcodeprojname
+
+	UNITY_VER=2018
+	if [ -d "${tempXcodeDir}/UnityFramework/" ];then
+		UNITY_VER=2019
+	fi
 	
 	array=(${ipatypes//,/ }) 
 	for var in ${array[@]}
@@ -229,7 +234,11 @@ function __buildIPA(){
 		echo -e	"</plist>">>$ExportOptionsPlist
 
 		xcodebuild clean -project $xcodeproj -configuration Release -alltargets
-		xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
+		if [ ${UNITY_VER} == 2019 ];then
+			xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive clean archive CODE_SIGN_IDENTITY_APP="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE_APP=$PROVISIONING_PROFILE
+		else
+			xcodebuild archive -project $xcodeproj -scheme $targetname -configuration Release -archivePath build/$targetname-$var.xcarchive clean archive CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE=$PROVISIONING_PROFILE
+		fi
 		xcodebuild -exportArchive -archivePath build/$targetname-$var.xcarchive -exportOptionsPlist $ExportOptionsPlist -exportPath ipa
 	done
 }
