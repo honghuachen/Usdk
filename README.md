@@ -17,11 +17,13 @@
 #Java JDK1.7或1.8，android sdk8.0以上（至少升到了27）
 
 # Unity3D版本支持
-Unity全版本支持
+兼容unity2018及之前的版本 
+兼容unity2019及之后的版本 
+Unity全版本支持 
 
 # 多平台支持
-目前支持android、ios
-android平台支持eclipse、android studio工程适配
+目前支持android、ios 
+android平台支持eclipse、android studio工程适配 
 ios支持xcode工程适配
 
 # 快速适配渠道sdk和Native插件
@@ -56,13 +58,10 @@ google现在上架必须使用aab包，但是aab包大于150m就无法上传了�
 3、一个 Android App Bundle 中的所有 Asset Pack 的总下载大小上限为 2 GB。  
 4、一个 Android App Bundle 中最多可以使用 50 个资源包。  
 
-# FAQ
-1、打的usdk自带渠道包崩溃问题？  
-由于我之前适配的百度SDK和其他的插件或者其他渠道SDK都太老，打出来的包会崩溃，就不要打我以前适配的渠道包了，看下示例怎么适配然后自己适配自己的渠道就行了。
-要想看打包后的运行usdk运行情况，请打none(裸包)渠道。  
-2、打出来的包名字乱码问题？  
+# FAQ 
+1、打出来的包名字乱码问题？  
 如果出现打包出来的包的名字是乱码，请publish.properties文件转成utf8编码。  
-3、打出来的包安装好后出现2个应用图标？  
+2、打出来的包安装好后出现2个应用图标？  
 由于gradle合并的时候会把unity自动生成的AndroidManifest.xml中的main activity配置和usdk的AndroidManifest.xml的main activity合并到一起，所以出现了2个应用图标。需要把usdk/unity工程中的plugins/android/AndroidManifest.xml文件夹中的文件复制到你自己的工程中。
 
 # 技术支持
